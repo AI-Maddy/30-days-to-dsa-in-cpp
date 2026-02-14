@@ -1,6 +1,3 @@
-Here it is, Sasimegala — **Day 04**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, structured, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 04 — 1D Arrays: Two Pointers & Sliding Window Basics (README.rst)**  
@@ -417,5 +414,3 @@ Today you mastered:
 This is one of the most important days in your DSA journey — these techniques appear everywhere: arrays, strings, hashing, DP, graphs, and more.
 
 ---
-
-If you’re ready, I’ll prepare **Day 05 — Prefix Sum + Difference Array + Range Query Patterns** with the same ultra‑premium depth.

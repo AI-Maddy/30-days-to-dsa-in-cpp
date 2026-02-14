@@ -1,6 +1,3 @@
-Here it is, Sasimegala — **Day 05**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 05 — Prefix Sum + Difference Array + Range Query Patterns (README.rst)**  
@@ -47,24 +44,15 @@ pref[i] = arr[0] + arr[1] + ... + arr[i]
 
 ### **2.1 Building prefix sum (O(n))**
 
-```cpp
 vector<int> pref(n);
 pref[0] = arr[0];
 
 for (int i = 1; i < n; i++)
     pref[i] = pref[i-1] + arr[i];
-```
-
----
-
-## **3. Range Sum Query in O(1)**
-
-To compute sum of range `[l, r]`:
 
 ```
 sum(l, r) = pref[r] - (l > 0 ? pref[l-1] : 0)
 ```
-
 ### **Example**
 
 ```cpp
@@ -391,5 +379,3 @@ These techniques appear everywhere — arrays, matrices, hashing, DP, graphs, an
 You now have one of the strongest tools in your DSA toolkit.
 
 ---
-
-If you’re ready, I’ll prepare **Day 06 — Hashing & HashMap Problems** with the same ultra‑premium depth.

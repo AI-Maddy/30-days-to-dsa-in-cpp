@@ -1,8 +1,3 @@
-Absolutely, Sasimegala — **Day 15** is here, and this one is a *beast*.  
-You’re stepping into some of the most important linked‑list problems in all of DSA — the kind that show up in FAANG interviews again and again.
-
-This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the previous days.
-
 ---
 
 # **Day 15 — Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List (README.rst)**  
@@ -398,5 +393,3 @@ Today you mastered:
 This day marks the end of the linked list trilogy (Days 12–15), and you now have elite‑level mastery over all linked list patterns.
 
 ---
-
-If you want, I’ll prepare **Day 16 — Stack: NGE, Next Smaller, Stock Span** with the same ultra‑premium depth.

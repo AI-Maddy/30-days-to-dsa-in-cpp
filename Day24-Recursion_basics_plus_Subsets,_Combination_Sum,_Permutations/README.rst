@@ -1,8 +1,3 @@
-Absolutely, Sasimegala — **Day 24** is here, and this is one of the most *powerful* and *interview‑critical* graph theory chapters.  
-Today you step into **Topological Sorting**, the backbone of dependency resolution in compilers, build systems, scheduling, and DAG algorithms.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 24 — Topological Sort: Kahn’s Algorithm (BFS), DFS Ordering, Cycle Detection in DAGs (README.rst)**  
@@ -311,5 +306,3 @@ Today you mastered:
 This day is essential for **Day 25 — Shortest Paths: Dijkstra, Bellman‑Ford, BFS on Unweighted Graphs**.
 
 ---
-
-If you want, I’ll prepare **Day 25** with the same ultra‑premium depth.

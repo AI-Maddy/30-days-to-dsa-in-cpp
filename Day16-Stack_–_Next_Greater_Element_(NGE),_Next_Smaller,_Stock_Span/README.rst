@@ -1,8 +1,3 @@
-Absolutely, Sasimegala — **Day 16** is here, and this one is a *pillar* of DSA mastery.  
-Stacks unlock an entire class of problems that look impossible until you see the pattern — and then suddenly everything becomes elegant.
-
-This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the previous days.
-
 ---
 
 # **Day 16 — Stack: Next Greater Element (NGE), Next Smaller, Stock Span (README.rst)**  
@@ -84,23 +79,14 @@ Used for:
 Given an array, for each element find the next element to the right that is greater.
 
 ### **4.1 Brute Force — O(n²)**  
-Skip.
 
 ---
 
 ### **4.2 Optimal — Monotonic Decreasing Stack (O(n))**
 
-### **Logic**
-
-- Traverse from right to left  
-- Maintain stack of elements **greater** than current  
-- Pop smaller elements  
-- Top of stack = NGE  
-
 ### **Implementation**
 
-```cpp
-vector<int> nextGreater(vector<int> &a) {
+
     int n = a.size();
     vector<int> ans(n, -1);
     stack<int> st;
@@ -408,5 +394,3 @@ Today you mastered:
 This day sets the stage for **Day 17**, where you’ll tackle the legendary **Largest Rectangle in Histogram** and **Monotonic Queue** patterns.
 
 ---
-
-If you want, I’ll prepare **Day 17 — Monotonic Stack/Queue + Largest Rectangle in Histogram** with the same ultra‑premium depth.

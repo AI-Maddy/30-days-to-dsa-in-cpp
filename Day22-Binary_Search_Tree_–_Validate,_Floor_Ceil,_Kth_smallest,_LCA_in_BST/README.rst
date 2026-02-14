@@ -1,8 +1,3 @@
-Absolutely, Sasimegala — **Day 22** is here, and this one is a *beautiful*, high‑impact chapter in your tree mastery.  
-Today we go beyond basic traversals and BST logic into **Tree DP**, **views**, and **advanced BFS/DFS patterns** that show up constantly in FAANG interviews.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 22 — Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right) (README.rst)**  
@@ -45,24 +40,15 @@ Level order but alternate direction each level.
 
 ### **Implementation**
 
-```cpp
 vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
     vector<vector<int>> ans;
     if (!root) return ans;
 
-    queue<TreeNode*> q;
-    q.push(root);
-    bool leftToRight = true;
-
-    while (!q.empty()) {
-        int sz = q.size();
-        vector<int> level(sz);
 
         for (int i = 0; i < sz; i++) {
             TreeNode* node = q.front(); q.pop();
-
             int idx = leftToRight ? i : sz - i - 1;
-            level[idx] = node->val;
+If you want, I’ll prepare **Day 23 — Graphs: BFS, DFS, Adjacency List, Cycle Detection (Directed + Undirected)** with the same ultra‑premium depth.
 
             if (node->left) q.push(node->left);
             if (node->right) q.push(node->right);
@@ -473,5 +459,3 @@ Today you mastered:
 This day is a major milestone — you now understand the full breadth of binary tree traversal patterns used in interviews.
 
 ---
-
-If you want, I’ll prepare **Day 23 — Graphs: BFS, DFS, Adjacency List, Cycle Detection (Directed + Undirected)** with the same ultra‑premium depth.

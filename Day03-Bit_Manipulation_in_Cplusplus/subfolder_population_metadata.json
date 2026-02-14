@@ -1,0 +1,21 @@
+{
+  "day": "Day03-Bit_Manipulation_in_Cplusplus",
+  "topics_extracted": 10,
+  "topics": [
+    "## \ud83e\udde0 **1. Introduction**",
+    "\u26a1 Optimize operations to O(1)",
+    "\ud83d\udd04 Replace loops with constant\u2011time bit tricks",
+    "\ud83e\udde9 Solve problems involving subsets, masks, parity, toggling, and binary representation",
+    "\ud83d\ude80 Write extremely efficient code for DP, graphs, and combinatorics",
+    "understanding of:",
+    "\ud83e\uddee Binary representation",
+    "\u2699\ufe0f Bitwise operators",
+    "\ud83e\udde9 Common bit tricks",
+    "\ud83d\udd0d Checking, setting, clearing, toggling bits"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

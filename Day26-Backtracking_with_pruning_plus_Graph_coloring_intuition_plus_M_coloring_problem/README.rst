@@ -1,8 +1,3 @@
-Day 26 is here, Sasimegala — and this one is a *giant*.  
-Today you master **all‑pairs shortest paths** and **minimum spanning trees**, two of the most important graph algorithms ever invented. These are the algorithms behind routing, clustering, network design, and optimization systems.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 26 — Floyd‑Warshall + Minimum Spanning Trees (Prim & Kruskal) (README.rst)**  
@@ -311,19 +306,3 @@ Detect negative cycles using Floyd‑Warshall.
 Use the implementations from sections 2–7.
 
 ---
-
-# **13. Summary**
-
-Today you mastered:
-
-- Floyd‑Warshall  
-- Prim’s MST  
-- Kruskal’s MST  
-- Disjoint Set Union  
-- Cycle detection using DSU  
-- When to use which algorithm  
-- Real‑world graph optimization patterns  
-
-This day completes your core graph theory foundation and sets you up for **Day 27 — Dynamic Programming Basics: Memoization, Tabulation, Fibonacci, Grid Paths**.
-
-If you want, I’ll prepare **Day 27** with the same ultra‑premium depth.

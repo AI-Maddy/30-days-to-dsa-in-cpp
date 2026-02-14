@@ -1,0 +1,21 @@
+{
+  "day": "Day28-Shortest_Path_(Dijkstra_intro)_plus_Topological_Sort_plus_Course_Schedule",
+  "topics_extracted": 10,
+  "topics": [
+    "1D DP is the backbone of:",
+    "Optimization problems",
+    "Subsequence problems",
+    "Greedy + DP hybrids",
+    "Stock trading DP",
+    "Partitioning problems",
+    "Scheduling problems",
+    "House Robber (DP on linear arrays)",
+    "Max sum of non\u2011adjacent elements",
+    "Longest Increasing Subsequence (LIS)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

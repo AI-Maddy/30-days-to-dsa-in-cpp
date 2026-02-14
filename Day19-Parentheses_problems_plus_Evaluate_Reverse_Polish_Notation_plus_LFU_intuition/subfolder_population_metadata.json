@@ -1,0 +1,21 @@
+{
+  "day": "Day19-Parentheses_problems_plus_Evaluate_Reverse_Polish_Notation_plus_LFU_intuition",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 19 \u2014 Binary Trees: Traversals, Height, Diameter, Balanced Trees (README.rst)**",
+    "Binary Trees are the backbone of:",
+    "Binary Search Trees (BST)",
+    "Segment Trees",
+    "Fenwick Trees",
+    "Expression Trees",
+    "AVL / Red\u2011Black Trees",
+    "Graph traversal intuition",
+    "Tree representation",
+    "DFS traversals (preorder, inorder, postorder)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

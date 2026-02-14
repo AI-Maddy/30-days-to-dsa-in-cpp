@@ -1,6 +1,3 @@
-Here it is, Sasimegala — **Day 14**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 14 — Fast & Slow Pointers Deep Dive + Palindrome Linked List Variants (README.rst)**  
@@ -416,22 +413,3 @@ Use middle pointer.
 Use two‑pointer switching.
 
 ---
-
-# **15. Summary**
-
-Today you mastered:
-
-- Fast & slow pointer mechanics  
-- Middle node detection  
-- Cycle detection + cycle start  
-- Palindrome linked list (multiple approaches)  
-- Reorder list  
-- Odd-even list  
-- Intersection logic  
-- Deep pointer intuition  
-
-This day is foundational for advanced linked list problems in Day 15.
-
----
-
-If you want, I’ll prepare **Day 15 — Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List** with the same ultra‑premium depth.

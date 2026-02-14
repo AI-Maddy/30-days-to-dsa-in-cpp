@@ -1,0 +1,21 @@
+{
+  "day": "Day26-Backtracking_with_pruning_plus_Graph_coloring_intuition_plus_M_coloring_problem",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 26 \u2014 Floyd\u2011Warshall + Minimum Spanning Trees (Prim & Kruskal) (README.rst)**",
+    "Today\u2019s algorithms power:",
+    "Internet routing",
+    "Network design",
+    "Logistics optimization",
+    "Social network analysis",
+    "Compiler optimization",
+    "Distributed systems",
+    "Floyd\u2011Warshall (all\u2011pairs shortest paths)",
+    "Prim\u2019s algorithm (MST using priority queue)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

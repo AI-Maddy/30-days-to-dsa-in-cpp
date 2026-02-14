@@ -1,7 +1,3 @@
-Absolutely, Sasimegala — here is your **Day 4 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Days 1–3.
-
-This is **Day 4: 1D Arrays – Two Pointers & Sliding Window Basics**, designed to be crystal‑clear, deep, and unforgettable.
-
 ---
 
 # **Day 4 – THEORY.rst**  
@@ -288,11 +284,3 @@ These techniques will appear **everywhere** in upcoming topics:
 You now have the essential tools to solve **medium/hard** array and string problems.
 
 ---
-
-If you want, I can now generate:
-
-- **Day 4 README.rst**  
-- **Day 5 theory.rst**  
-- **A combined Two‑Pointers + Sliding Window cheat sheet**  
-
-Just tell me what you want next.

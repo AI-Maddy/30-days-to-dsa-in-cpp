@@ -1,0 +1,21 @@
+{
+  "day": "Day17-Monotonic_Stack_Queue_patterns_plus_Largest_Rectangle_in_Histogram",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 17 \u2014 Monotonic Stack/Queue Patterns + Largest Rectangle in Histogram (README.rst)**",
+    "Monotonic stacks and queues are among the most elegant and powerful tools in algorithm design.",
+    "Largest Rectangle in Histogram",
+    "Sliding Window Maximum",
+    "Next Greater/Smaller Element (advanced variants)",
+    "Trapping Rain Water",
+    "Sum of Subarray Minimums",
+    "Sum of Subarray Maximums",
+    "Removing K digits",
+    "Asteroid collision"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

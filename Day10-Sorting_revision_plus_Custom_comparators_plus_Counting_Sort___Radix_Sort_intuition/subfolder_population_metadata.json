@@ -1,0 +1,21 @@
+{
+  "day": "Day10-Sorting_revision_plus_Custom_comparators_plus_Counting_Sort___Radix_Sort_intuition",
+  "topics_extracted": 10,
+  "topics": [
+    "Sorting is one of the most fundamental operations in computer science.",
+    "Greedy algorithms",
+    "Binary search on answer",
+    "Hashing optimizations",
+    "Interval problems",
+    "Graph algorithms",
+    "Priority queues",
+    "Scheduling problems",
+    "Comparison\u2011based sorting",
+    "Custom comparators"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

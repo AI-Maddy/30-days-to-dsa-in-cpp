@@ -1,8 +1,3 @@
-Day 21 coming right up, Sasimegala — and this one is a *big milestone*.  
-Today you step into the world of **self‑balancing trees**, the structures that make modern databases, compilers, and ordered maps lightning‑fast.
-
-This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 21 — AVL Trees: Self‑Balancing BST + Rotations + Insert/Delete (README.rst)**  
@@ -271,21 +266,13 @@ Node* deleteNode(Node* root, int key) {
 
     int balance = getBalance(root);
 
-    // LL
     if (balance > 1 && getBalance(root->left) >= 0)
         return rightRotate(root);
 
     // LR
-    if (balance > 1 && getBalance(root->left) < 0) {
-        root->left = leftRotate(root->left);
-        return rightRotate(root);
-    }
-
-    // RR
-    if (balance < -1 && getBalance(root->right) <= 0)
         return leftRotate(root);
 
-    // RL
+
     if (balance < -1 && getBalance(root->right) > 0) {
         root->right = rightRotate(root->right);
         return leftRotate(root);
@@ -450,5 +437,3 @@ Today you mastered:
 This day is essential for **Day 22 — Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right)**.
 
 ---
-
-If you want, I’ll prepare **Day 22** with the same ultra‑premium depth.

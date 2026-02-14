@@ -1,0 +1,21 @@
+{
+  "day": "Day23-Construct_Tree_from_traversals_plus_Serialize_Deserialize_plus_Morris_Traversal_deep",
+  "topics_extracted": 10,
+  "topics": [
+    "Graphs are everywhere:",
+    "Social networks",
+    "Maps & navigation",
+    "Recommendation systems",
+    "Compilers (dependency graphs)",
+    "Operating systems (deadlock detection)",
+    "Networking (routing algorithms)",
+    "AI search algorithms",
+    "Graph representation",
+    "BFS (Breadth\u2011First Search)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

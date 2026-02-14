@@ -1,0 +1,21 @@
+{
+  "day": "Day11-Binary_Search_on_Sorted_Rotated_Array_plus_Search_in_2D_matrix_variants",
+  "topics_extracted": 10,
+  "topics": [
+    "## **1. Introduction**",
+    "A rotated sorted array is one of the most common interview patterns.",
+    "Identify sorted halves",
+    "Apply binary search in non\u2011linear structures",
+    "Handle duplicates",
+    "Solve pivot\u2011based problems",
+    "You will learn:",
+    "Staircase search",
+    "Binary search on flattened matrix",
+    "Searching in row\u2011wise sorted but column\u2011wise unsorted matrices"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

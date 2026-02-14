@@ -1,0 +1,21 @@
+{
+  "day": "Day12-Singly_Linked_List_\u2013_Reverse,_Middle,_Cycle_detection,_Remove_nth_node",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 12 \u2014 Singly Linked List: Reverse, Middle, Cycle Detection, Remove Nth Node (README.rst)**",
+    "Singly Linked Lists are the backbone of many advanced data structures:",
+    "Stacks & Queues",
+    "Hashing (chaining)",
+    "LRU Cache",
+    "Graph adjacency lists",
+    "Custom memory allocators",
+    "Dynamic data structures",
+    "that appear in almost every interview:",
+    "Creating and traversing a linked list"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

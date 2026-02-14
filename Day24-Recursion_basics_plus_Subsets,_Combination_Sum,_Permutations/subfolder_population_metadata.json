@@ -1,0 +1,21 @@
+{
+  "day": "Day24-Recursion_basics_plus_Subsets,_Combination_Sum,_Permutations",
+  "topics_extracted": 10,
+  "topics": [
+    "Topological sorting is defined only for **Directed Acyclic Graphs (DAGs)**.",
+    "Build systems (Make, Bazel)",
+    "Course scheduling",
+    "Dependency resolution",
+    "Task scheduling",
+    "Compilers (instruction ordering)",
+    "Package managers (npm, pip)",
+    "Topological sort using DFS",
+    "Topological sort using BFS (Kahn\u2019s Algorithm)",
+    "Cycle detection in directed graphs"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

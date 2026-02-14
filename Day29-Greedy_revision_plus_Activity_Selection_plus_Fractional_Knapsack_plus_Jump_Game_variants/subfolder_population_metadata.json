@@ -1,0 +1,21 @@
+{
+  "day": "Day29-Greedy_revision_plus_Activity_Selection_plus_Fractional_Knapsack_plus_Jump_Game_variants",
+  "topics_extracted": 10,
+  "topics": [
+    "Resource allocation",
+    "Graph algorithms (Prim, Kruskal, Dijkstra)",
+    "Jump game problems",
+    "Interval problems",
+    "Knapsack variants",
+    "Core greedy strategy",
+    "Activity Selection (Interval Scheduling)",
+    "Fractional Knapsack",
+    "Jump Game I (Reachability)",
+    "Jump Game II (Minimum jumps)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

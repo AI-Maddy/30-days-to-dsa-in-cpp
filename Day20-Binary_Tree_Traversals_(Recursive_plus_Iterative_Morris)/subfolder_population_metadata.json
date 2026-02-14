@@ -1,0 +1,21 @@
+{
+  "day": "Day20-Binary_Tree_Traversals_(Recursive_plus_Iterative_Morris)",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 20 \u2014 Binary Search Trees (BST): Insert, Delete, Search, Validate, LCA (README.rst)**",
+    "Binary Search Trees (BSTs) are special binary trees where:",
+    "O(log n) search",
+    "O(log n) insert",
+    "O(log n) delete",
+    "Ordered traversal",
+    "Efficient range queries",
+    "Predecessor/successor queries",
+    "LCA in O(log n)",
+    "BST fundamentals"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

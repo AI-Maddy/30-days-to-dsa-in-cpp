@@ -1,11 +1,3 @@
-Here it is, Sasimegala — **Day 11**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
-
-# **Day 11 — Binary Search on Sorted Rotated Array + Search in 2D Matrix Variants (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
-
 ---
 
 ## **1. Introduction**
@@ -395,5 +387,3 @@ Today you mastered:
 This day builds the foundation for advanced binary search, matrix problems, and interview‑level challenges.
 
 ---
-
-If you want, I’ll prepare **Day 12 — Singly Linked List: Reverse, Middle, Cycle Detection, Remove Nth Node** with the same ultra‑premium depth.

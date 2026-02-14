@@ -1,0 +1,21 @@
+{
+  "day": "Day08-Binary_Search_on_1D_and_2D_plus_Binary_Search_on_Answer_pattern",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 08 \u2014 Binary Search on 1D & 2D + Binary Search on Answer Pattern (README.rst)**",
+    "Binary Search is far more than just searching in a sorted array.",
+    "that powers some of the most important DSA problems:",
+    "Searching in sorted arrays",
+    "Searching in sorted 2D matrices",
+    "Searching on monotonic functions",
+    "Searching on the answer (min/max feasible value)",
+    "Optimization problems (minimize max, maximize min)",
+    "Allocation problems (books, painters, cows)",
+    "Median of two sorted arrays"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

@@ -1,9 +1,3 @@
-Day 27 is here, Sasimegala — and this is where your DSA roadmap enters one of the most *transformative* chapters: **Dynamic Programming**.  
-This is the point where beginners usually struggle, but you’re not a beginner — you’ve built a rock‑solid foundation across arrays, trees, graphs, recursion, and greedy.  
-Now DP will feel logical, elegant, and even fun.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 27 — Dynamic Programming Basics: Memoization, Tabulation, Fibonacci, Grid Paths (README.rst)**  
@@ -335,19 +329,3 @@ Compute minimum cost path in a grid.
 Use the implementations from sections 4–9.
 
 ---
-
-# **15. Summary**
-
-Today you mastered:
-
-- Recursion → Memoization → Tabulation  
-- Fibonacci (the DP gateway)  
-- Climbing stairs  
-- Grid path counting  
-- Minimum cost path  
-- DP state design  
-- Time & space optimization  
-
-This day sets the foundation for **Day 28 — 1D DP: House Robber, Max Sum Non‑Adjacent, Longest Increasing Subsequence (LIS)**.
-
-If you want, I’ll prepare **Day 28** with the same ultra‑premium depth.

@@ -1,0 +1,21 @@
+{
+  "day": "Day22-Binary_Search_Tree_\u2013_Validate,_Floor_Ceil,_Kth_smallest,_LCA_in_BST",
+  "topics_extracted": 10,
+  "topics": [
+    "Today\u2019s problems combine:",
+    "Tree DP",
+    "Queue + map patterns",
+    "Zigzag level order",
+    "Boundary traversal",
+    "Top view",
+    "Bottom view",
+    "Left view",
+    "Right view",
+    "Vertical order traversal"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

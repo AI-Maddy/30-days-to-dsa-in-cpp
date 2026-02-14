@@ -1,33 +1,25 @@
-Absolutely, Sasimegala — here comes **Day 02**, crafted with the same ultra‑premium depth, clarity, and richness as Day 01.  
-This is a **long, interview‑oriented, example‑heavy, 150+ line README.rst**, perfect for your 30‑day DSA mastery repo.
-
 ---
 
-# **Day 02 — Time & Space Complexity + STL Algorithms (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
-
----
-
-## **1. Introduction**
+## ⏳ **1. Introduction**
 
 Time and space complexity form the mathematical backbone of algorithm analysis.  
 Understanding them deeply allows you to:
 
-- Predict performance  
-- Optimize solutions  
-- Choose the right data structure  
-- Impress interviewers with clarity and precision  
-- Avoid brute‑force traps  
+- 🔮 Predict performance  
+- 🛠️ Optimize solutions  
+- 🏗️ Choose the right data structure  
+- 🗣️ Impress interviewers with clarity and precision  
+- 🚫 Avoid brute‑force traps  
 
 Today, you will master:
 
-- Big‑O notation  
-- Best / average / worst‑case analysis  
-- Space complexity patterns  
-- Recurrence relations (intro)  
-- STL algorithm complexities  
-- Practical performance comparisons  
-- Real interview examples  
+- 🏁 Big‑O notation  
+- 📊 Best / average / worst‑case analysis  
+- 🧮 Space complexity patterns  
+- 🔁 Recurrence relations (intro)  
+- ⚙️ STL algorithm complexities  
+- 🏎️ Practical performance comparisons  
+- 💼 Real interview examples  
 
 This day sets the tone for the rest of the 30‑day journey.
 
@@ -37,18 +29,18 @@ This day sets the tone for the rest of the 30‑day journey.
 
 Big‑O describes the **upper bound** of an algorithm’s growth rate.
 
-### **Common Complexities (From Fastest to Slowest)**
+### 🚦 **Common Complexities (From Fastest to Slowest)**
 
 | Complexity | Example |
 |-----------|---------|
-| O(1) | Accessing array index |
-| O(log n) | Binary search |
-| O(n) | Linear scan |
-| O(n log n) | Merge sort, quicksort avg |
-| O(n²) | Nested loops |
-| O(n³) | Triple nested loops |
-| O(2ⁿ) | Subset generation |
-| O(n!) | Permutations |
+| 🟢 O(1) | Accessing array index |
+| 🟡 O(log n) | Binary search |
+| 🟠 O(n) | Linear scan |
+| 🔵 O(n log n) | Merge sort, quicksort avg |
+| 🟣 O(n²) | Nested loops |
+| 🟤 O(n³) | Triple nested loops |
+| 🔴 O(2ⁿ) | Subset generation |
+| ⚫ O(n!) | Permutations |
 
 ---
 
@@ -408,5 +400,3 @@ Today you mastered:
 This is one of the most important days in the entire 30‑day plan.
 
 ---
-
-If you’re ready, I’ll prepare **Day 03 — Bit Manipulation in C++** with the same ultra‑premium depth.

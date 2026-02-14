@@ -1,6 +1,3 @@
-Here we go, Sasimegala — **Day 08**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 08 — Binary Search on 1D & 2D + Binary Search on Answer Pattern (README.rst)**  
@@ -388,5 +385,3 @@ Today you mastered:
 This is one of the most powerful problem‑solving paradigms in DSA.
 
 ---
-
-If you want, I’ll prepare **Day 09 — Aggressive Cows, Book Allocation, Painters Partition, Median of 2 Sorted Arrays** with the same ultra‑premium depth.

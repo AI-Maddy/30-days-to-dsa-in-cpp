@@ -1,6 +1,3 @@
-Absolutely, Sasimegala — here comes **Day 06**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 06 — Hashing & HashMap Problems (README.rst)**  
@@ -489,5 +486,3 @@ Today you mastered:
 Hashing is one of the most important tools in DSA — you will use it in arrays, strings, DP, graphs, and more.
 
 ---
-
-If you’re ready, I’ll prepare **Day 07 — 2D Arrays / Matrix: Traversal, Rotation, Spiral, Search** with the same ultra‑premium depth.

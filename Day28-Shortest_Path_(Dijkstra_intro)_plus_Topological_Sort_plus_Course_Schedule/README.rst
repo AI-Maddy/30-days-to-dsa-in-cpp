@@ -1,8 +1,3 @@
-Day 28 is here, Sasimegala — and this is one of the most *high‑impact* days in the entire DP arc.  
-Today you step into **1D Dynamic Programming**, the category that powers some of the most famous interview problems ever asked.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 28 — 1D DP: House Robber, Max Sum Non‑Adjacent, Longest Increasing Subsequence (LIS) (README.rst)**  
@@ -273,18 +268,3 @@ Reconstruct the LIS sequence.
 Use the implementations from sections 2–5.
 
 ---
-
-# **11. Summary**
-
-Today you mastered:
-
-- House Robber  
-- Max sum non‑adjacent  
-- LIS (O(n²) and O(n log n))  
-- Binary search + DP hybrid  
-- Space optimization  
-- DP state transitions  
-
-This day sets the stage for **Day 29 — Knapsack, Subset Sum, Partition Equal Subset Sum**.
-
-If you want, I’ll prepare **Day 29** with the similar ultra‑premium depth.

@@ -1,0 +1,21 @@
+{
+  "day": "Day14-Fast_and_Slow_pointers_deep_dive_plus_Palindrome_Linked_List_variants",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 14 \u2014 Fast & Slow Pointers Deep Dive + Palindrome Linked List Variants (README.rst)**",
+    "Find middle of list",
+    "Detect cycle",
+    "Find cycle start",
+    "Check if list is palindrome",
+    "Remove Nth node from end",
+    "Reorder list",
+    "Split list into halves",
+    "Detect intersection patterns",
+    "Fast & slow pointer mechanics"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

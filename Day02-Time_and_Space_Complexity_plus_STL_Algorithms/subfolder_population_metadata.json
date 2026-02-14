@@ -1,0 +1,21 @@
+{
+  "day": "Day02-Time_and_Space_Complexity_plus_STL_Algorithms",
+  "topics_extracted": 10,
+  "topics": [
+    "## \u23f3 **1. Introduction**",
+    "\ud83d\udd2e Predict performance",
+    "\ud83d\udee0\ufe0f Optimize solutions",
+    "\ud83c\udfd7\ufe0f Choose the right data structure",
+    "\ud83d\udde3\ufe0f Impress interviewers with clarity and precision",
+    "\ud83d\udeab Avoid brute\u2011force traps",
+    "\ud83c\udfc1 Big\u2011O notation",
+    "\ud83d\udcca Best / average / worst\u2011case analysis",
+    "\ud83e\uddee Space complexity patterns",
+    "\ud83d\udd01 Recurrence relations (intro)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

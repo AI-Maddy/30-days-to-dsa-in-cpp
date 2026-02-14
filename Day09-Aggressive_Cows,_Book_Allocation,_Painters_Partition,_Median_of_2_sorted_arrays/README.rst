@@ -1,6 +1,3 @@
-Absolutely, Sasimegala — here comes **Day 09**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This is one of the *heaviest* and most *interview‑critical* days in the entire 30‑day roadmap.
-
 ---
 
 # **Day 09 — Aggressive Cows, Book Allocation, Painters Partition, Median of 2 Sorted Arrays (README.rst)**  
@@ -373,22 +370,3 @@ Use partition logic.
 Binary search on speed.
 
 ---
-
-# **11. Summary**
-
-Today you mastered:
-
-- Binary search on answer  
-- Feasibility functions  
-- Aggressive Cows  
-- Book Allocation  
-- Painters Partition  
-- Median of two sorted arrays  
-- Partition‑based binary search  
-- Optimization problems  
-
-This day is a milestone — these patterns appear in DP, greedy, graphs, and advanced binary search problems.
-
----
-
-If you’re ready, I’ll prepare **Day 10 — Sorting Revision + Custom Comparators + Counting Sort / Radix Sort Intuition** with the same ultra‑premium depth.

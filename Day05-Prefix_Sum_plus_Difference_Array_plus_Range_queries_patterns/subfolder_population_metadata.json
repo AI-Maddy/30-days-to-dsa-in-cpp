@@ -1,0 +1,21 @@
+{
+  "day": "Day05-Prefix_Sum_plus_Difference_Array_plus_Range_queries_patterns",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 05 \u2014 Prefix Sum + Difference Array + Range Query Patterns (README.rst)**",
+    "Answer range sum queries instantly",
+    "Perform range updates efficiently",
+    "Convert O(n\u00b2) brute\u2011force loops into O(n)",
+    "Build intuition for advanced patterns like:",
+    "Sliding window",
+    "Binary indexed trees",
+    "Segment trees",
+    "Difference constraints",
+    "Range DP"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

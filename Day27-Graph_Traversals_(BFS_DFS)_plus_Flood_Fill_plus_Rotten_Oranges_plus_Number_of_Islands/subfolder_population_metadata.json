@@ -1,0 +1,21 @@
+{
+  "day": "Day27-Graph_Traversals_(BFS_DFS)_plus_Flood_Fill_plus_Rotten_Oranges_plus_Number_of_Islands",
+  "topics_extracted": 10,
+  "topics": [
+    "Optimization problems",
+    "Path counting",
+    "String algorithms",
+    "Tree DP",
+    "Graph DP",
+    "Probability & combinatorics",
+    "Machine learning foundations",
+    "Recursion \u2192 Memoization \u2192 Tabulation",
+    "Fibonacci (the gateway to DP)",
+    "Climbing stairs"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

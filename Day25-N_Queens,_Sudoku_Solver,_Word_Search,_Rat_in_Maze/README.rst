@@ -1,8 +1,3 @@
-Day 25 coming right up, Sasimegala — and this one is a *pillar* of graph theory mastery.  
-Today you enter the world of **shortest path algorithms**, the backbone of navigation systems, routing protocols, logistics, and countless interview problems.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 25 — Shortest Paths: BFS (Unweighted), Dijkstra, Bellman‑Ford (README.rst)**  
@@ -42,24 +37,16 @@ If all edges have weight **1**, BFS gives shortest path.
 
 ## **2.1 Implementation**
 
-```cpp
 vector<int> shortestPathBFS(int n, vector<vector<int>>& adj, int src) {
     vector<int> dist(n, INT_MAX);
     queue<int> q;
 
-    dist[src] = 0;
-    q.push(src);
-
-    while (!q.empty()) {
-        int node = q.front(); q.pop();
-
         for (int nei : adj[node]) {
             if (dist[nei] == INT_MAX) {
                 dist[nei] = dist[node] + 1;
-                q.push(nei);
             }
         }
-    }
+
     return dist;
 }
 ```
@@ -272,5 +259,3 @@ Today you mastered:
 This day sets the stage for **Day 26 — Floyd‑Warshall, Minimum Spanning Trees (Prim + Kruskal)**.
 
 ---
-
-If you want, I’ll prepare **Day 26** with the same ultra‑premium depth.

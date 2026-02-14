@@ -1,10 +1,3 @@
-Perfect — **we go one day at a time**, and I’ll deliver **ultra‑premium, 150+ line, example‑rich, exercise‑rich README content** for each day exactly the way you like it.
-
-You already approved Day 01 earlier, so I’ll continue with:
-
-# ✅ **Day 02 — Arrays (Ultra‑Premium README.rst)**  
-(150+ lines, deep explanations, 4+ examples, 4+ exercises, clean RST formatting)
-
 ---
 
 # **Day 02 — Mastering Arrays in C++**
@@ -133,20 +126,12 @@ int main() {
     while (start < end) {
         swap(arr[start], arr[end]);
         start++;
-        end--;
     }
-
-    for (int x : arr)
-        cout << x << " ";
-}
-```
 
 ---
 
 ## **Example 4 — Linear Search**
-
 ```cpp
-#include <iostream>
 using namespace std;
 
 int main() {
@@ -275,5 +260,3 @@ Today you learned:
 This foundation will make future topics like strings, linked lists, stacks, queues, and dynamic arrays much easier.
 
 ---
-
-If you want, I can now generate **Day 03 — Strings** in the same ultra‑premium style.

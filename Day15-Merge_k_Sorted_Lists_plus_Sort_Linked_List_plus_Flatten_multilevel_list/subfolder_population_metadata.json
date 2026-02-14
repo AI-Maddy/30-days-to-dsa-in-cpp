@@ -1,0 +1,21 @@
+{
+  "day": "Day15-Merge_k_Sorted_Lists_plus_Sort_Linked_List_plus_Flatten_multilevel_list",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 15 \u2014 Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List (README.rst)**",
+    "Today\u2019s problems combine:",
+    "**Linked lists**",
+    "**Divide & conquer**",
+    "**Pointer manipulation**",
+    "linked list challenges that test your understanding of:",
+    "Merging sorted structures",
+    "Recursion vs iteration",
+    "Priority queues",
+    "Multilevel pointer flattening"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

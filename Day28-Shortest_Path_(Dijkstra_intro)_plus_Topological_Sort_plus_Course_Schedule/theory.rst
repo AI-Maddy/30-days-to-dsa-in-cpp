@@ -1,13 +1,3 @@
-Absolutely, Sasimegala — here comes your **Day 28** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 28 is a **major graph‑algorithms milestone**, covering:
-
-- **Shortest Path (Dijkstra’s Algorithm — Intro + Intuition)**  
-- **Topological Sort (DFS + BFS/Kahn’s Algorithm)**  
-- **Course Schedule (Cycle Detection + Topological Ordering)**  
-
-These three patterns form the backbone of **FAANG graph questions**, especially those involving dependencies, prerequisites, and weighted shortest paths.
-
 ---
 
 # **Day 28 – 🚀 Shortest Path (Dijkstra Intro) + 🔗 Topological Sort + 🎓 Course Schedule**  
@@ -302,12 +292,3 @@ Use topological sort to return valid ordering.
 - Course schedule modeling  
 
 ---
-
-If you want, I can now generate:
-
-🔥 **Day 28 README (ultra‑premium)**  
-🧠 **C++ templates for Dijkstra + Topo Sort + Course Schedule**  
-🎯 **20 FAANG‑level graph problems**  
-📘 **Graph Algorithms cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.

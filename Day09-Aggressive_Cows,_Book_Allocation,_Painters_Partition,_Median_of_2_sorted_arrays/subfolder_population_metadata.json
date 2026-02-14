@@ -1,0 +1,21 @@
+{
+  "day": "Day09-Aggressive_Cows,_Book_Allocation,_Painters_Partition,_Median_of_2_sorted_arrays",
+  "topics_extracted": 10,
+  "topics": [
+    "for FAANG\u2011level interviews:",
+    "**Aggressive Cows** \u2192 maximize minimum distance",
+    "**Book Allocation** \u2192 minimize maximum pages",
+    "**Painters Partition** \u2192 minimize maximum time",
+    "**Median of Two Sorted Arrays** \u2192 binary search on partitions",
+    "How to convert a problem into a monotonic feasibility function",
+    "How to search for the optimal answer",
+    "How to reason about constraints",
+    "How to design efficient partitioning logic",
+    "# **2. Core Concept: Binary Search on Answer (BSOA)**"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

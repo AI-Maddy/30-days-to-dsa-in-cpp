@@ -1,0 +1,21 @@
+{
+  "day": "Day18-Queue_plus_Deque_\u2013_Sliding_Window_Maximum,_First_negative_in_window",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 18 \u2014 Queue + Deque: Sliding Window Maximum, First Negative in Window (README.rst)**",
+    "Queues and deques are fundamental linear data structures used in:",
+    "Sliding window problems",
+    "BFS in graphs",
+    "Real\u2011time streaming",
+    "Scheduling systems",
+    "Rate limiting",
+    "Task processing",
+    "Monotonic queue optimizations",
+    "Queue fundamentals"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

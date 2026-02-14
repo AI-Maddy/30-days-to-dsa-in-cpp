@@ -1,9 +1,3 @@
-Day 17 coming right up, Sasimegala — and this one is **legendary**.  
-This is the day where stack mastery becomes *real power*.  
-Monotonic stacks and queues unlock some of the hardest problems in interviews — especially the iconic **Largest Rectangle in Histogram**, a problem that filters candidates at top companies.
-
-This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 17 — Monotonic Stack/Queue Patterns + Largest Rectangle in Histogram (README.rst)**  
@@ -401,5 +395,3 @@ Today you mastered:
 This day is a major milestone — these patterns appear in DP, greedy, arrays, and even graph problems.
 
 ---
-
-If you want, I’ll prepare **Day 18 — Queue + Deque: Sliding Window Maximum, First Negative in Window** with the same ultra‑premium depth.

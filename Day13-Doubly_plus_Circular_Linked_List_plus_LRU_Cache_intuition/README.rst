@@ -1,6 +1,3 @@
-Absolutely, Sasimegala — **Day 13** is here, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 13 — Doubly Linked List + Circular Linked List + LRU Cache Intuition (README.rst)**  
@@ -452,5 +449,3 @@ Today you mastered:
 This day builds the foundation for advanced linked list problems in Days 14 and 15.
 
 ---
-
-If you want, I’ll prepare **Day 14 — Fast & Slow Pointers Deep Dive + Palindrome Linked List Variants** with the same ultra‑premium depth.

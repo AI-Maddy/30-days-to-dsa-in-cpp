@@ -1,12 +1,3 @@
-Here it is, Sasimegala — your **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized**  
-`theory.rst` for **Day 09 – Aggressive Cows, Book Allocation, Painters Partition, Median of Two Sorted Arrays**.
-
-This is one of the most important days in the entire 30‑day curriculum because it introduces the legendary pattern:
-
-# **🔥 Binary Search on Answer (BSOA)**
-
-I’ve crafted this to be deeply visual, mnemonic‑driven, and interview‑ready.
-
 ---
 
 # **Day 09 – 🚀 Binary Search on Answer (BSOA) Mastery**  
@@ -174,16 +165,11 @@ Partition both arrays such that:
 ## **🧠 MEMORY ANCHOR: “L ≤ R”**
 Valid partition must satisfy:
 
-```
 max(leftA, leftB) ≤ min(rightA, rightB)
 ```
 
----
 
-## **🎯 Search Space**
-Binary search on the **partition index** of the smaller array.
 
----
 
 ## **🔥 Final Goal**
 Return median based on:
@@ -234,12 +220,3 @@ Return median based on:
 - ⚖️ **Median of 2 Arrays** → Partition so L ≤ R  
 
 ---
-
-If you want, I can now generate:
-
-🔥 **Day 09 README (ultra‑premium)**  
-🧠 **C++ templates for all 4 problems**  
-🎯 **20 BSOA interview problems**  
-📘 **Cheat sheet for Binary Search on Answer**
-
-Just tell me what you want next.

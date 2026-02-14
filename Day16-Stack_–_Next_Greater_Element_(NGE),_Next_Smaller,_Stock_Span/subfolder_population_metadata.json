@@ -1,0 +1,21 @@
+{
+  "day": "Day16-Stack_\u2013_Next_Greater_Element_(NGE),_Next_Smaller,_Stock_Span",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 16 \u2014 Stack: Next Greater Element (NGE), Next Smaller, Stock Span (README.rst)**",
+    "Stacks are one of the most powerful linear data structures in algorithmic problem\u2011solving.",
+    "Next greater/smaller elements",
+    "Stock span",
+    "Histogram area",
+    "Balanced parentheses",
+    "Expression evaluation",
+    "Monotonic stack patterns",
+    "Sliding window optimizations",
+    "Tree traversals"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

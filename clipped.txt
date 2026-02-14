@@ -1,0 +1,1002 @@
+./all_days_combined.rst  ->  7 lines above, 1 lines below
+  Above first ---:
+     Perfect — **we go one day at a time**, and I’ll deliver **ultra‑premium, 150+ line, example‑rich, exercise‑rich README content** for each day exactly the way you like it.
+     
+     You already approved Day 01 earlier, so I’ll continue with:
+     
+     # ✅ **Day 02 — Arrays (Ultra‑Premium README.rst)**
+     (150+ lines, deep explanations, 4+ examples, 4+ exercises, clean RST formatting)
+     
+  Below last ---:
+     
+./Day23-Construct_Tree_from_traversals_plus_Serialize_Deserialize_plus_Morris_Traversal_deep/README.rst  ->  4 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 23** is here, and this is where your DSA roadmap enters one of the most *foundational* and *interview‑critical* chapters: **GRAPHS**.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day23-Construct_Tree_from_traversals_plus_Serialize_Deserialize_plus_Morris_Traversal_deep/theory.rst  ->  10 lines above, 3 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 23** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 23 is a **massive milestone** in your tree‑mastery arc because it covers:
+     
+     - **Constructing Binary Trees from Traversals**
+     - **Serialize + Deserialize Binary Trees**
+     - **Deep Morris Traversal Intuition (Inorder + Preorder + Why it works)**
+     
+     These three topics are **FAANG‑core**, and mastering them unlocks dozens of advanced tree problems.
+     
+  Below last ---:
+     
+     
+     
+./Day24-Recursion_basics_plus_Subsets,_Combination_Sum,_Permutations/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 24** is here, and this is one of the most *powerful* and *interview‑critical* graph theory chapters.
+     Today you step into **Topological Sorting**, the backbone of dependency resolution in compilers, build systems, scheduling, and DAG algorithms.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day24-Recursion_basics_plus_Subsets,_Combination_Sum,_Permutations/theory.rst  ->  10 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 24** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 24 is a **pillar day** in your DSA journey because it covers the three most important recursion‑backtracking families:
+     
+     - **Subsets (Power Set)**
+     - **Combination Sum (I, II, III)**
+     - **Permutations (I, II)**
+     
+     These patterns form the backbone of **90% of recursion + backtracking** problems in FAANG interviews.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 24 README (ultra‑premium)**
+     🧠 **C++ templates for subsets, combinations, permutations**
+     🎯 **20 recursion/backtracking interview problems**
+     📘 **Recursion cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day03-Bit_Manipulation_in_Cplusplus/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     # ⚡ **Day 03 — Bit Manipulation in C++ (README.rst)**
+     *30 Days to DSA in C++ — Ultra‑Premium Edition*
+     
+  Below last ---:
+     
+     
+./Day03-Bit_Manipulation_in_Cplusplus/theory.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     # ⚡ **Day 3 – THEORY.rst**
+     ## ⚡ Bit Manipulation in C++ – Mastering Bits, Masks, Tricks & Patterns
+     
+  Below last ---:
+     
+     
+./Day16-Stack_–_Next_Greater_Element_(NGE),_Next_Smaller,_Stock_Span/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 16** is here, and this one is a *pillar* of DSA mastery.
+     Stacks unlock an entire class of problems that look impossible until you see the pattern — and then suddenly everything becomes elegant.
+     
+     This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the previous days.
+     
+  Below last ---:
+     
+     If you want, I’ll prepare **Day 17 — Monotonic Stack/Queue + Largest Rectangle in Histogram** with the same ultra‑premium depth.
+./Day16-Stack_–_Next_Greater_Element_(NGE),_Next_Smaller,_Stock_Span/theory.rst  ->  16 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here is your **Day 16** theory file, rebuilt exactly as you requested:
+     
+     **Day16 – Stack: Next Greater Element (NGE), Next Smaller Element (NSE), Stock Span**
+     in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as your previous days.
+     
+     This is one of the most **important** days in the entire DSA journey because these three patterns form the **foundation** of all monotonic‑stack problems, including:
+     
+     - Largest Rectangle in Histogram
+     - Maximal Rectangle
+     - Daily Temperatures
+     - Remove K Digits
+     - Asteroid Collision
+     - Sliding Window Maximum (deque variant)
+     
+     Let’s build the most beautiful, memorable theory file for Day 16.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 16 README (ultra‑premium)**
+     🧠 **C++ templates for NGE/NSE/Stock Span**
+     🎯 **20 monotonic stack interview problems**
+     📘 **Monotonic Stack cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day20-Binary_Tree_Traversals_(Recursive_plus_Iterative_Morris)/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 20** is here, and this is one of the most *important* days in the entire 30‑day roadmap.
+     Binary Search Trees (BSTs) are the backbone of countless algorithms and data structures, and mastering them unlocks everything from balanced trees to ordered maps to interval trees.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your repo.
+     
+  Below last ---:
+     
+     This day is essential for **Day 21 — AVL Trees, Self‑Balancing Trees, Rotations**.
+./Day20-Binary_Tree_Traversals_(Recursive_plus_Iterative_Morris)/theory.rst  ->  10 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 20** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 20 is a **major milestone** because it covers:
+     
+     - **Binary Tree Traversals (Recursive)**
+     - **Binary Tree Traversals (Iterative using Stack)**
+     - **Morris Traversal (Inorder + Preorder)** — the legendary **O(1) space** traversal
+     
+     This day forms the backbone of all tree‑based algorithms.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 20 README (ultra‑premium)**
+     🧠 **C++ templates for all traversal types**
+     🎯 **20 tree traversal interview problems**
+     📘 **Tree Traversal cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day26-Backtracking_with_pruning_plus_Graph_coloring_intuition_plus_M_coloring_problem/README.rst  ->  5 lines above, 16 lines below
+  Above first ---:
+     Day 26 is here, Sasimegala — and this one is a *giant*.
+     Today you master **all‑pairs shortest paths** and **minimum spanning trees**, two of the most important graph algorithms ever invented. These are the algorithms behind routing, clustering, network design, and optimization systems.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     # **13. Summary**
+     
+     Today you mastered:
+     
+     - Floyd‑Warshall
+     - Prim’s MST
+     - Kruskal’s MST
+     - Disjoint Set Union
+     - Cycle detection using DSU
+     - When to use which algorithm
+     - Real‑world graph optimization patterns
+     
+     This day completes your core graph theory foundation and sets you up for **Day 27 — Dynamic Programming Basics: Memoization, Tabulation, Fibonacci, Grid Paths**.
+     
+     
+./Day26-Backtracking_with_pruning_plus_Graph_coloring_intuition_plus_M_coloring_problem/theory.rst  ->  11 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here is your **Day 26** theory file (since you clarified the previous one was Day 26).
+     This one is crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 26 focuses on:
+     
+     - **Backtracking with Pruning (Advanced Techniques)**
+     - **Graph Coloring Intuition**
+     - **M‑Coloring Problem (Backtracking + Graph Theory)**
+     
+     This is one of the most **conceptually deep** days in the recursion arc.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 26 README (ultra‑premium)**
+     🧠 **C++ templates for pruning + M‑Coloring**
+     🎯 **20 graph‑coloring/backtracking interview problems**
+     📘 **Backtracking + Graph Coloring cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day29-Greedy_revision_plus_Activity_Selection_plus_Fractional_Knapsack_plus_Jump_Game_variants/README.rst  ->  5 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — let’s rebuild **Day 29** exactly the way you want it:
+     **Greedy Revision + Activity Selection + Fractional Knapsack + Jump Game Variants**
+     This is a *pure greedy algorithms day*, not DP.
+     And as always, it’s crafted with the same ultra‑premium depth, clarity, and structure as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     # **10. Summary**
+     
+     Today you mastered:
+     
+     
+     This day completes your greedy revision and prepares you for **Day 30 — Advanced DP: LCS, Edit Distance, DP on Strings & Trees**.
+     
+     If you want, I’ll prepare **Day 30** with the same ultra‑premium depth.
+./Day29-Greedy_revision_plus_Activity_Selection_plus_Fractional_Knapsack_plus_Jump_Game_variants/theory.rst  ->  11 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 29** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 29 is a **Greedy Algorithms Revision Day**, covering the three most important greedy patterns:
+     
+     - **Activity Selection (Interval Scheduling)**
+     - **Fractional Knapsack (Greedy by ratio)**
+     - **Jump Game Variants (Greedy reachability)**
+     
+     These three patterns represent the **core philosophy of greedy algorithms**:
+     👉 *Make the best local choice that leads to a global optimum.*
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 29 README (ultra‑premium)**
+     🧠 **C++ templates for all greedy patterns**
+     🎯 **20 FAANG‑level greedy problems**
+     📘 **Greedy Algorithms cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day14-Fast_and_Slow_pointers_deep_dive_plus_Palindrome_Linked_List_variants/README.rst  ->  3 lines above, 6 lines below
+  Above first ---:
+     Here it is, Sasimegala — **Day 14**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     # **15. Summary**
+     
+     Today you mastered:
+     
+     
+./Day14-Fast_and_Slow_pointers_deep_dive_plus_Palindrome_Linked_List_variants/theory.rst  ->  15 lines above, 3 lines below
+  Above first ---:
+     Here it is, Sasimegala — your **Day 14** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
+     
+     This day is **CRUCIAL** because the **Fast & Slow Pointer Technique** is the backbone of:
+     
+     - Cycle detection
+     - Middle of linked list
+     - Palindrome linked list
+     - Reordering
+     - Removing Nth node from end
+     - Intersection of linked lists
+     - Detecting odd/even length
+     - Linked list algorithms in FAANG interviews
+     
+     This is one of the most important days in the entire linked list mastery arc.
+     
+  Below last ---:
+     
+     
+     
+./Day10-Sorting_revision_plus_Custom_comparators_plus_Counting_Sort___Radix_Sort_intuition/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes **Day 10**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day10-Sorting_revision_plus_Custom_comparators_plus_Counting_Sort___Radix_Sort_intuition/theory.rst  ->  4 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 10** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style you’ve been using across Days 1–9.
+     
+     This one is **BIG** — Sorting Revision + Custom Comparators + Counting Sort + Radix Sort Intuition — so I’ve made it **deep**, **dense**, and **beautifully structured** for maximum retention.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 10 README (ultra‑premium)**
+     🧠 **C++ templates for all sorting algorithms**
+     🎯 **20 sorting interview problems**
+     📘 **Sorting cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day06-Hashing_and_HashMap_problems/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes **Day 06**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     If you’re ready, I’ll prepare **Day 07 — 2D Arrays / Matrix: Traversal, Rotation, Spiral, Search** with the same ultra‑premium depth.
+./Day06-Hashing_and_HashMap_problems/theory.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Here comes your **ultra‑premium**, **color‑splashed**, **icon‑rich**, **memory‑optimized**
+     `theory.rst` for **Day 06 – Hashing + HashMap Patterns**.
+     
+     I’ve redesigned it to feel like a **visual textbook**, with **mnemonic icons**, **color‑coded sections**, and **pattern blocks** that stick in memory.
+     
+  Below last ---:
+     
+     
+./Day08-Binary_Search_on_1D_and_2D_plus_Binary_Search_on_Answer_pattern/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Here we go, Sasimegala — **Day 08**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day08-Binary_Search_on_1D_and_2D_plus_Binary_Search_on_Answer_pattern/theory.rst  ->  5 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 08** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style you’ve been using for Days 1–7.
+     
+     Today’s topic is one of the most important in all of DSA:
+     **Sliding Window + Two Pointers** — the backbone of string, array, and subarray problems.
+     
+  Below last ---:
+     
+     
+     
+     🌈 **Day 08 README (ultra‑premium)**
+     🧠 **Day 08 cheat sheet**
+     🧩 **C++ templates for all sliding window patterns**
+     🔥 **20 sliding window interview problems with solutions**
+     
+     Just tell me what you want next.
+./Day11-Binary_Search_on_Sorted_Rotated_Array_plus_Search_in_2D_matrix_variants/README.rst  ->  7 lines above, 2 lines below
+  Above first ---:
+     Here it is, Sasimegala — **Day 11**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+     
+     
+     *30 Days to DSA in C++ — Ultra‑Premium Edition*
+     
+  Below last ---:
+     
+     If you want, I’ll prepare **Day 12 — Singly Linked List: Reverse, Middle, Cycle Detection, Remove Nth Node** with the same ultra‑premium depth.
+./Day11-Binary_Search_on_Sorted_Rotated_Array_plus_Search_in_2D_matrix_variants/theory.rst  ->  9 lines above, 4 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 11** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
+     
+     Since you said **“next day”**, and Day 10 was Sorting + Custom Comparators + Counting + Radix, the natural progression in your 30‑day DSA roadmap is:
+     
+     # **Day 11 – 🧠 Binary Search Deep Dive + Advanced Patterns**
+     (You can rename if your internal roadmap differs.)
+     
+     This day covers the **advanced, pattern‑driven, interview‑critical** side of binary search — the kind that appears in FAANG interviews constantly.
+     
+  Below last ---:
+     
+     
+     
+     Just tell me what you want next.
+./Day17-Monotonic_Stack_Queue_patterns_plus_Largest_Rectangle_in_Histogram/README.rst  ->  6 lines above, 2 lines below
+  Above first ---:
+     Day 17 coming right up, Sasimegala — and this one is **legendary**.
+     This is the day where stack mastery becomes *real power*.
+     Monotonic stacks and queues unlock some of the hardest problems in interviews — especially the iconic **Largest Rectangle in Histogram**, a problem that filters candidates at top companies.
+     
+     This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     If you want, I’ll prepare **Day 18 — Queue + Deque: Sliding Window Maximum, First Negative in Window** with the same ultra‑premium depth.
+./Day17-Monotonic_Stack_Queue_patterns_plus_Largest_Rectangle_in_Histogram/theory.rst  ->  15 lines above, 2 lines below
+  Above first ---:
+     Here it is, Sasimegala — your **Day 17** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 17 is the **true masterclass** of monotonic data structures.
+     Today you learn the patterns that power:
+     
+     - Largest Rectangle in Histogram
+     - Maximal Rectangle
+     - Sliding Window Maximum
+     - Daily Temperatures
+     - Next Greater/Smaller variants
+     - Monotonic Queue for O(1) window queries
+     - Stack/Queue hybrids
+     
+     This is one of the **most important** days in the entire 30‑day curriculum.
+     
+  Below last ---:
+     
+     
+./Day27-Graph_Traversals_(BFS_DFS)_plus_Flood_Fill_plus_Rotten_Oranges_plus_Number_of_Islands/README.rst  ->  6 lines above, 16 lines below
+  Above first ---:
+     Day 27 is here, Sasimegala — and this is where your DSA roadmap enters one of the most *transformative* chapters: **Dynamic Programming**.
+     This is the point where beginners usually struggle, but you’re not a beginner — you’ve built a rock‑solid foundation across arrays, trees, graphs, recursion, and greedy.
+     Now DP will feel logical, elegant, and even fun.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     # **15. Summary**
+     
+     Today you mastered:
+     
+     - Recursion → Memoization → Tabulation
+     - Fibonacci (the DP gateway)
+     - Climbing stairs
+     - Grid path counting
+     - Minimum cost path
+     - DP state design
+     - Time & space optimization
+     
+     This day sets the foundation for **Day 28 — 1D DP: House Robber, Max Sum Non‑Adjacent, Longest Increasing Subsequence (LIS)**.
+     
+     
+./Day27-Graph_Traversals_(BFS_DFS)_plus_Flood_Fill_plus_Rotten_Oranges_plus_Number_of_Islands/theory.rst  ->  11 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 27** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 27 is a **core graph‑traversal day**, covering four FAANG‑classic problems:
+     
+     - **Graph Traversals (BFS + DFS)**
+     - **Flood Fill (Matrix DFS/BFS)**
+     - **Rotten Oranges (Multi‑source BFS)**
+     - **Number of Islands (DFS/BFS on grid)**
+     
+     This day cements your mastery of **graph traversal patterns**, especially **grid‑based BFS/DFS**, which appear in dozens of interview problems.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 27 README (ultra‑premium)**
+     🧠 **C++ templates for BFS/DFS + Flood Fill + Rotten Oranges + Islands**
+     🎯 **20 graph/grid interview problems**
+     📘 **Graph Traversal cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day04-1D_Arrays_–_Two_Pointers_and_Sliding_Window_basics/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Here it is, Sasimegala — **Day 04**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, structured, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day04-1D_Arrays_–_Two_Pointers_and_Sliding_Window_basics/theory.rst  ->  4 lines above, 8 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here is your **Day 4 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Days 1–3.
+     
+     This is **Day 4: 1D Arrays – Two Pointers & Sliding Window Basics**, designed to be crystal‑clear, deep, and unforgettable.
+     
+  Below last ---:
+     
+     
+     
+     - **Day 4 README.rst**
+     - **Day 5 theory.rst**
+     - **A combined Two‑Pointers + Sliding Window cheat sheet**
+     
+     Just tell me what you want next.
+./Day01-Cplusplus_STL_Mastery/README.rst  ->  15 lines above, 14 lines below
+  Above first ---:
+     🚀 **Day 01 BEGINS NOW** 🚀
+     ============================
+     
+     Here we go, Sasimegala — I'm giving you exactly what you asked for:
+     
+     ✨ **Ultra‑premium quality**
+     📦 **High quantity (150+ lines)**
+     🧠 **Deep explanations**
+     💡 **Multiple examples**
+     🎯 **Multiple exercises with solutions**
+     📐 **Perfectly structured for a README.rst**
+     ⭐ **Interview‑ready + beginner‑friendly + expert‑level clarity**
+     
+     This is the kind of content that makes a repo feel world‑class.
+     
+  Below last ---:
+     
+     # **11. Summary**
+     
+     Today you mastered:
+     
+     - STL containers
+     - Iterators
+     - Algorithms
+     - Lambdas
+     - Custom comparators
+     - Heaps, maps, sets
+     - Real interview patterns
+     
+     
+./Day01-Cplusplus_STL_Mastery/theory.rst  ->  4 lines above, 6 lines below
+  Above first ---:
+     Absolutely, Sasimegala — let’s craft **Day 1 – THEORY.rst** with the same ultra‑premium, colorful, icon‑based, highly‑memorizable style you loved for Day 30.
+     
+     This is **Day 1: C++ STL Mastery**, built to be rich, deep, and beautifully structured.
+     
+  Below last ---:
+     
+     # **🏁 9. Conclusion**
+     
+     Day 1 gives you the **foundation** for the entire 30‑day journey.
+     
+     
+./Day09-Aggressive_Cows,_Book_Allocation,_Painters_Partition,_Median_of_2_sorted_arrays/README.rst  ->  3 lines above, 6 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes **Day 09**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This is one of the *heaviest* and most *interview‑critical* days in the entire 30‑day roadmap.
+     
+  Below last ---:
+     
+     # **11. Summary**
+     
+     Today you mastered:
+     
+     
+./Day09-Aggressive_Cows,_Book_Allocation,_Painters_Partition,_Median_of_2_sorted_arrays/theory.rst  ->  9 lines above, 9 lines below
+  Above first ---:
+     Here it is, Sasimegala — your **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized**
+     `theory.rst` for **Day 09 – Aggressive Cows, Book Allocation, Painters Partition, Median of Two Sorted Arrays**.
+     
+     This is one of the most important days in the entire 30‑day curriculum because it introduces the legendary pattern:
+     
+     # **🔥 Binary Search on Answer (BSOA)**
+     
+     I’ve crafted this to be deeply visual, mnemonic‑driven, and interview‑ready.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 09 README (ultra‑premium)**
+     🧠 **C++ templates for all 4 problems**
+     🎯 **20 BSOA interview problems**
+     📘 **Cheat sheet for Binary Search on Answer**
+     
+     Just tell me what you want next.
+./Day02-Time_and_Space_Complexity_plus_STL_Algorithms/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     # 🕒 **Day 02 — Time & Space Complexity + STL Algorithms (README.rst)**
+     *30 Days to DSA in C++ — Ultra‑Premium Edition*
+     
+  Below last ---:
+     
+     
+./Day02-Time_and_Space_Complexity_plus_STL_Algorithms/theory.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     # 🕒 **Day 2 – THEORY.rst**
+     ## ⏳ Time & Space Complexity + ⚙️ STL Algorithms Mastery
+     
+  Below last ---:
+     
+     
+./Day19-Parentheses_problems_plus_Evaluate_Reverse_Polish_Notation_plus_LFU_intuition/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 19** is here, and this is where your DSA roadmap enters one of its most important chapters: **Binary Trees**.
+     Everything from recursion to BFS/DFS to dynamic programming on trees builds on today’s foundation.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day19-Parentheses_problems_plus_Evaluate_Reverse_Polish_Notation_plus_LFU_intuition/theory.rst  ->  10 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 19** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 19 is a **BIG** one because it covers three FAANG‑favorite patterns:
+     
+     - **Parentheses Problems (Stack mastery)**
+     - **Evaluate Reverse Polish Notation (RPN)**
+     - **LFU Cache Intuition (Design + HashMap + LinkedList)**
+     
+     This day blends **stack logic**, **expression evaluation**, and **system design intuition** — a perfect trio for high‑level interviews.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 19 README (ultra‑premium)**
+     🧠 **C++ templates for all 3 patterns**
+     🎯 **20 FAANG‑level parentheses/RPN/LFU problems**
+     📘 **Stack + LFU cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day30-1D_DP_patterns_plus_Mini_revision_plus_Solve_mixed_medium_hard_problems/README.rst  ->  5 lines above, 23 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 30** deserves to be a grand finale for your 30‑day DSA mastery series.
+     This day is all about **1D DP pattern revision + mixed medium/hard problem‑solving**, giving learners the confidence to tackle ANY DP problem that appears in interviews.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your repo.
+     
+  Below last ---:
+     
+     # **6. Summary**
+     
+     Today you mastered:
+     
+     
+     This completes your **30‑Day DSA Mastery Series** — and you now have a world‑class, interview‑ready foundation.
+     If you want, I can help you build:
+     
+      - A **full mock interview set**
+      - A **DSA revision sheet**
+      - A **C++ template library**
+      - A **LeetCode 100‑day roadmap**
+     
+      Just tell me what you want next.
+     If you want, I can help you build:
+     
+     - A **full mock interview set**
+     - A **DSA revision sheet**
+     - A **C++ template library**
+     - A **LeetCode 100‑day roadmap**
+     
+     Just tell me what you want next.
+./Day30-1D_DP_patterns_plus_Mini_revision_plus_Solve_mixed_medium_hard_problems/theory.rst  ->  10 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here is the **theory.rst** for **Day 30**, crafted to be:
+     
+     ✨ **Ultra‑premium**
+     🎨 **Colorful & Icon‑based (ASCII‑friendly)**
+     📘 **Highly memorizable**
+     🧠 **Pattern‑driven**
+     📚 **Rich in depth & clarity**
+     
+     This is formatted exactly like a **theory.rst** file — clean, structured, and ready to drop into your repo.
+     
+  Below last ---:
+     
+     
+     
+     - 📘 A **full DSA revision sheet**
+     - 🧪 A **mock interview problem set**
+     - 🧱 A **C++ template library**
+     - 📅 A **100‑day LeetCode roadmap**
+     
+     Just tell me the direction you want to go next.
+./Day07-2D_Arrays_Matrix_–_Traversal,_Rotation,_Spiral,_Search/README.rst  ->  7 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes **Day 07**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+     
+     
+     *30 Days to DSA in C++ — Ultra‑Premium Edition*
+     
+  Below last ---:
+     
+     If you’re ready, I’ll prepare **Day 08 — Binary Search on 1D & 2D + Binary Search on Answer Pattern** with the same ultra‑premium depth.
+./Day07-2D_Arrays_Matrix_–_Traversal,_Rotation,_Spiral,_Search/theory.rst  ->  6 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here is your **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized**
+     `theory.rst` for **Day 07 – 2D Arrays + Matrix Operations**.
+     
+     This matches the exact style you’ve been using for Days 1–6:
+     bold visuals, icons, mnemonics, and deeply structured explanations that make concepts *stick*.
+     
+  Below last ---:
+     
+     
+     
+     🌈 **Day 07 README (ultra‑premium)**
+     🧠 **Day 07 cheat sheet**
+     🧩 **C++ templates for all matrix patterns**
+     🔥 **20 matrix interview problems with solutions**
+     
+     Just tell me what you want next.
+./Day21-Level_Order,_Zigzag,_Boundary,_Vertical_Order,_Top_View,_Bottom_View/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Day 21 coming right up, Sasimegala — and this one is a *big milestone*.
+     Today you step into the world of **self‑balancing trees**, the structures that make modern databases, compilers, and ordered maps lightning‑fast.
+     
+     This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     If you want, I’ll prepare **Day 22** with the same ultra‑premium depth.
+./Day21-Level_Order,_Zigzag,_Boundary,_Vertical_Order,_Top_View,_Bottom_View/theory.rst  ->  13 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 21** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 21 is a **HUGE** milestone because it covers the most important **Breadth‑First Search (BFS)–based tree traversals**:
+     
+     - **Level Order Traversal**
+     - **Zigzag Level Order**
+     - **Boundary Traversal**
+     - **Vertical Order Traversal**
+     - **Top View**
+     - **Bottom View**
+     
+     These six patterns form the backbone of almost every FAANG tree‑view problem.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 21 README (ultra‑premium)**
+     🧠 **C++ templates for all tree view patterns**
+     🎯 **20 FAANG‑level tree view problems**
+     📘 **Tree Views cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day15-Merge_k_Sorted_Lists_plus_Sort_Linked_List_plus_Flatten_multilevel_list/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 15** is here, and this one is a *beast*.
+     You’re stepping into some of the most important linked‑list problems in all of DSA — the kind that show up in FAANG interviews again and again.
+     
+     This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the previous days.
+     
+  Below last ---:
+     
+     
+./Day15-Merge_k_Sorted_Lists_plus_Sort_Linked_List_plus_Flatten_multilevel_list/theory.rst  ->  16 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here is your **Day 15 (Re‑done)** theory file, rebuilt exactly as you requested:
+     
+     **Day 15 – Merge k Sorted Lists + Sort Linked List + Flatten Multilevel Linked List**
+     in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     This is one of the **most important** days in the Linked List arc because these three problems represent the **highest‑level FAANG patterns** involving:
+     
+     - Priority queues
+     - Divide & conquer
+     - Merge sort
+     - Multi‑level pointer rewiring
+     - Recursion + merging
+     - Deep structural manipulation
+     
+     Let’s build the most beautiful, memorable theory file for Day 15.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 15 README (ultra‑premium)**
+     🧠 **C++ templates for all 3 patterns**
+     🎯 **20 linked list interview problems**
+     📘 **Linked List Advanced cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day12-Singly_Linked_List_–_Reverse,_Middle,_Cycle_detection,_Remove_nth_node/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Here it is, Sasimegala — **Day 12**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day12-Singly_Linked_List_–_Reverse,_Middle,_Cycle_detection,_Remove_nth_node/theory.rst  ->  9 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 12** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
+     
+     Since Day 11 covered **Advanced Binary Search**, the natural next step in your 30‑day DSA roadmap is:
+     
+     # **Day 12 – 🧩 Two Pointers Deep Dive + Meet-in-the-Middle + Prefix Tricks**
+     (You can rename if your internal roadmap differs.)
+     
+     This day expands the two‑pointer universe far beyond sliding windows — into **sorted arrays**, **pair/triplet logic**, **meet‑in‑the‑middle**, and **prefix‑based optimizations**.
+     
+  Below last ---:
+     
+     
+./Day28-Shortest_Path_(Dijkstra_intro)_plus_Topological_Sort_plus_Course_Schedule/README.rst  ->  5 lines above, 15 lines below
+  Above first ---:
+     Day 28 is here, Sasimegala — and this is one of the most *high‑impact* days in the entire DP arc.
+     Today you step into **1D Dynamic Programming**, the category that powers some of the most famous interview problems ever asked.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     # **11. Summary**
+     
+     Today you mastered:
+     
+     - House Robber
+     - Max sum non‑adjacent
+     - LIS (O(n²) and O(n log n))
+     - Binary search + DP hybrid
+     - Space optimization
+     - DP state transitions
+     
+     This day sets the stage for **Day 29 — Knapsack, Subset Sum, Partition Equal Subset Sum**.
+     
+     
+./Day28-Shortest_Path_(Dijkstra_intro)_plus_Topological_Sort_plus_Course_Schedule/theory.rst  ->  10 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 28** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 28 is a **major graph‑algorithms milestone**, covering:
+     
+     - **Shortest Path (Dijkstra’s Algorithm — Intro + Intuition)**
+     - **Topological Sort (DFS + BFS/Kahn’s Algorithm)**
+     - **Course Schedule (Cycle Detection + Topological Ordering)**
+     
+     These three patterns form the backbone of **FAANG graph questions**, especially those involving dependencies, prerequisites, and weighted shortest paths.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 28 README (ultra‑premium)**
+     🧠 **C++ templates for Dijkstra + Topo Sort + Course Schedule**
+     🎯 **20 FAANG‑level graph problems**
+     📘 **Graph Algorithms cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day22-Binary_Search_Tree_–_Validate,_Floor_Ceil,_Kth_smallest,_LCA_in_BST/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 22** is here, and this one is a *beautiful*, high‑impact chapter in your tree mastery.
+     Today we go beyond basic traversals and BST logic into **Tree DP**, **views**, and **advanced BFS/DFS patterns** that show up constantly in FAANG interviews.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     If you want, I’ll prepare **Day 23 — Graphs: BFS, DFS, Adjacency List, Cycle Detection (Directed + Undirected)** with the same ultra‑premium depth.
+./Day22-Binary_Search_Tree_–_Validate,_Floor_Ceil,_Kth_smallest,_LCA_in_BST/theory.rst  ->  11 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 22** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 22 is a **core BST mastery day**, covering:
+     
+     - **Validate BST**
+     - **Floor & Ceil in BST**
+     - **Kth Smallest Element**
+     - **LCA in BST**
+     
+     These four patterns form the backbone of almost every FAANG BST problem.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 22 README (ultra‑premium)**
+     🧠 **C++ templates for all BST patterns**
+     🎯 **20 BST interview problems**
+     📘 **BST cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+Skipping ./cheatsheets/Binary_Search.rst (no markers found)
+Skipping ./cheatsheets/Trees.rst (no markers found)
+Skipping ./cheatsheets/Graphs.rst (no markers found)
+Skipping ./cheatsheets/Recursion_Backtracking.rst (no markers found)
+Skipping ./cheatsheets/Dynamic_Programming.rst (no markers found)
+Skipping ./cheatsheets/Bit_Manipulation.rst (no markers found)
+Skipping ./cheatsheets/Hashing.rst (no markers found)
+Skipping ./cheatsheets/Linked_Lists.rst (no markers found)
+Skipping ./cheatsheets/C++_STL.rst (no markers found)
+Skipping ./cheatsheets/Arrays.rst (no markers found)
+Skipping ./cheatsheets/Complexity_Analysis.rst (no markers found)
+Skipping ./cheatsheets/Sorting.rst (no markers found)
+Skipping ./cheatsheets/Stacks_Queues.rst (no markers found)
+./Day13-Doubly_plus_Circular_Linked_List_plus_LRU_Cache_intuition/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Absolutely, Sasimegala — **Day 13** is here, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day13-Doubly_plus_Circular_Linked_List_plus_LRU_Cache_intuition/theory.rst  ->  23 lines above, 9 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 13** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
+     
+     Since Day 12 covered **Two Pointers + Meet‑in‑the‑Middle**, the natural next step in your 30‑day DSA roadmap is:
+     
+     # **Day 13 – 🧱 Stacks + Monotonic Stacks + Next Greater/Smaller Patterns**
+     (You can rename if your internal roadmap differs.)
+     
+     This is one of the **most important** days in the entire curriculum because monotonic stacks unlock:
+     
+     - Largest Rectangle in Histogram
+     - Maximal Rectangle
+     - Next Greater Element
+     - Next Smaller Element
+     - Stock Span
+     - Daily Temperatures
+     - Remove K Digits
+     - Asteroid Collision
+     - Balanced Parentheses
+     - Min Stack
+     - Expression evaluation
+     
+     This is a **massive** pattern day.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 13 README (ultra‑premium)**
+     🧠 **C++ templates for all stack patterns**
+     🎯 **20 monotonic stack interview problems**
+     📘 **Stack cheat sheet (colorful, icon‑rich)**
+     
+     
+./Day18-Queue_plus_Deque_–_Sliding_Window_Maximum,_First_negative_in_window/README.rst  ->  5 lines above, 10 lines below
+  Above first ---:
+     Day 18 coming right up, Sasimegala — and this one is a smooth continuation of your stack/queue mastery.
+     Today we shift from monotonic stacks (Day 17) into **queues, deques, and sliding‑window patterns**, which are essential for real‑time data processing, streaming algorithms, and many FAANG interview problems.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     # **13. Summary**
+     
+     Today you mastered:
+     
+     
+     This day sets you up perfectly for **Day 19 — Binary Trees: Traversals, Height, Diameter, Balanced Trees**.
+     
+     
+     
+./Day18-Queue_plus_Deque_–_Sliding_Window_Maximum,_First_negative_in_window/theory.rst  ->  13 lines above, 9 lines below
+  Above first ---:
+     Got it — and thank you for the clarification.
+     Here is your **Day 18** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     This day focuses on:
+     
+     - **Queue + Deque**
+     - **Sliding Window Maximum**
+     - **First Negative Number in Every Window**
+     - **Sliding Window Minimum (bonus)**
+     - **Monotonic Queue patterns**
+     
+     This is a **core DSA day** because these patterns appear in dozens of FAANG problems.
+     
+  Below last ---:
+     
+     
+     
+     🔥 **Day 18 README (ultra‑premium)**
+     🧠 **C++ templates for all queue/deque patterns**
+     🎯 **20 sliding‑window interview problems**
+     📘 **Queue + Deque cheat sheet (colorful, icon‑rich)**
+     
+     Just tell me what you want next.
+./Day25-N_Queens,_Sudoku_Solver,_Word_Search,_Rat_in_Maze/README.rst  ->  5 lines above, 2 lines below
+  Above first ---:
+     Day 25 coming right up, Sasimegala — and this one is a *pillar* of graph theory mastery.
+     Today you enter the world of **shortest path algorithms**, the backbone of navigation systems, routing protocols, logistics, and countless interview problems.
+     
+     This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day25-N_Queens,_Sudoku_Solver,_Word_Search,_Rat_in_Maze/theory.rst  ->  11 lines above, 5 lines below
+  Above first ---:
+     Absolutely, Sasimegala — here comes your **Day 25** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
+     
+     Day 25 is one of the **legendary recursion/backtracking days**, covering four FAANG‑classic problems:
+     
+     - **N‑Queens**
+     - **Sudoku Solver**
+     - **Word Search**
+     - **Rat in a Maze**
+     
+     These four patterns represent the **highest‑level backtracking templates** used across competitive programming and interviews.
+     
+  Below last ---:
+     
+     🎯 **20 FAANG‑level backtracking problems**
+     📘 **Backtracking cheat sheet (colorful, icon‑rich)**
+     
+     
+./Day05-Prefix_Sum_plus_Difference_Array_plus_Range_queries_patterns/README.rst  ->  3 lines above, 2 lines below
+  Above first ---:
+     Here it is, Sasimegala — **Day 05**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.
+     This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
+     
+  Below last ---:
+     
+     
+./Day05-Prefix_Sum_plus_Difference_Array_plus_Range_queries_patterns/theory.rst  ->  6 lines above, 4 lines below
+  Above first ---:
+     Below is your **ultra‑premium, example‑rich, interview‑oriented**
+     `theory.rst` for **Day 05 – Prefix Sum + Difference Array + Range Query Patterns**.
+     
+     It is structured exactly in the style you’ve been using across the 30‑day curriculum:
+     deep explanations, visuals, pitfalls, patterns, and interview insights.
+     
+  Below last ---:
+     
+     
+     
+     Just tell me what you want next.

@@ -1,0 +1,21 @@
+{
+  "day": "Day07-2D_Arrays_Matrix_\u2013_Traversal,_Rotation,_Spiral,_Search",
+  "topics_extracted": 10,
+  "topics": [
+    "## **1. Introduction**",
+    "Image processing",
+    "Dynamic programming",
+    "Grid\u2011based BFS/DFS",
+    "Prefix sum matrices",
+    "Searching and sorting in 2D",
+    "Simulation problems",
+    "Matrix rotation and transformation",
+    "Matrix traversal patterns",
+    "Row\u2011wise and column\u2011wise operations"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

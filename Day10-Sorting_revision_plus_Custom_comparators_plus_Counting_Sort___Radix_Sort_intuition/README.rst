@@ -1,6 +1,3 @@
-Absolutely, Sasimegala — here comes **Day 10**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 10 — Sorting Revision + Custom Comparators + Counting Sort / Radix Sort Intuition (README.rst)**  
@@ -414,5 +411,3 @@ Today you mastered:
 Sorting is the backbone of many advanced algorithms — this day strengthens your foundation for the rest of the roadmap.
 
 ---
-
-If you want, I’ll prepare **Day 11 — Binary Search on Sorted Rotated Array + Search in 2D Matrix Variants** with the same ultra‑premium depth.

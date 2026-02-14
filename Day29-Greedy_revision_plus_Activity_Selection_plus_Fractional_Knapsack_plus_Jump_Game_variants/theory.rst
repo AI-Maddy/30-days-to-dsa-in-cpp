@@ -1,14 +1,3 @@
-Absolutely, Sasimegala — here comes your **Day 29** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 29 is a **Greedy Algorithms Revision Day**, covering the three most important greedy patterns:
-
-- **Activity Selection (Interval Scheduling)**  
-- **Fractional Knapsack (Greedy by ratio)**  
-- **Jump Game Variants (Greedy reachability)**  
-
-These three patterns represent the **core philosophy of greedy algorithms**:  
-👉 *Make the best local choice that leads to a global optimum.*
-
 ---
 
 # **Day 29 – ⚡ Greedy Revision + 🎯 Activity Selection + 💰 Fractional Knapsack + 🏃 Jump Game Variants**  
@@ -290,12 +279,3 @@ Use BFS/DFS with visited array.
 - Sorting + greedy combos  
 
 ---
-
-If you want, I can now generate:
-
-🔥 **Day 29 README (ultra‑premium)**  
-🧠 **C++ templates for all greedy patterns**  
-🎯 **20 FAANG‑level greedy problems**  
-📘 **Greedy Algorithms cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.

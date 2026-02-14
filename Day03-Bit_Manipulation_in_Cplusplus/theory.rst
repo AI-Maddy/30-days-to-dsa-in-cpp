@@ -1,15 +1,6 @@
-Absolutely, Sasimegala — here is your **Day 3 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Day 1 and Day 2.
-
-This is **Day 3: Bit Manipulation in C++**, designed to be crystal‑clear, deep, and unforgettable.
-
 ---
 
-# **Day 3 – THEORY.rst**  
-## **⚡ Bit Manipulation in C++ – Mastering Bits, Masks, Tricks & Patterns**
-
----
-
-# **🌟 1. Overview**
+# 🌟 **1. Overview**
 
 Bit manipulation is one of the most **powerful**, **beautiful**, and **high‑performance** techniques in programming.
 
@@ -24,7 +15,7 @@ Mastering bits makes you a **10× better problem solver**.
 
 ---
 
-# **🔢 2. Binary Representation Refresher**
+# 🔢 2. Binary Representation Refresher**
 
 Every integer is stored in **binary**:
 
@@ -45,7 +36,7 @@ bit3 = 8
 
 ---
 
-# **🧰 3. Bitwise Operators (The Core Tools)**
+# 🧰 3. Bitwise Operators (The Core Tools)**
 
 | Operator | Symbol | Meaning |
 |----------|--------|---------|
@@ -126,7 +117,7 @@ x >> 1 = x / 2
 
 ---
 
-# **🎯 4. Bit Masks (The Heart of Bit Manipulation)**
+# 🎯 4. Bit Masks (The Heart of Bit Manipulation)**
 
 A **bit mask** is a number used to manipulate specific bits.
 
@@ -177,7 +168,7 @@ Used in:
 
 ---
 
-# **🧠 5. Important Bit Tricks (Must Memorize)**
+# 🧠 5. Important Bit Tricks (Must Memorize)**
 
 ---
 
@@ -226,7 +217,7 @@ n & -n
 
 ---
 
-# **🧩 6. XOR Patterns (Extremely Important)**
+# 🧩 6. XOR Patterns (Extremely Important)**
 
 ---
 
@@ -255,7 +246,7 @@ Used in:
 
 ---
 
-# **🧮 7. Bit Manipulation in C++**
+# 🧮 7. Bit Manipulation in C++**
 
 ---
 
@@ -282,7 +273,7 @@ __builtin_ctz(x)
 
 ---
 
-# **🧱 8. Subset Generation Using Bits**
+# 🧱 8. Subset Generation Using Bits**
 
 For array of size `n`, subsets = `2^n`.
 
@@ -303,7 +294,7 @@ Used in:
 
 ---
 
-# **📘 9. Bit Manipulation Patterns in Interviews**
+# 📘 9. Bit Manipulation Patterns in Interviews**
 
 ---
 
@@ -340,7 +331,7 @@ Used in:
 
 ---
 
-# **🎯 10. Interview‑Level Insights**
+# 🎯 10. Interview‑Level Insights**
 
 - Bit manipulation is **constant time**  
 - XOR is your best friend  
@@ -350,7 +341,7 @@ Used in:
 
 ---
 
-# **🏁 11. Conclusion**
+# 🏁 11. Conclusion**
 
 Day 3 gives you mastery over:
 
@@ -371,11 +362,3 @@ This knowledge becomes essential for:
 You now have the **bit‑level superpowers** needed for advanced DSA.
 
 ---
-
-If you want, I can now generate:
-
-- **Day 3 README.rst**  
-- **Day 4 theory.rst**  
-- **A complete Bit Manipulation cheat sheet**  
-
-Just tell me what you want next.

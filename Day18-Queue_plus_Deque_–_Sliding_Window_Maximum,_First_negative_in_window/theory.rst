@@ -1,16 +1,3 @@
-Got it — and thank you for the clarification.  
-Here is your **Day 18** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-This day focuses on:
-
-- **Queue + Deque**
-- **Sliding Window Maximum**
-- **First Negative Number in Every Window**
-- **Sliding Window Minimum (bonus)**
-- **Monotonic Queue patterns**
-
-This is a **core DSA day** because these patterns appear in dozens of FAANG problems.
-
 ---
 
 # **Day 18 – 🚀 Queue + Deque Mastery: Sliding Window Maximum & First Negative in Window**  
@@ -195,8 +182,6 @@ Same logic, track positives.
 
 ---
 
-## **💚 Count Negatives in Window**
-Use queue size.
 
 ---
 
@@ -272,12 +257,3 @@ answer = arr[dq.front()]
 - O(n) window processing  
 
 ---
-
-If you want, I can now generate:
-
-🔥 **Day 18 README (ultra‑premium)**  
-🧠 **C++ templates for all queue/deque patterns**  
-🎯 **20 sliding‑window interview problems**  
-📘 **Queue + Deque cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.

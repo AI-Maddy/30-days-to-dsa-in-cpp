@@ -1,29 +1,20 @@
-Absolutely, Sasimegala — here is your **Day 2 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Day 1 and Day 30.
-
-This is **Day 2: Time & Space Complexity + STL Algorithms**, designed to feel like a beautifully structured textbook chapter.
-
 ---
 
-# **Day 2 – THEORY.rst**  
-## **⏱️ Time & Space Complexity + ⚙️ STL Algorithms Mastery**
-
----
-
-# **🌟 1. Overview**
+# 🌟 **1. Overview**
 
 Day 2 builds the mathematical backbone of your DSA journey:
 
-- ⏱️ **Time Complexity**  
+- ⏳ **Time Complexity**  
 - 💾 **Space Complexity**  
 - ⚙️ **STL Algorithms**  
-- 📊 **Big‑O intuition**  
+- 📈 **Big‑O intuition**  
 - 🧠 **How to analyze code efficiently**  
 
 This chapter makes you fluent in understanding **how fast** and **how memory‑efficient** your programs are — a skill every top‑tier engineer must master.
 
 ---
 
-# **📘 2. Big‑O Notation (The Language of Complexity)**
+# 🧮 2. Big‑O Notation (The Language of Complexity)**
 
 Big‑O describes **how performance scales** with input size `n`.
 
@@ -58,7 +49,7 @@ Think of it like **speed tiers**:
 
 ---
 
-# **🧮 3. Time Complexity – Deep Dive**
+# 🧮 3. Time Complexity – Deep Dive**
 
 ---
 
@@ -136,7 +127,7 @@ Used in:
 
 ---
 
-# **💾 4. Space Complexity**
+# 💾 4. Space Complexity**
 
 Measures **extra memory** used.
 
@@ -164,7 +155,7 @@ Measures **extra memory** used.
 
 ---
 
-# **⚙️ 5. STL Algorithms – The Powerhouse**
+# ⚙️ 5. STL Algorithms – The Powerhouse**
 
 STL algorithms are **highly optimized** and should be your default choice.
 
@@ -215,7 +206,7 @@ First element > x.
 
 ---
 
-# **🧠 6. How to Analyze Code Quickly**
+# 🧠 6. How to Analyze Code Quickly**
 
 ---
 
@@ -251,7 +242,7 @@ O(3n + 5) → O(n)
 
 ---
 
-# **📚 7. Common Patterns (Must Memorize)**
+# 📚 7. Common Patterns (Must Memorize)**
 
 ---
 
@@ -293,7 +284,7 @@ Used in:
 
 ---
 
-# **🎯 8. Interview‑Level Insights**
+# 🎯 8. Interview‑Level Insights**
 
 - Always prefer STL algorithms over manual loops  
 - Use `unordered_map` for O(1) average lookups  
@@ -303,7 +294,7 @@ Used in:
 
 ---
 
-# **🏁 9. Conclusion**
+# 🏁 9. Conclusion**
 
 Day 2 gives you the **mathematical intuition** behind algorithm performance and the **STL algorithm toolkit** to write efficient code.
 
@@ -318,11 +309,3 @@ You now understand:
 This foundation will be used **every single day** going forward.
 
 ---
-
-If you want, I can now generate:
-
-- **Day 2 README.rst**  
-- **Day 3 theory.rst**  
-- **A combined complexity cheat sheet**  
-
-Just tell me what you want next.

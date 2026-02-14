@@ -1,0 +1,21 @@
+{
+  "day": "Day06-Hashing_and_HashMap_problems",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 06 \u2014 Hashing & HashMap Problems (README.rst)**",
+    "Hashing is one of the most powerful ideas in computer science.",
+    "Frequency counting",
+    "Duplicate detection",
+    "Prefix\u2011based problems",
+    "Sliding window optimizations",
+    "Subarray sum problems",
+    "Graph adjacency maps",
+    "Caching (LRU, LFU)",
+    "Set membership queries"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

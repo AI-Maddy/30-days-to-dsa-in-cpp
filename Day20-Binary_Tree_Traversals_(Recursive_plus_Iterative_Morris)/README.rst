@@ -1,8 +1,3 @@
-Absolutely, Sasimegala — **Day 20** is here, and this is one of the most *important* days in the entire 30‑day roadmap.  
-Binary Search Trees (BSTs) are the backbone of countless algorithms and data structures, and mastering them unlocks everything from balanced trees to ordered maps to interval trees.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your repo.
-
 ---
 
 # **Day 20 — Binary Search Trees (BST): Insert, Delete, Search, Validate, LCA (README.rst)**  
@@ -435,5 +430,3 @@ Today you mastered:
 This day is essential for **Day 21 — AVL Trees, Self‑Balancing Trees, Rotations**.
 
 ---
-
-If you want, I’ll prepare **Day 21** with the same ultra‑premium depth.

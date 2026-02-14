@@ -1,0 +1,21 @@
+{
+  "day": "Day30-1D_DP_patterns_plus_Mini_revision_plus_Solve_mixed_medium_hard_problems",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 30 \u2014 1D DP Patterns + Mini\u2011Revision + Mixed Medium/Hard Problems (README.rst)**",
+    "You\u2019ve reached the final day \u2014 and today is all about **consolidation + mastery**.",
+    "Revisit the most important **1D DP patterns**",
+    "Understand how to convert problems into DP states",
+    "Solve a curated set of **medium/hard DP problems**",
+    "Learn how to identify the right recurrence",
+    "Practice space optimization",
+    "Build confidence for real interviews",
+    "# **2. Mini\u2011Revision: Core 1D DP Patterns**",
+    "## **2.1 Pattern 1 \u2014 Pick / Not Pick (House Robber Pattern)**"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

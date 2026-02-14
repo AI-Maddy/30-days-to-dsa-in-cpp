@@ -1,14 +1,3 @@
-Absolutely, Sasimegala — here comes your **Day 22** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 22 is a **core BST mastery day**, covering:
-
-- **Validate BST**  
-- **Floor & Ceil in BST**  
-- **Kth Smallest Element**  
-- **LCA in BST**
-
-These four patterns form the backbone of almost every FAANG BST problem.
-
 ---
 
 # **Day 22 – 🌳 Binary Search Tree (BST) Mastery: Validate, Floor/Ceil, Kth Smallest, LCA**  
@@ -252,12 +241,3 @@ LCA(2,4) = 2
 - Predecessor/successor intuition  
 
 ---
-
-If you want, I can now generate:
-
-🔥 **Day 22 README (ultra‑premium)**  
-🧠 **C++ templates for all BST patterns**  
-🎯 **20 BST interview problems**  
-📘 **BST cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.

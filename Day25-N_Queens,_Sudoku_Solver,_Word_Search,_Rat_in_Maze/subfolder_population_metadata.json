@@ -1,0 +1,21 @@
+{
+  "day": "Day25-N_Queens,_Sudoku_Solver,_Word_Search,_Rat_in_Maze",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 25 \u2014 Shortest Paths: BFS (Unweighted), Dijkstra, Bellman\u2011Ford (README.rst)**",
+    "Shortest path algorithms are used everywhere:",
+    "Google Maps",
+    "Network routing (OSPF, BGP)",
+    "Game AI pathfinding",
+    "Logistics & supply chain",
+    "Social network analysis",
+    "Distributed systems",
+    "BFS for unweighted graphs",
+    "Dijkstra\u2019s algorithm (priority queue)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

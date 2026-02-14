@@ -1,0 +1,21 @@
+{
+  "day": "Day04-1D_Arrays_\u2013_Two_Pointers_and_Sliding_Window_basics",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 04 \u2014 1D Arrays: Two Pointers & Sliding Window Basics (README.rst)**",
+    "Reduce O(n\u00b2) brute\u2011force solutions to O(n)",
+    "Solve subarray problems without extra memory",
+    "Handle sorted arrays elegantly",
+    "Process continuous ranges with minimal overhead",
+    "Build intuition for more advanced patterns (prefix sums, binary search on answer, DP)",
+    "Two\u2011pointer fundamentals",
+    "Opposite\u2011direction pointers",
+    "Same\u2011direction pointers",
+    "Sliding window (fixed + variable)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

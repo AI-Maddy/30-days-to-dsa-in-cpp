@@ -1,33 +1,25 @@
-Here it is, Sasimegala — **Day 03**, crafted with the same ultra‑premium depth, clarity, and richness as Days 01 and 02.  
-This README is long, example‑rich, interview‑oriented, and structured exactly for your 30‑day DSA mastery repo.
-
 ---
 
-# **Day 03 — Bit Manipulation in C++ (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
-
----
-
-## **1. Introduction**
+## 🧠 **1. Introduction**
 
 Bit manipulation is one of the most powerful tools in competitive programming and technical interviews.  
 It allows you to:
 
-- Optimize operations to O(1)  
-- Replace loops with constant‑time bit tricks  
-- Solve problems involving subsets, masks, parity, toggling, and binary representation  
-- Write extremely efficient code for DP, graphs, and combinatorics  
+- ⚡ Optimize operations to O(1)  
+- 🔄 Replace loops with constant‑time bit tricks  
+- 🧩 Solve problems involving subsets, masks, parity, toggling, and binary representation  
+- 🚀 Write extremely efficient code for DP, graphs, and combinatorics  
 
 Today’s goal is to build a **deep, intuitive, and practical** understanding of:
 
-- Binary representation  
-- Bitwise operators  
-- Common bit tricks  
-- Checking, setting, clearing, toggling bits  
-- Counting bits  
-- Fast exponentiation using bits  
-- Subset generation using bitmasks  
-- Interview‑level problems  
+- 🧮 Binary representation  
+- ⚙️ Bitwise operators  
+- 🧩 Common bit tricks  
+- 🔍 Checking, setting, clearing, toggling bits  
+- 📊 Counting bits  
+- ⚡ Fast exponentiation using bits  
+- 🗂️ Subset generation using bitmasks  
+- 🏆 Interview‑level problems  
 
 ---
 
@@ -423,5 +415,3 @@ Bit manipulation is one of the most powerful tools in your DSA arsenal.
 You’ll use these tricks repeatedly in sliding window, hashing, DP, graphs, and more.
 
 ---
-
-If you’re ready, I’ll prepare **Day 04 — 1D Arrays: Two Pointers & Sliding Window Basics** with the same ultra‑premium depth.

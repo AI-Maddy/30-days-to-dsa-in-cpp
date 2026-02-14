@@ -1,0 +1,21 @@
+{
+  "day": "Day21-Level_Order,_Zigzag,_Boundary,_Vertical_Order,_Top_View,_Bottom_View",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 21 \u2014 AVL Trees: Self\u2011Balancing BST + Rotations + Insert/Delete (README.rst)**",
+    "A Binary Search Tree (BST) becomes inefficient when it gets skewed:",
+    "\u2192 operations degrade to **O(n)**.",
+    "fix this by maintaining strict balance:",
+    "height(right)| \u2264 1",
+    "Search \u2192 O(log n)",
+    "Insert \u2192 O(log n)",
+    "Delete \u2192 O(log n)",
+    "Height always \u2248 log\u2082(n)",
+    "AVL tree properties"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}

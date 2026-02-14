@@ -1,8 +1,3 @@
-Absolutely, Sasimegala — let’s rebuild **Day 29** exactly the way you want it:  
-**Greedy Revision + Activity Selection + Fractional Knapsack + Jump Game Variants**  
-This is a *pure greedy algorithms day*, not DP.  
-And as always, it’s crafted with the same ultra‑premium depth, clarity, and structure as the rest of your 30‑day DSA mastery repo.
-
 ---
 
 # **Day 29 — Greedy Algorithms Revision: Activity Selection, Fractional Knapsack, Jump Game Variants (README.rst)**  
@@ -277,19 +272,3 @@ Find minimum jumps (Jump Game II).
 Solve Minimum Platforms using greedy.
 
 ---
-
-# **10. Summary**
-
-Today you mastered:
-
-- Greedy algorithm fundamentals  
-- Activity selection  
-- Fractional knapsack  
-- Jump game variants  
-- When greedy works  
-- When greedy fails  
-- Real‑world greedy applications  
-
-This day completes your greedy revision and prepares you for **Day 30 — Advanced DP: LCS, Edit Distance, DP on Strings & Trees**.
-
-If you want, I’ll prepare **Day 30** with the same ultra‑premium depth.

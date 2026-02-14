@@ -1,0 +1,21 @@
+{
+  "day": "Day13-Doubly_plus_Circular_Linked_List_plus_LRU_Cache_intuition",
+  "topics_extracted": 10,
+  "topics": [
+    "# **Day 13 \u2014 Doubly Linked List + Circular Linked List + LRU Cache Intuition (README.rst)**",
+    "Today\u2019s focus is on **advanced linked list structures** that power real\u2011world systems:",
+    "**Doubly Linked List (DLL)**",
+    "**Circular Linked List (CLL)**",
+    "**LRU Cache (DLL + HashMap)**",
+    "Browser history",
+    "Undo/redo systems",
+    "Media playlists",
+    "Task schedulers",
+    "Cache systems (LRU, LFU)"
+  ],
+  "files_created": {
+    "examples": 10,
+    "exercises": 10,
+    "solutions": 10
+  }
+}
