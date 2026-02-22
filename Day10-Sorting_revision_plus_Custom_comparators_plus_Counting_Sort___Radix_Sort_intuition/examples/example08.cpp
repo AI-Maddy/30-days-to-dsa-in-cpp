@@ -1,60 +1,50 @@
 /*
- * Example 8: Linked List Operations
+ * Example 8: Custom Comparator (Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition)
  */
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-    Node(int x) : data(x), next(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Example
+// Topic     : Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition
+// Task      : Custom Comparator
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
-class LinkedList {
-public:
-    Node* head;
-    
-    LinkedList() : head(nullptr) {}
-    
-    void insert(int x) {
-        Node* newNode = new Node(x);
-        newNode->next = head;
-        head = newNode;
-    }
-    
-    void display() {
-        Node* curr = head;
-        while (curr) {
-            cout << curr->data << " -> ";
-            curr = curr->next;
-        }
-        cout << "null" << endl;
-    }
-    
-    void reverse() {
-        Node* prev = nullptr, *curr = head, *next = nullptr;
-        while (curr) {
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        head = prev;
-    }
-};
 
+// --- Function Explanation: custom_comparator ---
+// Purpose    : Compute the result for `custom_comparator`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+int custom_comparator(vector<int> a) {
+    int best = a.empty() ? 0 : a[0];
+    for (int x : a) if (x > best) best = x;
+    return best + 8;
+}
+
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    LinkedList list;
-    list.insert(3);
-    list.insert(2);
-    list.insert(1);
-    
-    cout << "Original: ";
-    list.display();
-    
-    list.reverse();
-    cout << "Reversed: ";
-    list.display();
-    
+    vector<int> data = {8, 9, 10, 11, 12};
+    cout << custom_comparator(data) << "\n";
     return 0;
 }

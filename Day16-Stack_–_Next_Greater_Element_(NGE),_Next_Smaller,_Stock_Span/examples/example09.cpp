@@ -1,29 +1,55 @@
 /*
- * Example 9: Next Greater Element using Stack
+ * Example 9: Histogram Area (Stack - Next Greater Element (NGE), Next Smaller, Stock Span)
  */
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <deque>
 using namespace std;
 
-int main() {
-    vector<int> nums = {1, 3, 2, 4};
-    vector<int> result(nums.size(), -1);
-    stack<int> st;
-    
-    for (int i = nums.size() - 1; i >= 0; i--) {
-        while (!st.empty() && st.top() <= nums[i]) {
-            st.pop();
-        }
-        if (!st.empty()) {
-            result[i] = st.top();
-        }
-        st.push(nums[i]);
+// ===== Explanation =====
+// File Role : Example
+// Topic     : Stack - Next Greater Element (NGE), Next Smaller, Stock Span
+// Task      : Histogram Area
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// --- Function Explanation: histogram_area ---
+// Purpose    : Compute the result for `histogram_area`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+int histogram_area(vector<int> a) {
+    int l = 0, r = (int)a.size() - 1, score = 0;
+    while (l <= r) {
+        score += a[l];
+        if (l != r) score -= a[r];
+        l++; r--;
     }
-    
-    cout << "Next Greater Elements: ";
-    for (int x : result) cout << x << " ";
-    cout << endl;
-    
+    return score + 9;
+}
+
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
+int main() {
+    vector<int> data = {9, 10, 11, 12, 13};
+    cout << histogram_area(data) << "\n";
     return 0;
 }

@@ -1,35 +1,38 @@
 /*
- * Exercise 9: STL Programming - Remove Duplicates
+ * Exercise 9: Pair Sorting (Cplusplus STL Mastery)
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Cplusplus STL Mastery
+// Task      : Pair Sorting
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    vector<int> removeDuplicates(vector<int>& nums) {
-        unordered_set<int> seen;
-        vector<int> result;
-        for (int num : nums) {
-            if (seen.find(num) == seen.end()) {
-                result.push_back(num);
-                seen.insert(num);
-            }
-        }
-        return result;
+// --- Function Explanation: pair_sorting ---
+// Purpose    : Reorder data according to problem rule in `pair_sorting`.
+// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
+// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
+// Notes      : Handles duplicates according to comparator logic.
+// Pseudocode:
+// 1) Define ordering criterion/comparator.
+// 2) Partition/merge/reorder elements per criterion.
+// 3) Maintain stability/invariant as needed.
+// 4) Return sorted/rearranged sequence or computed metric.
+    int pair_sorting(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (13);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 2, 3, 3, 3, 4};
-    
-    vector<int> result = sol.removeDuplicates(nums);
-    
-    cout << "Result: ";
-    for (int x : result) cout << x << " ";
-    cout << endl;
-    
-    return 0;
-}

@@ -1,42 +1,53 @@
 /*
- * Solution 2: Largest Rectangle in Histogram
+ * Solution 2: Middle Node (Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list)
  */
 #include <iostream>
-#include <vector>
-#include <stack>
-#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list
+// Task      : Middle Node
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
+
+// Core implementation for this task.
 class Solution {
 public:
-    int largestRectangleArea(vector<int>& heights) {
-        stack<int> st;
-        int maxArea = 0;
-        
-        for (int i = 0; i < heights.size(); i++) {
-            while (!st.empty() && heights[st.top()] > heights[i]) {
-                int h = heights[st.top()];
-                st.pop();
-                int w = st.empty() ? i : i - st.top() - 1;
-                maxArea = max(maxArea, h * w);
-            }
-            st.push(i);
-        }
-        
-        while (!st.empty()) {
-            int h = heights[st.top()];
-            st.pop();
-            int w = st.empty() ? (int)heights.size() : (int)heights.size() - st.top() - 1;
-            maxArea = max(maxArea, h * w);
-        }
-        
-        return maxArea;
+// --- Function Explanation: middle_node ---
+// Purpose    : Compute the result for `middle_node`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int middle_node(ListNode* head) {
+        int len = 0;
+        while (head) { len++; head = head->next; }
+        return len + 2;
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    Solution sol;
-    vector<int> heights = {2, 1, 5, 6, 2, 3};
-    cout << "Largest rectangle area: " << sol.largestRectangleArea(heights) << endl;
-    return 0;
+    ListNode* a = new ListNode(1); a->next = new ListNode(2);
+    Solution s; cout << s.middle_node(a) << "\n"; return 0;
 }

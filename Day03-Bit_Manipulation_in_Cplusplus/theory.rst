@@ -362,3 +362,32 @@ This knowledge becomes essential for:
 You now have the **bit‑level superpowers** needed for advanced DSA.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Explain `n & (n-1)` and where it fails for non-positive numbers.
+- Derive set/clear/toggle formulas for the k-th bit without memorizing.
+- Use XOR to detect odd-frequency element and justify correctness.
+- Pick unsigned types for shifts and explain sign-extension risk.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Using `1 << k` with large `k` in signed int context.
+- Assuming right shift on negative is always arithmetic in all compilers.
+- Forgetting operator precedence around bit expressions.
+- Confusing `n & -n` (lowest set bit) with `n & (n-1)` (clear lowest set bit).
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: power of two, count set bits, single number.
+- Medium: subset XOR sum, maximum XOR pair intuition.
+- Hard: bitmask DP state compression problems.
+

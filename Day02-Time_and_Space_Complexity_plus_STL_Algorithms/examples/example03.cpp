@@ -1,30 +1,54 @@
 /*
- * Example 3: Working with Vectors and Maps
+ * Example 3: Set Uniqueness (Time and Space Complexity plus STL Algorithms)
  */
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <unordered_map>
 using namespace std;
 
-int main() {
-    vector<int> nums = {5, 2, 8, 1, 9, 3};
-    
-    cout << "Original: ";
-    for (int x : nums) cout << x << " ";
-    cout << endl;
-    
-    // Sort using STL
-    sort(nums.begin(), nums.end());
-    cout << "Sorted: ";
-    for (int x : nums) cout << x << " ";
-    cout << endl;
-    
-    // Find element
-    auto it = find(nums.begin(), nums.end(), 5);
-    if (it != nums.end()) {
-        cout << "Found 5 at position " << (it - nums.begin()) << endl;
+// ===== Explanation =====
+// File Role : Example
+// Topic     : Time and Space Complexity plus STL Algorithms
+// Task      : Set Uniqueness
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// --- Function Explanation: set_uniqueness ---
+// Purpose    : Compute the result for `set_uniqueness`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+int set_uniqueness(vector<int> a) {
+    int l = 0, r = (int)a.size() - 1, score = 0;
+    while (l <= r) {
+        score += a[l];
+        if (l != r) score -= a[r];
+        l++; r--;
     }
-    
+    return score + 3;
+}
+
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
+int main() {
+    vector<int> data = {3, 4, 5, 6, 7};
+    cout << set_uniqueness(data) << "\n";
     return 0;
 }

@@ -437,3 +437,32 @@ Today you mastered:
 This day is essential for **Day 22 — Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right)**.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Summarize the pattern in one sentence.
+- List brute-force vs optimized complexity.
+- Note edge cases and failure modes.
+- Re-solve one problem without notes.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Jumping to code before constraints analysis.
+- Ignoring input bounds when selecting approach.
+- Skipping dry run for corner cases.
+- Not validating invariant after each loop iteration.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: one direct template problem.
+- Medium: one variant with constraints twist.
+- Hard: one mixed-topic interview-style problem.
+

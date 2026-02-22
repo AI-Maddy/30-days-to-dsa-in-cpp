@@ -306,3 +306,32 @@ Detect negative cycles using Floyd‑Warshall.
 Use the implementations from sections 2–7.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Choose BFS for shortest path in unweighted graphs.
+- Use visited timing correctly (enqueue-time vs dequeue-time).
+- Know adjacency list complexity and memory tradeoffs.
+- Detect cycle differently for directed vs undirected graphs.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Revisiting nodes due to late visited marking.
+- Mixing 0-based and 1-based graph indexing.
+- Forgetting disconnected components loop.
+- Using DFS recursion without stack-limit awareness.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: BFS/DFS traversal templates.
+- Medium: number of islands, flood fill, course schedule.
+- Hard: shortest paths with constraints and topological-DP hybrids.
+

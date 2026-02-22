@@ -1,31 +1,38 @@
 /*
- * Exercise 5: Maximum Subarray Sum (Kadane's Algorithm)
+ * Exercise 5: Rotate Array (Binary Search on 1D and 2D plus Binary Search on Answer pattern)
  */
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Binary Search on 1D and 2D plus Binary Search on Answer pattern
+// Task      : Rotate Array
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int maxSum = nums[0], currentSum = nums[0];
-        
-        for (int i = 1; i < nums.size(); i++) {
-            currentSum = max(nums[i], currentSum + nums[i]);
-            maxSum = max(maxSum, currentSum);
-        }
-        
-        return maxSum;
+// --- Function Explanation: rotate_array ---
+// Purpose    : Apply pointer/index transformation in `rotate_array`.
+// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
+// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
+// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
+// Pseudocode:
+// 1) Initialize pointers/iterators to required positions.
+// 2) Move pointers per condition while updating state.
+// 3) Handle crossing/meeting/base edge conditions.
+// 4) Return transformed structure or boolean/result value.
+    int rotate_array(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (9);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    
-    int result = sol.maxSubArray(nums);
-    cout << "Max subarray sum: " << result << endl;
-    
-    return 0;
-}

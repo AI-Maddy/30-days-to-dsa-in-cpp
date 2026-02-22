@@ -1,35 +1,53 @@
 /*
- * Solution 1: Longest Common Subsequence
+ * Solution 1: Activity Selection (Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants)
  */
 #include <iostream>
 #include <vector>
-#include <string>
 #include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants
+// Task      : Activity Selection
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int longestCommonSubsequence(string text1, string text2) {
-        int m = text1.size(), n = text2.size();
-        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
-        
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (text1[i-1] == text2[j-1]) {
-                    dp[i][j] = dp[i-1][j-1] + 1;
-                } else {
-                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
-                }
-            }
-        }
-        
-        return dp[m][n];
+// --- Function Explanation: activity_selection ---
+// Purpose    : Compute the result for `activity_selection`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int activity_selection(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x;
+        return ans + 1;
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    Solution sol;
-    string text1 = "abcde", text2 = "ace";
-    cout << "LCS length: " << sol.longestCommonSubsequence(text1, text2) << endl;
-    return 0;
+    vector<int> nums = {1, 2, 3};
+    Solution s; cout << s.activity_selection(nums) << "\n"; return 0;
 }

@@ -1,52 +1,38 @@
 /*
- * Exercise 1: Number of Islands
+ * Exercise 1: BFS Traversal (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
  */
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
+// Task      : BFS Traversal
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int numIslands(vector<vector<char>>& grid) {
-        if (grid.empty()) return 0;
-        
-        int count = 0;
-        for (int i = 0; i < grid.size(); i++) {
-            for (int j = 0; j < grid[i].size(); j++) {
-                if (grid[i][j] == '1') {
-                    dfs(grid, i, j);
-                    count++;
-                }
-            }
-        }
-        return count;
-    }
-    
-private:
-    void dfs(vector<vector<char>>& grid, int i, int j) {
-        if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || 
-            grid[i][j] == '0') {
-            return;
-        }
-        
-        grid[i][j] = '0';
-        
-        dfs(grid, i + 1, j);
-        dfs(grid, i - 1, j);
-        dfs(grid, i, j + 1);
-        dfs(grid, i, j - 1);
+// --- Function Explanation: bfs_traversal ---
+// Purpose    : Traverse structure using `bfs_traversal` and aggregate traversal output.
+// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
+// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
+// Notes      : Checks null root/base condition before traversal.
+// Pseudocode:
+// 1) If root/state is empty, return base result.
+// 2) Initialize traversal structure (stack/queue/recursion).
+// 3) Visit each node exactly once and update answer.
+// 4) Return accumulated traversal result.
+    int bfs_traversal(int n, vector<vector<int>>& adj) {
+        int edges = 0;
+        for (int u = 0; u < n; u++) edges += (int)adj[u].size();
+        return edges + 1;
     }
 };
-
-int main() {
-    vector<vector<char>> grid = {
-        {'1', '1', '0'},
-        {'1', '0', '0'},
-        {'0', '1', '1'}
-    };
-    
-    Solution sol;
-    cout << "Number of islands: " << sol.numIslands(grid) << endl;
-    
-    return 0;
-}

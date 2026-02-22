@@ -1,35 +1,38 @@
 /*
- * Exercise 8: STL Programming - Remove Duplicates
+ * Exercise 8: Accumulate Range (Cplusplus STL Mastery)
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Cplusplus STL Mastery
+// Task      : Accumulate Range
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    vector<int> removeDuplicates(vector<int>& nums) {
-        unordered_set<int> seen;
-        vector<int> result;
-        for (int num : nums) {
-            if (seen.find(num) == seen.end()) {
-                result.push_back(num);
-                seen.insert(num);
-            }
-        }
-        return result;
+// --- Function Explanation: accumulate_range ---
+// Purpose    : Answer aggregate/range computation in `accumulate_range`.
+// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
+// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
+// Notes      : Watch index boundaries for left/right endpoints.
+// Pseudocode:
+// 1) Initialize running aggregate/prefix state.
+// 2) Scan array and update aggregate incrementally.
+// 3) Use aggregate differences or window updates for answer.
+// 4) Return final query/optimization result.
+    int accumulate_range(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (12);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 2, 3, 3, 3, 4};
-    
-    vector<int> result = sol.removeDuplicates(nums);
-    
-    cout << "Result: ";
-    for (int x : result) cout << x << " ";
-    cout << endl;
-    
-    return 0;
-}

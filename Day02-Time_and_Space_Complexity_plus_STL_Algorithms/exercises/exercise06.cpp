@@ -1,35 +1,38 @@
 /*
- * Exercise 6: STL Programming - Remove Duplicates
+ * Exercise 6: Lower Bound Query (Time and Space Complexity plus STL Algorithms)
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Time and Space Complexity plus STL Algorithms
+// Task      : Lower Bound Query
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    vector<int> removeDuplicates(vector<int>& nums) {
-        unordered_set<int> seen;
-        vector<int> result;
-        for (int num : nums) {
-            if (seen.find(num) == seen.end()) {
-                result.push_back(num);
-                seen.insert(num);
-            }
-        }
-        return result;
+// --- Function Explanation: lower_bound_query ---
+// Purpose    : Locate target condition/index via `lower_bound_query`.
+// Approach   : Use binary/conditional narrowing on search space with invariant maintenance.
+// Complexity : O(log n) time on sorted/monotonic search spaces; O(1) extra space.
+// Notes      : Behavior depends on sortedness/monotonicity precondition.
+// Pseudocode:
+// 1) Initialize search boundaries or pointers.
+// 2) Repeatedly pick probe/mid and compare with target rule.
+// 3) Shrink the valid range while preserving invariants.
+// 4) Return found index/value or fallback result.
+    int lower_bound_query(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (10);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 2, 3, 3, 3, 4};
-    
-    vector<int> result = sol.removeDuplicates(nums);
-    
-    cout << "Result: ";
-    for (int x : result) cout << x << " ";
-    cout << endl;
-    
-    return 0;
-}

@@ -417,3 +417,32 @@ Today you mastered:
 This day is the foundation for **Day 20 — Binary Search Trees (BST): Insert, Delete, Search, Validate, LCA**.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Identify monotonic stack direction from query type.
+- Map nearest-greater/smaller variants quickly.
+- Use deque invariants for sliding window maximum.
+- Explain amortized O(1) pop/push behavior.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Pushing indices vs values inconsistently.
+- Forgetting to evict out-of-window indices.
+- Wrong tie-handling (`>` vs `>=`) in monotonic logic.
+- Mismatched push/pop causing invalid parenthesis checks to fail.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: valid parentheses, stack using queues.
+- Medium: daily temperatures, stock span.
+- Hard: largest rectangle + maximal rectangle variations.
+

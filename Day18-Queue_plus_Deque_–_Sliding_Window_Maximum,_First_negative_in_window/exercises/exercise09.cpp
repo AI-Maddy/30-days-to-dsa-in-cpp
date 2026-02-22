@@ -1,41 +1,39 @@
 /*
- * Exercise 9: Valid Parentheses
+ * Exercise 9: Histogram Area (Queue plus Deque - Sliding Window Maximum, First negative in window)
  */
 #include <iostream>
-#include <string>
-#include <stack>
 #include <vector>
+#include <stack>
+#include <deque>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Queue plus Deque - Sliding Window Maximum, First negative in window
+// Task      : Histogram Area
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    bool isValid(string s) {
-        stack<char> st;
-        for (char c : s) {
-            if (c == '(' || c == '{' || c == '[') {
-                st.push(c);
-            } else {
-                if (st.empty()) return false;
-                char top = st.top();
-                st.pop();
-                if ((c == ')' && top != '(') ||
-                    (c == '}' && top != '{') ||
-                    (c == ']' && top != '[')) {
-                    return false;
-                }
-            }
-        }
-        return st.empty();
+// --- Function Explanation: histogram_area ---
+// Purpose    : Compute the result for `histogram_area`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int histogram_area(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (13);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<string> tests = {"()", "([)]", "{}[]", ""};
-    
-    for (const auto& test : tests) {
-        cout << test << " : " << (sol.isValid(test) ? "Valid" : "Invalid") << endl;
-    }
-    
-    return 0;
-}

@@ -259,3 +259,32 @@ Today you mastered:
 This day sets the stage for **Day 26 — Floyd‑Warshall, Minimum Spanning Trees (Prim + Kruskal)**.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Write choose/explore/unchoose pattern explicitly.
+- Define stopping condition before recursive calls.
+- Use pruning rules to cut impossible branches early.
+- Track path/state restoration on backtracking return.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Mutating shared containers without rollback.
+- Missing base case for empty candidate set.
+- Generating duplicate permutations/subsets.
+- Not sorting when pruning depends on order.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: subsets and permutations.
+- Medium: combination sum and palindrome partitioning.
+- Hard: sudoku solver, N-Queens, word search with pruning.
+

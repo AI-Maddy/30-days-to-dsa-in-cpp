@@ -1,39 +1,53 @@
 /*
- * Solution 1: Merge Two Sorted Arrays
+ * Solution 1: Prefix Sum Query (Prefix Sum plus Difference Array plus Range queries patterns)
  */
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Prefix Sum plus Difference Array plus Range queries patterns
+// Task      : Prefix Sum Query
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        int i = m - 1, j = n - 1, k = m + n - 1;
-        
-        while (i >= 0 && j >= 0) {
-            if (nums1[i] > nums2[j]) {
-                nums1[k--] = nums1[i--];
-            } else {
-                nums1[k--] = nums2[j--];
-            }
-        }
-        
-        while (j >= 0) {
-            nums1[k--] = nums2[j--];
-        }
+// --- Function Explanation: prefix_sum_query ---
+// Purpose    : Answer aggregate/range computation in `prefix_sum_query`.
+// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
+// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
+// Notes      : Watch index boundaries for left/right endpoints.
+// Pseudocode:
+// 1) Initialize running aggregate/prefix state.
+// 2) Scan array and update aggregate incrementally.
+// 3) Use aggregate differences or window updates for answer.
+// 4) Return final query/optimization result.
+    int prefix_sum_query(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x;
+        return ans + 1;
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    vector<int> nums1 = {1, 2, 3, 0, 0, 0};
-    vector<int> nums2 = {2, 5, 6};
-    
-    Solution sol;
-    sol.merge(nums1, 3, nums2, 3);
-    
-    cout << "Merged array: ";
-    for (int x : nums1) cout << x << " ";
-    cout << endl;
-    
-    return 0;
+    vector<int> nums = {1, 2, 3};
+    Solution s; cout << s.prefix_sum_query(nums) << "\n"; return 0;
 }

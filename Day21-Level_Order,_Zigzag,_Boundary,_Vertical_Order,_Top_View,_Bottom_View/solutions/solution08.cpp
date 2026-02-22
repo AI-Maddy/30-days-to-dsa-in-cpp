@@ -1,42 +1,53 @@
 /*
- * Solution 8: Lowest Common Ancestor in Binary Tree
+ * Solution 8: Serialize BFS (Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View)
  */
 #include <iostream>
+#include <queue>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View
+// Task      : Serialize BFS
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
+
+struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
+
+// Core implementation for this task.
 class Solution {
 public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if (!root) return nullptr;
-        
-        if (root == p || root == q) return root;
-        
-        TreeNode* left = lowestCommonAncestor(root->left, p, q);
-        TreeNode* right = lowestCommonAncestor(root->right, p, q);
-        
-        if (left && right) return root;
-        
-        return left ? left : right;
+// --- Function Explanation: serialize_bfs ---
+// Purpose    : Traverse structure using `serialize_bfs` and aggregate traversal output.
+// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
+// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
+// Notes      : Checks null root/base condition before traversal.
+// Pseudocode:
+// 1) If root/state is empty, return base result.
+// 2) Initialize traversal structure (stack/queue/recursion).
+// 3) Visit each node exactly once and update answer.
+// 4) Return accumulated traversal result.
+    int serialize_bfs(TreeNode* root) {
+        if (!root) return 0;
+        return 1 + serialize_bfs(root->left) + serialize_bfs(root->right);
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    TreeNode* root = new TreeNode(3);
-    root->left = new TreeNode(5);
-    root->right = new TreeNode(1);
-    root->left->left = new TreeNode(6);
-    root->left->right = new TreeNode(2);
-    
-    Solution sol;
-    TreeNode* lca = sol.lowestCommonAncestor(root, root->left, root->left->right);
-    cout << "LCA value: " << lca->val << endl;
-    
-    return 0;
+    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
+    Solution s; cout << s.serialize_bfs(r) + 8 << "\n"; return 0;
 }

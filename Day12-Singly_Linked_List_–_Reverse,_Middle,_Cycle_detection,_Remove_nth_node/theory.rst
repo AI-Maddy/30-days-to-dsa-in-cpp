@@ -266,3 +266,32 @@ Two pointers + monotonic deque.
 - Prefix + two pointer hybrid patterns  
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Draw pointer transitions before coding.
+- Know dummy-node pattern for head-sensitive operations.
+- Apply fast-slow pointer for cycle, middle, palindrome.
+- Track ownership/memory safety for node deletion.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Losing next pointer before rewiring.
+- Not handling 0/1-node edge cases.
+- Incorrect split before merge sort on lists.
+- Cycle detection logic that dereferences null.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: reverse list, middle node.
+- Medium: remove Nth from end, detect cycle.
+- Hard: flatten multilevel list, merge k sorted lists.
+

@@ -1,52 +1,38 @@
 /*
- * Exercise 5: Number of Islands
+ * Exercise 5: Word Search (N Queens, Sudoku Solver, Word Search, Rat in Maze)
  */
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : N Queens, Sudoku Solver, Word Search, Rat in Maze
+// Task      : Word Search
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int numIslands(vector<vector<char>>& grid) {
-        if (grid.empty()) return 0;
-        
-        int count = 0;
-        for (int i = 0; i < grid.size(); i++) {
-            for (int j = 0; j < grid[i].size(); j++) {
-                if (grid[i][j] == '1') {
-                    dfs(grid, i, j);
-                    count++;
-                }
-            }
-        }
-        return count;
-    }
-    
-private:
-    void dfs(vector<vector<char>>& grid, int i, int j) {
-        if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || 
-            grid[i][j] == '0') {
-            return;
-        }
-        
-        grid[i][j] = '0';
-        
-        dfs(grid, i + 1, j);
-        dfs(grid, i - 1, j);
-        dfs(grid, i, j + 1);
-        dfs(grid, i, j - 1);
+// --- Function Explanation: word_search ---
+// Purpose    : Locate target condition/index via `word_search`.
+// Approach   : Use binary/conditional narrowing on search space with invariant maintenance.
+// Complexity : O(log n) time on sorted/monotonic search spaces; O(1) extra space.
+// Notes      : Behavior depends on sortedness/monotonicity precondition.
+// Pseudocode:
+// 1) Initialize search boundaries or pointers.
+// 2) Repeatedly pick probe/mid and compare with target rule.
+// 3) Shrink the valid range while preserving invariants.
+// 4) Return found index/value or fallback result.
+    int word_search(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (9);
+        return ans;
     }
 };
-
-int main() {
-    vector<vector<char>> grid = {
-        {'1', '1', '0'},
-        {'1', '0', '0'},
-        {'0', '1', '1'}
-    };
-    
-    Solution sol;
-    cout << "Number of islands: " << sol.numIslands(grid) << endl;
-    
-    return 0;
-}

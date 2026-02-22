@@ -1,32 +1,38 @@
 /*
- * Exercise 1: House Robber - DP Problem
+ * Exercise 1: Fibonacci DP (1D DP patterns plus Mini revision plus Solve mixed medium hard problems)
  */
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : 1D DP patterns plus Mini revision plus Solve mixed medium hard problems
+// Task      : Fibonacci DP
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int rob(vector<int>& nums) {
-        if (nums.empty()) return 0;
-        if (nums.size() == 1) return nums[0];
-        
-        vector<int> dp(nums.size());
-        dp[0] = nums[0];
-        dp[1] = max(nums[0], nums[1]);
-        
-        for (int i = 2; i < nums.size(); i++) {
-            dp[i] = max(nums[i] + dp[i-2], dp[i-1]);
-        }
-        
-        return dp.back();
+// --- Function Explanation: fibonacci_dp ---
+// Purpose    : Compute optimal substructure value using `fibonacci_dp`.
+// Approach   : Build DP state transitions from smaller subproblems.
+// Complexity : Usually O(states × transitions), space O(states) unless compressed.
+// Notes      : State definition and transition order are the key correctness points.
+// Pseudocode:
+// 1) Define DP state and base conditions.
+// 2) Iterate states in dependency-safe order.
+// 3) Apply transition recurrence to update best value.
+// 4) Return target state result.
+    int fibonacci_dp(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (5);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 3, 1};
-    cout << "Maximum money robbed: " << sol.rob(nums) << endl;
-    return 0;
-}

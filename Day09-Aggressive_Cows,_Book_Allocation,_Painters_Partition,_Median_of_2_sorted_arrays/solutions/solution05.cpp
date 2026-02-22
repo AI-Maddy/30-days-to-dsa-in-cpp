@@ -1,58 +1,59 @@
 /*
- * Solution 5: Detect and Remove Cycle in Linked List
+ * Solution 5: Last Occurrence (Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays)
  */
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-    Node(int x) : data(x), next(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays
+// Task      : Last Occurrence
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
+
+// Core implementation for this task.
 class Solution {
 public:
-    bool hasCycle(Node* head) {
-        if (!head || !head->next) return false;
-        
-        Node* slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
-            fast = fast->next->next;
-            if (slow == fast) return true;
+// --- Function Explanation: last_occurrence ---
+// Purpose    : Compute the result for `last_occurrence`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int last_occurrence(vector<int>& a, int target) {
+        int l = 0, r = (int)a.size() - 1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            if (a[m] == target) return m;
+            if (a[m] < target) l = m + 1;
+            else r = m - 1;
         }
-        return false;
-    }
-    
-    void removeCycle(Node* head) {
-        if (!head || !head->next) return;
-        
-        Node* slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
-            fast = fast->next->next;
-            if (slow == fast) break;
-        }
-        
-        if (!fast || !fast->next) return;
-        
-        slow = head;
-        while (slow->next != fast->next) {
-            slow = slow->next;
-            fast = fast->next;
-        }
-        fast->next = nullptr;
+        return -1;
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    Node* head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
-    head->next->next->next = head->next;
-    
-    Solution sol;
-    cout << "Has cycle: " << (sol.hasCycle(head) ? "Yes" : "No") << endl;
-    
+    Solution s; vector<int> a = {5, 7, 9, 11};
+    cout << s.last_occurrence(a, 9) << "\n";
     return 0;
 }

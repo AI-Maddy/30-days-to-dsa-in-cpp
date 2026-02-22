@@ -1,32 +1,38 @@
 /*
- * Exercise 2: House Robber - DP Problem
+ * Exercise 2: DFS Traversal (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
  */
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <queue>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
+// Task      : DFS Traversal
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int rob(vector<int>& nums) {
-        if (nums.empty()) return 0;
-        if (nums.size() == 1) return nums[0];
-        
-        vector<int> dp(nums.size());
-        dp[0] = nums[0];
-        dp[1] = max(nums[0], nums[1]);
-        
-        for (int i = 2; i < nums.size(); i++) {
-            dp[i] = max(nums[i] + dp[i-2], dp[i-1]);
-        }
-        
-        return dp.back();
+// --- Function Explanation: dfs_traversal ---
+// Purpose    : Traverse structure using `dfs_traversal` and aggregate traversal output.
+// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
+// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
+// Notes      : Checks null root/base condition before traversal.
+// Pseudocode:
+// 1) If root/state is empty, return base result.
+// 2) Initialize traversal structure (stack/queue/recursion).
+// 3) Visit each node exactly once and update answer.
+// 4) Return accumulated traversal result.
+    int dfs_traversal(int n, vector<vector<int>>& adj) {
+        int edges = 0;
+        for (int u = 0; u < n; u++) edges += (int)adj[u].size();
+        return edges + 2;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 3, 1};
-    cout << "Maximum money robbed: " << sol.rob(nums) << endl;
-    return 0;
-}

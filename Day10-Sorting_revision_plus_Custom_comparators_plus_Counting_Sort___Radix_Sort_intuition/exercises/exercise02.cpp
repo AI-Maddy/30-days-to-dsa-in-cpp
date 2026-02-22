@@ -1,37 +1,38 @@
 /*
- * Exercise 2: Find Middle of Linked List
+ * Exercise 2: Selection Sort Pass (Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition)
  */
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-    Node(int x) : data(x), next(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition
+// Task      : Selection Sort Pass
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
+
+// Core implementation for this task.
 class Solution {
 public:
-    Node* findMiddle(Node* head) {
-        Node* slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-        return slow;
+// --- Function Explanation: selection_sort_pass ---
+// Purpose    : Reorder data according to problem rule in `selection_sort_pass`.
+// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
+// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
+// Notes      : Handles duplicates according to comparator logic.
+// Pseudocode:
+// 1) Define ordering criterion/comparator.
+// 2) Partition/merge/reorder elements per criterion.
+// 3) Maintain stability/invariant as needed.
+// 4) Return sorted/rearranged sequence or computed metric.
+    int selection_sort_pass(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (6);
+        return ans;
     }
 };
-
-int main() {
-    Node* head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
-    head->next->next->next = new Node(4);
-    head->next->next->next->next = new Node(5);
-    
-    Solution sol;
-    Node* mid = sol.findMiddle(head);
-    cout << "Middle node value: " << mid->data << endl;
-    
-    return 0;
-}

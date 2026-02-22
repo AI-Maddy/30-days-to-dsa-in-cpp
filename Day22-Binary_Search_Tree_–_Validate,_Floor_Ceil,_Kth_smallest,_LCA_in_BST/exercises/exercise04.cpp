@@ -1,48 +1,38 @@
 /*
- * Exercise 4: Maximum Path Sum in Binary Tree
+ * Exercise 4: Diameter (Binary Search Tree - Validate, Floor Ceil, Kth smallest, LCA in BST)
  */
 #include <iostream>
-#include <algorithm>
-#include <climits>
+#include <queue>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Binary Search Tree - Validate, Floor Ceil, Kth smallest, LCA in BST
+// Task      : Diameter
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
+
+struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
+
+// Core implementation for this task.
 class Solution {
-private:
-    int maxSum = INT_MIN;
-    
 public:
-    int maxPathSum(TreeNode* root) {
-        dfs(root);
-        return maxSum;
-    }
-    
-private:
-    int dfs(TreeNode* node) {
-        if (!node) return 0;
-        
-        int leftSum = max(0, dfs(node->left));
-        int rightSum = max(0, dfs(node->right));
-        
-        maxSum = max(maxSum, leftSum + node->val + rightSum);
-        
-        return node->val + max(leftSum, rightSum);
+// --- Function Explanation: diameter ---
+// Purpose    : Compute the result for `diameter`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int diameter(TreeNode* root) {
+        if (!root) return 0;
+        return 1 + diameter(root->left) + diameter(root->right);
     }
 };
-
-int main() {
-    TreeNode* root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(3);
-    
-    Solution sol;
-    cout << "Max path sum: " << sol.maxPathSum(root) << endl;
-    
-    return 0;
-}

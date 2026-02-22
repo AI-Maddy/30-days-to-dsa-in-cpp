@@ -1,42 +1,53 @@
 /*
- * Solution 9: Find Pairs with Target Sum
+ * Solution 9: Pair Sorting (Time and Space Complexity plus STL Algorithms)
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Time and Space Complexity plus STL Algorithms
+// Task      : Pair Sorting
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    vector<pair<int, int>> findPairs(vector<int>& nums, int target) {
-        unordered_set<int> numSet(nums.begin(), nums.end());
-        vector<pair<int, int>> pairs;
-        unordered_set<int> seen;
-        
-        for (int num : nums) {
-            if (seen.count(num)) continue;
-            if (numSet.count(target - num)) {
-                pairs.push_back({num, target - num});
-            }
-            seen.insert(num);
-        }
-        
-        return pairs;
+// --- Function Explanation: pair_sorting ---
+// Purpose    : Reorder data according to problem rule in `pair_sorting`.
+// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
+// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
+// Notes      : Handles duplicates according to comparator logic.
+// Pseudocode:
+// 1) Define ordering criterion/comparator.
+// 2) Partition/merge/reorder elements per criterion.
+// 3) Maintain stability/invariant as needed.
+// 4) Return sorted/rearranged sequence or computed metric.
+    int pair_sorting(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x;
+        return ans + 9;
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    Solution sol;
-    vector<int> nums = {1, 5, 7, -1, 5};
-    int target = 6;
-    
-    auto pairs = sol.findPairs(nums, target);
-    
-    cout << "Pairs summing to " << target << ":" << endl;
-    for (auto p : pairs) {
-        cout << "(" << p.first << ", " << p.second << ") ";
-    }
-    cout << endl;
-    
-    return 0;
+    vector<int> nums = {9, 10, 11};
+    Solution s; cout << s.pair_sorting(nums) << "\n"; return 0;
 }

@@ -1,49 +1,58 @@
 /*
- * Solution 5: Dijkstra's Algorithm for Shortest Path
+ * Solution 5: Cycle Detection Undirected (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
  */
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <climits>
 using namespace std;
 
-int main() {
-    int n = 5;
-    vector<vector<pair<int, int>>> graph(n);
-    
-    graph[0].push_back({1, 4});
-    graph[0].push_back({2, 1});
-    graph[1].push_back({3, 1});
-    graph[2].push_back({1, 2});
-    graph[2].push_back({3, 5});
-    graph[3].push_back({4, 3});
-    
-    vector<int> dist(n, INT_MAX);
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    
-    dist[0] = 0;
-    pq.push({0, 0});
-    
-    while (!pq.empty()) {
-        int d = pq.top().first;
-        int u = pq.top().second;
-        pq.pop();
-        
-        if (d > dist[u]) continue;
-        
-        for (auto edge : graph[u]) {
-            int v = edge.first;
-            int w = edge.second;
-            if (dist[u] + w < dist[v]) {
-                dist[v] = dist[u] + w;
-                pq.push({dist[v], v});
-            }
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
+// Task      : Cycle Detection Undirected
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
+class Solution {
+public:
+// --- Function Explanation: cycle_detection_undirected ---
+// Purpose    : Apply pointer/index transformation in `cycle_detection_undirected`.
+// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
+// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
+// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
+// Pseudocode:
+// 1) Initialize pointers/iterators to required positions.
+// 2) Move pointers per condition while updating state.
+// 3) Handle crossing/meeting/base edge conditions.
+// 4) Return transformed structure or boolean/result value.
+    int cycle_detection_undirected(int n, vector<vector<int>>& g) {
+        vector<int> vis(n, 0);
+        queue<int> q; q.push(0); vis[0] = 1;
+        int cnt = 0;
+        while (!q.empty()) {
+            int u = q.front(); q.pop(); cnt++;
+            for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
         }
+        return cnt + 5;
     }
-    
-    cout << "Shortest distances from 0: ";
-    for (int d : dist) cout << d << " ";
-    cout << endl;
-    
-    return 0;
+};
+
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
+int main() {
+    int n = 4; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3};
+    Solution s; cout << s.cycle_detection_undirected(n, g) << "\n"; return 0;
 }

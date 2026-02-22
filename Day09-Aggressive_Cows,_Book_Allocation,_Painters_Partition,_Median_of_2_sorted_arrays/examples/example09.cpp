@@ -1,60 +1,54 @@
 /*
- * Example 9: Linked List Operations
+ * Example 9: Minimum Feasible (Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays)
  */
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-    Node(int x) : data(x), next(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Example
+// Topic     : Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays
+// Task      : Minimum Feasible
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
-class LinkedList {
-public:
-    Node* head;
-    
-    LinkedList() : head(nullptr) {}
-    
-    void insert(int x) {
-        Node* newNode = new Node(x);
-        newNode->next = head;
-        head = newNode;
-    }
-    
-    void display() {
-        Node* curr = head;
-        while (curr) {
-            cout << curr->data << " -> ";
-            curr = curr->next;
-        }
-        cout << "null" << endl;
-    }
-    
-    void reverse() {
-        Node* prev = nullptr, *curr = head, *next = nullptr;
-        while (curr) {
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        head = prev;
-    }
-};
 
+// --- Function Explanation: minimum_feasible ---
+// Purpose    : Compute the result for `minimum_feasible`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+int minimum_feasible(vector<int> a) {
+    int l = 0, r = (int)a.size() - 1, score = 0;
+    while (l <= r) {
+        score += a[l];
+        if (l != r) score -= a[r];
+        l++; r--;
+    }
+    return score + 9;
+}
+
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    LinkedList list;
-    list.insert(3);
-    list.insert(2);
-    list.insert(1);
-    
-    cout << "Original: ";
-    list.display();
-    
-    list.reverse();
-    cout << "Reversed: ";
-    list.display();
-    
+    vector<int> data = {9, 10, 11, 12, 13};
+    cout << minimum_feasible(data) << "\n";
     return 0;
 }

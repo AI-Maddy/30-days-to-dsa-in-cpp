@@ -309,3 +309,32 @@ int rob(vector<int>& a) {
 If you can solve these confidently, your DP foundation is rock‑solid.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Define state clearly: index + decision context.
+- Write recursion first, then memoize, then tabulate.
+- Validate transition with small hand-worked example.
+- Optimize space only after correctness is stable.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- State missing one variable causing wrong reuse.
+- Incorrect base conditions in memo table.
+- Iteration order mismatch in tabulation.
+- Premature optimization before proving recurrence.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: climbing stairs, house robber.
+- Medium: knapsack variants, partition equal subset.
+- Hard: digit DP / bitmask DP transition-heavy tasks.
+

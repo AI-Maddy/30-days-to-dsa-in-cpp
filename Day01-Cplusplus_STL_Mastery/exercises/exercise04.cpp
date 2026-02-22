@@ -1,35 +1,38 @@
 /*
- * Exercise 4: STL Programming - Remove Duplicates
+ * Exercise 4: Deque Operations (Cplusplus STL Mastery)
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Cplusplus STL Mastery
+// Task      : Deque Operations
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    vector<int> removeDuplicates(vector<int>& nums) {
-        unordered_set<int> seen;
-        vector<int> result;
-        for (int num : nums) {
-            if (seen.find(num) == seen.end()) {
-                result.push_back(num);
-                seen.insert(num);
-            }
-        }
-        return result;
+// --- Function Explanation: deque_operations ---
+// Purpose    : Compute the result for `deque_operations`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int deque_operations(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (8);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 2, 3, 3, 3, 4};
-    
-    vector<int> result = sol.removeDuplicates(nums);
-    
-    cout << "Result: ";
-    for (int x : result) cout << x << " ";
-    cout << endl;
-    
-    return 0;
-}

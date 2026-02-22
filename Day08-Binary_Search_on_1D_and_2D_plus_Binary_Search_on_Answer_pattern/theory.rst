@@ -253,3 +253,32 @@ Used for:
 - All major sliding window problem types  
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- State loop invariant before writing code.
+- Choose inclusive/exclusive boundaries consistently.
+- Write first-true / last-true templates from memory.
+- Explain monotonic predicate in binary-search-on-answer.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Mid overflow in `mid = (l + r)/2` with large bounds.
+- Infinite loop from wrong boundary updates.
+- Returning `mid` directly without post-processing.
+- Applying BS on non-monotonic condition.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: lower_bound / upper_bound exercises.
+- Medium: rotated array search and first/last occurrence.
+- Hard: allocate pages, aggressive cows, minimize maximum patterns.
+

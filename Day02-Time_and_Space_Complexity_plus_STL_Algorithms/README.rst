@@ -400,3 +400,32 @@ Today you mastered:
 This is one of the most important days in the entire 30‑day plan.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Choose container by operation profile, not habit.
+- Know iterator invalidation rules for vector/deque/list.
+- Use algorithms (`sort`, `lower_bound`, `accumulate`) idiomatically.
+- Prefer `emplace` when constructing in-place.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Unexpected map insertion via `operator[]`.
+- Using `erase` incorrectly while iterating.
+- Copying heavy containers instead of references.
+- Forgetting `reserve` for known vector sizes.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: vector + set basics.
+- Medium: custom comparator with sort/priority_queue.
+- Hard: combine STL containers in multi-step interview problems.
+

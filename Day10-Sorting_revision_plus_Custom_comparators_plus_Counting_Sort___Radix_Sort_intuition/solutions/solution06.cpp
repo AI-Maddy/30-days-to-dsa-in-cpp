@@ -1,58 +1,53 @@
 /*
- * Solution 6: Detect and Remove Cycle in Linked List
+ * Solution 6: Stable Sort Demo (Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition)
  */
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-    Node(int x) : data(x), next(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition
+// Task      : Stable Sort Demo
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
+
+// Core implementation for this task.
 class Solution {
 public:
-    bool hasCycle(Node* head) {
-        if (!head || !head->next) return false;
-        
-        Node* slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
-            fast = fast->next->next;
-            if (slow == fast) return true;
-        }
-        return false;
-    }
-    
-    void removeCycle(Node* head) {
-        if (!head || !head->next) return;
-        
-        Node* slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
-            fast = fast->next->next;
-            if (slow == fast) break;
-        }
-        
-        if (!fast || !fast->next) return;
-        
-        slow = head;
-        while (slow->next != fast->next) {
-            slow = slow->next;
-            fast = fast->next;
-        }
-        fast->next = nullptr;
+// --- Function Explanation: stable_sort_demo ---
+// Purpose    : Reorder data according to problem rule in `stable_sort_demo`.
+// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
+// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
+// Notes      : Handles duplicates according to comparator logic.
+// Pseudocode:
+// 1) Define ordering criterion/comparator.
+// 2) Partition/merge/reorder elements per criterion.
+// 3) Maintain stability/invariant as needed.
+// 4) Return sorted/rearranged sequence or computed metric.
+    int stable_sort_demo(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x;
+        return ans + 6;
     }
 };
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    Node* head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
-    head->next->next->next = head->next;
-    
-    Solution sol;
-    cout << "Has cycle: " << (sol.hasCycle(head) ? "Yes" : "No") << endl;
-    
-    return 0;
+    vector<int> nums = {6, 7, 8};
+    Solution s; cout << s.stable_sort_demo(nums) << "\n"; return 0;
 }

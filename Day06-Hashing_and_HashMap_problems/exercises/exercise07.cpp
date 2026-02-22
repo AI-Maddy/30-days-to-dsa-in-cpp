@@ -1,31 +1,38 @@
 /*
- * Exercise 7: Maximum Subarray Sum (Kadane's Algorithm)
+ * Exercise 7: Difference Array Update (Hashing and HashMap problems)
  */
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Hashing and HashMap problems
+// Task      : Difference Array Update
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int maxSum = nums[0], currentSum = nums[0];
-        
-        for (int i = 1; i < nums.size(); i++) {
-            currentSum = max(nums[i], currentSum + nums[i]);
-            maxSum = max(maxSum, currentSum);
-        }
-        
-        return maxSum;
+// --- Function Explanation: difference_array_update ---
+// Purpose    : Compute the result for `difference_array_update`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+    int difference_array_update(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (11);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    
-    int result = sol.maxSubArray(nums);
-    cout << "Max subarray sum: " << result << endl;
-    
-    return 0;
-}

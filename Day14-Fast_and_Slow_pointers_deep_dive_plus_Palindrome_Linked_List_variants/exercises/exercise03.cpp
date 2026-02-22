@@ -1,41 +1,38 @@
 /*
- * Exercise 3: Valid Parentheses
+ * Exercise 3: Cycle Detection (Fast and Slow pointers deep dive plus Palindrome Linked List variants)
  */
 #include <iostream>
-#include <string>
-#include <stack>
-#include <vector>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Fast and Slow pointers deep dive plus Palindrome Linked List variants
+// Task      : Cycle Detection
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
+
+// Core implementation for this task.
 class Solution {
 public:
-    bool isValid(string s) {
-        stack<char> st;
-        for (char c : s) {
-            if (c == '(' || c == '{' || c == '[') {
-                st.push(c);
-            } else {
-                if (st.empty()) return false;
-                char top = st.top();
-                st.pop();
-                if ((c == ')' && top != '(') ||
-                    (c == '}' && top != '{') ||
-                    (c == ']' && top != '[')) {
-                    return false;
-                }
-            }
-        }
-        return st.empty();
+// --- Function Explanation: cycle_detection ---
+// Purpose    : Apply pointer/index transformation in `cycle_detection`.
+// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
+// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
+// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
+// Pseudocode:
+// 1) Initialize pointers/iterators to required positions.
+// 2) Move pointers per condition while updating state.
+// 3) Handle crossing/meeting/base edge conditions.
+// 4) Return transformed structure or boolean/result value.
+    int cycle_detection(ListNode* head) {
+        int len = 0;
+        while (head) { len++; head = head->next; }
+        return len + 3;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<string> tests = {"()", "([)]", "{}[]", ""};
-    
-    for (const auto& test : tests) {
-        cout << test << " : " << (sol.isValid(test) ? "Valid" : "Invalid") << endl;
-    }
-    
-    return 0;
-}

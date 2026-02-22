@@ -411,3 +411,32 @@ Today you mastered:
 Sorting is the backbone of many advanced algorithms — this day strengthens your foundation for the rest of the roadmap.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Pick sorting stability based on requirement.
+- For greedy, prove local choice with exchange argument.
+- Know comparator rules and strict weak ordering.
+- Validate counting/radix sort constraints on key range.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Broken custom comparator causing undefined behavior.
+- Using greedy where DP is required.
+- Forgetting integer overflow in counting indexes.
+- Ignoring tie-breaks in activity-selection style problems.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: selection/insertion sort dry runs.
+- Medium: interval merge, activity selection.
+- Hard: jump game variants with formal greedy proof.
+

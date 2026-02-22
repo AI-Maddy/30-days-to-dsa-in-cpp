@@ -486,3 +486,32 @@ Today you mastered:
 Hashing is one of the most important tools in DSA — you will use it in arrays, strings, DP, graphs, and more.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Map frequency-count and prefix-hash patterns to common problems.
+- Explain when unordered_map may degrade and how to mitigate.
+- Distinguish set vs map usage in dedup problems.
+- Use hashing to convert O(n^2) pair checks to O(n).
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Forgetting to seed/update prefix count before loop.
+- Assuming insertion order in unordered containers.
+- Ignoring collision worst-case discussion in interviews.
+- Overusing map where vector frequency table is enough.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: two sum, valid anagram.
+- Medium: longest consecutive sequence.
+- Hard: subarray count with target constraints and negatives.
+

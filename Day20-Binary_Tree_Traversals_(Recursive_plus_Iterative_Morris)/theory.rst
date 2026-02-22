@@ -268,3 +268,32 @@ Inorder = visit on second encounter
 - Traversal applications  
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Differentiate preorder/inorder/postorder use-cases.
+- Use level-order when distance/width is asked.
+- In BST, exploit ordering before brute force.
+- Reconstruct tree only when traversal pair is sufficient.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Not checking null before child access.
+- Confusing node-level and subtree-level recursion state.
+- Using global vars where return struct/pair is cleaner.
+- Forgetting base cases in serialization/deserialization.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: depth, traversals.
+- Medium: LCA, zigzag, boundary traversal.
+- Hard: serialize/deserialize, construct from traversals, Morris tweaks.
+

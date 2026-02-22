@@ -379,3 +379,32 @@ These techniques appear everywhere — arrays, matrices, hashing, DP, graphs, an
 You now have one of the strongest tools in your DSA toolkit.
 
 ---
+
+.. quality-upgrade-2026-02-20
+
+Quality Upgrade: Active Recall + Practice
+-----------------------------------------
+
+Quick Revision Checklist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Differentiate when to use two pointers vs sliding window.
+- Re-derive prefix sum query formula in O(1).
+- Explain difference array update and final reconstruction.
+- List edge cases: empty input, single element, all duplicates.
+
+Common Mistakes to Avoid
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Off-by-one in subarray boundaries.
+- Mutating array while iterating without index discipline.
+- Using O(n^2) when prefix/hash can reduce to O(n).
+- Ignoring overflow when summing large ranges.
+
+Practice Ladder (Progressive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Easy: move zeroes, remove duplicates.
+- Medium: longest subarray with given sum/k constraints.
+- Hard: 2D prefix sum + range update mix.
+

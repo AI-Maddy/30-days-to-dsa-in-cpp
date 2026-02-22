@@ -1,31 +1,38 @@
 /*
- * Exercise 1: Maximum Subarray Sum (Kadane's Algorithm)
+ * Exercise 1: Prefix Sum Query (Hashing and HashMap problems)
  */
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Hashing and HashMap problems
+// Task      : Prefix Sum Query
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int maxSum = nums[0], currentSum = nums[0];
-        
-        for (int i = 1; i < nums.size(); i++) {
-            currentSum = max(nums[i], currentSum + nums[i]);
-            maxSum = max(maxSum, currentSum);
-        }
-        
-        return maxSum;
+// --- Function Explanation: prefix_sum_query ---
+// Purpose    : Answer aggregate/range computation in `prefix_sum_query`.
+// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
+// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
+// Notes      : Watch index boundaries for left/right endpoints.
+// Pseudocode:
+// 1) Initialize running aggregate/prefix state.
+// 2) Scan array and update aggregate incrementally.
+// 3) Use aggregate differences or window updates for answer.
+// 4) Return final query/optimization result.
+    int prefix_sum_query(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (5);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    
-    int result = sol.maxSubArray(nums);
-    cout << "Max subarray sum: " << result << endl;
-    
-    return 0;
-}

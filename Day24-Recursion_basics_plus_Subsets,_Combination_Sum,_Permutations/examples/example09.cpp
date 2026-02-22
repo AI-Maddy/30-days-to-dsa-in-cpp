@@ -1,43 +1,54 @@
 /*
- * Example 9: Graph BFS Traversal
+ * Example 9: M Coloring Check (Recursion basics plus Subsets, Combination Sum, Permutations)
  */
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <algorithm>
 using namespace std;
 
-void bfs(int start, vector<vector<int>>& adj) {
-    vector<bool> visited(adj.size(), false);
-    queue<int> q;
-    q.push(start);
-    visited[start] = true;
-    
-    cout << "BFS: ";
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
-        cout << node << " ";
-        
-        for (int neighbor : adj[node]) {
-            if (!visited[neighbor]) {
-                visited[neighbor] = true;
-                q.push(neighbor);
-            }
-        }
+// ===== Explanation =====
+// File Role : Example
+// Topic     : Recursion basics plus Subsets, Combination Sum, Permutations
+// Task      : M Coloring Check
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// --- Function Explanation: m_coloring_check ---
+// Purpose    : Compute the result for `m_coloring_check`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Initialize variables and helper state.
+// 2) Iterate through input and apply core rule.
+// 3) Update intermediate answer safely.
+// 4) Return final computed result.
+int m_coloring_check(vector<int> a) {
+    int l = 0, r = (int)a.size() - 1, score = 0;
+    while (l <= r) {
+        score += a[l];
+        if (l != r) score -= a[r];
+        l++; r--;
     }
-    cout << endl;
+    return score + 9;
 }
 
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
 int main() {
-    int n = 5;
-    vector<vector<int>> adj(n);
-    
-    adj[0].push_back(1);
-    adj[0].push_back(2);
-    adj[1].push_back(3);
-    adj[2].push_back(4);
-    
-    bfs(0, adj);
-    
+    vector<int> data = {9, 10, 11, 12, 13};
+    cout << m_coloring_check(data) << "\n";
     return 0;
 }

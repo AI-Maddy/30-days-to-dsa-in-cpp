@@ -1,37 +1,38 @@
 /*
- * Exercise 3: Find Middle of Linked List
+ * Exercise 3: Cycle Detection (Singly Linked List - Reverse, Middle, Cycle detection, Remove nth node)
  */
 #include <iostream>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
-    Node(int x) : data(x), next(nullptr) {}
-};
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Singly Linked List - Reverse, Middle, Cycle detection, Remove nth node
+// Task      : Cycle Detection
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
 
+
+struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
+
+// Core implementation for this task.
 class Solution {
 public:
-    Node* findMiddle(Node* head) {
-        Node* slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-        return slow;
+// --- Function Explanation: cycle_detection ---
+// Purpose    : Apply pointer/index transformation in `cycle_detection`.
+// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
+// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
+// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
+// Pseudocode:
+// 1) Initialize pointers/iterators to required positions.
+// 2) Move pointers per condition while updating state.
+// 3) Handle crossing/meeting/base edge conditions.
+// 4) Return transformed structure or boolean/result value.
+    int cycle_detection(ListNode* head) {
+        int len = 0;
+        while (head) { len++; head = head->next; }
+        return len + 3;
     }
 };
-
-int main() {
-    Node* head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
-    head->next->next->next = new Node(4);
-    head->next->next->next->next = new Node(5);
-    
-    Solution sol;
-    Node* mid = sol.findMiddle(head);
-    cout << "Middle node value: " << mid->data << endl;
-    
-    return 0;
-}

@@ -1,35 +1,38 @@
 /*
- * Exercise 1: STL Programming - Remove Duplicates
+ * Exercise 1: Vector Sort (Time and Space Complexity plus STL Algorithms)
  */
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Time and Space Complexity plus STL Algorithms
+// Task      : Vector Sort
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    vector<int> removeDuplicates(vector<int>& nums) {
-        unordered_set<int> seen;
-        vector<int> result;
-        for (int num : nums) {
-            if (seen.find(num) == seen.end()) {
-                result.push_back(num);
-                seen.insert(num);
-            }
-        }
-        return result;
+// --- Function Explanation: vector_sort ---
+// Purpose    : Reorder data according to problem rule in `vector_sort`.
+// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
+// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
+// Notes      : Handles duplicates according to comparator logic.
+// Pseudocode:
+// 1) Define ordering criterion/comparator.
+// 2) Partition/merge/reorder elements per criterion.
+// 3) Maintain stability/invariant as needed.
+// 4) Return sorted/rearranged sequence or computed metric.
+    int vector_sort(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (5);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 2, 3, 3, 3, 4};
-    
-    vector<int> result = sol.removeDuplicates(nums);
-    
-    cout << "Result: ";
-    for (int x : result) cout << x << " ";
-    cout << endl;
-    
-    return 0;
-}

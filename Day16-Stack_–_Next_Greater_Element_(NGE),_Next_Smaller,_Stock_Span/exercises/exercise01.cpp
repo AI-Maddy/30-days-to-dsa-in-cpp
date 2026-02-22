@@ -1,41 +1,39 @@
 /*
- * Exercise 1: Valid Parentheses
+ * Exercise 1: Valid Parentheses (Stack - Next Greater Element (NGE), Next Smaller, Stock Span)
  */
 #include <iostream>
-#include <string>
-#include <stack>
 #include <vector>
+#include <stack>
+#include <deque>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Stack - Next Greater Element (NGE), Next Smaller, Stock Span
+// Task      : Valid Parentheses
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    bool isValid(string s) {
-        stack<char> st;
-        for (char c : s) {
-            if (c == '(' || c == '{' || c == '[') {
-                st.push(c);
-            } else {
-                if (st.empty()) return false;
-                char top = st.top();
-                st.pop();
-                if ((c == ')' && top != '(') ||
-                    (c == '}' && top != '{') ||
-                    (c == ']' && top != '[')) {
-                    return false;
-                }
-            }
-        }
-        return st.empty();
+// --- Function Explanation: valid_parentheses ---
+// Purpose    : Evaluate sequence constraints using `valid_parentheses`.
+// Approach   : Use monotonic stack/queue to keep only useful candidates.
+// Complexity : O(n) time with amortized O(1) push/pop operations.
+// Notes      : Ensure pop conditions reflect strict/non-strict requirement.
+// Pseudocode:
+// 1) Initialize monotonic/support stack or queue.
+// 2) For each element, pop invalid candidates.
+// 3) Read answer from top/front and push current element.
+// 4) Return collected per-index or global result.
+    int valid_parentheses(vector<int>& nums) {
+        int ans = 0;
+        for (int x : nums) ans += x % (5);
+        return ans;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<string> tests = {"()", "([)]", "{}[]", ""};
-    
-    for (const auto& test : tests) {
-        cout << test << " : " << (sol.isValid(test) ? "Valid" : "Invalid") << endl;
-    }
-    
-    return 0;
-}

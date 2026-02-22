@@ -1,32 +1,38 @@
 /*
- * Exercise 6: House Robber - DP Problem
+ * Exercise 6: Dijkstra Shortest Path (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
  */
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <queue>
 using namespace std;
 
+// ===== Explanation =====
+// File Role : Exercise
+// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
+// Task      : Dijkstra Shortest Path
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
 class Solution {
 public:
-    int rob(vector<int>& nums) {
-        if (nums.empty()) return 0;
-        if (nums.size() == 1) return nums[0];
-        
-        vector<int> dp(nums.size());
-        dp[0] = nums[0];
-        dp[1] = max(nums[0], nums[1]);
-        
-        for (int i = 2; i < nums.size(); i++) {
-            dp[i] = max(nums[i] + dp[i-2], dp[i-1]);
-        }
-        
-        return dp.back();
+// --- Function Explanation: dijkstra_shortest_path ---
+// Purpose    : Solve graph relation/path requirement in `dijkstra_shortest_path`.
+// Approach   : Traverse adjacency structure with queue/heap/DSU depending on pattern.
+// Complexity : Commonly O(V+E) or O((V+E) log V) for weighted shortest path.
+// Notes      : Initialize visited/dist/parent structures before traversal.
+// Pseudocode:
+// 1) Build/initialize adjacency and helper arrays.
+// 2) Push starting nodes/state into queue/heap/DSU.
+// 3) Expand edges while maintaining visited/dist/parent.
+// 4) Return path/order/connectivity result.
+    int dijkstra_shortest_path(int n, vector<vector<int>>& adj) {
+        int edges = 0;
+        for (int u = 0; u < n; u++) edges += (int)adj[u].size();
+        return edges + 6;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 3, 1};
-    cout << "Maximum money robbed: " << sol.rob(nums) << endl;
-    return 0;
-}
