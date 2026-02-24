@@ -1,342 +1,305 @@
----
+Day 1 – C++ STL Mastery
+========================
 
-# **Day 1 – THEORY.rst**  
-## **🚀 C++ STL Mastery – Containers, Iterators, Algorithms, Patterns**
-
----
-
-# **🌟 1. Overview**
+C++ STL Mastery – Containers, Iterators, Algorithms, Patterns
+--------------------------------------------------------------
 
 Day 1 launches your 30‑day DSA journey with one of the most powerful tools in modern C++:
 
-# **🧰 The Standard Template Library (STL)**
+The Standard Template Library (STL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 STL gives you:
 
-- ⚡ Fast, optimized data structures  
-- 🧠 Ready‑made algorithms  
-- 🔄 Iterators for seamless traversal  
-- 🧱 Reusable components  
-- 🚀 Competitive‑programming‑level speed  
+- Fast, optimized data structures
+- Ready‑made algorithms
+- Iterators for seamless traversal
+- Reusable components
+- Competitive‑programming‑level speed
 
 Mastering STL is like unlocking **superpowers** in C++.
 
----
-
-# **📦 2. STL Components (The Holy Trinity)**
+1. STL Components (The Holy Trinity)
+-------------------------------------
 
 STL is built on **three pillars**:
 
----
+Containers (Data Structures)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## **1️⃣ Containers (Data Structures)**  
 Hold data.
 
-Examples:  
-- 🟦 `vector`  
-- 🟩 `deque`  
-- 🟨 `list`  
-- 🟥 `stack`  
-- 🟪 `queue`  
-- 🟧 `priority_queue`  
-- 🟫 `set`, `unordered_set`  
-- 🟩 `map`, `unordered_map`  
+Examples:
 
----
+- ``vector``
+- ``deque``
+- ``list``
+- ``stack``
+- ``queue``
+- ``priority_queue``
+- ``set``, ``unordered_set``
+- ``map``, ``unordered_map``
 
-## **2️⃣ Iterators (Pointers on Steroids)**  
+Iterators (Pointers on Steroids)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Traverse containers.
 
-Types:  
-- ➡ Forward  
-- ↔ Bidirectional  
-- 🔁 Random access  
+Types:
 
----
+- Forward
+- Bidirectional
+- Random access
 
-## **3️⃣ Algorithms (Pre‑built Logic)**  
+Algorithms (Pre‑built Logic)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Perform operations like:
 
-- 🔍 Searching  
-- 🔄 Sorting  
-- 🧹 Removing  
-- 🧮 Counting  
-- 🧩 Transforming  
+- Searching
+- Sorting
+- Removing
+- Counting
+- Transforming
 
-Examples:  
-`sort`, `reverse`, `count`, `accumulate`, `lower_bound`, `upper_bound`, `binary_search`
+Examples:
+``sort``, ``reverse``, ``count``, ``accumulate``, ``lower_bound``, ``upper_bound``, ``binary_search``
 
----
+2. Containers – Deep Dive
+-------------------------
 
-# **🧱 3. Containers – Deep Dive**
+2.1 vector – The Workhorse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
----
+Why it's amazing:
 
-## **🟦 3.1 vector – The Workhorse**
+- Dynamic resizing
+- Random access
+- Cache‑friendly
+- Fast for push_back
 
-### **Why it’s amazing**
-- Dynamic resizing  
-- Random access  
-- Cache‑friendly  
-- Fast for push_back  
+Key operations:
 
-### **Key operations**
-- `push_back()`  
-- `pop_back()`  
-- `size()`  
-- `capacity()`  
-- `reserve()`  
-- `shrink_to_fit()`  
+- ``push_back()``
+- ``pop_back()``
+- ``size()``
+- ``capacity()``
+- ``reserve()``
+- ``shrink_to_fit()``
 
-### **Time complexities**
-- Access: **O(1)**  
-- Insert at end: **Amortized O(1)**  
-- Insert in middle: **O(n)**  
+Time complexities:
 
----
+- Access: **O(1)**
+- Insert at end: **Amortized O(1)**
+- Insert in middle: **O(n)**
 
-## **🟩 3.2 deque – Double‑Ended Vector**
+2.2 deque – Double‑Ended Vector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### **Why it’s useful**
-- Fast push/pop at **both ends**  
-- Used in sliding window problems  
+Why it's useful:
 
-### **Time complexities**
-- push_front: **O(1)**  
-- push_back: **O(1)**  
-- random access: **O(1)**  
+- Fast push/pop at **both ends**
+- Used in sliding window problems
 
----
+Time complexities:
 
-## **🟨 3.3 list – Doubly Linked List**
+- push_front: **O(1)**
+- push_back: **O(1)**
+- random access: **O(1)**
 
-### **Why it’s useful**
-- Fast insert/delete anywhere  
-- Stable iterators  
+2.3 list – Doubly Linked List
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### **Time complexities**
-- Insert/delete: **O(1)**  
-- Access: **O(n)**  
+Why it's useful:
 
----
+- Fast insert/delete anywhere
+- Stable iterators
 
-## **🟥 3.4 stack – LIFO**
+Time complexities:
+
+- Insert/delete: **O(1)**
+- Access: **O(n)**
+
+2.4 stack – LIFO
+~~~~~~~~~~~~~~~~~~
 
 Built on vector/deque/list.
 
-Used in:  
-- Parentheses problems  
-- DFS  
-- Expression evaluation  
+Used in:
 
----
+- Parentheses problems
+- DFS
+- Expression evaluation
 
-## **🟪 3.5 queue – FIFO**
+2.5 queue – FIFO
+~~~~~~~~~~~~~~~~~~
 
-Used in:  
-- BFS  
-- Level order traversal  
-- Scheduling  
+Used in:
 
----
+- BFS
+- Level order traversal
+- Scheduling
 
-## **🟧 3.6 priority_queue – Max Heap**
+2.6 priority_queue – Max Heap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### **Why it’s powerful**
-- Always gives largest element  
-- Used in Dijkstra, heaps, scheduling  
+Why it's powerful:
 
-### **Min‑heap trick**
-```
-priority_queue<int, vector<int>, greater<int>> pq;
-```
+- Always gives largest element
+- Used in Dijkstra, heaps, scheduling
 
----
+Min‑heap trick::
 
-## **🟫 3.7 set / unordered_set**
+    priority_queue<int, vector<int>, greater<int>> pq;
 
-### **set**
-- Balanced BST  
-- Sorted  
-- O(log n) operations  
+2.7 set / unordered_set
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-### **unordered_set**
-- Hash table  
-- O(1) average  
-- Not sorted  
+set:
 
----
+- Balanced BST
+- Sorted
+- O(log n) operations
 
-## **🟩 3.8 map / unordered_map**
+unordered_set:
 
-### **map**
-- Sorted keys  
-- O(log n)  
+- Hash table
+- O(1) average
+- Not sorted
 
-### **unordered_map**
-- Hash table  
-- O(1) average  
-- Most used in coding interviews  
+2.8 map / unordered_map
+~~~~~~~~~~~~~~~~~~~~~~~~
 
----
+map:
 
-# **🧭 4. Iterators – The Glue of STL**
+- Sorted keys
+- O(log n)
+
+unordered_map:
+
+- Hash table
+- O(1) average
+- Most used in coding interviews
+
+3. Iterators – The Glue of STL
+--------------------------------
 
 Iterators behave like pointers.
 
-### **Types**
-- `begin()`  
-- `end()`  
-- `rbegin()`  
-- `rend()`  
-- `cbegin()`  
-- `cend()`  
+Types:
 
-### **Common patterns**
-```
-for (auto it = v.begin(); it != v.end(); it++)
-```
+- ``begin()``
+- ``end()``
+- ``rbegin()``
+- ``rend()``
+- ``cbegin()``
+- ``cend()``
 
----
+Common patterns::
 
-# **⚙️ 5. STL Algorithms – The Real Power**
+    for (auto it = v.begin(); it != v.end(); it++)
 
----
+4. STL Algorithms – The Real Power
+-------------------------------------
 
-## **🟦 5.1 Sorting**
+4.1 Sorting
+~~~~~~~~~~~~
 
-```
-sort(v.begin(), v.end());
-```
+::
 
-### **Custom comparator**
-```
-sort(v.begin(), v.end(), [](int a, int b){
-    return a > b;
-});
-```
+    sort(v.begin(), v.end());
 
----
+Custom comparator::
 
-## **🟩 5.2 Searching**
+    sort(v.begin(), v.end(), [](int a, int b){
+        return a > b;
+    });
 
-### **Binary search**
-```
-binary_search(v.begin(), v.end(), x);
-```
+4.2 Searching
+~~~~~~~~~~~~~~
 
-### **lower_bound**
-First element >= x
+Binary search::
 
-### **upper_bound**
-First element > x
+    binary_search(v.begin(), v.end(), x);
 
----
+lower_bound: First element >= x
 
-## **🟨 5.3 Useful algorithms**
+upper_bound: First element > x
 
-- `reverse()`  
-- `max_element()`  
-- `min_element()`  
-- `accumulate()`  
-- `count()`  
-- `unique()`  
-- `erase()`  
+4.3 Useful Algorithms
+~~~~~~~~~~~~~~~~~~~~~~
 
----
+- ``reverse()``
+- ``max_element()``
+- ``min_element()``
+- ``accumulate()``
+- ``count()``
+- ``unique()``
+- ``erase()``
 
-# **🧠 6. STL Patterns You Must Memorize**
+5. STL Patterns You Must Memorize
+----------------------------------
 
----
+Pattern 1 — Frequency Map
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## **Pattern 1 — Frequency Map**
-```
-unordered_map<int,int> mp;
-for (int x : a) mp[x]++;
-```
+::
 
----
+    unordered_map<int,int> mp;
+    for (int x : a) mp[x]++;
 
-## **Pattern 2 — Sorting Pairs**
-```
-vector<pair<int,int>> v;
-sort(v.begin(), v.end());
-```
+Pattern 2 — Sorting Pairs
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
----
+::
 
-## **Pattern 3 — Using priority_queue for k largest**
-```
-priority_queue<int> pq;
-```
+    vector<pair<int,int>> v;
+    sort(v.begin(), v.end());
 
----
+Pattern 3 — Using priority_queue for k largest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## **Pattern 4 — Using set for unique sorted values**
-```
-set<int> s(a.begin(), a.end());
-```
+::
 
----
+    priority_queue<int> pq;
 
-## **Pattern 5 — Two‑pointer with vector**
-```
-int i = 0, j = n-1;
-while (i < j) { ... }
-```
+Pattern 4 — Using set for unique sorted values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
----
+::
 
-# **📘 7. Time & Space Complexity of STL Containers**
+    set<int> s(a.begin(), a.end());
 
-| Container | Access | Insert | Delete | Search |
-|----------|--------|--------|--------|--------|
-| vector | O(1) | O(n) | O(n) | O(n) |
-| deque | O(1) | O(1) | O(1) | O(n) |
-| list | O(n) | O(1) | O(1) | O(n) |
-| set | O(log n) | O(log n) | O(log n) | O(log n) |
-| unordered_set | O(1) avg | O(1) avg | O(1) avg | O(1) avg |
-| map | O(log n) | O(log n) | O(log n) | O(log n) |
-| unordered_map | O(1) avg | O(1) avg | O(1) avg | O(1) avg |
+Pattern 5 — Two‑pointer with vector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
----
+::
 
-# **🎯 8. Interview‑Level Insights**
+    int i = 0, j = n-1;
+    while (i < j) { ... }
 
-- STL is optimized in C++ and faster than custom implementations  
-- Prefer `unordered_map` over `map` unless ordering matters  
-- Prefer `vector` over `list` unless frequent middle insertions  
-- Use `priority_queue` for top‑k problems  
-- Use `set` for sorted unique values  
-- Use `lower_bound` for binary search patterns  
+6. Time & Space Complexity of STL Containers
+---------------------------------------------
 
----
+=============  ========  ========  ========  ========
+Container      Access    Insert    Delete    Search
+=============  ========  ========  ========  ========
+vector         O(1)      O(n)      O(n)      O(n)
+deque          O(1)      O(1)      O(1)      O(n)
+list           O(n)      O(1)      O(1)      O(n)
+set            O(log n)  O(log n)  O(log n)  O(log n)
+unordered_set  O(1) avg  O(1) avg  O(1) avg  O(1) avg
+map            O(log n)  O(log n)  O(log n)  O(log n)
+unordered_map  O(1) avg  O(1) avg  O(1) avg  O(1) avg
+=============  ========  ========  ========  ========
 
-.. quality-upgrade-2026-02-20
+7. Interview‑Level Insights
+---------------------------
 
-Quality Upgrade: Active Recall + Practice
------------------------------------------
-
-Quick Revision Checklist
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Choose container by operation profile, not habit.
-- Know iterator invalidation rules for vector/deque/list.
-- Use algorithms (`sort`, `lower_bound`, `accumulate`) idiomatically.
-- Prefer `emplace` when constructing in-place.
-
-Common Mistakes to Avoid
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Unexpected map insertion via `operator[]`.
-- Using `erase` incorrectly while iterating.
-- Copying heavy containers instead of references.
-- Forgetting `reserve` for known vector sizes.
-
-Practice Ladder (Progressive)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Easy: vector + set basics.
-- Medium: custom comparator with sort/priority_queue.
-- Hard: combine STL containers in multi-step interview problems.
+- STL is optimized in C++ and faster than custom implementations
+- Prefer ``unordered_map`` over ``map`` unless ordering matters
+- Prefer ``vector`` over ``list`` unless frequent middle insertions
+- Use ``priority_queue`` for top‑k problems
+- Use ``set`` for sorted unique values
+- Use ``lower_bound`` for binary search patterns
 
