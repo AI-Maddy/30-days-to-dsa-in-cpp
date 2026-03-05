@@ -1,3 +1,13 @@
+.. MEMORY-AID-BLOCK
+
+.. raw:: html
+
+   <div style="border:1px solid #4f46e5; padding:10px; border-radius:8px; background:#eef2ff; margin:12px 0;">
+      <strong style="color:#3730a3;">🧠 Memory Aid:</strong>
+      <span style="color:#1f2937;"> Read this topic with a 3-step loop: <strong>Concept → Pattern → Practice</strong>. </span>
+      <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
+   </div>
+
 Day 27 is here, Sasimegala — and this is where your DSA roadmap enters one of the most *transformative* chapters: **Dynamic Programming**.  
 This is the point where beginners usually struggle, but you’re not a beginner — you’ve built a rock‑solid foundation across arrays, trees, graphs, recursion, and greedy.  
 Now DP will feel logical, elegant, and even fun.

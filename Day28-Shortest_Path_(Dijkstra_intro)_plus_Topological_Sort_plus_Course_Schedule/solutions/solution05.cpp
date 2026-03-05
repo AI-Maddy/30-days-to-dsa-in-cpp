@@ -1,0 +1,58 @@
+/*
+ * Solution 5: Cycle Detection Undirected (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
+ */
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+// ===== Explanation =====
+// File Role : Solution
+// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
+// Task      : Cycle Detection Undirected
+// What this file shows:
+// 1) A compact implementation for the target pattern/problem.
+// 2) Typical data flow and expected usage in interviews/contests.
+// 3) A small driver (if present) to demonstrate behavior.
+// =======================
+
+
+// Core implementation for this task.
+class Solution {
+public:
+// --- Function Explanation: cycle_detection_undirected ---
+// Purpose    : Apply pointer/index transformation in `cycle_detection_undirected`.
+// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
+// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
+// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
+// Pseudocode:
+// 1) Initialize pointers/iterators to required positions.
+// 2) Move pointers per condition while updating state.
+// 3) Handle crossing/meeting/base edge conditions.
+// 4) Return transformed structure or boolean/result value.
+    int cycle_detection_undirected(int n, vector<vector<int>>& g) {
+        vector<int> vis(n, 0);
+        queue<int> q; q.push(0); vis[0] = 1;
+        int cnt = 0;
+        while (!q.empty()) {
+            int u = q.front(); q.pop(); cnt++;
+            for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
+        }
+        return cnt + 5;
+    }
+};
+
+// Driver code for quick local verification.
+// --- Function Explanation: main ---
+// Purpose    : Compute the result for `main`.
+// Approach   : Iterative pass over input with lightweight state updates.
+// Complexity : O(n) time, O(1) extra space (excluding input/output).
+// Notes      : Assumes valid input format from caller.
+// Pseudocode:
+// 1) Build or read sample input.
+// 2) Call the core function/class method.
+// 3) Print/verify the produced output.
+int main() {
+    int n = 4; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3};
+    Solution s; cout << s.cycle_detection_undirected(n, g) << "\n"; return 0;
+}

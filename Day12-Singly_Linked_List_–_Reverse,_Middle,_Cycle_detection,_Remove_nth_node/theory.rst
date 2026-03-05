@@ -1,3 +1,13 @@
+.. MEMORY-AID-BLOCK
+
+.. raw:: html
+
+   <div style="border:1px solid #4f46e5; padding:10px; border-radius:8px; background:#eef2ff; margin:12px 0;">
+      <strong style="color:#3730a3;">🧠 Memory Aid:</strong>
+      <span style="color:#1f2937;"> Read this topic with a 3-step loop: <strong>Concept → Pattern → Practice</strong>. </span>
+      <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
+   </div>
+
 Absolutely, Sasimegala — here comes your **Day 12** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
 
 Since Day 11 covered **Advanced Binary Search**, the natural next step in your 30‑day DSA roadmap is:

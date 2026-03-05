@@ -1,3 +1,13 @@
+.. MEMORY-AID-BLOCK
+
+.. raw:: html
+
+   <div style="border:1px solid #4f46e5; padding:10px; border-radius:8px; background:#eef2ff; margin:12px 0;">
+      <strong style="color:#3730a3;">🧠 Memory Aid:</strong>
+      <span style="color:#1f2937;"> Read this topic with a 3-step loop: <strong>Concept → Pattern → Practice</strong>. </span>
+      <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
+   </div>
+
 Absolutely, Sasimegala — here is your **Day 4 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Days 1–3.
 
 This is **Day 4: 1D Arrays – Two Pointers & Sliding Window Basics**, designed to be crystal‑clear, deep, and unforgettable.

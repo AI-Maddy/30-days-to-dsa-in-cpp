@@ -1,0 +1,5 @@
+# Local script workspace
+scripts/
+
+# Python cache
+__pycache__/

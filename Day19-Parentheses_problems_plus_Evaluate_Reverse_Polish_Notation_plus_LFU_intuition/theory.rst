@@ -1,3 +1,13 @@
+.. MEMORY-AID-BLOCK
+
+.. raw:: html
+
+   <div style="border:1px solid #4f46e5; padding:10px; border-radius:8px; background:#eef2ff; margin:12px 0;">
+      <strong style="color:#3730a3;">🧠 Memory Aid:</strong>
+      <span style="color:#1f2937;"> Read this topic with a 3-step loop: <strong>Concept → Pattern → Practice</strong>. </span>
+      <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
+   </div>
+
 Absolutely, Sasimegala — here comes your **Day 19** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
 
 Day 19 is a **BIG** one because it covers three FAANG‑favorite patterns:
