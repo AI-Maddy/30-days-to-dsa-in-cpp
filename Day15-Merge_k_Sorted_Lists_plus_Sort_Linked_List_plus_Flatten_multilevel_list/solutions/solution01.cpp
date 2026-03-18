@@ -1,53 +1,21 @@
 /*
- * Solution 1: Reverse List (Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list)
+ * Solution 1: Merge K Sorted Lists
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list
-// Task      : Reverse List
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: reverse_list ---
-// Purpose    : Compute optimal substructure value using `reverse_list`.
-// Approach   : Build DP state transitions from smaller subproblems.
-// Complexity : Usually O(states × transitions), space O(states) unless compressed.
-// Notes      : State definition and transition order are the key correctness points.
-// Pseudocode:
-// 1) Define DP state and base conditions.
-// 2) Iterate states in dependency-safe order.
-// 3) Apply transition recurrence to update best value.
-// 4) Return target state result.
-    int reverse_list(ListNode* head) {
-        int len = 0;
-        while (head) { len++; head = head->next; }
-        return len + 1;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2);
-    Solution s; cout << s.reverse_list(a) << "\n"; return 0;
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+ListNode* mergeK(vector<ListNode*>&lists){
+    auto cmp=[](ListNode*a,ListNode*b){return a->val>b->val;};
+    priority_queue<ListNode*,vector<ListNode*>,decltype(cmp)> pq(cmp);
+    for(auto l:lists) if(l) pq.push(l);
+    ListNode d(0);ListNode*c=&d;
+    while(!pq.empty()){c->next=pq.top();pq.pop();c=c->next;if(c->next)pq.push(c->next);}
+    return d.next;
+}
+int main(){
+    vector<ListNode*> lists={build({1,4,5}),build({1,3,4}),build({2,6})};
+    print(mergeK(lists)); // 1->1->2->3->4->4->5->6
+    return 0;
 }

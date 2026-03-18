@@ -1,53 +1,17 @@
 /*
- * Solution 4: Merge Two Lists (Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list)
+ * Solution 4: Add Two Numbers LL
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list
-// Task      : Merge Two Lists
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: merge_two_lists ---
-// Purpose    : Reorder data according to problem rule in `merge_two_lists`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-    int merge_two_lists(ListNode* head) {
-        int len = 0;
-        while (head) { len++; head = head->next; }
-        return len + 4;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2);
-    Solution s; cout << s.merge_two_lists(a) << "\n"; return 0;
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+ListNode* addTwoNumbers(ListNode*l1,ListNode*l2){
+    ListNode d(0);ListNode*c=&d;int carry=0;
+    while(l1||l2||carry){int s=carry;if(l1){s+=l1->val;l1=l1->next;}if(l2){s+=l2->val;l2=l2->next;}carry=s/10;c->next=new ListNode(s%10);c=c->next;}
+    return d.next;
+}
+int main(){
+    print(addTwoNumbers(build({2,4,3}),build({5,6,4}))); // 7->0->8 (342+465=807)
+    return 0;
 }

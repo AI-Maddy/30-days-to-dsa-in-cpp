@@ -1,0 +1,6 @@
+{
+  "slug": "stacks-queues",
+  "title": "Stacks Queues",
+  "icon": "📚",
+  "content": "# 📚 Stacks & Queues Cheatsheet\n       \n        **🧠 Memory Aid:** Monotonic stack: pop when invariant breaks, then push. Store indices, not just values.  Deque for sliding window max: pop front (out of window), pop back (smaller than current). \n       \n      \n## 🛠️ STL Operations\n       `stack  st;\nst.push(x); st.pop(); st.top(); st.empty(); st.size();\nqueue  q;\nq.push(x); q.pop(); q.front(); q.back(); q.empty();`"
+}

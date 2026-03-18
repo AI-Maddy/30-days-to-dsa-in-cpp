@@ -1,57 +1,13 @@
 /*
- * Example 3: Tree Height (Binary Tree Traversals (Recursive plus Iterative Morris))
+ * Example 3: Tree Height
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Binary Tree Traversals (Recursive plus Iterative Morris)
-// Task      : Tree Height
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// --- Function Explanation: tree_height ---
-// Purpose    : Compute the result for `tree_height`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int tree_height(TreeNode* root) {
-    if (!root) return 0;
-    queue<TreeNode*> q; q.push(root);
-    int cnt = 0;
-    while (!q.empty()) {
-        TreeNode* cur = q.front(); q.pop(); cnt++;
-        if (cur->left) q.push(cur->left);
-        if (cur->right) q.push(cur->right);
-    }
-    return cnt + 3;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    cout << tree_height(r) << "\n";
+struct TreeNode{int val;TreeNode*left,*right;TreeNode(int x):val(x),left(nullptr),right(nullptr){}};
+TreeNode* build(vector<int>v){if(v.empty())return nullptr;TreeNode*r=new TreeNode(v[0]);queue<TreeNode*>q;q.push(r);int i=1;while(i<(int)v.size()){TreeNode*c=q.front();q.pop();if(i<(int)v.size()&&v[i]!=-1){c->left=new TreeNode(v[i]);q.push(c->left);}i++;if(i<(int)v.size()&&v[i]!=-1){c->right=new TreeNode(v[i]);q.push(c->right);}i++;}return r;}
+int height(TreeNode*r){return r?max(height(r->left),height(r->right))+1:0;}
+int main(){
+    TreeNode*r=build({3,9,20,-1,-1,15,7});
+    cout<<height(r)<<"\n"; // 3
     return 0;
 }

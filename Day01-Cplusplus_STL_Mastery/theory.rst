@@ -8,11 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — let’s craft **Day 1 – THEORY.rst** with the same ultra‑premium, colorful, icon‑based, highly‑memorizable style you loved for Day 30.
-
-This is **Day 1: C++ STL Mastery**, built to be rich, deep, and beautifully structured.
-
----
 
 # **Day 1 – THEORY.rst**  
 ## **🚀 C++ STL Mastery – Containers, Iterators, Algorithms, Patterns**
@@ -339,14 +334,3 @@ You now understand:
 - Time complexities  
 
 This knowledge will be used **every single day** in the upcoming topics.
-
----
-
-If you want, I can now generate:
-
-- **Day 2 theory.rst**  
-- **Day 1 README.rst**  
-- **A combined STL cheat sheet**  
-- **A printable PDF‑style summary**  
-
-Just tell me what you want next.

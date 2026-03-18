@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="30 Days to DSA in C++ — Premium Edition"><title>Day 17 · Monotonic Stack Queue Largest Rectangle Histogram · DSA in C++</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.EuORl1j-.css"></head> <body class="min-h-screen bg-[#0d1117] text-slate-100 antialiased"> <!-- Nav --> <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0d1117]/90 backdrop-blur-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14"> <a href="/" class="flex items-center gap-2 font-bold text-slate-100 hover:text-white transition-colors"> <span class="text-xl">⚡</span> <span class="hidden sm:inline text-sm">30 Days DSA C++</span> </a> <div class="flex items-center gap-1"> <a href="/" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">Home</a> <a href="/cheatsheets" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">📄 Cheatsheets</a> </div> </div> </nav> <!-- Main --> <main>  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10"> <!-- Breadcrumb --> <div class="flex items-center gap-2 text-xs text-slate-500 mb-6"> <a href="/" class="hover:text-slate-300 transition-colors">Home</a> <span>›</span> <span class="text-orange-400 font-medium">🟠 Stacks &amp; Queues</span> </div> <!-- Header --> <div class="rounded-2xl border border-orange-500/40 bg-orange-950/40 p-6 mb-8"> <div class="flex items-start gap-4"> <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black bg-orange-500/20 text-orange-300"> 17 </div> <div> <div class="text-xs font-bold uppercase tracking-widest mb-1 text-orange-400">Day 17 · Stacks &amp; Queues</div> <h1 class="text-2xl font-extrabold text-white leading-tight">Monotonic Stack Queue Largest Rectangle Histogram</h1> <div class="flex gap-3 mt-3 text-xs text-slate-400"> <span>📖 README</span> <span>🧠 Theory</span> <span>💻 5 Examples</span> <span>✏️ 5 Exercises</span> <span>✅ 5 Solutions</span> </div> </div> </div> </div> <!-- Tabs --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="1R3HIb" prefix="r1" component-url="/_astro/DayTabs.B_BF-cJm.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;readme&quot;:[0,&quot;Day 17 coming right up, ---\n\n# **Day 17 \\u2014 Monotonic Stack/Queue Patterns + Largest Rectangle in Histogram (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nMonotonic stacks and queues are among the most elegant and powerful tools in algorithm design.  \nThey allow you to solve problems that seem impossible with brute force:\n\n- Largest Rectangle in Histogram  \n- Sliding Window Maximum  \n- Next Greater/Smaller Element (advanced variants)  \n- Trapping Rain Water  \n- Sum of Subarray Minimums  \n- Sum of Subarray Maximums  \n- Removing K digits  \n- Asteroid collision  \n- Daily temperatures  \n\nToday\\u2019s goal is to master:\n\n- Monotonic stack patterns  \n- Monotonic queue patterns  \n- Largest Rectangle in Histogram (O(n))  \n- Sliding Window Maximum (O(n))  \n- Advanced NSE/NGE usage  \n- Real interview problems  \n\nThis day is a major milestone \\u2014 these patterns appear in DP, greedy, arrays, and even graph problems.\n\n---\n\n# **2. Monotonic Stack \\u2014 Deep Dive**\n\nA monotonic stack maintains elements in sorted order:\n\n- **Increasing stack** \\u2192 top is smallest  \n- **Decreasing stack** \\u2192 top is largest  \n\nUsed for:\n\n- Next smaller element  \n- Next greater element  \n- Histogram area  \n- Subarray min/max contributions  \n\n---\n\n## **2.1 Increasing Stack**\n\nTop is smallest.\n\nUsed for:\n\n- Next smaller element  \n- Histogram area  \n- Sum of subarray minimums  \n\n---\n\n## **2.2 Decreasing Stack**\n\nTop is largest.\n\nUsed for:\n\n- Next greater element  \n- Sliding window maximum  \n- Daily temperatures  \n\n---\n\n# **3. Largest Rectangle in Histogram (O(n))**\n\nThis is one of the most important stack problems in all of DSA.\n\n---\n\n## **3.1 Problem Statement**\n\nGiven heights of bars in a histogram, find the largest rectangular area.\n\nExample:\n\n```\n[2, 1, 5, 6, 2, 3]\n```\n\nAnswer: **10** (bars 5 and 6)\n\n---\n\n## **3.2 Brute Force \\u2014 O(n\\u00b2)**  \nSkip.\n\n---\n\n## **3.3 Optimal \\u2014 Monotonic Increasing Stack (O(n))**\n\n### **Intuition**\n\nFor each bar, find:\n\n- First smaller element to the left  \n- First smaller element to the right  \n\nThese define the width where the bar is the minimum height.\n\n### **Implementation**\n\n```cpp\nint largestRectangleArea(vector&lt;int&gt;&amp; h) {\n    int n = h.size();\n    stack&lt;int&gt; st;\n    int maxA = 0;\n\n    for (int i = 0; i &lt;= n; i++) {\n        int curr = (i == n ? 0 : h[i]);\n\n        while (!st.empty() &amp;&amp; curr &lt; h[st.top()]) {\n            int height = h[st.top()];\n            st.pop();\n\n            int right = i;\n            int left = st.empty() ? -1 : st.top();\n\n            int width = right - left - 1;\n            maxA = max(maxA, height * width);\n        }\n        st.push(i);\n    }\n    return maxA;\n}\n```\n\nTime: **O(n)**  \nSpace: **O(n)**\n\n---\n\n# **4. Trapping Rain Water (Monotonic Stack Variant)**\n\n### **Logic**\n\n- Use stack to find boundaries  \n- Water trapped = min(left, right) \\u2212 height  \n\n### **Implementation**\n\n```cpp\nint trap(vector&lt;int&gt;&amp; h) {\n    int n = h.size();\n    stack&lt;int&gt; st;\n    int ans = 0;\n\n    for (int i = 0; i &lt; n; i++) {\n        while (!st.empty() &amp;&amp; h[i] &gt; h[st.top()]) {\n            int mid = st.top();\n            st.pop();\n            if (st.empty()) break;\n\n            int left = st.top();\n            int height = min(h[left], h[i]) - h[mid];\n            int width = i - left - 1;\n\n            ans += height * width;\n        }\n        st.push(i);\n    }\n    return ans;\n}\n```\n\n---\n\n# **5. Sum of Subarray Minimums (Advanced Monotonic Stack)**\n\nEach element contributes as the minimum of certain subarrays.\n\n### **Logic**\n\n- Find previous smaller element  \n- Find next smaller element  \n- Contribution = value \\u00d7 left \\u00d7 right  \n\n---\n\n# **6. Monotonic Queue \\u2014 Sliding Window Maximum (O(n))**\n\nA monotonic queue maintains elements in decreasing order.\n\n### **6.1 Logic**\n\n- Remove elements smaller than current  \n- Remove elements outside window  \n- Front of deque = maximum  \n\n### **Implementation**\n\n```cpp\nvector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; a, int k) {\n    deque&lt;int&gt; dq;\n    vector&lt;int&gt; ans;\n\n    for (int i = 0; i &lt; a.size(); i++) {\n        while (!dq.empty() &amp;&amp; dq.front() &lt;= i - k)\n            dq.pop_front();\n\n        while (!dq.empty() &amp;&amp; a[dq.back()] &lt;= a[i])\n            dq.pop_back();\n\n        dq.push_back(i);\n\n        if (i &gt;= k - 1)\n            ans.push_back(a[dq.front()]);\n    }\n    return ans;\n}\n```\n\nTime: **O(n)**  \nSpace: **O(k)**\n\n---\n\n# **7. Real\\u2011World Examples**\n\n---\n\n### **Example 1 \\u2014 Histogram Area**  \nUsed in:\n\n- Image processing  \n- Skyline problems  \n- Largest rectangle in binary matrix  \n\n---\n\n### **Example 2 \\u2014 Sliding Window Maximum**  \nUsed in:\n\n- Stock market  \n- Sensor data  \n- Real\\u2011time analytics  \n\n---\n\n### **Example 3 \\u2014 Rain Water Trapping**  \nUsed in:\n\n- Terrain modeling  \n- Water flow simulations  \n\n---\n\n### **Example 4 \\u2014 Subarray Minimums**  \nUsed in:\n\n- DP optimization  \n- Range queries  \n\n---\n\n# **8. Interview\\u2011Level Problems**\n\n---\n\n### **Problem 1 \\u2014 Largest Rectangle in Histogram**  \nMonotonic increasing stack.\n\n---\n\n### **Problem 2 \\u2014 Sliding Window Maximum**  \nMonotonic deque.\n\n---\n\n### **Problem 3 \\u2014 Trapping Rain Water**  \nStack or two\\u2011pointer.\n\n---\n\n### **Problem 4 \\u2014 Sum of Subarray Minimums**  \nContribution technique.\n\n---\n\n### **Problem 5 \\u2014 Remove K Digits**  \nMonotonic increasing stack.\n\n---\n\n# **9. Exercises (Try First)**\n\n---\n\n### **Exercise 1**  \nCompute largest rectangle in histogram.\n\n---\n\n### **Exercise 2**  \nCompute sliding window maximum.\n\n---\n\n### **Exercise 3**  \nCompute trapped rain water.\n\n---\n\n### **Exercise 4**  \nCompute sum of subarray minimums.\n\n---\n\n### **Exercise 5**  \nRemove K digits to form smallest number.\n\n---\n\n# **10. Solutions**\n\n---\n\n### **Solution 1 \\u2014 Histogram area**  \nUse code from section 3.\n\n---\n\n### **Solution 2 \\u2014 Sliding window max**  \nUse monotonic deque.\n\n---\n\n### **Solution 3 \\u2014 Rain water**  \nUse stack logic.\n\n---\n\n### **Solution 4 \\u2014 Subarray minimums**  \nUse contribution technique.\n\n---\n\n### **Solution 5 \\u2014 Remove K digits**\n\n```cpp\nstring removeKdigits(string s, int k) {\n    stack&lt;char&gt; st;\n\n    for (char c : s) {\n        while (!st.empty() &amp;&amp; k &gt; 0 &amp;&amp; st.top() &gt; c) {\n            st.pop();\n            k--;\n        }\n        st.push(c);\n    }\n\n    while (k-- &gt; 0 &amp;&amp; !st.empty())\n        st.pop();\n\n    string ans = \&quot;\\&quot;],&quot;theory&quot;:[0,&quot;---\n\n# **Day 17 \\u2013 \\ud83d\\udd25 Monotonic Stack + Monotonic Queue Patterns + Largest Rectangle in Histogram**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Day 17 Matters**\nMonotonic stacks and queues are the **weapons of O(n)** solutions for problems that look like O(n\\u00b2).\n\nThey help you solve:\n\n- \\ud83d\\udcc8 Range queries  \n- \\ud83d\\udcc9 Next greater/smaller  \n- \\ud83e\\uddf1 Histogram area  \n- \\ud83e\\uddca Sliding window maximum  \n- \\ud83c\\udf21\\ufe0f Daily temperatures  \n- \\ud83e\\udde9 Structural array problems  \n- \\ud83e\\uddee Window min/max in O(1)  \n\nMastering these patterns unlocks **dozens** of FAANG problems.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cS\\u2011Q\\u2011H\\u201d**\nToday\\u2019s 3 pillars:\n\n- **S** \\u2013 Monotonic Stack  \n- **Q** \\u2013 Monotonic Queue  \n- **H** \\u2013 Histogram (LRH)\n\nRemember: **S\\u2011Q\\u2011H** \\u2192 Stack, Queue, Histogram.\n\n---\n\n# **\\ud83c\\udf08 2. Monotonic Stack Patterns (Deep Dive)**\n\nA **monotonic stack** maintains elements in sorted order:\n\n- **Increasing stack** \\u2192 top is smallest  \n- **Decreasing stack** \\u2192 top is largest  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Increasing stack finds smaller**  \n**Decreasing stack finds greater**\n\n---\n\n# **\\ud83c\\udf08 3. Pattern 1: Next Greater Element (NGE)**\n\n### **\\ud83c\\udfaf Goal**\nFor each index `i`, find first `j &gt; i` with `arr[j] &gt; arr[i]`.\n\n### **\\ud83d\\udd25 Logic**\n- Traverse **right \\u2192 left**  \n- Maintain **decreasing stack**  \n- Pop smaller elements  \n- Top = NGE  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Right \\u2192 Left + Pop smaller \\u2192 Top is greater**\n\n---\n\n# **\\ud83c\\udf08 4. Pattern 2: Next Smaller Element (NSE)**\n\n### **\\ud83c\\udfaf Goal**\nFind first `j &gt; i` with `arr[j] &lt; arr[i]`.\n\n### **\\ud83d\\udd25 Logic**\n- Traverse **right \\u2192 left**  \n- Maintain **increasing stack**  \n- Pop bigger elements  \n- Top = NSE  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Right \\u2192 Left + Pop bigger \\u2192 Top is smaller**\n\n---\n\n# **\\ud83c\\udf08 5. Pattern 3: Previous Greater / Previous Smaller**\n\nMirror versions of NGE/NSE.\n\n### **\\ud83d\\udd25 Logic**\n- Traverse **left \\u2192 right**  \n- Use same stack type as NGE/NSE  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nDirection flips \\u2192 stack type stays same.\n\n---\n\n# **\\ud83c\\udf08 6. Pattern 4: Stock Span Problem**\n\n### **\\ud83c\\udfaf Goal**\nFor each day, count consecutive previous days with price \\u2264 today.\n\n### **\\ud83d\\udd25 Logic**\n- Traverse left \\u2192 right  \n- Maintain **decreasing stack** of indices  \n- Pop all \\u2264 current  \n- Span = i \\u2212 top  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Pop smaller \\u2192 compute span**\n\n---\n\n# **\\ud83c\\udf08 7. Pattern 5: Daily Temperatures (NGE Variant)**\n\n### **\\ud83c\\udfaf Goal**\nFor each day, find next warmer day.\n\n### **\\ud83d\\udd25 Logic**\nSame as NGE but store **indices**.\n\n---\n\n# **\\ud83c\\udf08 8. Pattern 6: Largest Rectangle in Histogram (LRH)**  \nThis is the **ultimate monotonic stack problem**.\n\n---\n\n## **\\ud83c\\udfaf Goal**\nFind the largest rectangle area in histogram bars.\n\n---\n\n## **\\ud83d\\udd25 Core Idea**\nFor each bar, find:\n\n- **NSL** \\u2192 Next Smaller to Left  \n- **NSR** \\u2192 Next Smaller to Right  \n\nThen:\n\n```\nwidth = NSR[i] - NSL[i] - 1\narea = height[i] * width\n```\n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**NSL + NSR = LRH**\n\n---\n\n## **\\ud83d\\udd25 Steps**\n### **1. Compute NSL**\n- Traverse left \\u2192 right  \n- Use **increasing stack**  \n- Pop \\u2265 current  \n\n### **2. Compute NSR**\n- Traverse right \\u2192 left  \n- Use **increasing stack**  \n- Pop \\u2265 current  \n\n### **3. Compute area for each bar**\n\n---\n\n## **\\ud83c\\udfa8 Example**\nHeights: `[2, 1, 5, 6, 2, 3]`\n\nLargest area = **10** (bars 5 &amp; 6)\n\n---\n\n# **\\ud83c\\udf08 9. Pattern 7: Maximal Rectangle (Matrix Version)**\n\n### **\\ud83c\\udfaf Idea**\nConvert each row into histogram heights \\u2192 apply LRH.\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Matrix \\u2192 Histogram \\u2192 LRH**\n\n---\n\n# **\\ud83c\\udf08 10. Monotonic Queue Patterns (Deep Dive)**\n\nA **monotonic queue** maintains elements in sorted order while supporting:\n\n- Push  \n- Pop  \n- Get max/min  \n\nAll in **O(1)** amortized time.\n\n---\n\n# **\\ud83c\\udf08 11. Pattern 8: Sliding Window Maximum**\n\n### **\\ud83c\\udfaf Goal**\nFor each window of size k, find max.\n\n---\n\n## **\\ud83d\\udd25 Logic**\nUse **monotonic decreasing deque**:\n\n- Pop from back while smaller  \n- Push new element  \n- Pop from front if out of window  \n- Front = max  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Back pops smaller \\u2192 front holds max**\n\n---\n\n# **\\ud83c\\udf08 12. Pattern 9: Sliding Window Minimum**\n\nSame as above but use **increasing deque**.\n\n---\n\n# **\\ud83c\\udf08 13. Pattern 10: Shortest Subarray With Sum \\u2265 K (Hard)**\n\nUses **monotonic deque** on prefix sums.\n\n---\n\n# **\\ud83c\\udf08 14. Pattern 11: Trapping Rain Water (Stack Variant)**\n\nUse stack to find boundaries.\n\n---\n\n# **\\ud83c\\udf08 15. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Using wrong stack type (increasing vs decreasing)  \n- \\ud83d\\udea9 Forgetting to pop until stack is valid  \n- \\ud83d\\udea9 Not storing indices when needed  \n- \\ud83d\\udea9 Off\\u2011by\\u2011one in LRH width  \n- \\ud83d\\udea9 Forgetting to clear stack between passes  \n- \\ud83d\\udea9 Using stack instead of deque for sliding window  \n- \\ud83d\\udea9 Not handling equal elements correctly  \n\n---\n\n# **\\ud83c\\udf08 16. Problems You Can Now Solve**\n\n- Next Greater Element  \n- Next Smaller Element  \n- Previous Greater/Smaller  \n- Stock Span  \n- Daily Temperatures  \n- Largest Rectangle in Histogram  \n- Maximal Rectangle  \n- Sliding Window Maximum  \n- Sliding Window Minimum  \n- Trapping Rain Water  \n- Shortest subarray with sum \\u2265 K  \n- All monotonic stack/queue variants  \n\n---\n\n# **\\ud83c\\udf08 17. What You Must Master Today**\n\n- Monotonic increasing/decreasing stacks  \n- Monotonic queues (deque)  \n- NGE/NSE/PGE/PSE  \n- Stock Span  \n- LRH (Largest Rectangle in Histogram)  \n- Maximal Rectangle  \n- Sliding window max/min  \n- Stack vs deque decision making  \n&quot;],&quot;examples&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;example01&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 1: Valid Parentheses\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nbool isValid(string s){stack&lt;char&gt;st;for(char c:s){if(c==&#39;(&#39;||c==&#39;[&#39;||c==&#39;{&#39;)st.push(c);else{if(st.empty())return false;char t=st.top();st.pop();if((c==&#39;)&#39;&amp;&amp;t!=&#39;(&#39;)||(c==&#39;]&#39;&amp;&amp;t!=&#39;[&#39;)||(c==&#39;}&#39;&amp;&amp;t!=&#39;{&#39;))return false;}}return st.empty();}\nint main(){\n    cout&lt;&lt;isValid(\&quot;()[]{}\&quot;)&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example02&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 2: Next Greater Element\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; nextGreater(vector&lt;int&gt;&amp;a){\n    int n=a.size();vector&lt;int&gt;res(n,-1);stack&lt;int&gt;st;\n    for(int i=0;i&lt;n;i++){while(!st.empty()&amp;&amp;a[st.top()]&lt;a[i]){res[st.top()]=a[i];st.pop();}st.push(i);}\n    return res;\n}\nint main(){\n    vector&lt;int&gt; a={2,1,2,4,3}; for(int x:nextGreater(a))cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example03&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 3: Stock Span\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; stockSpan(vector&lt;int&gt;&amp;p){\n    int n=p.size();vector&lt;int&gt;sp(n);stack&lt;int&gt;st;\n    for(int i=0;i&lt;n;i++){while(!st.empty()&amp;&amp;p[st.top()]&lt;=p[i])st.pop();sp[i]=st.empty()?i+1:i-st.top();st.push(i);}\n    return sp;\n}\nint main(){\n    vector&lt;int&gt; p={7,2,1,2}; for(int x:stockSpan(p))cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example04&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 4: Daily Temperatures\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; dailyTemp(vector&lt;int&gt;&amp;t){\n    int n=t.size();vector&lt;int&gt;res(n,0);stack&lt;int&gt;st;\n    for(int i=0;i&lt;n;i++){while(!st.empty()&amp;&amp;t[st.top()]&lt;t[i]){res[st.top()]=i-st.top();st.pop();}st.push(i);}\n    return res;\n}\nint main(){\n    vector&lt;int&gt; t={73,74,75,71,69,72,76,73}; for(int x:dailyTemp(t))cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example05&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 5: RPN Evaluate\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nint evalRPN(vector&lt;string&gt;&amp;tokens){\n    stack&lt;long long&gt;st;\n    for(auto&amp;t:tokens){if(t==\&quot;+\&quot;||t==\&quot;-\&quot;||t==\&quot;*\&quot;||t==\&quot;/\&quot;){long long b=st.top();st.pop();long long a=st.top();st.pop();if(t==\&quot;+\&quot;)st.push(a+b);else if(t==\&quot;-\&quot;)st.push(a-b);else if(t==\&quot;*\&quot;)st.push(a*b);else st.push(a/b);}else st.push(stoll(t));}\n    return st.top();\n}\nint main(){\n    vector&lt;string&gt; t1={\&quot;2\&quot;,\&quot;1\&quot;,\&quot;+\&quot;,\&quot;3\&quot;,\&quot;*\&quot;}; cout&lt;&lt;evalRPN(t1)&lt;&lt;\&quot;\\\n\\&quot;]}]]],&quot;exercises&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;exercise01&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 1: Valid Parentheses\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Largest Rectangle in Histogram (max area)\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise02&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 2: Next Greater Element\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Maximum Width Ramp in array\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise03&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 3: Stock Span\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Sum of Subarray Minimums\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise04&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 4: Daily Temperatures\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Online Stock Span (class design)\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise05&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 5: RPN Evaluate\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: 132 Pattern detection\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}]]],&quot;solutions&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;solution01&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 1: Valid Parentheses\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nint main(){string s;cin&gt;&gt;s;stack&lt;char&gt;st;for(char c:s){if(c==&#39;(&#39;||c==&#39;[&#39;||c==&#39;{&#39;)st.push(c);else{if(st.empty()||((c==&#39;)&#39;&amp;&amp;st.top()!=&#39;(&#39;)||(c==&#39;]&#39;&amp;&amp;st.top()!=&#39;[&#39;)||(c==&#39;}&#39;&amp;&amp;st.top()!=&#39;{&#39;))) {cout&lt;&lt;\&quot;NO\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution02&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 2: Next Greater Element\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nint main(){int n;cin&gt;&gt;n;vector&lt;int&gt;a(n);for(int&amp;x:a)cin&gt;&gt;x;vector&lt;int&gt;res(n,-1);stack&lt;int&gt;st;for(int i=0;i&lt;n;i++){while(!st.empty()&amp;&amp;a[st.top()]&lt;a[i]){res[st.top()]=a[i];st.pop();}st.push(i);}for(int x:res)cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution03&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 3: Stock Span\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nint main(){int n;cin&gt;&gt;n;vector&lt;int&gt;p(n);for(int&amp;x:p)cin&gt;&gt;x;vector&lt;int&gt;sp(n);stack&lt;int&gt;st;for(int i=0;i&lt;n;i++){while(!st.empty()&amp;&amp;p[st.top()]&lt;=p[i])st.pop();sp[i]=st.empty()?i+1:i-st.top();st.push(i);}for(int x:sp)cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution04&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 4: Daily Temperatures\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nint main(){int n;cin&gt;&gt;n;vector&lt;int&gt;t(n);for(int&amp;x:t)cin&gt;&gt;x;stack&lt;int&gt;st;vector&lt;int&gt;res(n,0);for(int i=0;i&lt;n;i++){while(!st.empty()&amp;&amp;t[st.top()]&lt;t[i]){res[st.top()]=i-st.top();st.pop();}st.push(i);}for(int x:res)cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution05&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 5: RPN Evaluate\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nint main(){int n;cin&gt;&gt;n;vector&lt;string&gt;tok(n);for(auto&amp;t:tok)cin&gt;&gt;t;stack&lt;long long&gt;st;for(auto&amp;t:tok){if(t==\&quot;+\&quot;||t==\&quot;-\&quot;||t==\&quot;*\&quot;||t==\&quot;/\&quot;){long long b=st.top();st.pop();long long a=st.top();st.pop();if(t==\&quot;+\&quot;)st.push(a+b);else if(t==\&quot;-\&quot;)st.push(a-b);else if(t==\&quot;*\&quot;)st.push(a*b);else st.push(a/b);}else st.push(stoll(t));}cout&lt;&lt;st.top()&lt;&lt;\&quot;\\\n\\&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;DayTabs&quot;,&quot;value&quot;:true}" await-children><div><div class="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-1 mb-6 border-b border-slate-800"><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap bg-slate-700 text-white">📖 README</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">🧠 Theory</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">💻 Examples <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✏️ Exercises <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✅ Solutions <span class="ml-1 text-xs text-slate-500">5</span></button></div><div><p class="text-slate-300 leading-7 mb-3">Day 17 coming right up, ---</p>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">Day 17 \u2014 Monotonic Stack/Queue Patterns + Largest Rectangle in Histogram (README.rst)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3"><em>30 Days to DSA in C++ \u2014 Ultra\u2011Premium Edition</em></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">1. Introduction</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Monotonic stacks and queues are among the most elegant and powerful tools in algorithm design.<br/>
+<!-- -->They allow you to solve problems that seem impossible with brute force:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Largest Rectangle in Histogram</li>
+<li class="text-slate-300 ml-2">Sliding Window Maximum</li>
+<li class="text-slate-300 ml-2">Next Greater/Smaller Element (advanced variants)</li>
+<li class="text-slate-300 ml-2">Trapping Rain Water</li>
+<li class="text-slate-300 ml-2">Sum of Subarray Minimums</li>
+<li class="text-slate-300 ml-2">Sum of Subarray Maximums</li>
+<li class="text-slate-300 ml-2">Removing K digits</li>
+<li class="text-slate-300 ml-2">Asteroid collision</li>
+<li class="text-slate-300 ml-2">Daily temperatures</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">Today\u2019s goal is to master:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Monotonic stack patterns</li>
+<li class="text-slate-300 ml-2">Monotonic queue patterns</li>
+<li class="text-slate-300 ml-2">Largest Rectangle in Histogram (O(n))</li>
+<li class="text-slate-300 ml-2">Sliding Window Maximum (O(n))</li>
+<li class="text-slate-300 ml-2">Advanced NSE/NGE usage</li>
+<li class="text-slate-300 ml-2">Real interview problems</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day is a major milestone \u2014 these patterns appear in DP, greedy, arrays, and even graph problems.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">2. Monotonic Stack \u2014 Deep Dive</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">A monotonic stack maintains elements in sorted order:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Increasing stack</strong> \u2192 top is smallest</li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Decreasing stack</strong> \u2192 top is largest</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">Used for:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Next smaller element</li>
+<li class="text-slate-300 ml-2">Next greater element</li>
+<li class="text-slate-300 ml-2">Histogram area</li>
+<li class="text-slate-300 ml-2">Subarray min/max contributions</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">2.1 Increasing Stack</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Top is smallest.</p>
+<p class="text-slate-300 leading-7 mb-3">Used for:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Next smaller element</li>
+<li class="text-slate-300 ml-2">Histogram area</li>
+<li class="text-slate-300 ml-2">Sum of subarray minimums</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">2.2 Decreasing Stack</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Top is largest.</p>
+<p class="text-slate-300 leading-7 mb-3">Used for:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Next greater element</li>
+<li class="text-slate-300 ml-2">Sliding window maximum</li>
+<li class="text-slate-300 ml-2">Daily temperatures</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">3. Largest Rectangle in Histogram (O(n))</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">This is one of the most important stack problems in all of DSA.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.1 Problem Statement</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Given heights of bars in a histogram, find the largest rectangular area.</p>
+<p class="text-slate-300 leading-7 mb-3">Example:</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>[2, 1, 5, 6, 2, 3]</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Answer: <strong class="text-white font-semibold">10</strong> (bars 5 and 6)</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.2 Brute Force \u2014 O(n\u00b2)</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Skip.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.3 Optimal \u2014 Monotonic Increasing Stack (O(n))</strong></h2>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Intuition</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">For each bar, find:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">First smaller element to the left</li>
+<li class="text-slate-300 ml-2">First smaller element to the right</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">These define the width where the bar is the minimum height.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>int largestRectangleArea(vector&lt;int&gt;&amp; h) {
+    int n = h.size();
+    stack&lt;int&gt; st;
+    int maxA = 0;
+
+    for (int i = 0; i &lt;= n; i++) {
+        int curr = (i == n ? 0 : h[i]);
+
+        while (!st.empty() &amp;&amp; curr &lt; h[st.top()]) {
+            int height = h[st.top()];
+            st.pop();
+
+            int right = i;
+            int left = st.empty() ? -1 : st.top();
+
+            int width = right - left - 1;
+            maxA = max(maxA, height * width);
+        }
+        st.push(i);
+    }
+    return maxA;
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: <strong class="text-white font-semibold">O(n)</strong><br/>
+<!-- -->Space: <strong class="text-white font-semibold">O(n)</strong></p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">4. Trapping Rain Water (Monotonic Stack Variant)</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Logic</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Use stack to find boundaries</li>
+<li class="text-slate-300 ml-2">Water trapped = min(left, right) \u2212 height</li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>int trap(vector&lt;int&gt;&amp; h) {
+    int n = h.size();
+    stack&lt;int&gt; st;
+    int ans = 0;
+
+    for (int i = 0; i &lt; n; i++) {
+        while (!st.empty() &amp;&amp; h[i] &gt; h[st.top()]) {
+            int mid = st.top();
+            st.pop();
+            if (st.empty()) break;
+
+            int left = st.top();
+            int height = min(h[left], h[i]) - h[mid];
+            int width = i - left - 1;
+
+            ans += height * width;
+        }
+        st.push(i);
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">5. Sum of Subarray Minimums (Advanced Monotonic Stack)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Each element contributes as the minimum of certain subarrays.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Logic</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Find previous smaller element</li>
+<li class="text-slate-300 ml-2">Find next smaller element</li>
+<li class="text-slate-300 ml-2">Contribution = value \u00d7 left \u00d7 right</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">6. Monotonic Queue \u2014 Sliding Window Maximum (O(n))</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">A monotonic queue maintains elements in decreasing order.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">6.1 Logic</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Remove elements smaller than current</li>
+<li class="text-slate-300 ml-2">Remove elements outside window</li>
+<li class="text-slate-300 ml-2">Front of deque = maximum</li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; a, int k) {
+    deque&lt;int&gt; dq;
+    vector&lt;int&gt; ans;
+
+    for (int i = 0; i &lt; a.size(); i++) {
+        while (!dq.empty() &amp;&amp; dq.front() &lt;= i - k)
+            dq.pop_front();
+
+        while (!dq.empty() &amp;&amp; a[dq.back()] &lt;= a[i])
+            dq.pop_back();
+
+        dq.push_back(i);
+
+        if (i &gt;= k - 1)
+            ans.push_back(a[dq.front()]);
+    }
+    return ans;
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: <strong class="text-white font-semibold">O(n)</strong><br/>
+<!-- -->Space: <strong class="text-white font-semibold">O(k)</strong></p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">7. Real\u2011World Examples</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 1 \u2014 Histogram Area</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Image processing</li>
+<li class="text-slate-300 ml-2">Skyline problems</li>
+<li class="text-slate-300 ml-2">Largest rectangle in binary matrix</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 2 \u2014 Sliding Window Maximum</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Stock market</li>
+<li class="text-slate-300 ml-2">Sensor data</li>
+<li class="text-slate-300 ml-2">Real\u2011time analytics</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 3 \u2014 Rain Water Trapping</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Terrain modeling</li>
+<li class="text-slate-300 ml-2">Water flow simulations</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 4 \u2014 Subarray Minimums</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">DP optimization</li>
+<li class="text-slate-300 ml-2">Range queries</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">8. Interview\u2011Level Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 1 \u2014 Largest Rectangle in Histogram</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Monotonic increasing stack.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 2 \u2014 Sliding Window Maximum</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Monotonic deque.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 3 \u2014 Trapping Rain Water</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Stack or two\u2011pointer.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 4 \u2014 Sum of Subarray Minimums</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Contribution technique.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 5 \u2014 Remove K Digits</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Monotonic increasing stack.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">9. Exercises (Try First)</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 1</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute largest rectangle in histogram.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 2</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute sliding window maximum.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 3</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute trapped rain water.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 4</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute sum of subarray minimums.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 5</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Remove K digits to form smallest number.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">10. Solutions</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 1 \u2014 Histogram area</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use code from section 3.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 2 \u2014 Sliding window max</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use monotonic deque.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 3 \u2014 Rain water</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use stack logic.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 4 \u2014 Subarray minimums</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use contribution technique.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 5 \u2014 Remove K digits</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>string removeKdigits(string s, int k) {
+    stack&lt;char&gt; st;
+
+    for (char c : s) {
+        while (!st.empty() &amp;&amp; k &gt; 0 &amp;&amp; st.top() &gt; c) {
+            st.pop();
+            k--;
+        }
+        st.push(c);
+    }
+
+    while (k-- &gt; 0 &amp;&amp; !st.empty())
+        st.pop();
+
+    string ans = &quot;\</code></pre></div></div></div><!--astro:end--></astro-island> <!-- Prev / Next --> <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800"> <a href="/day/day16-stack-next-greater-smaller-stock-span" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"> <span class="text-lg">←</span> <span class="hidden sm:inline">Day 16 · Stack Next Greater Smaller Stock Span</span> <span class="sm:hidden">Prev</span> </a> <a href="/day/day18-queue-deque-sliding-window-max-first-negative" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right"> <span class="hidden sm:inline">Day 18 · Queue Deque Sliding Window Max First Negative</span> <span class="sm:hidden">Next</span> <span class="text-lg">→</span> </a> </div> </div>  </main> <!-- Footer --> <footer class="border-t border-slate-800/60 mt-16 py-8 text-center text-xs text-slate-600">
+30 Days to DSA in C++ · Built with Astro
+</footer> </body></html>

@@ -1,35 +1,17 @@
+/*
+ * Solution 1: Spiral Order (Matrix)
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution01
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
+int main(){
+    int n,m; cin>>n>>m;
+    vector<vector<int>> mat(n,vector<int>(m)); for(auto&r:mat)for(int&x:r)cin>>x;
+    int t=0,b=n-1,l=0,r=m-1;
+    while(t<=b&&l<=r){
+        for(int c=l;c<=r;c++)cout<<mat[t][c]<<" "; t++;
+        for(int ro=t;ro<=b;ro++)cout<<mat[ro][r]<<" "; r--;
+        if(t<=b){for(int c=r;c>=l;c--)cout<<mat[b][c]<<" "; b--;}
+        if(l<=r){for(int ro=b;ro>=t;ro--)cout<<mat[ro][l]<<" "; l++;}
+    }
+    cout<<"\n"; return 0;
 }

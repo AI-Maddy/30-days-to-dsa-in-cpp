@@ -1,35 +1,21 @@
+/*
+ * Example 5: Queue using Stack
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example05
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+// Queue using two stacks (amortized O(1))
+class MyQueue{stack<int>in,out;
+    void transfer(){while(!in.empty()){out.push(in.top());in.pop();}}
+public:
+    void push(int v){in.push(v);}
+    int pop(){if(out.empty())transfer();int v=out.top();out.pop();return v;}
+    int peek(){if(out.empty())transfer();return out.top();}
+    bool empty(){return in.empty()&&out.empty();}
+};
+int main(){
+    MyQueue q;q.push(1);q.push(2);q.push(3);
+    cout<<q.peek()<<"\n"; // 1
+    cout<<q.pop()<<"\n";  // 1
+    cout<<q.peek()<<"\n"; // 2
     return 0;
 }

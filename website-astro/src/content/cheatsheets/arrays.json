@@ -1,0 +1,6 @@
+{
+  "slug": "arrays",
+  "title": "Arrays",
+  "icon": "📋",
+  "content": "# 📋 Arrays Cheatsheet\n       \n        **🧠 Memory Aid:** Two pointers: start both ends, move inward. Sliding window: expand right, shrink left.  Prefix sum: precompute to answer range queries in O(1). \n       \n      \n## 👉 Two Pointers Pattern\n       `// Two Sum in sorted array\nint l = 0, r = n - 1;\nwhile (l  \n       `// Trapping Rain Water\nint l = 0, r = n-1, lMax = 0, rMax = 0, water = 0;\nwhile (l"
+}

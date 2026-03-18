@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — **Day 30** deserves to be a grand finale for your 30‑day DSA mastery series.  
-This day is all about **1D DP pattern revision + mixed medium/hard problem‑solving**, giving learners the confidence to tackle ANY DP problem that appears in interviews.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your repo.
-
----
 
 # **Day 30 — 1D DP Patterns + Mini‑Revision + Mixed Medium/Hard Problems (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -337,12 +331,3 @@ Today you mastered:
 - Final revision of the entire DP arc  
 
 This completes your **30‑Day DSA Mastery Series** — and you now have a world‑class, interview‑ready foundation.
-
-If you want, I can help you build:
-
-- A **full mock interview set**  
-- A **DSA revision sheet**  
-- A **C++ template library**  
-- A **LeetCode 100‑day roadmap**  
-
-Just tell me what you want next.

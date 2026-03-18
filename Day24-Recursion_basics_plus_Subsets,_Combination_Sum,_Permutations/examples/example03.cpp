@@ -1,54 +1,20 @@
 /*
- * Example 3: Combination Sum (Recursion basics plus Subsets, Combination Sum, Permutations)
+ * Example 3: Permutations
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Recursion basics plus Subsets, Combination Sum, Permutations
-// Task      : Combination Sum
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: combination_sum ---
-// Purpose    : Answer aggregate/range computation in `combination_sum`.
-// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
-// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
-// Notes      : Watch index boundaries for left/right endpoints.
-// Pseudocode:
-// 1) Initialize running aggregate/prefix state.
-// 2) Scan array and update aggregate incrementally.
-// 3) Use aggregate differences or window updates for answer.
-// 4) Return final query/optimization result.
-int combination_sum(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
+// Example 3: All Permutations of distinct integers
+void permute(vector<int>& nums, int start, vector<vector<int>>& res) {
+    if (start == (int)nums.size()) { res.push_back(nums); return; }
+    for (int i = start; i < (int)nums.size(); i++) {
+        swap(nums[start], nums[i]);
+        permute(nums, start + 1, res);
+        swap(nums[start], nums[i]); // backtrack
     }
-    return score + 3;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << combination_sum(data) << "\n";
-    return 0;
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> res;
+    permute(nums, 0, res);
+    for (auto& p : res) { for (int x : p) cout << x << " "; cout << "\n"; }
 }

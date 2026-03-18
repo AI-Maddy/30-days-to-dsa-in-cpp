@@ -1,35 +1,25 @@
+/*
+ * Example 4: LCA in BST
+ */
 #include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example04
- * Pattern Family: Binary Search
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Binary Search approach.
- * Input   : Read sorted data or searchable answer range.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read input and identify monotonic condition.
- * 2) Set low/high search boundaries.
- * 3) Check mid using feasibility predicate.
- * 4) Shrink range based on predicate outcome.
- * 5) Return exact position/boundary/optimal answer.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Prefer long long where boundary multiplication/sums can overflow int.
+// Example 4: LCA in BST
+// In BST: LCA is first node where p <= node <= q (or q <= node <= p)
+TreeNode* lcaBST(TreeNode* root, int p, int q) {
+    while (root) {
+        if (p < root->val && q < root->val) root = root->left;
+        else if (p > root->val && q > root->val) root = root->right;
+        else return root;
+    }
+    return nullptr;
 }
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
+    TreeNode* root = new TreeNode(6);
+    root->left = new TreeNode(2); root->right = new TreeNode(8);
+    root->left->left = new TreeNode(0); root->left->right = new TreeNode(4);
+    root->left->right->left = new TreeNode(3); root->left->right->right = new TreeNode(5);
+    cout << lcaBST(root, 2, 4)->val << "\n"; // 2
+    cout << lcaBST(root, 2, 8)->val << "\n"; // 6
 }

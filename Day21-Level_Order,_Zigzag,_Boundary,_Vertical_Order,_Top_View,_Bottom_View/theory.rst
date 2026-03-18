@@ -8,20 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 21** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 21 is a **HUGE** milestone because it covers the most important **Breadth‑First Search (BFS)–based tree traversals**:
-
-- **Level Order Traversal**  
-- **Zigzag Level Order**  
-- **Boundary Traversal**  
-- **Vertical Order Traversal**  
-- **Top View**  
-- **Bottom View**
-
-These six patterns form the backbone of almost every FAANG tree‑view problem.
-
----
 
 # **Day 21 – 🌳 BFS Tree Views: Level Order, Zigzag, Boundary, Vertical, Top View, Bottom View**  
 `theory.rst`
@@ -290,15 +276,4 @@ Use BFS + map:
 - Top vs bottom view differences  
 - Map + queue hybrid patterns  
 - Sorting HD keys  
-- Leaf detection logic  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 21 README (ultra‑premium)**  
-🧠 **C++ templates for all tree view patterns**  
-🎯 **20 FAANG‑level tree view problems**  
-📘 **Tree Views cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Leaf detection logic

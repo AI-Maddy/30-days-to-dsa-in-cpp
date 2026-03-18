@@ -1,0 +1,90 @@
+{
+  "day": 7,
+  "title": "2D Arrays Matrix – Traversal, Rotation, Spiral, Search",
+  "slug": "day07-2d-arrays-matrix-traversal-rotation-spiral-search",
+  "dirName": "day07-2d_arrays_matrix_–_traversal,_rotation,_spiral,_search",
+  "cluster": "binary-search",
+  "clusterLabel": "Binary Search",
+  "clusterColor": "violet",
+  "clusterIcon": "🟣",
+  "readme": "---\n\n# **Day 07 \\u2014 2D Arrays / Matrix: Traversal, Rotation, Spiral, Search (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\n2D arrays (matrices) are everywhere in DSA:\n\n- Image processing  \n- Dynamic programming  \n- Graphs  \n- Grid\\u2011based BFS/DFS  \n- Prefix sum matrices  \n- Searching and sorting in 2D  \n- Simulation problems  \n- Matrix rotation and transformation  \n\nToday\\u2019s goal is to master:\n\n- Matrix traversal patterns  \n- Row\\u2011wise and column\\u2011wise operations  \n- Spiral traversal  \n- Matrix rotation (90\\u00b0, 180\\u00b0, 270\\u00b0)  \n- Searching in sorted matrices  \n- Boundary traversal  \n- Diagonal traversal  \n- Real interview problems  \n\nThis is one of the most important days for building intuition for grid\\u2011based problems.\n\n---\n\n## **2. Basic Matrix Traversal**\n\n### **2.1 Row\\u2011wise traversal**\n\n```cpp\nfor (int i = 0; i < n; i++)\n    for (int j = 0; j < m; j++)\n        cout << mat[i][j] << \" \\",
+  "theory": "---\n\n# **Day 07 \\u2013 \\ud83e\\udde9 2D Arrays + Matrix Operations (Colorful Memory Edition)**  \n`theory.rst`\n\n---\n\n## **\\ud83c\\udf08 1. Why 2D Arrays Matter**\n2D arrays (matrices) are the foundation of:\n\n- \\ud83e\\udde0 Dynamic Programming (DP tables)  \n- \\ud83c\\udfae Game boards (chess, tic\\u2011tac\\u2011toe)  \n- \\ud83d\\uddfa\\ufe0f Grid traversal (BFS/DFS)  \n- \\ud83e\\uddee Mathematical operations (transpose, rotation)  \n- \\ud83d\\uddbc\\ufe0f Image processing (pixels)  \n- \\ud83d\\udd25 Competitive programming (prefix sums, difference matrices)\n\nIf you master matrices, you unlock **half of DSA**.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cR\\u2011C\\u2011G\\u201d**\n2D arrays represent:\n\n- **R**ows  \n- **C**olumns  \n- **G**rids  \n\nThink: **R\\u2011C\\u2011G = Rows, Columns, Grid**.\n\n---\n\n## **\\ud83e\\uddf1 2. Declaring & Initializing 2D Arrays**\n\n### **\\ud83d\\udfe6 Static Declaration**\n```\nint a[3][4];\n```\n\n### **\\ud83d\\udfe9 Initialization**\n```\nint a[3][3] = {\n    {1,2,3},\n    {4,5,6},\n    {7,8,9}\n};\n```\n\n### **\\ud83d\\udfe7 Dynamic (vector)**\n```\nvector<vector<int>> a(n, vector<int>(m));\n```\n\n---\n\n# **\\ud83c\\udf08 3. Traversing a Matrix (The Core Skill)**\n\n### **\\ud83d\\udd39 Row\\u2011wise Traversal**\n```\nfor (int i=0; i<n; i++)\n  for (int j=0; j<m; j++)\n    process(a[i][j]);\n```\n\n### **\\ud83d\\udd38 Column\\u2011wise Traversal**\n```\nfor (int j=0; j<m; j++)\n  for (int i=0; i<n; i++)\n    process(a[i][j]);\n```\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nThink of a matrix as **rows of rows** \\u2192 `a[row][col]`.\n\n---\n\n# **\\ud83c\\udf1f 4. Matrix Operations (Color\\u2011Coded)**\n\n---\n\n## **\\ud83d\\udc99 Operation 1: Transpose**\nSwap rows \\u2194 columns.\n\n```\nb[j][i] = a[i][j];\n```\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \nTranspose = **Flip over the diagonal**.\n\n---\n\n## **\\ud83d\\udc9a Operation 2: Reverse Rows**\nUsed in rotation.\n\n```\nreverse(a[i].begin(), a[i].end());\n```\n\n---\n\n## **\\ud83d\\udc9b Operation 3: Reverse Columns**\n```\nswap(a[top][j], a[bottom][j]);\n```\n\n---\n\n## **\\u2764\\ufe0f Operation 4: Rotate Matrix (90\\u00b0 Clockwise)**\n\n### **\\ud83c\\udfaf Steps**\n1. Transpose  \n2. Reverse each row  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**T\\u2011R** \\u2192 **Transpose \\u2192 Reverse** = Rotate 90\\u00b0.\n\n---\n\n## **\\ud83d\\udc9c Operation 5: Spiral Traversal**\nTraverse in layers:\n\n- \\u27a1\\ufe0f Left \\u2192 Right  \n- \\u2b07\\ufe0f Top \\u2192 Bottom  \n- \\u2b05\\ufe0f Right \\u2192 Left  \n- \\u2b06\\ufe0f Bottom \\u2192 Top  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**R\\u2011D\\u2011L\\u2011U** (Right, Down, Left, Up)\n\n---\n\n## **\\ud83e\\udde1 Operation 6: Boundary Traversal**\nPrint only the outer ring.\n\n---\n\n## **\\ud83e\\ude75 Operation 7: Diagonal Traversal**\n- Primary diagonal: `i == j`  \n- Secondary diagonal: `i + j == n - 1`\n\n---\n\n# **\\ud83c\\udf08 5. Matrix Patterns (The Heart of Day 07)**\n\n---\n\n## **\\ud83d\\udca5 Pattern 1: Searching in a Sorted Matrix**\nMatrix sorted row\\u2011wise & column\\u2011wise.\n\n### **\\ud83c\\udfaf Trick:**  \nStart at **top\\u2011right**.\n\n- If target < value \\u2192 move left  \n- If target > value \\u2192 move down  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**T\\u2011R Start** \\u2192 Top\\u2011Right Start.\n\n---\n\n## **\\ud83d\\udd25 Pattern 2: Matrix Prefix Sum (2D Prefix)**\nPrefix matrix `P[i][j]` stores sum of rectangle (0,0) \\u2192 (i,j).\n\n### **Rectangle Sum Formula**\n\\[\nP[x2][y2] - P[x1-1][y2] - P[x2][y1-1] + P[x1-1][y1-1]\n\\]\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**+ \\u2212 \\u2212 +** pattern.\n\n---\n\n## **\\u26a1 Pattern 3: 2D Difference Array (Imos Method)**\nUsed for range updates on grids.\n\n### **Update rectangle (x1,y1) \\u2192 (x2,y2) by +k**\n```\nD[x1][y1] += k\nD[x1][y2+1] -= k\nD[x2+1][y1] -= k\nD[x2+1][y2+1] += k\n```\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \nCorners = **+ \\u2212 \\u2212 +**\n\n---\n\n## **\\ud83c\\udf2a\\ufe0f Pattern 4: Flood Fill (DFS/BFS on Grid)**\nUsed for:\n- Counting islands  \n- Coloring regions  \n- Maze solving  \n\n### **Moves**\n```\n(0,1), (1,0), (0,-1), (-1,0)\n```\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**R\\u2011D\\u2011L\\u2011U** directions.\n\n---\n\n## **\\ud83c\\udf0b Pattern 5: Connected Components in Grid**\nUse DFS/BFS to count regions.\n\n---\n\n## **\\ud83c\\udf1f Pattern 6: Matrix as Graph**\nEach cell = node  \nEdges = adjacent cells  \n\nThis is the basis of:\n- BFS shortest path  \n- DFS region detection  \n- Multi\\u2011source BFS  \n\n---\n\n# **\\ud83c\\udf08 6. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Mixing up rows & columns  \n- \\ud83d\\udea9 Forgetting matrix bounds  \n- \\ud83d\\udea9 Using recursion without checking limits  \n- \\ud83d\\udea9 Not marking visited cells in DFS/BFS  \n- \\ud83d\\udea9 Using wrong rotation order (must be T\\u2011R)  \n- \\ud83d\\udea9 Forgetting to handle rectangular matrices  \n\n---\n\n# **\\ud83d\\udcda 7. Problems You Can Now Solve**\n- Spiral traversal  \n- Rotate matrix  \n- Search in sorted matrix  \n- Count islands  \n- Flood fill  \n- 2D prefix sum queries  \n- 2D difference array updates  \n- Boundary traversal  \n- Diagonal traversal  \n- Shortest path in grid  \n\n---\n\n# **\\u23f1\\ufe0f 8. Complexity Table**\n\n| Operation | Time | Space |\n|-----------|--------|--------|\n| Traversal | O(n\\u00b7m) | O(1) |\n| Transpose | O(n\\u00b7m) | O(1) |\n| Rotation | O(n\\u00b7m) | O(1) |\n| Spiral | O(n\\u00b7m) | O(1) |\n| BFS/DFS | O(n\\u00b7m) | O(n\\u00b7m) |\n| 2D Prefix | O(n\\u00b7m) | O(n\\u00b7m) |\n\n---\n\n# **\\ud83c\\udfaf 9. What You Must Master Today**\n- Traversing matrices in all patterns  \n- Transpose, reverse, rotate  \n- Spiral & boundary traversal  \n- Searching in sorted matrix  \n- 2D prefix sum  \n- 2D difference array  \n- BFS/DFS on grids  \n- Matrix as graph  \n",
+  "examples": [
+    {
+      "id": "example01",
+      "code": "/*\n * Example 1: Spiral Order (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nvector<int> spiralOrder(vector<vector<int>>& m){\n    int top=0,bot=m.size()-1,l=0,r=m[0].size()-1; vector<int> res;\n    while(top<=bot&&l<=r){\n        for(int c=l;c<=r;c++) res.push_back(m[top][c]); top++;\n        for(int ro=top;ro<=bot;ro++) res.push_back(m[ro][r]); r--;\n        if(top<=bot){for(int c=r;c>=l;c--) res.push_back(m[bot][c]); bot--;}\n        if(l<=r){for(int ro=bot;ro>=top;ro--) res.push_back(m[ro][l]); l++;}\n    }\n    return res;\n}\nint main(){\n    vector<vector<int>> m={{1,2,3},{4,5,6},{7,8,9}};\n    for(int x:spiralOrder(m)) cout<<x<<\" \\"
+    },
+    {
+      "id": "example02",
+      "code": "/*\n * Example 2: Rotate 90 Degrees (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Rotate 90 CW: transpose then reverse each row\nvoid rotate90(vector<vector<int>>& m){\n    int n=m.size();\n    for(int i=0;i<n;i++) for(int j=i+1;j<n;j++) swap(m[i][j]);\n    for(auto& row:m) reverse(row.begin(),row.end());\n}\nint main(){\n    vector<vector<int>> m={{1,2,3},{4,5,6},{7,8,9}};\n    rotate90(m);\n    for(auto& row:m){for(int x:row) cout<<x<<\" \\"
+    },
+    {
+      "id": "example03",
+      "code": "/*\n * Example 3: Search Sorted Matrix (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Search in row-sorted col-sorted matrix: start top-right O(n+m)\nbool searchMatrix(vector<vector<int>>& m, int target){\n    int r=0,c=(int)m[0].size()-1;\n    while(r<(int)m.size()&&c>=0){\n        if(m[r][c]==target) return true;\n        else if(m[r][c]>target) c--;\n        else r++;\n    }\n    return false;\n}\nint main(){\n    vector<vector<int>> m={{1,4,7,11},{2,5,8,12},{3,6,9,16},{10,13,14,17}};\n    cout<<searchMatrix(m,5)<<\"\\\n\\"
+    },
+    {
+      "id": "example04",
+      "code": "/*\n * Example 4: Set Matrix Zeros (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Set matrix zeros: O(1) extra space using first row/col as flags\nvoid setZeroes(vector<vector<int>>& m){\n    int n=m.size(),k=m[0].size();\n    bool row0=false,col0=false;\n    for(int j=0;j<k;j++) if(m[0][j]==0) row0=true;\n    for(int i=0;i<n;i++) if(m[i][0]==0) col0=true;\n    for(int i=1;i<n;i++) for(int j=1;j<k;j++) if(m[i][j]==0){m[i][0]=0;m[0][j]=0;}\n    for(int i=1;i<n;i++) for(int j=1;j<k;j++) if(m[i][0]==0||m[0][j]==0) m[i][j]=0;\n    if(row0) for(int j=0;j<k;j++) m[0][j]=0;\n    if(col0) for(int i=0;i<n;i++) m[i][0]=0;\n}\nint main(){\n    vector<vector<int>> m={{1,1,1},{1,0,1},{1,1,1}};\n    setZeroes(m);\n    for(auto& r:m){for(int x:r) cout<<x<<\" \\"
+    },
+    {
+      "id": "example05",
+      "code": "/*\n * Example 5: Matrix Diagonal Traversal (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Print all diagonals of matrix (top-left to bottom-right)\nint main(){\n    vector<vector<int>> m={{1,2,3},{4,5,6},{7,8,9}};\n    int n=m.size(),k=m[0].size();\n    // Group by (i+j): same diagonal has same i+j\n    map<int,vector<int>> diag;\n    for(int i=0;i<n;i++) for(int j=0;j<k;j++) diag[i+j].push_back(m[i][j]);\n    for(auto&[d,v]:diag){for(int x:v) cout<<x<<\" \\"
+    },
+    {
+      "id": "page.tsx",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise01",
+      "content": "/*\n * Exercise 1: Spiral Order (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Print matrix in zigzag diagonal order\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise02",
+      "content": "/*\n * Exercise 2: Rotate 90 Degrees (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Flood fill \\u2014 change color of connected region starting at (r,c)\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise03",
+      "content": "/*\n * Exercise 3: Search Sorted Matrix (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Count islands in binary matrix\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise04",
+      "content": "/*\n * Exercise 4: Set Matrix Zeros (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Minimum path sum from (0,0) to (n-1,m-1)\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise05",
+      "content": "/*\n * Exercise 5: Matrix Diagonal Traversal (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Word search in 2D grid\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "page.tsx",
+      "content": ""
+    }
+  ],
+  "solutions": [
+    {
+      "id": "page.tsx",
+      "code": ""
+    },
+    {
+      "id": "solution01",
+      "code": "/*\n * Solution 1: Spiral Order (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> mat(n,vector<int>(m)); for(auto&r:mat)for(int&x:r)cin>>x;\n    int t=0,b=n-1,l=0,r=m-1;\n    while(t<=b&&l<=r){\n        for(int c=l;c<=r;c++)cout<<mat[t][c]<<\" \\"
+    },
+    {
+      "id": "solution02",
+      "code": "/*\n * Solution 2: Rotate 90 Degrees (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<vector<int>> m(n,vector<int>(n)); for(auto&r:m)for(int&x:r)cin>>x;\n    for(int i=0;i<n;i++) for(int j=i+1;j<n;j++) swap(m[i][j]);\n    for(auto&r:m){reverse(r.begin(),r.end());for(int x:r)cout<<x<<\" \\"
+    },
+    {
+      "id": "solution03",
+      "code": "/*\n * Solution 3: Search Sorted Matrix (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m,t; cin>>n>>m>>t;\n    vector<vector<int>> mat(n,vector<int>(m)); for(auto&r:mat)for(int&x:r)cin>>x;\n    int r=0,c=m-1;\n    while(r<n&&c>=0){if(mat[r][c]==t){cout<<r<<\" \"<<c<<\"\\\n\\"
+    },
+    {
+      "id": "solution04",
+      "code": "/*\n * Solution 4: Set Matrix Zeros (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> mat(n,vector<int>(m)); for(auto&r:mat)for(int&x:r)cin>>x;\n    bool r0=false,c0=false;\n    for(int j=0;j<m;j++) if(mat[0][j]==0) r0=true;\n    for(int i=0;i<n;i++) if(mat[i][0]==0) c0=true;\n    for(int i=1;i<n;i++) for(int j=1;j<m;j++) if(mat[i][j]==0){mat[i][0]=0;mat[0][j]=0;}\n    for(int i=1;i<n;i++) for(int j=1;j<m;j++) if(!mat[i][0]||!mat[0][j]) mat[i][j]=0;\n    if(r0) for(int j=0;j<m;j++) mat[0][j]=0;\n    if(c0) for(int i=0;i<n;i++) mat[i][0]=0;\n    for(auto&r:mat){for(int x:r)cout<<x<<\" \\"
+    },
+    {
+      "id": "solution05",
+      "code": "/*\n * Solution 5: Matrix Diagonal Traversal (Matrix)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Minimum path sum using DP\nint main(){\n    int n,m; cin>>n>>m;\n    vector<vector<int>> g(n,vector<int>(m)); for(auto&r:g)for(int&x:r)cin>>x;\n    vector<vector<int>> dp=g;\n    for(int i=1;i<n;i++) dp[i][0]+=dp[i-1][0];\n    for(int j=1;j<m;j++) dp[0][j]+=dp[0][j-1];\n    for(int i=1;i<n;i++) for(int j=1;j<m;j++) dp[i][j]+=min(dp[i-1][j],dp[i][j-1]);\n    cout<<dp[n-1][m-1]<<\"\\\n\\"
+    }
+  ]
+}

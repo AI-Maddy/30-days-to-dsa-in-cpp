@@ -1,58 +1,17 @@
 /*
- * Solution 2: DFS Traversal (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
+ * Solution 2: Number of Islands
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
-// Task      : DFS Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: dfs_traversal ---
-// Purpose    : Traverse structure using `dfs_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-    int dfs_traversal(int n, vector<vector<int>>& g) {
-        vector<int> vis(n, 0);
-        queue<int> q; q.push(0); vis[0] = 1;
-        int cnt = 0;
-        while (!q.empty()) {
-            int u = q.front(); q.pop(); cnt++;
-            for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
-        }
-        return cnt + 2;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    int n = 4; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3};
-    Solution s; cout << s.dfs_traversal(n, g) << "\n"; return 0;
+int numIslands(vector<vector<char>>&g){
+    int r=g.size(),c=g[0].size(),cnt=0;
+    int dx[]={0,0,1,-1},dy[]={1,-1,0,0};
+    auto bfs=[&](int sr,int sc){queue<pair<int,int>>q;q.push({sr,sc});g[sr][sc]='0';
+        while(!q.empty()){auto[x,y]=q.front();q.pop();for(int d=0;d<4;d++){int nx=x+dx[d],ny=y+dy[d];
+            if(nx>=0&&nx<r&&ny>=0&&ny<c&&g[nx][ny]=='1'){g[nx][ny]='0';q.push({nx,ny});}}}};
+    for(int i=0;i<r;i++)for(int j=0;j<c;j++)if(g[i][j]=='1'){bfs(i,j);cnt++;}
+    return cnt;
 }
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    vector<vector<char>>g={{'1','1','0','0'},{'1','1','0','0'},{'0','0','1','0'},{'0','0','0','1'}};
+    cout<<numIslands(g)<<"\n";}

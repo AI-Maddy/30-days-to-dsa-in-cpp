@@ -1,35 +1,15 @@
+/*
+ * Example 3: Stock Span
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example03
- * Pattern Family: Stack / Queue
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Stack / Queue approach.
- * Input   : Read sequence and query/order constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read values and initialize stack/queue/deque.
- * 2) Process each value maintaining monotonic/validity invariants.
- * 3) Pop outdated elements when condition breaks.
- * 4) Record answers at each relevant step.
- * 5) Print full answer sequence.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: For monotonic structures, store indices when window boundaries matter.
+vector<int> stockSpan(vector<int>&prices){
+    int n=prices.size(); vector<int> span(n); stack<int> st;
+    for(int i=0;i<n;i++){while(!st.empty()&&prices[st.top()]<=prices[i])st.pop();span[i]=st.empty()?i+1:i-st.top();st.push(i);}
+    return span;
 }
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+int main(){
+    vector<int> p={100,80,60,70,60,75,85};
+    for(int x:stockSpan(p)) cout<<x<<" "; cout<<"\n"; // 1 1 1 2 1 4 6
     return 0;
 }

@@ -1,50 +1,22 @@
 /*
- * Example 1: Activity Selection (Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants)
+ * Example 1: Activity Selection
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants
-// Task      : Activity Selection
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: activity_selection ---
-// Purpose    : Compute the result for `activity_selection`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int activity_selection(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
+// Example 1: Activity Selection Problem (maximum non-overlapping activities)
+int activitySelection(vector<pair<int,int>>& activities) {
+    // Sort by end time
+    sort(activities.begin(), activities.end(), [](auto& a, auto& b){ return a.second < b.second; });
+    int count = 1, lastEnd = activities[0].second;
+    for (int i = 1; i < (int)activities.size(); i++) {
+        if (activities[i].first >= lastEnd) {
+            count++;
+            lastEnd = activities[i].second;
+        }
+    }
+    return count;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << activity_selection(data) << "\n";
-    return 0;
+    vector<pair<int,int>> acts = {{1,2},{3,4},{0,6},{5,7},{8,9},{5,9}};
+    cout << activitySelection(acts) << "\n"; // 4
 }

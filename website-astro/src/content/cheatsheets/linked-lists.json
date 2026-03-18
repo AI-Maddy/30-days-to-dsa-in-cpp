@@ -1,0 +1,6 @@
+{
+  "slug": "linked-lists",
+  "title": "Linked Lists",
+  "icon": "🔗",
+  "content": "# 🔗 Linked Lists Cheatsheet\n       \n        **🧠 Memory Aid:** Use dummy head to simplify edge cases. Fast/slow pointers for middle and cycle detection.  Reverse: prev=null, curr=head, save next, rewire, advance. \n       \n      \n## 🏕️ Node Definition\n       `struct ListNode \n};\n\n// Doubly linked list\nstruct DNode \n};\n\n// Helper: build list from vector\nListNode* build(vector  v) `"
+}

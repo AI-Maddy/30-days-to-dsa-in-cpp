@@ -1,0 +1,6 @@
+{
+  "slug": "hashing",
+  "title": "Hashing",
+  "icon": "🔢",
+  "content": "# 🔢 Hashing Cheatsheet\n       \n        **🧠 Memory Aid:** Hash maps turn O(n) lookups into O(1). Key patterns: frequency, complement lookup, prefix sum + map.  When you need \"have I seen X before?\" → use hash map/set. \n       \n      \n## #️⃣ unordered_map vs map\n       `unordered_map  ump; // O(1) avg, no ordering\nmap  mp; // O(log n), sorted keys\nump[key]++; // insert or increment\nump.count(key); // 0 or 1 — existence check`"
+}

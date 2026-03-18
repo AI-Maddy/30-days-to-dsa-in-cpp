@@ -8,17 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 24** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 24 is a **pillar day** in your DSA journey because it covers the three most important recursion‑backtracking families:
-
-- **Subsets (Power Set)**  
-- **Combination Sum (I, II, III)**  
-- **Permutations (I, II)**  
-
-These patterns form the backbone of **90% of recursion + backtracking** problems in FAANG interviews.
-
----
 
 # **Day 24 – 🔥 Recursion Basics + Subsets + Combination Sum + Permutations**  
 `theory.rst`
@@ -310,15 +299,4 @@ Factorial tree (swap with all positions)
 - Pruning branches  
 - Recursion tree visualization  
 - Handling duplicates  
-- Passing state correctly  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 24 README (ultra‑premium)**  
-🧠 **C++ templates for subsets, combinations, permutations**  
-🎯 **20 recursion/backtracking interview problems**  
-📘 **Recursion cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Passing state correctly

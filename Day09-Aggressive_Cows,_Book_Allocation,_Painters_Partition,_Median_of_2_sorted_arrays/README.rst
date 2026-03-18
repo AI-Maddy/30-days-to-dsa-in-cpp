@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes **Day 09**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This is one of the *heaviest* and most *interview‑critical* days in the entire 30‑day roadmap.
-
----
 
 # **Day 09 — Aggressive Cows, Book Allocation, Painters Partition, Median of 2 Sorted Arrays (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -398,7 +394,3 @@ Today you mastered:
 - Optimization problems  
 
 This day is a milestone — these patterns appear in DP, greedy, graphs, and advanced binary search problems.
-
----
-
-If you’re ready, I’ll prepare **Day 10 — Sorting Revision + Custom Comparators + Counting Sort / Radix Sort Intuition** with the same ultra‑premium depth.

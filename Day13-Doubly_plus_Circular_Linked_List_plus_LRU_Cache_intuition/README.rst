@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — **Day 13** is here, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 13 — Doubly Linked List + Circular Linked List + LRU Cache Intuition (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -460,7 +456,3 @@ Today you mastered:
 - Interview‑level linked list patterns  
 
 This day builds the foundation for advanced linked list problems in Days 14 and 15.
-
----
-
-If you want, I’ll prepare **Day 14 — Fast & Slow Pointers Deep Dive + Palindrome Linked List Variants** with the same ultra‑premium depth.

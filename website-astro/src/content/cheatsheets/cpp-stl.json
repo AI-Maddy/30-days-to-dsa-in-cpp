@@ -1,0 +1,6 @@
+{
+  "slug": "cpp-stl",
+  "title": "Cpp Stl",
+  "icon": "📄",
+  "content": "#   C++ STL Cheatsheet\n       \n        **🧠 Memory Aid:** STL = Containers + Iterators + Algorithms.  Every container has begin()/end(); every algorithm works on ranges. \n       \n      \n## 📦 Sequence Containers\n       `vector  v;\nv.push_back(x);   // O(1) amortized\nv.pop_back();     // O(1)\nv[i];             // O(1) random access\nv.size();  v.empty();  v.front();  v.back();\nsort(v.begin(), v.end()); // O(n log n)\nreverse(v.begin(), v.end()); // O(n)`"
+}

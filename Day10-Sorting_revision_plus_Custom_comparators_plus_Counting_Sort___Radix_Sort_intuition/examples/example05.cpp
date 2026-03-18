@@ -1,50 +1,13 @@
 /*
- * Example 5: Sort by Frequency (Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition)
+ * Example 5: Sort by Frequency
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Sorting revision plus Custom comparators plus Counting Sort Radix Sort intuition
-// Task      : Sort by Frequency
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: sort_by_frequency ---
-// Purpose    : Reorder data according to problem rule in `sort_by_frequency`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-int sort_by_frequency(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << sort_by_frequency(data) << "\n";
+int main(){
+    vector<int> nums={1,1,2,2,2,3};
+    unordered_map<int,int> freq; for(int x:nums) freq[x]++;
+    sort(nums.begin(),nums.end(),[&](int a,int b){return freq[a]!=freq[b]?freq[a]>freq[b]:a<b;});
+    nums.erase(unique(nums.begin(),nums.end()),nums.end());
+    for(int x:nums) cout<<x<<" "; cout<<"\n"; // 2 1 3
     return 0;
 }

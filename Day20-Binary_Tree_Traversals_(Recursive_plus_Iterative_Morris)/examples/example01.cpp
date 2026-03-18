@@ -1,57 +1,19 @@
 /*
- * Example 1: Inorder Traversal (Binary Tree Traversals (Recursive plus Iterative Morris))
+ * Example 1: Inorder Traversal
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Binary Tree Traversals (Recursive plus Iterative Morris)
-// Task      : Inorder Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// --- Function Explanation: inorder_traversal ---
-// Purpose    : Traverse structure using `inorder_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-int inorder_traversal(TreeNode* root) {
-    if (!root) return 0;
-    queue<TreeNode*> q; q.push(root);
-    int cnt = 0;
-    while (!q.empty()) {
-        TreeNode* cur = q.front(); q.pop(); cnt++;
-        if (cur->left) q.push(cur->left);
-        if (cur->right) q.push(cur->right);
-    }
-    return cnt + 1;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    cout << inorder_traversal(r) << "\n";
+struct TreeNode{int val;TreeNode*left,*right;TreeNode(int x):val(x),left(nullptr),right(nullptr){}};
+TreeNode* build(vector<int>v){if(v.empty())return nullptr;TreeNode*r=new TreeNode(v[0]);queue<TreeNode*>q;q.push(r);int i=1;while(i<(int)v.size()){TreeNode*c=q.front();q.pop();if(i<(int)v.size()&&v[i]!=-1){c->left=new TreeNode(v[i]);q.push(c->left);}i++;if(i<(int)v.size()&&v[i]!=-1){c->right=new TreeNode(v[i]);q.push(c->right);}i++;}return r;}
+void inorder(TreeNode*r,vector<int>&res){if(!r)return;inorder(r->left,res);res.push_back(r->val);inorder(r->right,res);}
+vector<int> inorderIter(TreeNode*r){vector<int>res;stack<TreeNode*>st;while(r||!st.empty()){while(r){st.push(r);r=r->left;}r=st.top();st.pop();res.push_back(r->val);r=r->right;}return res;}
+// Morris inorder: O(1) space
+vector<int> morrisInorder(TreeNode*r){vector<int>res;while(r){if(!r->left){res.push_back(r->val);r=r->right;}else{TreeNode*pre=r->left;while(pre->right&&pre->right!=r)pre=pre->right;if(!pre->right){pre->right=r;r=r->left;}else{pre->right=nullptr;res.push_back(r->val);r=r->right;}}}return res;}
+int main(){
+    TreeNode*r=build({1,-1,2,3}); // 1->null,2->3,null
+    r=new TreeNode(1);r->right=new TreeNode(2);r->right->left=new TreeNode(3);
+    for(int x:inorder(r,*(new vector<int>{})))cout<<x<<" "; // not clean - use below
+    vector<int>res; inorder(r,res); for(int x:res)cout<<x<<" "; cout<<"\n"; // 1 3 2
+    for(int x:morrisInorder(r))cout<<x<<" "; cout<<"\n"; // 1 3 2
     return 0;
 }

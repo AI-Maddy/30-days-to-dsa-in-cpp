@@ -1,50 +1,17 @@
 /*
- * Example 4: Two Pointers Pair (Binary Search on 1D and 2D plus Binary Search on Answer pattern)
+ * Example 4: First and Last Occurrence
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Binary Search on 1D and 2D plus Binary Search on Answer pattern
-// Task      : Two Pointers Pair
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: two_pointers_pair ---
-// Purpose    : Compute the result for `two_pointers_pair`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int two_pointers_pair(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (7));
-    return ans;
+pair<int,int> firstLast(vector<int>&a,int t){
+    int l=0,r=a.size()-1,first=-1,last=-1;
+    while(l<=r){int m=l+(r-l)/2;if(a[m]==t){first=m;r=m-1;}else if(a[m]<t)l=m+1;else r=m-1;}
+    l=0;r=a.size()-1;
+    while(l<=r){int m=l+(r-l)/2;if(a[m]==t){last=m;l=m+1;}else if(a[m]<t)l=m+1;else r=m-1;}
+    return{first,last};
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {4, 5, 6, 7, 8};
-    cout << two_pointers_pair(data) << "\n";
+int main(){
+    vector<int> a={5,7,7,8,8,10}; auto[f,l]=firstLast(a,8);
+    cout<<f<<" "<<l<<"\n"; // 3 4
     return 0;
 }

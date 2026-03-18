@@ -1,38 +1,11 @@
 /*
- * Exercise 4: N Queens Count (Backtracking with pruning plus Graph coloring intuition plus M coloring problem)
+ * Exercise 4: Unique Permutations
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Backtracking with pruning plus Graph coloring intuition plus M coloring problem
-// Task      : N Queens Count
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: n_queens_count ---
-// Purpose    : Compute the result for `n_queens_count`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int n_queens_count(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x % (8);
-        return ans;
-    }
-};
+// Exercise 4: Permutations II (unique permutations with duplicates)
+// Hint: Sort nums; use used[] array; skip if nums[i]==nums[i-1] && !used[i-1].
+void permuteUnique(vector<int>& nums, vector<bool>& used, vector<int>& cur, vector<vector<int>>& res) {
+    // TODO
+}
+int main() {}

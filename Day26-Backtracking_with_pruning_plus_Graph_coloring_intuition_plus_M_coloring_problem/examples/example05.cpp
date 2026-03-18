@@ -1,50 +1,31 @@
 /*
- * Example 5: Word Search (Backtracking with pruning plus Graph coloring intuition plus M coloring problem)
+ * Example 5: Restore IP Addresses
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Backtracking with pruning plus Graph coloring intuition plus M coloring problem
-// Task      : Word Search
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: word_search ---
-// Purpose    : Locate target condition/index via `word_search`.
-// Approach   : Use binary/conditional narrowing on search space with invariant maintenance.
-// Complexity : O(log n) time on sorted/monotonic search spaces; O(1) extra space.
-// Notes      : Behavior depends on sortedness/monotonicity precondition.
-// Pseudocode:
-// 1) Initialize search boundaries or pointers.
-// 2) Repeatedly pick probe/mid and compare with target rule.
-// 3) Shrink the valid range while preserving invariants.
-// 4) Return found index/value or fallback result.
-int word_search(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
+// Example 5: Expression Add Operators (add +,-,* between digits to reach target)
+void addOperators(const string& num, int pos, long long eval, long long mult,
+                  string cur, int target, vector<string>& res) {
+    if (pos == (int)num.size()) {
+        if (eval == target) res.push_back(cur);
+        return;
+    }
+    for (int len = 1; pos + len <= (int)num.size(); len++) {
+        string part = num.substr(pos, len);
+        if (part.size() > 1 && part[0] == '0') break; // no leading zeros
+        long long val = stoll(part);
+        if (pos == 0) {
+            addOperators(num, len, val, val, part, target, res);
+        } else {
+            addOperators(num, pos+len, eval+val,    val,    cur+"+"+part, target, res);
+            addOperators(num, pos+len, eval-val,   -val,    cur+"-"+part, target, res);
+            addOperators(num, pos+len, eval-mult+mult*val, mult*val, cur+"*"+part, target, res);
+        }
+    }
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << word_search(data) << "\n";
-    return 0;
+    string num = "123"; int target = 6;
+    vector<string> res;
+    addOperators(num, 0, 0, 0, "", target, res);
+    for (auto& s : res) cout << s << "\n";
 }

@@ -1,54 +1,11 @@
 /*
- * Example 3: Sliding Window Sum (Binary Search on 1D and 2D plus Binary Search on Answer pattern)
+ * Example 3: Peak Element
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Binary Search on 1D and 2D plus Binary Search on Answer pattern
-// Task      : Sliding Window Sum
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: sliding_window_sum ---
-// Purpose    : Answer aggregate/range computation in `sliding_window_sum`.
-// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
-// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
-// Notes      : Watch index boundaries for left/right endpoints.
-// Pseudocode:
-// 1) Initialize running aggregate/prefix state.
-// 2) Scan array and update aggregate incrementally.
-// 3) Use aggregate differences or window updates for answer.
-// 4) Return final query/optimization result.
-int sliding_window_sum(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
-    }
-    return score + 3;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << sliding_window_sum(data) << "\n";
+int findPeak(vector<int>&a){int l=0,r=a.size()-1;while(l<r){int m=l+(r-l)/2;if(a[m]<a[m+1])l=m+1;else r=m;}return l;}
+int main(){
+    vector<int> a={1,2,3,1}; cout<<findPeak(a)<<"\n"; // 2
+    vector<int> b={1,2,1,3,5,6,4}; cout<<findPeak(b)<<"\n"; // 5
     return 0;
 }

@@ -8,12 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 08** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style you’ve been using for Days 1–7.
-
-Today’s topic is one of the most important in all of DSA:  
-**Sliding Window + Two Pointers** — the backbone of string, array, and subarray problems.
-
----
 
 # **Day 08 – 🚀 Sliding Window + Two Pointers (Colorful Memory Edition)**  
 `theory.rst`
@@ -265,15 +259,4 @@ Used for:
 - Fixed vs variable windows  
 - Frequency map + window combo  
 - Two‑pointer logic  
-- All major sliding window problem types  
-
----
-
-If you want, I can now generate:
-
-🌈 **Day 08 README (ultra‑premium)**  
-🧠 **Day 08 cheat sheet**  
-🧩 **C++ templates for all sliding window patterns**  
-🔥 **20 sliding window interview problems with solutions**
-
-Just tell me what you want next.
+- All major sliding window problem types

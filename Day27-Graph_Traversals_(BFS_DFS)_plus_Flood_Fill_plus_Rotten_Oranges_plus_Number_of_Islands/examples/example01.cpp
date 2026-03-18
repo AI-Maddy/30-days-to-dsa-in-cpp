@@ -1,55 +1,27 @@
 /*
- * Example 1: BFS Traversal (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
+ * Example 1: BFS and DFS
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
-// Task      : BFS Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: bfs_traversal ---
-// Purpose    : Traverse structure using `bfs_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-int bfs_traversal(int n, vector<vector<int>>& g) {
-    vector<int> vis(n, 0);
-    queue<int> q; q.push(0); vis[0] = 1;
-    int cnt = 0;
+// Example 1: BFS and DFS on undirected graph
+void bfs(int src, vector<vector<int>>& adj, int n) {
+    vector<bool> vis(n, false);
+    queue<int> q; q.push(src); vis[src] = true;
     while (!q.empty()) {
-        int u = q.front(); q.pop(); cnt++;
-        for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
+        int u = q.front(); q.pop(); cout << u << " ";
+        for (int v : adj[u]) if (!vis[v]) { vis[v] = true; q.push(v); }
     }
-    return cnt + 1;
+    cout << "\n";
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+void dfs(int u, vector<vector<int>>& adj, vector<bool>& vis) {
+    vis[u] = true; cout << u << " ";
+    for (int v : adj[u]) if (!vis[v]) dfs(v, adj, vis);
+}
 int main() {
-    int n = 5; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3}; g[2] = {4};
-    cout << bfs_traversal(n, g) << "\n";
-    return 0;
+    int n = 6;
+    vector<vector<int>> adj(n);
+    auto add = [&](int u, int v){ adj[u].push_back(v); adj[v].push_back(u); };
+    add(0,1); add(0,2); add(1,3); add(2,4); add(3,5);
+    cout << "BFS from 0: "; bfs(0, adj, n);
+    cout << "DFS from 0: "; vector<bool> vis(n,false); dfs(0, adj, vis); cout << "\n";
 }

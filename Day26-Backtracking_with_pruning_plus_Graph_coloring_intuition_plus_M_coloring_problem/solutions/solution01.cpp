@@ -1,53 +1,18 @@
 /*
- * Solution 1: Generate Subsets (Backtracking with pruning plus Graph coloring intuition plus M coloring problem)
+ * Solution 1: M-Coloring
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Backtracking with pruning plus Graph coloring intuition plus M coloring problem
-// Task      : Generate Subsets
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: generate_subsets ---
-// Purpose    : Compute the result for `generate_subsets`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int generate_subsets(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x;
-        return ans + 1;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> nums = {1, 2, 3};
-    Solution s; cout << s.generate_subsets(nums) << "\n"; return 0;
+bool safe(int node,vector<vector<int>>&adj,vector<int>&col,int c){
+    for(int nb:adj[node])if(col[nb]==c)return false;return true;
 }
+bool mColoring(int node,int n,int m,vector<vector<int>>&adj,vector<int>&col){
+    if(node==n)return true;
+    for(int c=1;c<=m;c++){if(safe(node,adj,col,c)){col[node]=c;if(mColoring(node+1,n,m,adj,col))return true;col[node]=0;}}
+    return false;
+}
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    int n=4,m=3;vector<vector<int>>adj(n);
+    adj[0]={1,2};adj[1]={0,2,3};adj[2]={0,1,3};adj[3]={1,2};
+    vector<int>col(n,0);
+    cout<<(mColoring(0,n,m,adj,col)?"Possible":"Not Possible")<<"\n";}

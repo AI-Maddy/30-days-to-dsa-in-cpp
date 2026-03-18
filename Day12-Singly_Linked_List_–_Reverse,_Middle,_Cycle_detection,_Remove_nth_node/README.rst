@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Here it is, Sasimegala — **Day 12**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 12 — Singly Linked List: Reverse, Middle, Cycle Detection, Remove Nth Node (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -406,7 +402,3 @@ Today you mastered:
 - Deleting nodes efficiently  
 
 These operations form the foundation for advanced linked list problems in Days 13–15.
-
----
-
-If you want, I’ll prepare **Day 13 — Doubly + Circular Linked List + LRU Cache Intuition** with the same ultra‑premium depth.

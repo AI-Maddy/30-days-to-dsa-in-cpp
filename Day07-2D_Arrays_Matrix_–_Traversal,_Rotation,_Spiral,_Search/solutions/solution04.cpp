@@ -1,35 +1,18 @@
+/*
+ * Solution 4: Set Matrix Zeros (Matrix)
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution04
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+int main(){
+    int n,m; cin>>n>>m;
+    vector<vector<int>> mat(n,vector<int>(m)); for(auto&r:mat)for(int&x:r)cin>>x;
+    bool r0=false,c0=false;
+    for(int j=0;j<m;j++) if(mat[0][j]==0) r0=true;
+    for(int i=0;i<n;i++) if(mat[i][0]==0) c0=true;
+    for(int i=1;i<n;i++) for(int j=1;j<m;j++) if(mat[i][j]==0){mat[i][0]=0;mat[0][j]=0;}
+    for(int i=1;i<n;i++) for(int j=1;j<m;j++) if(!mat[i][0]||!mat[0][j]) mat[i][j]=0;
+    if(r0) for(int j=0;j<m;j++) mat[0][j]=0;
+    if(c0) for(int i=0;i<n;i++) mat[i][0]=0;
+    for(auto&r:mat){for(int x:r)cout<<x<<" ";cout<<"\n";}
     return 0;
 }

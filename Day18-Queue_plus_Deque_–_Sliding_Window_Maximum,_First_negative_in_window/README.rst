@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Day 18 coming right up, Sasimegala — and this one is a smooth continuation of your stack/queue mastery.  
-Today we shift from monotonic stacks (Day 17) into **queues, deques, and sliding‑window patterns**, which are essential for real‑time data processing, streaming algorithms, and many FAANG interview problems.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 18 — Queue + Deque: Sliding Window Maximum, First Negative in Window (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -421,7 +415,3 @@ Today you mastered:
 - Real interview sliding‑window problems  
 
 This day sets you up perfectly for **Day 19 — Binary Trees: Traversals, Height, Diameter, Balanced Trees**.
-
----
-
-If you want, I’ll prepare **Day 19** with the same ultra‑premium depth.

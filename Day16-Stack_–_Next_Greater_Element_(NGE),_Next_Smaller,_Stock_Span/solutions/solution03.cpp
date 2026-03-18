@@ -1,35 +1,6 @@
+/*
+ * Solution 3: Stock Span
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution03
- * Pattern Family: Stack / Queue
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Stack / Queue approach.
- * Input   : Read sequence and query/order constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read values and initialize stack/queue/deque.
- * 2) Process each value maintaining monotonic/validity invariants.
- * 3) Pop outdated elements when condition breaks.
- * 4) Record answers at each relevant step.
- * 5) Print full answer sequence.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: For monotonic structures, store indices when window boundaries matter.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
-}
+int main(){int n;cin>>n;vector<int>h(n);for(int&x:h)cin>>x;stack<int>st;int water=0;for(int i=0;i<n;i++){while(!st.empty()&&h[st.top()]<=h[i]){int bot=h[st.top()];st.pop();if(!st.empty()){int dist=i-st.top()-1;water+=dist*(min(h[i],h[st.top()])-bot);}}st.push(i);}cout<<water<<"\n";return 0;}

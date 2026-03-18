@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Here it is, Sasimegala — **Day 14**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 14 — Fast & Slow Pointers Deep Dive + Palindrome Linked List Variants (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -441,7 +437,3 @@ Today you mastered:
 - Deep pointer intuition  
 
 This day is foundational for advanced linked list problems in Day 15.
-
----
-
-If you want, I’ll prepare **Day 15 — Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List** with the same ultra‑premium depth.

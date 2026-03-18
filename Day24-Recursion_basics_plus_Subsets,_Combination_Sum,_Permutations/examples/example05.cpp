@@ -1,50 +1,24 @@
 /*
- * Example 5: Word Search (Recursion basics plus Subsets, Combination Sum, Permutations)
+ * Example 5: Combination Sum II
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Recursion basics plus Subsets, Combination Sum, Permutations
-// Task      : Word Search
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: word_search ---
-// Purpose    : Locate target condition/index via `word_search`.
-// Approach   : Use binary/conditional narrowing on search space with invariant maintenance.
-// Complexity : O(log n) time on sorted/monotonic search spaces; O(1) extra space.
-// Notes      : Behavior depends on sortedness/monotonicity precondition.
-// Pseudocode:
-// 1) Initialize search boundaries or pointers.
-// 2) Repeatedly pick probe/mid and compare with target rule.
-// 3) Shrink the valid range while preserving invariants.
-// 4) Return found index/value or fallback result.
-int word_search(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
+// Example 5: Letter Combinations of Phone Number
+unordered_map<char, string> phone = {
+    {'2',"abc"},{'3',"def"},{'4',"ghi"},{'5',"jkl"},
+    {'6',"mno"},{'7',"pqrs"},{'8',"tuv"},{'9',"wxyz"}
+};
+void letterCombinations(const string& digits, int idx, string& cur, vector<string>& res) {
+    if (idx == (int)digits.size()) { res.push_back(cur); return; }
+    for (char c : phone[digits[idx]]) {
+        cur.push_back(c);
+        letterCombinations(digits, idx + 1, cur, res);
+        cur.pop_back();
+    }
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << word_search(data) << "\n";
-    return 0;
+    string digits = "23";
+    vector<string> res; string cur;
+    if (!digits.empty()) letterCombinations(digits, 0, cur, res);
+    for (auto& s : res) cout << s << "\n";
 }

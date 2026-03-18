@@ -1,35 +1,27 @@
+/*
+ * Example 2: Floor and Ceil
+ */
 #include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example02
- * Pattern Family: Binary Search
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Binary Search approach.
- * Input   : Read sorted data or searchable answer range.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read input and identify monotonic condition.
- * 2) Set low/high search boundaries.
- * 3) Check mid using feasibility predicate.
- * 4) Shrink range based on predicate outcome.
- * 5) Return exact position/boundary/optimal answer.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Prefer long long where boundary multiplication/sums can overflow int.
+// Example 2: Floor and Ceil in BST
+// Floor: largest value <= key; Ceil: smallest value >= key
+pair<int,int> floorCeil(TreeNode* root, int key) {
+    int floor = -1, ceil = -1;
+    TreeNode* cur = root;
+    while (cur) {
+        if (cur->val == key) { floor = ceil = key; break; }
+        if (cur->val < key) { floor = cur->val; cur = cur->right; }
+        else { ceil = cur->val; cur = cur->left; }
+    }
+    return {floor, ceil};
 }
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
+    TreeNode* root = new TreeNode(8);
+    root->left = new TreeNode(4); root->right = new TreeNode(12);
+    root->left->left = new TreeNode(2); root->left->right = new TreeNode(6);
+    root->right->left = new TreeNode(10); root->right->right = new TreeNode(14);
+    auto [f,c] = floorCeil(root, 11);
+    cout << "floor=" << f << " ceil=" << c << "\n"; // 10, 12
 }

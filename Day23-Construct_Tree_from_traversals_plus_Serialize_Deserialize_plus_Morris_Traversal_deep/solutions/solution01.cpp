@@ -1,53 +1,22 @@
 /*
- * Solution 1: Inorder Traversal (Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep)
+ * Solution 1: Build from Pre+In
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep
-// Task      : Inorder Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: inorder_traversal ---
-// Purpose    : Traverse structure using `inorder_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-    int inorder_traversal(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + inorder_traversal(root->left) + inorder_traversal(root->right);
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    Solution s; cout << s.inorder_traversal(r) + 1 << "\n"; return 0;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
+TreeNode* build(vector<int>&pre,int pl,int pr,vector<int>&ino,int il,int ir,unordered_map<int,int>&idx){
+    if(pl>pr)return nullptr;
+    int rv=pre[pl],mid=idx[rv],ls=mid-il;
+    TreeNode* r=new TreeNode(rv);
+    r->left=build(pre,pl+1,pl+ls,ino,il,mid-1,idx);
+    r->right=build(pre,pl+ls+1,pr,ino,mid+1,ir,idx);
+    return r;
 }
+TreeNode* buildTree(vector<int>&preorder,vector<int>&inorder){
+    unordered_map<int,int> idx; for(int i=0;i<(int)inorder.size();i++)idx[inorder[i]]=i;
+    return build(preorder,0,preorder.size()-1,inorder,0,inorder.size()-1,idx);
+}
+void io(TreeNode* n){if(!n)return;io(n->left);cout<<n->val<<" ";io(n->right);}
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    vector<int>pre={3,9,20,15,7},in={9,3,15,20,7};
+    io(buildTree(pre,in));cout<<"\n";}

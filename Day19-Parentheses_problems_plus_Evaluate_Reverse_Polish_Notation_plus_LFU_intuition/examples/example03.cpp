@@ -1,55 +1,14 @@
 /*
- * Example 3: Stock Span (Parentheses problems plus Evaluate Reverse Polish Notation plus LFU intuition)
+ * Example 3: Stock Span
  */
-#include <iostream>
-#include <vector>
-#include <stack>
-#include <deque>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Parentheses problems plus Evaluate Reverse Polish Notation plus LFU intuition
-// Task      : Stock Span
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: stock_span ---
-// Purpose    : Evaluate sequence constraints using `stock_span`.
-// Approach   : Use monotonic stack/queue to keep only useful candidates.
-// Complexity : O(n) time with amortized O(1) push/pop operations.
-// Notes      : Ensure pop conditions reflect strict/non-strict requirement.
-// Pseudocode:
-// 1) Initialize monotonic/support stack or queue.
-// 2) For each element, pop invalid candidates.
-// 3) Read answer from top/front and push current element.
-// 4) Return collected per-index or global result.
-int stock_span(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
-    }
-    return score + 3;
+vector<int> stockSpan(vector<int>&p){
+    int n=p.size();vector<int>sp(n);stack<int>st;
+    for(int i=0;i<n;i++){while(!st.empty()&&p[st.top()]<=p[i])st.pop();sp[i]=st.empty()?i+1:i-st.top();st.push(i);}
+    return sp;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << stock_span(data) << "\n";
+int main(){
+    vector<int> p={7,2,1,2}; for(int x:stockSpan(p))cout<<x<<" "; cout<<"\n"; // 1 1 1 2
     return 0;
 }

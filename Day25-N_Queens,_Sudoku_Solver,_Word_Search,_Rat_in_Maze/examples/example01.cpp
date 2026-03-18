@@ -1,50 +1,37 @@
 /*
- * Example 1: Generate Subsets (N Queens, Sudoku Solver, Word Search, Rat in Maze)
+ * Example 1: N-Queens Board
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : N Queens, Sudoku Solver, Word Search, Rat in Maze
-// Task      : Generate Subsets
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: generate_subsets ---
-// Purpose    : Compute the result for `generate_subsets`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int generate_subsets(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
+// Example 1: N-Queens Problem
+int n;
+vector<string> board;
+vector<vector<string>> solutions;
+bool isSafe(int row, int col) {
+    // Check column and diagonals above
+    for (int i = 0; i < row; i++) {
+        if (board[i][col] == 'Q') return false;
+        int dc = col - (row - i);
+        if (dc >= 0 && board[i][dc] == 'Q') return false;
+        dc = col + (row - i);
+        if (dc < n && board[i][dc] == 'Q') return false;
+    }
+    return true;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+void solve(int row) {
+    if (row == n) { solutions.push_back(board); return; }
+    for (int col = 0; col < n; col++) {
+        if (isSafe(row, col)) {
+            board[row][col] = 'Q';
+            solve(row + 1);
+            board[row][col] = '.';
+        }
+    }
+}
 int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << generate_subsets(data) << "\n";
-    return 0;
+    n = 4;
+    board.assign(n, string(n, '.'));
+    solve(0);
+    cout << solutions.size() << " solutions\n";
+    for (auto& sol : solutions) { for (auto& row : sol) cout << row << "\n"; cout << "\n"; }
 }

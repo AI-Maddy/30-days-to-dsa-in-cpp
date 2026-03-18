@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — **Day 19** is here, and this is where your DSA roadmap enters one of its most important chapters: **Binary Trees**.  
-Everything from recursion to BFS/DFS to dynamic programming on trees builds on today’s foundation.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 19 — Binary Trees: Traversals, Height, Diameter, Balanced Trees (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -430,7 +424,3 @@ Today you mastered:
 - Real‑world tree applications  
 
 This day is the foundation for **Day 20 — Binary Search Trees (BST): Insert, Delete, Search, Validate, LCA**.
-
----
-
-If you want, I’ll prepare **Day 20** with the same ultra‑premium depth.

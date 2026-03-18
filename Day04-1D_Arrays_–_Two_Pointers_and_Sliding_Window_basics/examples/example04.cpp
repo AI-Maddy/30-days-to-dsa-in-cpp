@@ -1,35 +1,46 @@
+/*
+ * Example 4: Longest Substring Without Repeating (1D Arrays – Two Pointers and Sliding Window basics)
+ */
+// Sliding window + hash map tracking last seen index. O(n) time, O(min(n,alphabet)) space.
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example04
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
+int lengthOfLongestSubstring(string s) {
+    unordered_map<char,int> last;  // char -> last seen index
+    int l=0, maxLen=0;
+    for (int r=0; r<(int)s.size(); r++) {
+        // If char seen and was within window, shrink left
+        if (last.count(s[r]) && last[s[r]] >= l)
+            l = last[s[r]] + 1;
+        last[s[r]] = r;
+        maxLen = max(maxLen, r - l + 1);
+    }
+    return maxLen;
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    vector<string> tests = {"abcabcbb","bbbbb","pwwkew",""};
+    for (auto& s : tests) {
+        cout << """ << s << "" -> " << lengthOfLongestSubstring(s) << "\n";
+    }
+    // Expected: 3, 1, 3, 0
 
-    // Run the main solver for this file.
-    solve();
+    // Variant: longest substring with at most k distinct characters
+    auto longestKDistinct = [](string s, int k) {
+        unordered_map<char,int> freq;
+        int l=0, maxLen=0;
+        for (int r=0; r<(int)s.size(); r++) {
+            freq[s[r]]++;
+            while ((int)freq.size() > k) {
+                if (--freq[s[l]]==0) freq.erase(s[l]);
+                l++;
+            }
+            maxLen = max(maxLen, r-l+1);
+        }
+        return maxLen;
+    };
+    cout << "\nLongest with at most 2 distinct in \"eceba\": "
+         << longestKDistinct("eceba", 2) << "\n";  // 3
+
     return 0;
 }

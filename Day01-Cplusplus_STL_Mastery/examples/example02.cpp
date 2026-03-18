@@ -1,50 +1,41 @@
 /*
  * Example 2: Map Frequency (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Cplusplus STL Mastery
-// Task      : Map Frequency
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: map_frequency ---
-// Purpose    : Compute the result for `map_frequency`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int map_frequency(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 2;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {2, 3, 4, 5, 6};
-    cout << map_frequency(data) << "\n";
+    vector<int> nums = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
+
+    // Build frequency map — O(n log n) for map, O(n) for unordered_map
+    map<int,int> freq;
+    for (int x : nums) freq[x]++;
+
+    cout << "Frequencies (sorted):\n";
+    for (auto& [val, cnt] : freq)
+        cout << "  " << val << " -> " << cnt << "\n";
+
+    // Find element with maximum frequency
+    auto maxIt = max_element(freq.begin(), freq.end(),
+        [](const auto& a, const auto& b){ return a.second < b.second; });
+    cout << "\nMost frequent: " << maxIt->first
+         << " (appears " << maxIt->second << " times)\n";
+
+    // unordered_map — O(1) average operations
+    unordered_map<string,int> wordCount;
+    vector<string> words = {"the","quick","brown","fox","the","quick","the"};
+    for (auto& w : words) wordCount[w]++;
+
+    cout << "\nWord counts:\n";
+    for (auto& [word, cnt] : wordCount)
+        cout << "  " << word << ": " << cnt << "\n";
+
+    // map.lower_bound and upper_bound for range queries
+    map<int,int> m = {{1,10},{3,30},{5,50},{7,70},{9,90}};
+    int lo = 3, hi = 7;
+    cout << "\nKeys in [" << lo << "," << hi << "]:\n";
+    for (auto it = m.lower_bound(lo); it != m.upper_bound(hi); ++it)
+        cout << "  key=" << it->first << " val=" << it->second << "\n";
+
     return 0;
 }

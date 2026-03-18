@@ -1,38 +1,10 @@
 /*
- * Exercise 2: Level Order Traversal (Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep)
+ * Exercise 2: Build from In+Post
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep
-// Task      : Level Order Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: level_order_traversal ---
-// Purpose    : Traverse structure using `level_order_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-    int level_order_traversal(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + level_order_traversal(root->left) + level_order_traversal(root->right);
-    }
-};
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
+// Exercise 2: Build tree from inorder + postorder
+// Hint: postorder[last] is root; find in inorder to get left/right sizes. Process postorder from back.
+TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) { return nullptr; /* TODO */ }
+int main() {}

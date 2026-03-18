@@ -1,35 +1,15 @@
+/*
+ * Example 5: Matrix Diagonal Traversal (Matrix)
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example05
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+// Print all diagonals of matrix (top-left to bottom-right)
+int main(){
+    vector<vector<int>> m={{1,2,3},{4,5,6},{7,8,9}};
+    int n=m.size(),k=m[0].size();
+    // Group by (i+j): same diagonal has same i+j
+    map<int,vector<int>> diag;
+    for(int i=0;i<n;i++) for(int j=0;j<k;j++) diag[i+j].push_back(m[i][j]);
+    for(auto&[d,v]:diag){for(int x:v) cout<<x<<" "; cout<<"\n";}
     return 0;
 }

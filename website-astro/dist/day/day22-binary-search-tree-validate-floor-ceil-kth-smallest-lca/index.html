@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="30 Days to DSA in C++ — Premium Edition"><title>Day 22 · Binary Search Tree Validate Floor Ceil Kth Smallest Lca · DSA in C++</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.EuORl1j-.css"></head> <body class="min-h-screen bg-[#0d1117] text-slate-100 antialiased"> <!-- Nav --> <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0d1117]/90 backdrop-blur-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14"> <a href="/" class="flex items-center gap-2 font-bold text-slate-100 hover:text-white transition-colors"> <span class="text-xl">⚡</span> <span class="hidden sm:inline text-sm">30 Days DSA C++</span> </a> <div class="flex items-center gap-1"> <a href="/" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">Home</a> <a href="/cheatsheets" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">📄 Cheatsheets</a> </div> </div> </nav> <!-- Main --> <main>  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10"> <!-- Breadcrumb --> <div class="flex items-center gap-2 text-xs text-slate-500 mb-6"> <a href="/" class="hover:text-slate-300 transition-colors">Home</a> <span>›</span> <span class="text-yellow-400 font-medium">🟡 Trees &amp; BST</span> </div> <!-- Header --> <div class="rounded-2xl border border-yellow-500/40 bg-yellow-950/40 p-6 mb-8"> <div class="flex items-start gap-4"> <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black bg-yellow-500/20 text-yellow-300"> 22 </div> <div> <div class="text-xs font-bold uppercase tracking-widest mb-1 text-yellow-400">Day 22 · Trees &amp; BST</div> <h1 class="text-2xl font-extrabold text-white leading-tight">Binary Search Tree Validate Floor Ceil Kth Smallest Lca</h1> <div class="flex gap-3 mt-3 text-xs text-slate-400"> <span>📖 README</span> <span>🧠 Theory</span> <span>💻 5 Examples</span> <span>✏️ 5 Exercises</span> <span>✅ 5 Solutions</span> </div> </div> </div> </div> <!-- Tabs --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="1PuJCP" prefix="r1" component-url="/_astro/DayTabs.B_BF-cJm.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;readme&quot;:[0,&quot;---\n\n# **Day 22 \\u2014 Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right) (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nToday\\u2019s problems combine:\n\n- BFS  \n- DFS  \n- Hashing  \n- Recursion  \n- Tree DP  \n- Queue + map patterns  \n\nThese are the problems that separate beginners from advanced tree programmers.\n\nYou\\u2019ll master:\n\n- Zigzag level order  \n- Boundary traversal  \n- Top view  \n- Bottom view  \n- Left view  \n- Right view  \n- Vertical order traversal  \n- Path sum problems  \n- Root\\u2011to\\u2011leaf path generation  \n\nThese patterns appear in system design, compilers, file systems, and graph algorithms.\n\n---\n\n# **2. Zigzag Level Order Traversal**\n\nLevel order but alternate direction each level.\n\n### **Implementation**\n\n```cpp\nvector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) {\n    vector&lt;vector&lt;int&gt;&gt; ans;\n    if (!root) return ans;\n\n    queue&lt;TreeNode*&gt; q;\n    q.push(root);\n    bool leftToRight = true;\n\n    while (!q.empty()) {\n        int sz = q.size();\n        vector&lt;int&gt; level(sz);\n\n        for (int i = 0; i &lt; sz; i++) {\n            TreeNode* node = q.front(); q.pop();\n\n            int idx = leftToRight ? i : sz - i - 1;\n            level[idx] = node-&gt;val;\n\n            if (node-&gt;left) q.push(node-&gt;left);\n            if (node-&gt;right) q.push(node-&gt;right);\n        }\n\n        leftToRight = !leftToRight;\n        ans.push_back(level);\n    }\n    return ans;\n}\n```\n\n---\n\n# **3. Boundary Traversal of Binary Tree**\n\nBoundary =  \n1. Left boundary  \n2. Leaf nodes  \n3. Right boundary (reverse)\n\n---\n\n## **3.1 Left Boundary**\n\n```cpp\nvoid leftBoundary(TreeNode* root, vector&lt;int&gt;&amp; res) {\n    TreeNode* cur = root-&gt;left;\n    while (cur) {\n        if (cur-&gt;left || cur-&gt;right) res.push_back(cur-&gt;val);\n        cur = cur-&gt;left ? cur-&gt;left : cur-&gt;right;\n    }\n}\n```\n\n---\n\n## **3.2 Leaf Nodes**\n\n```cpp\nvoid leafNodes(TreeNode* root, vector&lt;int&gt;&amp; res) {\n    if (!root) return;\n    if (!root-&gt;left &amp;&amp; !root-&gt;right) {\n        res.push_back(root-&gt;val);\n        return;\n    }\n    leafNodes(root-&gt;left, res);\n    leafNodes(root-&gt;right, res);\n}\n```\n\n---\n\n## **3.3 Right Boundary**\n\n```cpp\nvoid rightBoundary(TreeNode* root, vector&lt;int&gt;&amp; res) {\n    vector&lt;int&gt; temp;\n    TreeNode* cur = root-&gt;right;\n\n    while (cur) {\n        if (cur-&gt;left || cur-&gt;right) temp.push_back(cur-&gt;val);\n        cur = cur-&gt;right ? cur-&gt;right : cur-&gt;left;\n    }\n\n    reverse(temp.begin(), temp.end());\n    for (int x : temp) res.push_back(x);\n}\n```\n\n---\n\n## **3.4 Full Boundary Traversal**\n\n```cpp\nvector&lt;int&gt; boundaryOfBinaryTree(TreeNode* root) {\n    vector&lt;int&gt; res;\n    if (!root) return res;\n\n    res.push_back(root-&gt;val);\n\n    leftBoundary(root, res);\n    leafNodes(root, res);\n    rightBoundary(root, res);\n\n    return res;\n}\n```\n\n---\n\n# **4. Top View of Binary Tree**\n\nNodes visible from the top.\n\nUse BFS + horizontal distance (hd).\n\n### **Implementation**\n\n```cpp\nvector&lt;int&gt; topView(TreeNode* root) {\n    vector&lt;int&gt; ans;\n    if (!root) return ans;\n\n    map&lt;int,int&gt; mp;\n    queue&lt;pair&lt;TreeNode*,int&gt;&gt; q;\n\n    q.push({root, 0});\n\n    while (!q.empty()) {\n        auto [node, hd] = q.front(); q.pop();\n\n        if (!mp.count(hd))\n            mp[hd] = node-&gt;val;\n\n        if (node-&gt;left) q.push({node-&gt;left, hd - 1});\n        if (node-&gt;right) q.push({node-&gt;right, hd + 1});\n    }\n\n    for (auto &amp;p : mp) ans.push_back(p.second);\n    return ans;\n}\n```\n\n---\n\n# **5. Bottom View of Binary Tree**\n\nSame as top view, but overwrite values.\n\n```cpp\nvector&lt;int&gt; bottomView(TreeNode* root) {\n    vector&lt;int&gt; ans;\n    if (!root) return ans;\n\n    map&lt;int,int&gt; mp;\n    queue&lt;pair&lt;TreeNode*,int&gt;&gt; q;\n\n    q.push({root, 0});\n\n    while (!q.empty()) {\n        auto [node, hd] = q.front(); q.pop();\n\n        mp[hd] = node-&gt;val;\n\n        if (node-&gt;left) q.push({node-&gt;left, hd - 1});\n        if (node-&gt;right) q.push({node-&gt;right, hd + 1});\n    }\n\n    for (auto &amp;p : mp) ans.push_back(p.second);\n    return ans;\n}\n```\n\n---\n\n# **6. Left View of Binary Tree**\n\nFirst node at each level.\n\n```cpp\nvector&lt;int&gt; leftView(TreeNode* root) {\n    vector&lt;int&gt; ans;\n    if (!root) return ans;\n\n    queue&lt;TreeNode*&gt; q;\n    q.push(root);\n\n    while (!q.empty()) {\n        int sz = q.size();\n        for (int i = 0; i &lt; sz; i++) {\n            TreeNode* node = q.front(); q.pop();\n            if (i == 0) ans.push_back(node-&gt;val);\n\n            if (node-&gt;left) q.push(node-&gt;left);\n            if (node-&gt;right) q.push(node-&gt;right);\n        }\n    }\n    return ans;\n}\n```\n\n---\n\n# **7. Right View of Binary Tree**\n\nLast node at each level.\n\n```cpp\nvector&lt;int&gt; rightView(TreeNode* root) {\n    vector&lt;int&gt; ans;\n    if (!root) return ans;\n\n    queue&lt;TreeNode*&gt; q;\n    q.push(root);\n\n    while (!q.empty()) {\n        int sz = q.size();\n        for (int i = 0; i &lt; sz; i++) {\n            TreeNode* node = q.front(); q.pop();\n            if (i == sz - 1) ans.push_back(node-&gt;val);\n\n            if (node-&gt;left) q.push(node-&gt;left);\n            if (node-&gt;right) q.push(node-&gt;right);\n        }\n    }\n    return ans;\n}\n```\n\n---\n\n# **8. Vertical Order Traversal**\n\nGroup nodes by horizontal distance.\n\n```cpp\nvector&lt;vector&lt;int&gt;&gt; verticalOrder(TreeNode* root) {\n    map&lt;int, vector&lt;int&gt;&gt; mp;\n    queue&lt;pair&lt;TreeNode*,int&gt;&gt; q;\n\n    q.push({root, 0});\n\n    while (!q.empty()) {\n        auto [node, hd] = q.front(); q.pop();\n\n        mp[hd].push_back(node-&gt;val);\n\n        if (node-&gt;left) q.push({node-&gt;left, hd - 1});\n        if (node-&gt;right) q.push({node-&gt;right, hd + 1});\n    }\n\n    vector&lt;vector&lt;int&gt;&gt; ans;\n    for (auto &amp;p : mp) ans.push_back(p.second);\n    return ans;\n}\n```\n\n---\n\n# **9. Path Sum Problems**\n\n---\n\n## **9.1 Path Sum I \\u2014 Does a path exist?**\n\n```cpp\nbool hasPathSum(TreeNode* root, int target) {\n    if (!root) return false;\n\n    if (!root-&gt;left &amp;&amp; !root-&gt;right)\n        return target == root-&gt;val;\n\n    return hasPathSum(root-&gt;left, target - root-&gt;val) ||\n           hasPathSum(root-&gt;right, target - root-&gt;val);\n}\n```\n\n---\n\n## **9.2 Path Sum II \\u2014 Return all root\\u2011to\\u2011leaf paths**\n\n```cpp\nvoid dfs(TreeNode* root, int target, vector&lt;int&gt;&amp; path, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {\n    if (!root) return;\n\n    path.push_back(root-&gt;val);\n\n    if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; target == root-&gt;val)\n        ans.push_back(path);\n\n    dfs(root-&gt;left, target - root-&gt;val, path, ans);\n    dfs(root-&gt;right, target - root-&gt;val, path, ans);\n\n    path.pop_back();\n}\n\nvector&lt;vector&lt;int&gt;&gt; pathSum(TreeNode* root, int target) {\n    vector&lt;vector&lt;int&gt;&gt; ans;\n    vector&lt;int&gt; path;\n    dfs(root, target, path, ans);\n    return ans;\n}\n```\n\n---\n\n# **10. Root\\u2011to\\u2011Leaf Paths**\n\n```cpp\nvoid solve(TreeNode* root, vector&lt;int&gt;&amp; path, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {\n    if (!root) return;\n\n    path.push_back(root-&gt;val);\n\n    if (!root-&gt;left &amp;&amp; !root-&gt;right)\n        ans.push_back(path);\n\n    solve(root-&gt;left, path, ans);\n    solve(root-&gt;right, path, ans);\n\n    path.pop_back();\n}\n```\n\n---\n\n# **11. Real\\u2011World Examples**\n\n---\n\n### **Example 1 \\u2014 File System Explorer**  \nLeft/right/top/bottom views mimic directory visualizations.\n\n---\n\n### **Example 2 \\u2014 Compiler AST Traversal**  \nZigzag and vertical order mimic AST passes.\n\n---\n\n### **Example 3 \\u2014 Network Routing Trees**  \nPath sum = cost constraints.\n\n---\n\n### **Example 4 \\u2014 UI Layout Trees**  \nTop/bottom view logic used in rendering.\n\n---\n\n# **12. Interview\\u2011Level Problems**\n\n---\n\n### **Problem 1 \\u2014 Zigzag traversal**  \nAlternate direction BFS.\n\n---\n\n### **Problem 2 \\u2014 Boundary traversal**  \nLeft + leaves + right.\n\n---\n\n### **Problem 3 \\u2014 Top/Bottom view**  \nHorizontal distance mapping.\n\n---\n\n### **Problem 4 \\u2014 Path sum**  \nDFS with backtracking.\n\n---\n\n### **Problem 5 \\u2014 Vertical order traversal**  \nMap + BFS.\n\n---\n\n# **13. Exercises (Try First)**\n\n---\n\n### **Exercise 1**  \nImplement zigzag traversal.\n\n---\n\n### **Exercise 2**  \nCompute boundary traversal.\n\n---\n\n### **Exercise 3**  \nCompute top and bottom view.\n\n---\n\n### **Exercise 4**  \nReturn all root\\u2011to\\u2011leaf paths.\n\n---\n\n### **Exercise 5**  \nSolve Path Sum I &amp; II.\n\n---\n\n# **14. Solutions**\n\nUse the implementations from sections 2\\u201310.\n\n---\n\n# **15. Summary**\n\nToday you mastered:\n\n- Zigzag traversal  \n- Boundary traversal  \n- Top, bottom, left, right views  \n- Vertical order traversal  \n- Path sum problems  \n- Root\\u2011to\\u2011leaf path generation  \n- BFS + DFS + Tree DP patterns  \n\nThis day is a major milestone \\u2014 you now understand the full breadth of binary tree traversal patterns used in interviews.\n&quot;],&quot;theory&quot;:[0,&quot;---\n\n# **Day 22 \\u2013 \\ud83c\\udf33 Binary Search Tree (BST) Mastery: Validate, Floor/Ceil, Kth Smallest, LCA**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Day 22 Matters**\nBSTs are one of the most elegant and powerful data structures.\n\nToday you learn:\n\n- \\ud83e\\udde0 How to **validate** a BST  \n- \\ud83c\\udfaf How to compute **floor** and **ceil**  \n- \\ud83c\\udfc6 How to find **Kth smallest** using inorder  \n- \\ud83d\\udd17 How to compute **LCA** in BST using BST properties  \n\nThese patterns appear in **every major interview**.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cV\\u2011F\\u2011K\\u2011L\\u201d**\nToday\\u2019s 4 pillars:\n\n- **V** \\u2013 Validate BST  \n- **F** \\u2013 Floor &amp; Ceil  \n- **K** \\u2013 Kth Smallest  \n- **L** \\u2013 LCA in BST  \n\nRemember: **V\\u2011F\\u2011K\\u2011L** \\u2192 Validate, Floor, Kth, LCA.\n\n---\n\n# **\\ud83c\\udf08 2. Validate BST (The Most Important BST Problem)**\n\nA valid BST satisfies:\n\n```\nLeft subtree &lt; root &lt; Right subtree\n```\n\n---\n\n## **\\ud83d\\udd25 Approach 1: Min\\u2013Max Range (Recursive)**  \nThe most reliable method.\n\n### **Logic**\n- Each node must lie in a valid range  \n- Left subtree: (min, root.val)  \n- Right subtree: (root.val, max)  \n\n---\n\n## **\\ud83e\\udde0 MEMORY TIP:**  \n**BST = Range shrinking at every step**\n\n---\n\n## **\\ud83d\\udd25 Approach 2: Inorder Traversal**\nInorder traversal of BST gives **sorted order**.\n\n### **Logic**\n- Do inorder  \n- Check if array is strictly increasing  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Inorder sorted = valid BST**\n\n---\n\n# **\\ud83c\\udf08 3. Floor &amp; Ceil in BST**\n\nThese two operations are **BST\\u2011specific** and extremely common.\n\n---\n\n# **\\ud83c\\udf08 3.1 Floor in BST**\n**Floor(x)** = largest value \\u2264 x.\n\n---\n\n## **\\ud83d\\udd25 Logic**\n- If node.val == x \\u2192 return x  \n- If node.val &gt; x \\u2192 go left  \n- If node.val &lt; x \\u2192 store node.val as candidate \\u2192 go right  \n\n---\n\n## **\\ud83e\\udde0 MEMORY TIP:**  \n**Floor \\u2192 go right when small**\n\n---\n\n# **\\ud83c\\udf08 3.2 Ceil in BST**\n**Ceil(x)** = smallest value \\u2265 x.\n\n---\n\n## **\\ud83d\\udd25 Logic**\n- If node.val == x \\u2192 return x  \n- If node.val &lt; x \\u2192 go right  \n- If node.val &gt; x \\u2192 store node.val as candidate \\u2192 go left  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Ceil \\u2192 go left when big**\n\n---\n\n# **\\ud83c\\udf08 4. Kth Smallest Element in BST**\n\nBST inorder traversal gives sorted order.\n\n---\n\n## **\\ud83d\\udd25 Approach 1: Inorder Traversal**\n- Do inorder  \n- Stop at kth element  \n\n### **Time:** O(n)  \n### **Space:** O(h)\n\n---\n\n## **\\ud83d\\udd25 Approach 2: Iterative Inorder (Stack)**\nMore efficient and interview\\u2011friendly.\n\n---\n\n## **\\ud83e\\udde0 MEMORY TIP:**  \n**Kth smallest = Kth element in inorder**\n\n---\n\n## **\\ud83d\\udd25 Approach 3: Augmented BST (Node Count)**\nEach node stores:\n\n```\nsize of left subtree\n```\n\nThen:\n\n- If left_size + 1 == k \\u2192 answer  \n- If left_size \\u2265 k \\u2192 go left  \n- Else \\u2192 go right with k \\u2212 left_size \\u2212 1  \n\n### **Used in:**  \n- Order statistic trees  \n- Competitive programming  \n\n---\n\n# **\\ud83c\\udf08 5. LCA in BST (Lowest Common Ancestor)**\n\nBST property makes LCA extremely easy.\n\n---\n\n## **\\ud83c\\udfaf Goal**\nFind lowest node that is ancestor of both p and q.\n\n---\n\n## **\\ud83d\\udd25 Logic**\nUse BST ordering:\n\n- If both p and q &lt; root \\u2192 go left  \n- If both p and q &gt; root \\u2192 go right  \n- Else \\u2192 root is LCA  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Split point = LCA**\n\n---\n\n## **\\ud83c\\udfa8 Example**\nBST:\n```\n      6\n     / \\\n    2   8\n```\nLCA(2,8) = 6  \nLCA(2,4) = 2  \n\n---\n\n# **\\ud83c\\udf08 6. Comparison Table**\n\n| Problem | Key Idea | Technique |\n|--------|----------|-----------|\n| Validate BST | Range shrinking | Min\\u2013max recursion / inorder |\n| Floor | Largest \\u2264 x | Move right when small |\n| Ceil | Smallest \\u2265 x | Move left when big |\n| Kth smallest | Inorder sorted | Inorder traversal / stack |\n| LCA in BST | Split point | BST property |\n\n---\n\n# **\\ud83c\\udf08 7. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Using inorder for validation but allowing duplicates  \n- \\ud83d\\udea9 Forgetting strict inequality in BST  \n- \\ud83d\\udea9 Not updating candidate in floor/ceil  \n- \\ud83d\\udea9 Using full inorder array for kth smallest (inefficient)  \n- \\ud83d\\udea9 Using generic LCA logic instead of BST logic  \n- \\ud83d\\udea9 Forgetting that BST may be skewed (height = n)  \n\n---\n\n# **\\ud83c\\udf08 8. Problems You Can Now Solve**\n\n- Validate BST  \n- Floor &amp; Ceil  \n- Kth smallest  \n- Kth largest  \n- LCA in BST  \n- Insert, search, delete  \n- Recover BST  \n- Range sum in BST  \n- Count nodes in range  \n- Predecessor &amp; successor  \n- BST iterator  \n\n---\n\n# **\\ud83c\\udf08 9. What You Must Master Today**\n\n- BST property deeply  \n- Range\\u2011based validation  \n- Floor &amp; ceil logic  \n- Inorder traversal mastery  \n- Kth smallest using stack  \n- LCA using BST ordering  \n- Predecessor/successor intuition  \n&quot;],&quot;examples&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;example01&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 1: Validate BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n\n// Example 1: Validate BST\nbool isValidBST(TreeNode* root, long lo = LONG_MIN, long hi = LONG_MAX) {\n    if (!root) return true;\n    if (root-&gt;val &lt;= lo || root-&gt;val &gt;= hi) return false;\n    return isValidBST(root-&gt;left, lo, root-&gt;val) &amp;&amp;\n           isValidBST(root-&gt;right, root-&gt;val, hi);\n}\nint main() {\n    TreeNode* root = new TreeNode(5);\n    root-&gt;left = new TreeNode(1); root-&gt;right = new TreeNode(4);\n    root-&gt;right-&gt;left = new TreeNode(3); root-&gt;right-&gt;right = new TreeNode(6);\n    cout &lt;&lt; (isValidBST(root) ? \&quot;valid\&quot; : \&quot;invalid\&quot;) &lt;&lt; \&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example02&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 2: Floor and Ceil\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n\n// Example 2: Floor and Ceil in BST\n// Floor: largest value &lt;= key; Ceil: smallest value &gt;= key\npair&lt;int,int&gt; floorCeil(TreeNode* root, int key) {\n    int floor = -1, ceil = -1;\n    TreeNode* cur = root;\n    while (cur) {\n        if (cur-&gt;val == key) { floor = ceil = key; break; }\n        if (cur-&gt;val &lt; key) { floor = cur-&gt;val; cur = cur-&gt;right; }\n        else { ceil = cur-&gt;val; cur = cur-&gt;left; }\n    }\n    return {floor, ceil};\n}\nint main() {\n    TreeNode* root = new TreeNode(8);\n    root-&gt;left = new TreeNode(4); root-&gt;right = new TreeNode(12);\n    root-&gt;left-&gt;left = new TreeNode(2); root-&gt;left-&gt;right = new TreeNode(6);\n    root-&gt;right-&gt;left = new TreeNode(10); root-&gt;right-&gt;right = new TreeNode(14);\n    auto [f,c] = floorCeil(root, 11);\n    cout &lt;&lt; \&quot;floor=\&quot; &lt;&lt; f &lt;&lt; \&quot; ceil=\&quot; &lt;&lt; c &lt;&lt; \&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example03&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 3: Kth Smallest\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n\n// Example 3: Kth Smallest in BST (inorder = sorted)\nint kthSmallest(TreeNode* root, int k) {\n    stack&lt;TreeNode*&gt; st;\n    TreeNode* cur = root;\n    int count = 0;\n    while (cur || !st.empty()) {\n        while (cur) { st.push(cur); cur = cur-&gt;left; }\n        cur = st.top(); st.pop();\n        if (++count == k) return cur-&gt;val;\n        cur = cur-&gt;right;\n    }\n    return -1;\n}\nint main() {\n    TreeNode* root = new TreeNode(5);\n    root-&gt;left = new TreeNode(3); root-&gt;right = new TreeNode(6);\n    root-&gt;left-&gt;left = new TreeNode(2); root-&gt;left-&gt;right = new TreeNode(4);\n    root-&gt;left-&gt;left-&gt;left = new TreeNode(1);\n    cout &lt;&lt; kthSmallest(root, 3) &lt;&lt; \&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example04&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 4: LCA in BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n\n// Example 4: LCA in BST\n// In BST: LCA is first node where p &lt;= node &lt;= q (or q &lt;= node &lt;= p)\nTreeNode* lcaBST(TreeNode* root, int p, int q) {\n    while (root) {\n        if (p &lt; root-&gt;val &amp;&amp; q &lt; root-&gt;val) root = root-&gt;left;\n        else if (p &gt; root-&gt;val &amp;&amp; q &gt; root-&gt;val) root = root-&gt;right;\n        else return root;\n    }\n    return nullptr;\n}\nint main() {\n    TreeNode* root = new TreeNode(6);\n    root-&gt;left = new TreeNode(2); root-&gt;right = new TreeNode(8);\n    root-&gt;left-&gt;left = new TreeNode(0); root-&gt;left-&gt;right = new TreeNode(4);\n    root-&gt;left-&gt;right-&gt;left = new TreeNode(3); root-&gt;left-&gt;right-&gt;right = new TreeNode(5);\n    cout &lt;&lt; lcaBST(root, 2, 4)-&gt;val &lt;&lt; \&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example05&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 5: Insert and Delete BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n\n// Example 5: Insert into BST and Delete from BST\nTreeNode* insert(TreeNode* root, int val) {\n    if (!root) return new TreeNode(val);\n    if (val &lt; root-&gt;val) root-&gt;left = insert(root-&gt;left, val);\n    else root-&gt;right = insert(root-&gt;right, val);\n    return root;\n}\nTreeNode* findMin(TreeNode* n) { while (n-&gt;left) n = n-&gt;left; return n; }\nTreeNode* deleteNode(TreeNode* root, int key) {\n    if (!root) return nullptr;\n    if (key &lt; root-&gt;val) root-&gt;left = deleteNode(root-&gt;left, key);\n    else if (key &gt; root-&gt;val) root-&gt;right = deleteNode(root-&gt;right, key);\n    else {\n        if (!root-&gt;left) return root-&gt;right;\n        if (!root-&gt;right) return root-&gt;left;\n        TreeNode* succ = findMin(root-&gt;right);\n        root-&gt;val = succ-&gt;val;\n        root-&gt;right = deleteNode(root-&gt;right, succ-&gt;val);\n    }\n    return root;\n}\nvoid inorder(TreeNode* n) { if(!n)return; inorder(n-&gt;left); cout&lt;&lt;n-&gt;val&lt;&lt;\&quot; \\&quot;]}]]],&quot;exercises&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;exercise01&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 1: Validate BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n// Exercise 1: Validate BST\n// Hint: Pass min/max bounds through recursion; use LONG_MIN/LONG_MAX to handle INT extremes.\nbool isValidBST(TreeNode* root) { return false; /* TODO */ }\nint main() {}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise02&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 2: Floor and Ceil\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n// Exercise 2: Floor and Ceil in BST\n// Hint: Traverse BST; if node &lt; key \\u2192 floor candidate, go right; if node &gt; key \\u2192 ceil candidate, go left.\npair&lt;int,int&gt; floorCeil(TreeNode* root, int key) { return {-1,-1}; /* TODO */ }\nint main() {}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise03&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 3: Kth Smallest\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n// Exercise 3: Kth Smallest Element in BST\n// Hint: Iterative inorder traversal counts elements; return on k-th pop.\nint kthSmallest(TreeNode* root, int k) { return -1; /* TODO */ }\nint main() {}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise04&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 4: LCA in BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n// Exercise 4: LCA in BST\n// Hint: If both p,q &lt; root \\u2192 go left; if both &gt; root \\u2192 go right; else root is LCA.\nTreeNode* lcaBST(TreeNode* root, int p, int q) { return nullptr; /* TODO */ }\nint main() {}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise05&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 5: Insert and Delete BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\n// Exercise 5: Delete a node from BST\n// Hint: Find the inorder successor (min of right subtree) to replace deleted node.\nTreeNode* deleteNode(TreeNode* root, int key) { return root; /* TODO */ }\nint main() {}\n&quot;]}]]],&quot;solutions&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;solution01&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 1: Validate BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\nbool isValidBST(TreeNode* root, long lo=LONG_MIN, long hi=LONG_MAX) {\n    if (!root) return true;\n    if (root-&gt;val&lt;=lo || root-&gt;val&gt;=hi) return false;\n    return isValidBST(root-&gt;left,lo,root-&gt;val) &amp;&amp; isValidBST(root-&gt;right,root-&gt;val,hi);\n}\nint main() {\n    ios::sync_with_stdio(false); cin.tie(nullptr);\n    TreeNode* r = new TreeNode(2); r-&gt;left=new TreeNode(1); r-&gt;right=new TreeNode(3);\n    cout &lt;&lt; isValidBST(r) &lt;&lt; \&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution02&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 2: Floor and Ceil\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\npair&lt;int,int&gt; floorCeil(TreeNode* root, int key) {\n    int fl=-1,ce=-1; auto cur=root;\n    while (cur) {\n        if (cur-&gt;val==key) return {key,key};\n        if (cur-&gt;val&lt;key) { fl=cur-&gt;val; cur=cur-&gt;right; }\n        else { ce=cur-&gt;val; cur=cur-&gt;left; }\n    }\n    return {fl,ce};\n}\nint main() {\n    ios::sync_with_stdio(false); cin.tie(nullptr);\n    TreeNode* r=new TreeNode(8);\n    r-&gt;left=new TreeNode(4); r-&gt;right=new TreeNode(12);\n    r-&gt;left-&gt;left=new TreeNode(2); r-&gt;left-&gt;right=new TreeNode(6);\n    r-&gt;right-&gt;left=new TreeNode(10); r-&gt;right-&gt;right=new TreeNode(14);\n    auto [f,c]=floorCeil(r,11); cout&lt;&lt;f&lt;&lt;\&quot; \&quot;&lt;&lt;c&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution03&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 3: Kth Smallest\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\nint kthSmallest(TreeNode* root, int k) {\n    stack&lt;TreeNode*&gt; st; auto cur=root; int cnt=0;\n    while (cur||!st.empty()) {\n        while (cur){st.push(cur);cur=cur-&gt;left;}\n        cur=st.top();st.pop();\n        if(++cnt==k) return cur-&gt;val;\n        cur=cur-&gt;right;\n    }\n    return -1;\n}\nint main() {\n    ios::sync_with_stdio(false); cin.tie(nullptr);\n    TreeNode* r=new TreeNode(5);\n    r-&gt;left=new TreeNode(3); r-&gt;right=new TreeNode(6);\n    r-&gt;left-&gt;left=new TreeNode(2); r-&gt;left-&gt;right=new TreeNode(4);\n    r-&gt;left-&gt;left-&gt;left=new TreeNode(1);\n    cout&lt;&lt;kthSmallest(r,3)&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution04&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 4: LCA in BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\nTreeNode* lcaBST(TreeNode* root, int p, int q) {\n    while (root) {\n        if (p&lt;root-&gt;val&amp;&amp;q&lt;root-&gt;val) root=root-&gt;left;\n        else if (p&gt;root-&gt;val&amp;&amp;q&gt;root-&gt;val) root=root-&gt;right;\n        else return root;\n    }\n    return nullptr;\n}\nint main() {\n    ios::sync_with_stdio(false); cin.tie(nullptr);\n    TreeNode* r=new TreeNode(6);\n    r-&gt;left=new TreeNode(2); r-&gt;right=new TreeNode(8);\n    r-&gt;left-&gt;left=new TreeNode(0); r-&gt;left-&gt;right=new TreeNode(4);\n    cout&lt;&lt;lcaBST(r,2,4)-&gt;val&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution05&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 5: Insert and Delete BST\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };\nTreeNode* findMin(TreeNode* n){while(n-&gt;left)n=n-&gt;left;return n;}\nTreeNode* deleteNode(TreeNode* root,int key){\n    if(!root)return nullptr;\n    if(key&lt;root-&gt;val) root-&gt;left=deleteNode(root-&gt;left,key);\n    else if(key&gt;root-&gt;val) root-&gt;right=deleteNode(root-&gt;right,key);\n    else{\n        if(!root-&gt;left)return root-&gt;right;\n        if(!root-&gt;right)return root-&gt;left;\n        auto s=findMin(root-&gt;right); root-&gt;val=s-&gt;val;\n        root-&gt;right=deleteNode(root-&gt;right,s-&gt;val);\n    }\n    return root;\n}\nTreeNode* ins(TreeNode* r,int v){if(!r)return new TreeNode(v);if(v&lt;r-&gt;val)r-&gt;left=ins(r-&gt;left,v);else r-&gt;right=ins(r-&gt;right,v);return r;}\nvoid io(TreeNode* n){if(!n)return;io(n-&gt;left);cout&lt;&lt;n-&gt;val&lt;&lt;\&quot; \\&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;DayTabs&quot;,&quot;value&quot;:true}" await-children><div><div class="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-1 mb-6 border-b border-slate-800"><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap bg-slate-700 text-white">📖 README</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">🧠 Theory</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">💻 Examples <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✏️ Exercises <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✅ Solutions <span class="ml-1 text-xs text-slate-500">5</span></button></div><div><hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">Day 22 \u2014 Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right) (README.rst)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3"><em>30 Days to DSA in C++ \u2014 Ultra\u2011Premium Edition</em></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">1. Introduction</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Today\u2019s problems combine:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">BFS</li>
+<li class="text-slate-300 ml-2">DFS</li>
+<li class="text-slate-300 ml-2">Hashing</li>
+<li class="text-slate-300 ml-2">Recursion</li>
+<li class="text-slate-300 ml-2">Tree DP</li>
+<li class="text-slate-300 ml-2">Queue + map patterns</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">These are the problems that separate beginners from advanced tree programmers.</p>
+<p class="text-slate-300 leading-7 mb-3">You\u2019ll master:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Zigzag level order</li>
+<li class="text-slate-300 ml-2">Boundary traversal</li>
+<li class="text-slate-300 ml-2">Top view</li>
+<li class="text-slate-300 ml-2">Bottom view</li>
+<li class="text-slate-300 ml-2">Left view</li>
+<li class="text-slate-300 ml-2">Right view</li>
+<li class="text-slate-300 ml-2">Vertical order traversal</li>
+<li class="text-slate-300 ml-2">Path sum problems</li>
+<li class="text-slate-300 ml-2">Root\u2011to\u2011leaf path generation</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">These patterns appear in system design, compilers, file systems, and graph algorithms.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">2. Zigzag Level Order Traversal</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Level order but alternate direction each level.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) {
+    vector&lt;vector&lt;int&gt;&gt; ans;
+    if (!root) return ans;
+
+    queue&lt;TreeNode*&gt; q;
+    q.push(root);
+    bool leftToRight = true;
+
+    while (!q.empty()) {
+        int sz = q.size();
+        vector&lt;int&gt; level(sz);
+
+        for (int i = 0; i &lt; sz; i++) {
+            TreeNode* node = q.front(); q.pop();
+
+            int idx = leftToRight ? i : sz - i - 1;
+            level[idx] = node-&gt;val;
+
+            if (node-&gt;left) q.push(node-&gt;left);
+            if (node-&gt;right) q.push(node-&gt;right);
+        }
+
+        leftToRight = !leftToRight;
+        ans.push_back(level);
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">3. Boundary Traversal of Binary Tree</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Boundary =</p>
+<ol class="list-decimal list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Left boundary</li>
+<li class="text-slate-300 ml-2">Leaf nodes</li>
+<li class="text-slate-300 ml-2">Right boundary (reverse)</li>
+</ol>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.1 Left Boundary</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void leftBoundary(TreeNode* root, vector&lt;int&gt;&amp; res) {
+    TreeNode* cur = root-&gt;left;
+    while (cur) {
+        if (cur-&gt;left || cur-&gt;right) res.push_back(cur-&gt;val);
+        cur = cur-&gt;left ? cur-&gt;left : cur-&gt;right;
+    }
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.2 Leaf Nodes</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void leafNodes(TreeNode* root, vector&lt;int&gt;&amp; res) {
+    if (!root) return;
+    if (!root-&gt;left &amp;&amp; !root-&gt;right) {
+        res.push_back(root-&gt;val);
+        return;
+    }
+    leafNodes(root-&gt;left, res);
+    leafNodes(root-&gt;right, res);
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.3 Right Boundary</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void rightBoundary(TreeNode* root, vector&lt;int&gt;&amp; res) {
+    vector&lt;int&gt; temp;
+    TreeNode* cur = root-&gt;right;
+
+    while (cur) {
+        if (cur-&gt;left || cur-&gt;right) temp.push_back(cur-&gt;val);
+        cur = cur-&gt;right ? cur-&gt;right : cur-&gt;left;
+    }
+
+    reverse(temp.begin(), temp.end());
+    for (int x : temp) res.push_back(x);
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.4 Full Boundary Traversal</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; boundaryOfBinaryTree(TreeNode* root) {
+    vector&lt;int&gt; res;
+    if (!root) return res;
+
+    res.push_back(root-&gt;val);
+
+    leftBoundary(root, res);
+    leafNodes(root, res);
+    rightBoundary(root, res);
+
+    return res;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">4. Top View of Binary Tree</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Nodes visible from the top.</p>
+<p class="text-slate-300 leading-7 mb-3">Use BFS + horizontal distance (hd).</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; topView(TreeNode* root) {
+    vector&lt;int&gt; ans;
+    if (!root) return ans;
+
+    map&lt;int,int&gt; mp;
+    queue&lt;pair&lt;TreeNode*,int&gt;&gt; q;
+
+    q.push({root, 0});
+
+    while (!q.empty()) {
+        auto [node, hd] = q.front(); q.pop();
+
+        if (!mp.count(hd))
+            mp[hd] = node-&gt;val;
+
+        if (node-&gt;left) q.push({node-&gt;left, hd - 1});
+        if (node-&gt;right) q.push({node-&gt;right, hd + 1});
+    }
+
+    for (auto &amp;p : mp) ans.push_back(p.second);
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">5. Bottom View of Binary Tree</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Same as top view, but overwrite values.</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; bottomView(TreeNode* root) {
+    vector&lt;int&gt; ans;
+    if (!root) return ans;
+
+    map&lt;int,int&gt; mp;
+    queue&lt;pair&lt;TreeNode*,int&gt;&gt; q;
+
+    q.push({root, 0});
+
+    while (!q.empty()) {
+        auto [node, hd] = q.front(); q.pop();
+
+        mp[hd] = node-&gt;val;
+
+        if (node-&gt;left) q.push({node-&gt;left, hd - 1});
+        if (node-&gt;right) q.push({node-&gt;right, hd + 1});
+    }
+
+    for (auto &amp;p : mp) ans.push_back(p.second);
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">6. Left View of Binary Tree</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">First node at each level.</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; leftView(TreeNode* root) {
+    vector&lt;int&gt; ans;
+    if (!root) return ans;
+
+    queue&lt;TreeNode*&gt; q;
+    q.push(root);
+
+    while (!q.empty()) {
+        int sz = q.size();
+        for (int i = 0; i &lt; sz; i++) {
+            TreeNode* node = q.front(); q.pop();
+            if (i == 0) ans.push_back(node-&gt;val);
+
+            if (node-&gt;left) q.push(node-&gt;left);
+            if (node-&gt;right) q.push(node-&gt;right);
+        }
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">7. Right View of Binary Tree</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Last node at each level.</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; rightView(TreeNode* root) {
+    vector&lt;int&gt; ans;
+    if (!root) return ans;
+
+    queue&lt;TreeNode*&gt; q;
+    q.push(root);
+
+    while (!q.empty()) {
+        int sz = q.size();
+        for (int i = 0; i &lt; sz; i++) {
+            TreeNode* node = q.front(); q.pop();
+            if (i == sz - 1) ans.push_back(node-&gt;val);
+
+            if (node-&gt;left) q.push(node-&gt;left);
+            if (node-&gt;right) q.push(node-&gt;right);
+        }
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">8. Vertical Order Traversal</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Group nodes by horizontal distance.</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;vector&lt;int&gt;&gt; verticalOrder(TreeNode* root) {
+    map&lt;int, vector&lt;int&gt;&gt; mp;
+    queue&lt;pair&lt;TreeNode*,int&gt;&gt; q;
+
+    q.push({root, 0});
+
+    while (!q.empty()) {
+        auto [node, hd] = q.front(); q.pop();
+
+        mp[hd].push_back(node-&gt;val);
+
+        if (node-&gt;left) q.push({node-&gt;left, hd - 1});
+        if (node-&gt;right) q.push({node-&gt;right, hd + 1});
+    }
+
+    vector&lt;vector&lt;int&gt;&gt; ans;
+    for (auto &amp;p : mp) ans.push_back(p.second);
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">9. Path Sum Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">9.1 Path Sum I \u2014 Does a path exist?</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>bool hasPathSum(TreeNode* root, int target) {
+    if (!root) return false;
+
+    if (!root-&gt;left &amp;&amp; !root-&gt;right)
+        return target == root-&gt;val;
+
+    return hasPathSum(root-&gt;left, target - root-&gt;val) ||
+           hasPathSum(root-&gt;right, target - root-&gt;val);
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">9.2 Path Sum II \u2014 Return all root\u2011to\u2011leaf paths</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void dfs(TreeNode* root, int target, vector&lt;int&gt;&amp; path, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {
+    if (!root) return;
+
+    path.push_back(root-&gt;val);
+
+    if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; target == root-&gt;val)
+        ans.push_back(path);
+
+    dfs(root-&gt;left, target - root-&gt;val, path, ans);
+    dfs(root-&gt;right, target - root-&gt;val, path, ans);
+
+    path.pop_back();
+}
+
+vector&lt;vector&lt;int&gt;&gt; pathSum(TreeNode* root, int target) {
+    vector&lt;vector&lt;int&gt;&gt; ans;
+    vector&lt;int&gt; path;
+    dfs(root, target, path, ans);
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">10. Root\u2011to\u2011Leaf Paths</strong></h1>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void solve(TreeNode* root, vector&lt;int&gt;&amp; path, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {
+    if (!root) return;
+
+    path.push_back(root-&gt;val);
+
+    if (!root-&gt;left &amp;&amp; !root-&gt;right)
+        ans.push_back(path);
+
+    solve(root-&gt;left, path, ans);
+    solve(root-&gt;right, path, ans);
+
+    path.pop_back();
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">11. Real\u2011World Examples</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 1 \u2014 File System Explorer</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Left/right/top/bottom views mimic directory visualizations.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 2 \u2014 Compiler AST Traversal</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Zigzag and vertical order mimic AST passes.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 3 \u2014 Network Routing Trees</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Path sum = cost constraints.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 4 \u2014 UI Layout Trees</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Top/bottom view logic used in rendering.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">12. Interview\u2011Level Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 1 \u2014 Zigzag traversal</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Alternate direction BFS.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 2 \u2014 Boundary traversal</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Left + leaves + right.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 3 \u2014 Top/Bottom view</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Horizontal distance mapping.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 4 \u2014 Path sum</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">DFS with backtracking.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 5 \u2014 Vertical order traversal</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Map + BFS.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">13. Exercises (Try First)</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 1</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Implement zigzag traversal.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 2</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute boundary traversal.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 3</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute top and bottom view.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 4</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Return all root\u2011to\u2011leaf paths.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 5</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Solve Path Sum I &amp; II.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">14. Solutions</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Use the implementations from sections 2\u201310.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">15. Summary</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Today you mastered:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Zigzag traversal</li>
+<li class="text-slate-300 ml-2">Boundary traversal</li>
+<li class="text-slate-300 ml-2">Top, bottom, left, right views</li>
+<li class="text-slate-300 ml-2">Vertical order traversal</li>
+<li class="text-slate-300 ml-2">Path sum problems</li>
+<li class="text-slate-300 ml-2">Root\u2011to\u2011leaf path generation</li>
+<li class="text-slate-300 ml-2">BFS + DFS + Tree DP patterns</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day is a major milestone \u2014 you now understand the full breadth of binary tree traversal patterns used in interviews.</p></div></div><!--astro:end--></astro-island> <!-- Prev / Next --> <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800"> <a href="/day/day21-level-order-zigzag-boundary-vertical-top-bottom-view" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"> <span class="text-lg">←</span> <span class="hidden sm:inline">Day 21 · Level Order Zigzag Boundary Vertical Top Bottom View</span> <span class="sm:hidden">Prev</span> </a> <a href="/day/day23-construct-tree-traversals-serialize-deserialize-morris" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right"> <span class="hidden sm:inline">Day 23 · Construct Tree Traversals Serialize Deserialize Morris</span> <span class="sm:hidden">Next</span> <span class="text-lg">→</span> </a> </div> </div>  </main> <!-- Footer --> <footer class="border-t border-slate-800/60 mt-16 py-8 text-center text-xs text-slate-600">
+30 Days to DSA in C++ · Built with Astro
+</footer> </body></html>

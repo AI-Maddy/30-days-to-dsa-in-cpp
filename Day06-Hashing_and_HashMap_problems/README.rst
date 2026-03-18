@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes **Day 06**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 06 — Hashing & HashMap Problems (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -497,7 +493,3 @@ Today you mastered:
 - Classic interview problems  
 
 Hashing is one of the most important tools in DSA — you will use it in arrays, strings, DP, graphs, and more.
-
----
-
-If you’re ready, I’ll prepare **Day 07 — 2D Arrays / Matrix: Traversal, Rotation, Spiral, Search** with the same ultra‑premium depth.

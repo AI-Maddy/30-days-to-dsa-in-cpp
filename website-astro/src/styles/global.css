@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface-900: #080b14;
+    --surface-800: #0e1220;
+    --surface-700: #141928;
+    --surface-600: #1f2a3c;
+  }
+
+  body {
+    background-color: #080b14;
+    color: #e6edf3;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    /* Subtle dot grid */
+    background-image: radial-gradient(rgba(124,58,237,.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  pre, code {
+    font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  }
+
+  /* Smooth focus rings */
+  *:focus-visible { outline: 2px solid #7c3aed; outline-offset: 2px; }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+  /* Glow utilities */
+  .glow-violet { box-shadow: 0 0 20px rgba(124,58,237,.3); }
+  .glow-cyan   { box-shadow: 0 0 20px rgba(6,182,212,.3); }
+  .glow-emerald{ box-shadow: 0 0 20px rgba(16,185,129,.3); }
+  .glow-amber  { box-shadow: 0 0 20px rgba(245,158,11,.3); }
+
+  /* Animated gradient text */
+  .grad-text {
+    background: linear-gradient(90deg,#a78bfa,#60a5fa,#34d399,#fbbf24);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradAnim 5s ease infinite;
+  }
+  @keyframes gradAnim { 0%,100%{background-position:0%} 50%{background-position:100%} }
+
+  /* Fade up animation for cards */
+  .animate-fade-up {
+    animation: fadeUp .4s ease both;
+  }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+}

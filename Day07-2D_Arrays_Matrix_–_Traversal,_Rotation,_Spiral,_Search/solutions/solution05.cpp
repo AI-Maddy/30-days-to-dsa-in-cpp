@@ -1,35 +1,15 @@
+/*
+ * Solution 5: Matrix Diagonal Traversal (Matrix)
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution05
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
+// Minimum path sum using DP
+int main(){
+    int n,m; cin>>n>>m;
+    vector<vector<int>> g(n,vector<int>(m)); for(auto&r:g)for(int&x:r)cin>>x;
+    vector<vector<int>> dp=g;
+    for(int i=1;i<n;i++) dp[i][0]+=dp[i-1][0];
+    for(int j=1;j<m;j++) dp[0][j]+=dp[0][j-1];
+    for(int i=1;i<n;i++) for(int j=1;j<m;j++) dp[i][j]+=min(dp[i-1][j],dp[i][j-1]);
+    cout<<dp[n-1][m-1]<<"\n"; return 0;
 }

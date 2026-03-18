@@ -1,54 +1,15 @@
 /*
- * Solution 4: Daily Temperatures (Parentheses problems plus Evaluate Reverse Polish Notation plus LFU intuition)
+ * Solution 4: Daily Temperatures
  */
-#include <iostream>
-#include <vector>
-#include <stack>
-#include <deque>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Parentheses problems plus Evaluate Reverse Polish Notation plus LFU intuition
-// Task      : Daily Temperatures
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
+// LFU Cache
+class LFUCache{
+    int cap,minFreq; unordered_map<int,pair<int,int>>kv; unordered_map<int,list<int>>flist; unordered_map<int,list<int>::iterator>pos; unordered_map<int,int>freq;
 public:
-// --- Function Explanation: daily_temperatures ---
-// Purpose    : Compute the result for `daily_temperatures`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int daily_temperatures(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x;
-        return ans + 4;
-    }
+    LFUCache(int c):cap(c),minFreq(0){}
+    void touch(int k){int f=freq[k];freq[k]++;flist[f].erase(pos[k]);if(flist[f].empty()&&f==minFreq)minFreq++;flist[f+1].push_front(k);pos[k]=flist[f+1].begin();}
+    int get(int k){if(!kv.count(k))return -1;touch(k);return kv[k].second;}
+    void put(int k,int v){if(!cap)return;if(kv.count(k)){kv[k].second=v;touch(k);return;}if((int)kv.size()==cap){int ev=flist[minFreq].back();flist[minFreq].pop_back();kv.erase(ev);pos.erase(ev);freq.erase(ev);}kv[k]={0,v};freq[k]=1;flist[1].push_front(k);pos[k]=flist[1].begin();minFreq=1;}
 };
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> nums = {4, 5, 6};
-    Solution s; cout << s.daily_temperatures(nums) << "\n"; return 0;
-}
+int main(){LFUCache c(2);c.put(1,1);c.put(2,2);cout<<c.get(1)<<"\n";c.put(3,3);cout<<c.get(2)<<"\n";cout<<c.get(3)<<"\n";return 0;}

@@ -1,50 +1,21 @@
 /*
- * Example 3: Cycle Detection (Fast and Slow pointers deep dive plus Palindrome Linked List variants)
+ * Example 3: Palindrome Linked List
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Fast and Slow pointers deep dive plus Palindrome Linked List variants
-// Task      : Cycle Detection
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// --- Function Explanation: cycle_detection ---
-// Purpose    : Apply pointer/index transformation in `cycle_detection`.
-// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
-// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
-// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
-// Pseudocode:
-// 1) Initialize pointers/iterators to required positions.
-// 2) Move pointers per condition while updating state.
-// 3) Handle crossing/meeting/base edge conditions.
-// 4) Return transformed structure or boolean/result value.
-int cycle_detection(ListNode* head) {
-    int ans = 0;
-    while (head) { ans += head->val; head = head->next; }
-    return ans + 3;
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+ListNode* rev(ListNode*h){ListNode*p=nullptr,*c=h;while(c){ListNode*n=c->next;c->next=p;p=c;c=n;}return p;}
+ListNode* mid(ListNode*h){ListNode*s=h,*f=h;while(f&&f->next){s=s->next;f=f->next->next;}return s;}
+bool isPalindrome(ListNode*h){
+    ListNode*m=mid(h),*r=rev(m);
+    ListNode*p1=h,*p2=r; bool ok=true;
+    while(p2){if(p1->val!=p2->val){ok=false;break;}p1=p1->next;p2=p2->next;}
+    return ok;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2); a->next->next = new ListNode(3);
-    cout << cycle_detection(a) << "\n";
+int main(){
+    cout<<isPalindrome(build({1,2,2,1}))<<"\n"; // 1
+    cout<<isPalindrome(build({1,2,3}))<<"\n";   // 0
     return 0;
 }

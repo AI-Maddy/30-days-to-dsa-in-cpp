@@ -1,35 +1,14 @@
+/*
+ * Example 2: Next Smaller Element
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example02
- * Pattern Family: Stack / Queue
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Stack / Queue approach.
- * Input   : Read sequence and query/order constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read values and initialize stack/queue/deque.
- * 2) Process each value maintaining monotonic/validity invariants.
- * 3) Pop outdated elements when condition breaks.
- * 4) Record answers at each relevant step.
- * 5) Print full answer sequence.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: For monotonic structures, store indices when window boundaries matter.
+vector<int> nextSmaller(vector<int>&a){
+    int n=a.size(); vector<int> res(n,-1); stack<int> st;
+    for(int i=0;i<n;i++){while(!st.empty()&&a[st.top()]>a[i]){res[st.top()]=a[i];st.pop();}st.push(i);}
+    return res;
 }
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+int main(){
+    vector<int> a={4,2,10,6,1}; for(int x:nextSmaller(a)) cout<<x<<" "; cout<<"\n"; // 2 1 6 1 -1
     return 0;
 }

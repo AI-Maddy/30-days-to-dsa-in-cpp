@@ -1,55 +1,24 @@
 /*
- * Example 2: DFS Traversal (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
+ * Example 2: Topological Sort Kahn
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
-// Task      : DFS Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: dfs_traversal ---
-// Purpose    : Traverse structure using `dfs_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-int dfs_traversal(int n, vector<vector<int>>& g) {
-    vector<int> vis(n, 0);
-    queue<int> q; q.push(0); vis[0] = 1;
-    int cnt = 0;
+// Example 2: Topological Sort — Kahn's Algorithm (BFS)
+vector<int> topoSort(int n, vector<vector<int>>& adj) {
+    vector<int> indegree(n, 0), order;
+    for (int u=0;u<n;u++) for (int v : adj[u]) indegree[v]++;
+    queue<int> q;
+    for (int i=0;i<n;i++) if (indegree[i]==0) q.push(i);
     while (!q.empty()) {
-        int u = q.front(); q.pop(); cnt++;
-        for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
+        int u = q.front(); q.pop(); order.push_back(u);
+        for (int v : adj[u]) if (--indegree[v]==0) q.push(v);
     }
-    return cnt + 2;
+    return order; // size < n means cycle
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    int n = 5; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3}; g[2] = {4};
-    cout << dfs_traversal(n, g) << "\n";
-    return 0;
+    int n = 6;
+    vector<vector<int>> adj(n);
+    adj[5]={2,0}; adj[4]={0,1}; adj[2]={3}; adj[3]={1};
+    auto order = topoSort(n, adj);
+    for (int x : order) cout << x << " "; cout << "\n";
 }

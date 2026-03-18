@@ -1,50 +1,20 @@
 /*
- * Example 5: Last Occurrence (Binary Search on Sorted Rotated Array plus Search in 2D matrix variants)
+ * Example 5: Search Rotated with Duplicates
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Binary Search on Sorted Rotated Array plus Search in 2D matrix variants
-// Task      : Last Occurrence
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: last_occurrence ---
-// Purpose    : Compute the result for `last_occurrence`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int last_occurrence(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
+// With duplicates: worst case O(n)
+bool searchWithDups(vector<int>&a,int t){
+    int l=0,r=a.size()-1;
+    while(l<=r){int m=l+(r-l)/2;if(a[m]==t)return true;
+        if(a[l]==a[m]&&a[m]==a[r]){l++;r--;}
+        else if(a[l]<=a[m]){if(a[l]<=t&&t<a[m])r=m-1;else l=m+1;}
+        else{if(a[m]<t&&t<=a[r])l=m+1;else r=m-1;}}
+    return false;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << last_occurrence(data) << "\n";
+int main(){
+    vector<int> a={2,5,6,0,0,1,2};
+    cout<<searchWithDups(a,0)<<"\n"; // 1
+    cout<<searchWithDups(a,3)<<"\n"; // 0
     return 0;
 }

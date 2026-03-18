@@ -1,35 +1,47 @@
+/*
+ * Example 3: Trapping Rain Water (1D Arrays – Two Pointers and Sliding Window basics)
+ */
+// Two pointer with running max — O(n) time, O(1) space.
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example03
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
+int trap(vector<int>& h) {
+    int n = h.size(), water = 0;
+    int l=0, r=n-1, lMax=0, rMax=0;
+    while (l < r) {
+        if (h[l] < h[r]) {
+            lMax = max(lMax, h[l]);
+            water += lMax - h[l];
+            l++;
+        } else {
+            rMax = max(rMax, h[r]);
+            water += rMax - h[r];
+            r--;
+        }
+    }
+    return water;
+}
 
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
+// Alternative: prefix max arrays approach — O(n) time and space (easier to understand)
+int trapPrefixMax(vector<int>& h) {
+    int n = h.size();
+    vector<int> lMax(n), rMax(n);
+    lMax[0] = h[0];
+    for (int i=1;i<n;i++) lMax[i] = max(lMax[i-1], h[i]);
+    rMax[n-1] = h[n-1];
+    for (int i=n-2;i>=0;i--) rMax[i] = max(rMax[i+1], h[i]);
+    int water = 0;
+    for (int i=0;i<n;i++) water += min(lMax[i], rMax[i]) - h[i];
+    return water;
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    vector<int> h = {0,1,0,2,1,0,1,3,2,1,2,1};
+    cout << "Trapped water (two-pointer): " << trap(h) << "\n";     // 6
+    cout << "Trapped water (prefix max):  " << trapPrefixMax(h) << "\n"; // 6
 
-    // Run the main solver for this file.
-    solve();
+    vector<int> h2 = {4,2,0,3,2,5};
+    cout << "Test 2: " << trap(h2) << "\n";  // 9
+
     return 0;
 }

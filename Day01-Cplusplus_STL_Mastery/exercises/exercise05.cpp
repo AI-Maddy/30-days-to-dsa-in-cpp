@@ -1,38 +1,26 @@
 /*
  * Exercise 5: Priority Queue Top-K (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// Problem: Given n integers, find the kth largest element.
+// Input: n, k, then n integers.
+// Output: kth largest value.
+//
+// Hint: Maintain a min-heap of size k.
+//   - Push each element; if heap size > k, pop the minimum.
+//   - After processing all, heap.top() is the kth largest.
+// Complexity: O(n log k) time, O(k) space.
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Cplusplus STL Mastery
-// Task      : Priority Queue Top-K
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
+int kthLargest(vector<int>& nums, int k) {
+    // TODO: implement using min-heap of size k
+    return -1;
+}
 
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: priority_queue_top_k ---
-// Purpose    : Evaluate sequence constraints using `priority_queue_top_k`.
-// Approach   : Use monotonic stack/queue to keep only useful candidates.
-// Complexity : O(n) time with amortized O(1) push/pop operations.
-// Notes      : Ensure pop conditions reflect strict/non-strict requirement.
-// Pseudocode:
-// 1) Initialize monotonic/support stack or queue.
-// 2) For each element, pop invalid candidates.
-// 3) Read answer from top/front and push current element.
-// 4) Return collected per-index or global result.
-    int priority_queue_top_k(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x % (9);
-        return ans;
-    }
-};
+int main() {
+    int n, k; cin >> n >> k;
+    vector<int> nums(n);
+    for (int& x : nums) cin >> x;
+    cout << kthLargest(nums, k) << "\n";
+    return 0;
+}

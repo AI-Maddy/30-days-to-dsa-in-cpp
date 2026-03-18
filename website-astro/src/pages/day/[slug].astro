@@ -1,0 +1,81 @@
+---
+import Base from "../../layouts/Base.astro";
+import DayTabs from "../../components/DayTabs";
+import { clusterStyle } from "../../lib/clusters";
+import manifest from "../../content/manifest.json";
+
+export async function getStaticPaths() {
+  return manifest.days.map((d) => ({
+    params: { slug: d.slug },
+    props:  { meta: d },
+  }));
+}
+
+const { meta } = Astro.props;
+const data = await import(`../../content/days/day-${String(meta.day).padStart(2, "0")}.json`);
+const s = clusterStyle(meta.clusterColor);
+
+// Prev / Next
+const idx  = manifest.days.findIndex((d) => d.slug === meta.slug);
+const prev = manifest.days[idx - 1] ?? null;
+const next = manifest.days[idx + 1] ?? null;
+---
+
+<Base title={`Day ${String(meta.day).padStart(2, "0")} · ${meta.title}`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+      <a href="/" class="hover:text-slate-300 transition-colors">Home</a>
+      <span>›</span>
+      <span class={`${s.text} font-medium`}>{meta.clusterIcon} {meta.clusterLabel}</span>
+    </div>
+
+    <!-- Header -->
+    <div class={`rounded-2xl border ${s.border} ${s.bg} p-6 mb-8`}>
+      <div class="flex items-start gap-4">
+        <div class={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black ${s.badge}`}>
+          {String(meta.day).padStart(2, "0")}
+        </div>
+        <div>
+          <div class={`text-xs font-bold uppercase tracking-widest mb-1 ${s.text}`}>Day {meta.day} · {meta.clusterLabel}</div>
+          <h1 class="text-2xl font-extrabold text-white leading-tight">{meta.title}</h1>
+          <div class="flex gap-3 mt-3 text-xs text-slate-400">
+            <span>📖 README</span>
+            <span>🧠 Theory</span>
+            <span>💻 {data.examples.length} Examples</span>
+            <span>✏️ {data.exercises.length} Exercises</span>
+            <span>✅ {data.solutions.length} Solutions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <DayTabs
+      client:load
+      readme={data.readme}
+      theory={data.theory}
+      examples={data.examples}
+      exercises={data.exercises}
+      solutions={data.solutions}
+    />
+
+    <!-- Prev / Next -->
+    <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800">
+      {prev ? (
+        <a href={`/day/${prev.slug}`} class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+          <span class="text-lg">←</span>
+          <span class="hidden sm:inline">Day {String(prev.day).padStart(2,"0")} · {prev.title}</span>
+          <span class="sm:hidden">Prev</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/day/${next.slug}`} class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right">
+          <span class="hidden sm:inline">Day {String(next.day).padStart(2,"0")} · {next.title}</span>
+          <span class="sm:hidden">Next</span>
+          <span class="text-lg">→</span>
+        </a>
+      ) : <span />}
+    </div>
+  </div>
+</Base>

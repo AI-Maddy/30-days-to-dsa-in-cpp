@@ -1,0 +1,6 @@
+{
+  "slug": "dynamic-programming",
+  "title": "Dynamic Programming",
+  "icon": "📄",
+  "content": "#   Dynamic Programming Cheatsheet\n       \n        **🧠 Memory Aid:** DP = overlapping subproblems + optimal substructure. State → Transition → Base Case.  Write recurrence first, then code. Optimize space last. \n       \n      \n## 🧠 DP Mental Model\n       `// 1. Define state: dp[i] = ?\n// 2. Write transition: dp[i] = f(dp[i-1], dp[i-2], ...)\n// 3. Set base cases: dp[0], dp[1], ...\n// 4. Answer: usually dp[n] or max/min over dp`"
+}

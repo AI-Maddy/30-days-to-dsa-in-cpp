@@ -1,38 +1,11 @@
 /*
- * Exercise 4: N Queens Count (Recursion basics plus Subsets, Combination Sum, Permutations)
+ * Exercise 4: Subsets With Duplicates
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Recursion basics plus Subsets, Combination Sum, Permutations
-// Task      : N Queens Count
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: n_queens_count ---
-// Purpose    : Compute the result for `n_queens_count`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int n_queens_count(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x % (8);
-        return ans;
-    }
-};
+// Exercise 4: Subsets with duplicates
+// Hint: Sort first; skip duplicate elements at the same recursion depth (i > idx && nums[i]==nums[i-1]).
+void subsetsWithDup(vector<int>& nums, int idx, vector<int>& cur, vector<vector<int>>& res) {
+    // TODO
+}
+int main() {}

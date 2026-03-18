@@ -1,54 +1,33 @@
 /*
  * Example 3: Set Uniqueness (Time and Space Complexity plus STL Algorithms)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// Demonstrates set_intersection, set_union, set_difference on sorted ranges.
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Time and Space Complexity plus STL Algorithms
-// Task      : Set Uniqueness
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: set_uniqueness ---
-// Purpose    : Compute the result for `set_uniqueness`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int set_uniqueness(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
-    }
-    return score + 3;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << set_uniqueness(data) << "\n";
+    vector<int> a = {1,2,3,4,5,6}, b = {4,5,6,7,8,9};
+    // Both must be sorted for set algorithms
+
+    vector<int> inter, uni, diff_ab, diff_ba, sym_diff;
+    set_intersection(a.begin(),a.end(), b.begin(),b.end(), back_inserter(inter));
+    set_union(a.begin(),a.end(),        b.begin(),b.end(), back_inserter(uni));
+    set_difference(a.begin(),a.end(),   b.begin(),b.end(), back_inserter(diff_ab));
+    set_difference(b.begin(),b.end(),   a.begin(),a.end(), back_inserter(diff_ba));
+    set_symmetric_difference(a.begin(),a.end(), b.begin(),b.end(), back_inserter(sym_diff));
+
+    cout << "A: "; for(int x:a) cout<<x<<" "; cout<<"\n";
+    cout << "B: "; for(int x:b) cout<<x<<" "; cout<<"\n";
+    cout << "Intersection:        "; for(int x:inter)    cout<<x<<" "; cout<<"\n";
+    cout << "Union:               "; for(int x:uni)      cout<<x<<" "; cout<<"\n";
+    cout << "Difference (A-B):    "; for(int x:diff_ab)  cout<<x<<" "; cout<<"\n";
+    cout << "Difference (B-A):    "; for(int x:diff_ba)  cout<<x<<" "; cout<<"\n";
+    cout << "Symmetric difference:"; for(int x:sym_diff) cout<<x<<" "; cout<<"\n";
+
+    // merge two sorted arrays
+    vector<int> merged;
+    merge(a.begin(),a.end(), b.begin(),b.end(), back_inserter(merged));
+    cout << "Merged:              "; for(int x:merged)   cout<<x<<" "; cout<<"\n";
+
     return 0;
 }

@@ -1,0 +1,6 @@
+{
+  "slug": "complexity-analysis",
+  "title": "Complexity Analysis",
+  "icon": "📄",
+  "content": "#   Complexity Analysis Cheatsheet\n       \n        **🧠 Memory Aid:** O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).  Ask: what is n? What loop structure drives the complexity? \n       \n      \n## 📖 Big-O Notation\n       `// O(1): Hash lookup, array index\n// O(log n): Binary search, BST ops\n// O(n): Single loop, linear scan\n// O(n log n): Merge sort, heap sort\n// O(n²): Nested loops, bubble sort`"
+}

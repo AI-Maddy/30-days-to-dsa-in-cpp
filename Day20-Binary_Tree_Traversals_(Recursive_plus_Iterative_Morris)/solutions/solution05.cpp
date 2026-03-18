@@ -1,53 +1,18 @@
 /*
- * Solution 5: LCA (Binary Tree Traversals (Recursive plus Iterative Morris))
+ * Solution 5: LCA
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Binary Tree Traversals (Recursive plus Iterative Morris)
-// Task      : LCA
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: lca ---
-// Purpose    : Compute the result for `lca`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int lca(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + lca(root->left) + lca(root->right);
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    Solution s; cout << s.lca(r) + 5 << "\n"; return 0;
+struct TreeNode{int val;TreeNode*left,*right;TreeNode(int x):val(x),left(nullptr),right(nullptr){}};
+TreeNode* build(vector<int>v){if(v.empty())return nullptr;TreeNode*r=new TreeNode(v[0]);queue<TreeNode*>q;q.push(r);int i=1;while(i<(int)v.size()){TreeNode*c=q.front();q.pop();if(i<(int)v.size()&&v[i]!=-1){c->left=new TreeNode(v[i]);q.push(c->left);}i++;if(i<(int)v.size()&&v[i]!=-1){c->right=new TreeNode(v[i]);q.push(c->right);}i++;}return r;}
+TreeNode* lca(TreeNode*r,TreeNode*p,TreeNode*q){
+    if(!r||r==p||r==q)return r;
+    auto l=lca(r->left,p,q),ri=lca(r->right,p,q);
+    if(l&&ri)return r; return l?l:ri;
+}
+int main(){
+    TreeNode*r=build({3,5,1,6,2,0,8,-1,-1,7,4});
+    // simplified: just show structure
+    cout<<r->val<<"\n"; // 3 (root)
+    return 0;
 }

@@ -1,38 +1,9 @@
 /*
- * Exercise 2: DFS Traversal (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
+ * Exercise 2: Topological Sort Kahn
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
-// Task      : DFS Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: dfs_traversal ---
-// Purpose    : Traverse structure using `dfs_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-    int dfs_traversal(int n, vector<vector<int>>& adj) {
-        int edges = 0;
-        for (int u = 0; u < n; u++) edges += (int)adj[u].size();
-        return edges + 2;
-    }
-};
+// Exercise 2: Topological Sort (Kahn's BFS)
+// Hint: Compute indegrees; put 0-indegree nodes in queue; process and reduce neighbors' indegrees.
+vector<int> topoSort(int n, vector<vector<int>>& adj) { return {}; /* TODO */ }
+int main() {}

@@ -1,0 +1,6 @@
+{
+  "slug": "graphs",
+  "title": "Graphs",
+  "icon": "🕸️",
+  "content": "# 🕸️ Graphs Cheatsheet\n       \n        **🧠 Memory Aid:** BFS = shortest path in unweighted. DFS = connectivity, cycles. Dijkstra = weighted shortest.  Topo sort exists only on DAGs. Cycle in directed graph → no topo sort. \n       \n      \n## 🏕️ Graph Representation\n       `// Adjacency list\nvector > adj(n);\nadj[u].push_back(v); // directed\nadj[u].push_back(v); adj[v].push_back(u); // undirected`"
+}

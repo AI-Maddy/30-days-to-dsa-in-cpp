@@ -1,50 +1,26 @@
 /*
- * Example 4: N Queens Count (Backtracking with pruning plus Graph coloring intuition plus M coloring problem)
+ * Example 4: Unique Permutations
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Backtracking with pruning plus Graph coloring intuition plus M coloring problem
-// Task      : N Queens Count
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: n_queens_count ---
-// Purpose    : Compute the result for `n_queens_count`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int n_queens_count(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (7));
-    return ans;
+// Example 4: Unique Permutations (with duplicates, backtracking)
+void permuteUnique(vector<int>& nums, vector<bool>& used, vector<int>& cur, vector<vector<int>>& res) {
+    if (cur.size() == nums.size()) { res.push_back(cur); return; }
+    for (int i = 0; i < (int)nums.size(); i++) {
+        if (used[i]) continue;
+        // Skip duplicate: same value, previous one not used (would produce duplicate)
+        if (i > 0 && nums[i] == nums[i-1] && !used[i-1]) continue;
+        used[i] = true;
+        cur.push_back(nums[i]);
+        permuteUnique(nums, used, cur, res);
+        cur.pop_back();
+        used[i] = false;
+    }
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {4, 5, 6, 7, 8};
-    cout << n_queens_count(data) << "\n";
-    return 0;
+    vector<int> nums = {1, 1, 2}; sort(nums.begin(), nums.end());
+    vector<bool> used(nums.size(), false);
+    vector<vector<int>> res; vector<int> cur;
+    permuteUnique(nums, used, cur, res);
+    for (auto& p : res) { for (int x : p) cout << x << " "; cout << "\n"; }
 }

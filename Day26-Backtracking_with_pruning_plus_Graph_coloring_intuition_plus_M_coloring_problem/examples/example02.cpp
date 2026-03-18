@@ -1,50 +1,26 @@
 /*
- * Example 2: Generate Permutations (Backtracking with pruning plus Graph coloring intuition plus M coloring problem)
+ * Example 2: Palindrome Partition
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Backtracking with pruning plus Graph coloring intuition plus M coloring problem
-// Task      : Generate Permutations
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: generate_permutations ---
-// Purpose    : Compute the result for `generate_permutations`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int generate_permutations(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 2;
+// Example 2: Palindrome Partitioning with pruning
+bool isPalin(const string& s, int l, int r) {
+    while (l < r) if (s[l++] != s[r--]) return false;
+    return true;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+void partition(const string& s, int start, vector<string>& cur, vector<vector<string>>& res) {
+    if (start == (int)s.size()) { res.push_back(cur); return; }
+    for (int end = start; end < (int)s.size(); end++) {
+        if (isPalin(s, start, end)) { // prune: only recurse on palindromes
+            cur.push_back(s.substr(start, end - start + 1));
+            partition(s, end + 1, cur, res);
+            cur.pop_back();
+        }
+    }
+}
 int main() {
-    vector<int> data = {2, 3, 4, 5, 6};
-    cout << generate_permutations(data) << "\n";
-    return 0;
+    string s = "aab";
+    vector<vector<string>> res; vector<string> cur;
+    partition(s, 0, cur, res);
+    for (auto& v : res) { for (auto& w : v) cout << w << " "; cout << "\n"; }
 }

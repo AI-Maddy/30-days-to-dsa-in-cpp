@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes **Day 07**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 07 — 2D Arrays / Matrix: Traversal, Rotation, Spiral, Search (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -393,7 +389,3 @@ Today you mastered:
 
 Matrix problems appear everywhere — DP, graphs, BFS/DFS, simulations, and more.  
 This day builds the foundation for many advanced topics.
-
----
-
-If you’re ready, I’ll prepare **Day 08 — Binary Search on 1D & 2D + Binary Search on Answer Pattern** with the same ultra‑premium depth.

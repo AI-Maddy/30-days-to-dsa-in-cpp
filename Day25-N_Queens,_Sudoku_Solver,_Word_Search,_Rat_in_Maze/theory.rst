@@ -8,18 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 25** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 25 is one of the **legendary recursion/backtracking days**, covering four FAANG‑classic problems:
-
-- **N‑Queens**  
-- **Sudoku Solver**  
-- **Word Search**  
-- **Rat in a Maze**
-
-These four patterns represent the **highest‑level backtracking templates** used across competitive programming and interviews.
-
----
 
 # **Day 25 – 🔥 N‑Queens + Sudoku Solver + Word Search + Rat in a Maze**  
 `theory.rst`
@@ -300,15 +288,4 @@ function solve(state):
 - N‑Queens diagonal math  
 - Sudoku row/col/box validation  
 - Word Search DFS  
-- Rat in Maze path enumeration  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 25 README (ultra‑premium)**  
-🧠 **C++ templates for all 4 backtracking patterns**  
-🎯 **20 FAANG‑level backtracking problems**  
-📘 **Backtracking cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Rat in Maze path enumeration

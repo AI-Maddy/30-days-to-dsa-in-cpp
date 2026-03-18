@@ -1,50 +1,16 @@
 /*
- * Example 4: Merge Two Lists (Doubly plus Circular Linked List plus LRU Cache intuition)
+ * Example 4: Sort Doubly Linked List
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Doubly plus Circular Linked List plus LRU Cache intuition
-// Task      : Merge Two Lists
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// --- Function Explanation: merge_two_lists ---
-// Purpose    : Reorder data according to problem rule in `merge_two_lists`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-int merge_two_lists(ListNode* head) {
-    int ans = 0;
-    while (head) { ans += head->val; head = head->next; }
-    return ans + 4;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2); a->next->next = new ListNode(3);
-    cout << merge_two_lists(a) << "\n";
+struct DNode{int val;DNode*prev,*next;DNode(int x):val(x),prev(nullptr),next(nullptr){}};
+// Merge sort on DLL
+DNode* getMiddle(DNode*h){DNode*s=h,*f=h;while(f->next&&f->next->next){s=s->next;f=f->next->next;}return s;}
+DNode* merge(DNode*a,DNode*b){if(!a)return b;if(!b)return a;if(a->val<=b->val){a->next=merge(a->next,b);if(a->next)a->next->prev=a;a->prev=nullptr;return a;}else{b->next=merge(a,b->next);if(b->next)b->next->prev=b;b->prev=nullptr;return b;}}
+DNode* mergeSort(DNode*h){if(!h||!h->next)return h;DNode*m=getMiddle(h);DNode*r=m->next;m->next=nullptr;if(r)r->prev=nullptr;return merge(mergeSort(h),mergeSort(r));}
+void print(DNode*h){while(h){cout<<h->val<<" ";h=h->next;}cout<<"\n";}
+int main(){
+    DNode n1(5),n2(1),n3(3),n4(2),n5(4);n1.next=&n2;n2.prev=&n1;n2.next=&n3;n3.prev=&n2;n3.next=&n4;n4.prev=&n3;n4.next=&n5;n5.prev=&n4;
+    print(mergeSort(&n1));
     return 0;
 }

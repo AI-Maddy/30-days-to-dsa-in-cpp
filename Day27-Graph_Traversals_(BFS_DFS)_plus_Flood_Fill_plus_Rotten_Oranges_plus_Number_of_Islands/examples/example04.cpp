@@ -1,55 +1,31 @@
 /*
- * Example 4: Cycle Detection Directed (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
+ * Example 4: Rotten Oranges
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
-// Task      : Cycle Detection Directed
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: cycle_detection_directed ---
-// Purpose    : Apply pointer/index transformation in `cycle_detection_directed`.
-// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
-// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
-// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
-// Pseudocode:
-// 1) Initialize pointers/iterators to required positions.
-// 2) Move pointers per condition while updating state.
-// 3) Handle crossing/meeting/base edge conditions.
-// 4) Return transformed structure or boolean/result value.
-int cycle_detection_directed(int n, vector<vector<int>>& g) {
-    vector<int> vis(n, 0);
-    queue<int> q; q.push(0); vis[0] = 1;
-    int cnt = 0;
-    while (!q.empty()) {
-        int u = q.front(); q.pop(); cnt++;
-        for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
+// Example 4: Rotten Oranges (multi-source BFS)
+int orangesRotting(vector<vector<int>>& grid) {
+    int r = grid.size(), c = grid[0].size(), fresh = 0, mins = 0;
+    queue<pair<int,int>> q;
+    for (int i=0;i<r;i++) for (int j=0;j<c;j++) {
+        if (grid[i][j]==2) q.push({i,j});
+        if (grid[i][j]==1) fresh++;
     }
-    return cnt + 4;
+    if (!fresh) return 0;
+    int dx[]={0,0,1,-1}, dy[]={1,-1,0,0};
+    while (!q.empty()) {
+        int sz = q.size(); mins++;
+        for (int k=0;k<sz;k++) {
+            auto [x,y] = q.front(); q.pop();
+            for (int d=0;d<4;d++) {
+                int nx=x+dx[d],ny=y+dy[d];
+                if(nx>=0&&nx<r&&ny>=0&&ny<c&&grid[nx][ny]==1){grid[nx][ny]=2;fresh--;q.push({nx,ny});}
+            }
+        }
+    }
+    return fresh == 0 ? mins - 1 : -1;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    int n = 5; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3}; g[2] = {4};
-    cout << cycle_detection_directed(n, g) << "\n";
-    return 0;
+    vector<vector<int>> g = {{2,1,1},{1,1,0},{0,1,1}};
+    cout << orangesRotting(g) << "\n"; // 4
 }

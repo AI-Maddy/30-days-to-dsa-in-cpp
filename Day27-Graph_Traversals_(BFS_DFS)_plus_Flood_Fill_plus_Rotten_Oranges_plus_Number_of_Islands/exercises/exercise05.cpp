@@ -1,38 +1,9 @@
 /*
- * Exercise 5: Cycle Detection Undirected (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
+ * Exercise 5: Cycle Detection BFS
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
-// Task      : Cycle Detection Undirected
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: cycle_detection_undirected ---
-// Purpose    : Apply pointer/index transformation in `cycle_detection_undirected`.
-// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
-// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
-// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
-// Pseudocode:
-// 1) Initialize pointers/iterators to required positions.
-// 2) Move pointers per condition while updating state.
-// 3) Handle crossing/meeting/base edge conditions.
-// 4) Return transformed structure or boolean/result value.
-    int cycle_detection_undirected(int n, vector<vector<int>>& adj) {
-        int edges = 0;
-        for (int u = 0; u < n; u++) edges += (int)adj[u].size();
-        return edges + 5;
-    }
-};
+// Exercise 5: Detect cycle in undirected graph using BFS
+// Hint: Track parent of each node; if we visit an already-visited node that isn't parent → cycle.
+bool hasCycle(int n, vector<vector<int>>& adj) { return false; /* TODO */ }
+int main() {}

@@ -1,55 +1,29 @@
 /*
- * Example 5: Cycle Detection Undirected (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
+ * Example 5: Course Schedule II
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
-// Task      : Cycle Detection Undirected
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: cycle_detection_undirected ---
-// Purpose    : Apply pointer/index transformation in `cycle_detection_undirected`.
-// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
-// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
-// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
-// Pseudocode:
-// 1) Initialize pointers/iterators to required positions.
-// 2) Move pointers per condition while updating state.
-// 3) Handle crossing/meeting/base edge conditions.
-// 4) Return transformed structure or boolean/result value.
-int cycle_detection_undirected(int n, vector<vector<int>>& g) {
-    vector<int> vis(n, 0);
-    queue<int> q; q.push(0); vis[0] = 1;
-    int cnt = 0;
-    while (!q.empty()) {
-        int u = q.front(); q.pop(); cnt++;
-        for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
+// Example 5: Shortest path in DAG (using topological order)
+const int INF = 1e9;
+vector<int> shortestPathDAG(int src, int n, vector<vector<pair<int,int>>>& adj) {
+    // Step 1: Topological sort
+    vector<int> indegree(n,0);
+    for (int u=0;u<n;u++) for (auto[v,w]:adj[u]) indegree[v]++;
+    queue<int> q; for(int i=0;i<n;i++) if(!indegree[i]) q.push(i);
+    vector<int> topo;
+    while(!q.empty()){int u=q.front();q.pop();topo.push_back(u);for(auto[v,w]:adj[u])if(!--indegree[v])q.push(v);}
+    // Step 2: Relax edges in topological order
+    vector<int> dist(n, INF); dist[src] = 0;
+    for (int u : topo) {
+        if (dist[u] == INF) continue;
+        for (auto [v,w] : adj[u]) dist[v] = min(dist[v], dist[u] + w);
     }
-    return cnt + 5;
+    return dist;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    int n = 5; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3}; g[2] = {4};
-    cout << cycle_detection_undirected(n, g) << "\n";
-    return 0;
+    int n = 6; vector<vector<pair<int,int>>> adj(n);
+    adj[0].push_back({1,2}); adj[0].push_back({4,1}); adj[1].push_back({2,3});
+    adj[4].push_back({2,2}); adj[4].push_back({5,4}); adj[2].push_back({3,6}); adj[5].push_back({3,1});
+    auto dist = shortestPathDAG(0, n, adj);
+    for(int i=0;i<n;i++) cout<<"dist["<<i<<"]="<<(dist[i]==INF?-1:dist[i])<<"\n";
 }

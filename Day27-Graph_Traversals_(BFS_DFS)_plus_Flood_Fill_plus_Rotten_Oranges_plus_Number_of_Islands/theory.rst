@@ -8,18 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 27** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 27 is a **core graph‑traversal day**, covering four FAANG‑classic problems:
-
-- **Graph Traversals (BFS + DFS)**  
-- **Flood Fill (Matrix DFS/BFS)**  
-- **Rotten Oranges (Multi‑source BFS)**  
-- **Number of Islands (DFS/BFS on grid)**  
-
-This day cements your mastery of **graph traversal patterns**, especially **grid‑based BFS/DFS**, which appear in dozens of interview problems.
-
----
 
 # **Day 27 – 🌐 Graph Traversals (BFS/DFS) + 🎨 Flood Fill + 🍊 Rotten Oranges + 🏝️ Number of Islands**  
 `theory.rst`
@@ -296,15 +284,4 @@ Use 4‑direction or 8‑direction depending on problem.
 - Connected components  
 - Boundary checks  
 - Visited matrix logic  
-- BFS layer counting  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 27 README (ultra‑premium)**  
-🧠 **C++ templates for BFS/DFS + Flood Fill + Rotten Oranges + Islands**  
-🎯 **20 graph/grid interview problems**  
-📘 **Graph Traversal cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- BFS layer counting

@@ -1,38 +1,9 @@
 /*
- * Exercise 3: Topological Sort (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
+ * Exercise 3: Topological Sort DFS
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
-// Task      : Topological Sort
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: topological_sort ---
-// Purpose    : Reorder data according to problem rule in `topological_sort`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-    int topological_sort(int n, vector<vector<int>>& adj) {
-        int edges = 0;
-        for (int u = 0; u < n; u++) edges += (int)adj[u].size();
-        return edges + 3;
-    }
-};
+// Exercise 3: Topological Sort (DFS-based)
+// Hint: DFS; push to stack AFTER visiting all descendants; result is stack reversed.
+vector<int> topoSortDFS(int n, vector<vector<int>>& adj) { return {}; /* TODO */ }
+int main() {}

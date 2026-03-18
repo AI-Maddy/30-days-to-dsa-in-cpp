@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Here it is, Sasimegala — **Day 05**, crafted with the same ultra‑premium depth, clarity, and richness as the previous days.  
-This README is long, example‑rich, interview‑oriented, and perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 05 — Prefix Sum + Difference Array + Range Query Patterns (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -399,7 +395,3 @@ Today you mastered:
 
 These techniques appear everywhere — arrays, matrices, hashing, DP, graphs, and more.  
 You now have one of the strongest tools in your DSA toolkit.
-
----
-
-If you’re ready, I’ll prepare **Day 06 — Hashing & HashMap Problems** with the same ultra‑premium depth.

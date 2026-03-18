@@ -1,55 +1,24 @@
 /*
- * Example 3: Topological Sort (Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule)
+ * Example 3: Topological Sort DFS
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Shortest Path (Dijkstra intro) plus Topological Sort plus Course Schedule
-// Task      : Topological Sort
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: topological_sort ---
-// Purpose    : Reorder data according to problem rule in `topological_sort`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-int topological_sort(int n, vector<vector<int>>& g) {
-    vector<int> vis(n, 0);
-    queue<int> q; q.push(0); vis[0] = 1;
-    int cnt = 0;
-    while (!q.empty()) {
-        int u = q.front(); q.pop(); cnt++;
-        for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
-    }
-    return cnt + 3;
+// Example 3: Topological Sort — DFS-based
+void dfsTopoSort(int u, vector<vector<int>>& adj, vector<bool>& vis, stack<int>& st) {
+    vis[u] = true;
+    for (int v : adj[u]) if (!vis[v]) dfsTopoSort(v, adj, vis, st);
+    st.push(u);
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+vector<int> topoSortDFS(int n, vector<vector<int>>& adj) {
+    vector<bool> vis(n, false); stack<int> st;
+    for (int i=0;i<n;i++) if (!vis[i]) dfsTopoSort(i, adj, vis, st);
+    vector<int> order;
+    while (!st.empty()) { order.push_back(st.top()); st.pop(); }
+    return order;
+}
 int main() {
-    int n = 5; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3}; g[2] = {4};
-    cout << topological_sort(n, g) << "\n";
-    return 0;
+    int n = 4;
+    vector<vector<int>> adj(n);
+    adj[0]={1}; adj[0].push_back(2); adj[1]={3}; adj[2]={3};
+    for (int x : topoSortDFS(n, adj)) cout << x << " "; cout << "\n";
 }

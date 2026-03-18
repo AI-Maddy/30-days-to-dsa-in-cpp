@@ -1,50 +1,13 @@
 /*
- * Example 2: Lower Bound (Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays)
+ * Example 2: Lower Bound (BS Answer)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays
-// Task      : Lower Bound
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: lower_bound ---
-// Purpose    : Locate target condition/index via `lower_bound`.
-// Approach   : Use binary/conditional narrowing on search space with invariant maintenance.
-// Complexity : O(log n) time on sorted/monotonic search spaces; O(1) extra space.
-// Notes      : Behavior depends on sortedness/monotonicity precondition.
-// Pseudocode:
-// 1) Initialize search boundaries or pointers.
-// 2) Repeatedly pick probe/mid and compare with target rule.
-// 3) Shrink the valid range while preserving invariants.
-// 4) Return found index/value or fallback result.
-int lower_bound(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 2;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {2, 3, 4, 5, 6};
-    cout << lower_bound(data) << "\n";
+// Book Allocation: allocate n books to m students, minimize max pages
+bool feasible(vector<int>&p,int maxP,int m){int cnt=1,cur=0;for(int x:p){if(cur+x>maxP){cnt++;cur=0;}cur+=x;}return cnt<=m;}
+int bookAlloc(vector<int>&p,int m){int lo=*max_element(p.begin(),p.end()),hi=accumulate(p.begin(),p.end(),0),ans=hi;while(lo<=hi){int mid=lo+(hi-lo)/2;if(feasible(p,mid,m)){ans=mid;hi=mid-1;}else lo=mid+1;}return ans;}
+int main(){
+    vector<int> pages={12,34,67,90};int m=2;
+    cout<<bookAlloc(pages,m)<<"\n"; // 113
     return 0;
 }

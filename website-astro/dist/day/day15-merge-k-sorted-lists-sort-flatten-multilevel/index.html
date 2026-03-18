@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="30 Days to DSA in C++ — Premium Edition"><title>Day 15 · Merge K Sorted Lists Sort Flatten Multilevel · DSA in C++</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.EuORl1j-.css"></head> <body class="min-h-screen bg-[#0d1117] text-slate-100 antialiased"> <!-- Nav --> <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0d1117]/90 backdrop-blur-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14"> <a href="/" class="flex items-center gap-2 font-bold text-slate-100 hover:text-white transition-colors"> <span class="text-xl">⚡</span> <span class="hidden sm:inline text-sm">30 Days DSA C++</span> </a> <div class="flex items-center gap-1"> <a href="/" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">Home</a> <a href="/cheatsheets" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">📄 Cheatsheets</a> </div> </div> </nav> <!-- Main --> <main>  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10"> <!-- Breadcrumb --> <div class="flex items-center gap-2 text-xs text-slate-500 mb-6"> <a href="/" class="hover:text-slate-300 transition-colors">Home</a> <span>›</span> <span class="text-red-400 font-medium">🔴 Linked Lists</span> </div> <!-- Header --> <div class="rounded-2xl border border-red-500/40 bg-red-950/40 p-6 mb-8"> <div class="flex items-start gap-4"> <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black bg-red-500/20 text-red-300"> 15 </div> <div> <div class="text-xs font-bold uppercase tracking-widest mb-1 text-red-400">Day 15 · Linked Lists</div> <h1 class="text-2xl font-extrabold text-white leading-tight">Merge K Sorted Lists Sort Flatten Multilevel</h1> <div class="flex gap-3 mt-3 text-xs text-slate-400"> <span>📖 README</span> <span>🧠 Theory</span> <span>💻 5 Examples</span> <span>✏️ 5 Exercises</span> <span>✅ 5 Solutions</span> </div> </div> </div> </div> <!-- Tabs --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZmsfoQ" prefix="r1" component-url="/_astro/DayTabs.B_BF-cJm.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;readme&quot;:[0,&quot;---\n\n# **Day 15 \\u2014 Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nToday\\u2019s problems combine:\n\n- **Linked lists**\n- **Heaps**\n- **Divide &amp; conquer**\n- **Recursion**\n- **Pointer manipulation**\n\nThese are not beginner problems \\u2014 they are *elite\\u2011level* linked list challenges that test your understanding of:\n\n- Merging sorted structures  \n- Recursion vs iteration  \n- Priority queues  \n- Multilevel pointer flattening  \n- Divide\\u2011and\\u2011conquer sorting  \n\nMastering these unlocks the ability to solve complex linked list systems like:\n\n- LRU/LFU caches  \n- Multilevel data structures  \n- File system trees  \n- Priority\\u2011based scheduling  \n- K\\u2011way merging (used in external sorting, MapReduce, etc.)\n\n---\n\n# **2. Merge k Sorted Linked Lists**\n\nThis is one of the most important linked list problems ever asked.\n\n---\n\n## **2.1 Problem Statement**\n\nGiven `k` sorted linked lists, merge them into one sorted list.\n\n---\n\n## **2.2 Approaches**\n\n### **Approach A \\u2014 Brute Force (O(N log N))**\n\nPut all values in an array \\u2192 sort \\u2192 rebuild list.  \nNot recommended.\n\n---\n\n### **Approach B \\u2014 Merge Lists One by One (O(kN))**\n\nRepeatedly merge two lists.  \nToo slow for large k.\n\n---\n\n### **Approach C \\u2014 Min\\u2011Heap (Priority Queue) \\u2014 O(N log k)**  \n**Most popular interview solution.**\n\n### **Implementation**\n\n```cpp\nstruct cmp {\n    bool operator()(ListNode* a, ListNode* b) {\n        return a-&gt;val &gt; b-&gt;val;\n    }\n};\n\nListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {\n    priority_queue&lt;ListNode*, vector&lt;ListNode*&gt;, cmp&gt; pq;\n\n    for (auto node : lists)\n        if (node) pq.push(node);\n\n    ListNode dummy(0);\n    ListNode* tail = &amp;dummy;\n\n    while (!pq.empty()) {\n        ListNode* node = pq.top();\n        pq.pop();\n\n        tail-&gt;next = node;\n        tail = tail-&gt;next;\n\n        if (node-&gt;next)\n            pq.push(node-&gt;next);\n    }\n    return dummy.next;\n}\n```\n\n---\n\n### **Approach D \\u2014 Divide &amp; Conquer (O(N log k))**\n\nMerge lists in pairs:\n\n```\nk \\u2192 k/2 \\u2192 k/4 \\u2192 ... \\u2192 1\n```\n\n### **Implementation**\n\n```cpp\nListNode* mergeTwo(ListNode* a, ListNode* b) {\n    if (!a) return b;\n    if (!b) return a;\n\n    if (a-&gt;val &lt; b-&gt;val) {\n        a-&gt;next = mergeTwo(a-&gt;next, b);\n        return a;\n    } else {\n        b-&gt;next = mergeTwo(a, b-&gt;next);\n        return b;\n    }\n}\n\nListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {\n    if (lists.empty()) return NULL;\n\n    while (lists.size() &gt; 1) {\n        vector&lt;ListNode*&gt; merged;\n\n        for (int i = 0; i &lt; lists.size(); i += 2) {\n            ListNode* l1 = lists[i];\n            ListNode* l2 = (i + 1 &lt; lists.size()) ? lists[i+1] : NULL;\n            merged.push_back(mergeTwo(l1, l2));\n        }\n        lists = merged;\n    }\n    return lists[0];\n}\n```\n\n---\n\n# **3. Sort a Linked List (Merge Sort on Linked List)**\n\nArrays use quicksort or mergesort.  \nLinked lists **must** use mergesort because:\n\n- No random access  \n- Splitting is easy  \n- Merging is O(1) pointer manipulation  \n\n---\n\n## **3.1 Steps**\n\n1. Find middle  \n2. Split list  \n3. Recursively sort left and right  \n4. Merge sorted halves  \n\n---\n\n## **3.2 Implementation**\n\n```cpp\nListNode* sortList(ListNode* head) {\n    if (!head || !head-&gt;next) return head;\n\n    // Step 1: find middle\n    ListNode *slow = head, *fast = head, *prev = NULL;\n\n    while (fast &amp;&amp; fast-&gt;next) {\n        prev = slow;\n        slow = slow-&gt;next;\n        fast = fast-&gt;next-&gt;next;\n    }\n\n    prev-&gt;next = NULL; // split list\n\n    // Step 2: sort halves\n    ListNode* left = sortList(head);\n    ListNode* right = sortList(slow);\n\n    // Step 3: merge\n    return mergeTwo(left, right);\n}\n```\n\nTime: **O(n log n)**  \nSpace: **O(log n)** recursion stack\n\n---\n\n# **4. Flatten a Multilevel Doubly Linked List**\n\nThis is a beautiful pointer manipulation problem.\n\n---\n\n## **4.1 Structure**\n\nEach node has:\n\n- `next`\n- `prev`\n- `child` (points to another list)\n\nExample:\n\n```\n1 \\u2192 2 \\u2192 3\n      |\n      7 \\u2192 8 \\u2192 9\n          |\n          11 \\u2192 12\n```\n\nFlatten into:\n\n```\n1 \\u2192 2 \\u2192 3 \\u2192 7 \\u2192 8 \\u2192 11 \\u2192 12 \\u2192 9\n```\n\n---\n\n## **4.2 DFS\\u2011Based Solution**\n\n### **Implementation**\n\n```cpp\nNode* flatten(Node* head) {\n    if (!head) return head;\n\n    Node* curr = head;\n\n    while (curr) {\n        if (curr-&gt;child) {\n            Node* next = curr-&gt;next;\n\n            // flatten child\n            Node* child = flatten(curr-&gt;child);\n\n            curr-&gt;next = child;\n            child-&gt;prev = curr;\n            curr-&gt;child = NULL;\n\n            // find tail of child list\n            while (child-&gt;next)\n                child = child-&gt;next;\n\n            child-&gt;next = next;\n            if (next) next-&gt;prev = child;\n        }\n        curr = curr-&gt;next;\n    }\n    return head;\n}\n```\n\n---\n\n# **5. Real\\u2011World Applications**\n\n---\n\n### **Example 1 \\u2014 External Sorting (Merge K Lists)**  \nUsed in:\n\n- Databases  \n- MapReduce  \n- Big data pipelines  \n\n---\n\n### **Example 2 \\u2014 File System Trees (Flattening)**  \nFlattening directory structures.\n\n---\n\n### **Example 3 \\u2014 Sorting Linked Data Streams**  \nUsed in:\n\n- Network packet ordering  \n- Log merging  \n- Event stream processing  \n\n---\n\n### **Example 4 \\u2014 Priority\\u2011based scheduling**  \nMin\\u2011heap merging.\n\n---\n\n# **6. Interview\\u2011Level Problems**\n\n---\n\n### **Problem 1 \\u2014 Merge k sorted lists**  \nHeap or divide\\u2011and\\u2011conquer.\n\n---\n\n### **Problem 2 \\u2014 Sort linked list**  \nMerge sort.\n\n---\n\n### **Problem 3 \\u2014 Flatten multilevel list**  \nDFS pointer manipulation.\n\n---\n\n### **Problem 4 \\u2014 Merge two sorted lists**  \nClassic recursion.\n\n---\n\n### **Problem 5 \\u2014 Split list into k parts**  \nLength calculation + pointer slicing.\n\n---\n\n# **7. Exercises (Try First)**\n\n---\n\n### **Exercise 1**  \nMerge k sorted linked lists using a min\\u2011heap.\n\n---\n\n### **Exercise 2**  \nSort a linked list using merge sort.\n\n---\n\n### **Exercise 3**  \nFlatten a multilevel doubly linked list.\n\n---\n\n### **Exercise 4**  \nMerge two sorted lists (recursive + iterative).\n\n---\n\n### **Exercise 5**  \nSplit a linked list into k equal parts.\n\n---\n\n# **8. Solutions**\n\n---\n\n### **Solution 1 \\u2014 Merge k lists**  \nUse priority queue.\n\n---\n\n### **Solution 2 \\u2014 Sort list**  \nUse merge sort.\n\n---\n\n### **Solution 3 \\u2014 Flatten list**  \nUse DFS pointer rewiring.\n\n---\n\n### **Solution 4 \\u2014 Merge two lists**  \nUse mergeTwo().\n\n---\n\n### **Solution 5 \\u2014 Split list**  \nCompute length \\u2192 divide \\u2192 cut pointers.\n\n---\n\n# **9. Summary**\n\nToday you mastered:\n\n- Merging k sorted lists (heap + divide &amp; conquer)  \n- Sorting linked lists using merge sort  \n- Flattening multilevel doubly linked lists  \n- Advanced pointer manipulation  \n- Real\\u2011world applications of linked list merging  \n- High\\u2011level interview patterns  \n\nThis day marks the end of the linked list trilogy (Days 12\\u201315), and you now have elite\\u2011level mastery over all linked list patterns.\n&quot;],&quot;theory&quot;:[0,&quot;---\n\n# **Day 15 \\u2013 \\ud83d\\udd25 Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Day 15 Matters**\nToday\\u2019s patterns unlock the **elite tier** of linked list problem\\u2011solving:\n\n- \\ud83d\\udd17 Merging multiple sorted lists  \n- \\ud83e\\udde0 Sorting linked lists using merge sort  \n- \\ud83e\\udde9 Flattening multi\\u2011level linked lists  \n- \\ud83d\\udd01 Recursion + merging + pointer rewiring  \n- \\u2699\\ufe0f Priority queue + linked list hybrids  \n\nThese are **top\\u2011tier FAANG interview problems**.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cM\\u2011S\\u2011F\\u201d**\nToday\\u2019s 3 pillars:\n\n- **M** \\u2013 Merge k sorted lists  \n- **S** \\u2013 Sort linked list  \n- **F** \\u2013 Flatten multilevel list  \n\nRemember: **M\\u2011S\\u2011F** \\u2192 the 3 advanced transformations.\n\n---\n\n# **\\ud83c\\udf08 2. Pattern 1: Merge k Sorted Lists**\n\nThis is one of the most famous linked list problems.\n\n---\n\n## **\\ud83c\\udfaf Goal**\nMerge **k** sorted linked lists into one sorted list.\n\n---\n\n## **\\ud83d\\udd25 Approach 1: Min\\u2011Heap (Priority Queue)**  \nTime: **O(N log k)**  \nSpace: **O(k)**\n\n### **Steps**\n1. Push head of each list into min\\u2011heap  \n2. Pop smallest node  \n3. Append to result  \n4. Push next node from popped list  \n5. Repeat  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Heap picks smallest \\u2192 append \\u2192 push next**\n\n---\n\n## **\\ud83d\\udd25 Approach 2: Divide &amp; Conquer**  \nTime: **O(N log k)**  \nSpace: **O(1)** (besides recursion)\n\n### **Steps**\n1. Pair lists and merge  \n2. Repeat until one list remains  \n\n---\n\n## **\\ud83e\\udde0 MEMORY TIP:**  \n**Merge K = Merge 2 repeatedly**\n\n---\n\n## **\\ud83d\\udd25 Approach 3: Brute Force (Not recommended)**  \nConcatenate all \\u2192 sort \\u2192 rebuild list  \nTime: O(N log N)\n\n---\n\n# **\\ud83c\\udf08 3. Pattern 2: Sort Linked List (Merge Sort)**\n\nLinked lists cannot use quicksort efficiently because:\n\n- No random access  \n- Partitioning is expensive  \n\nMerge sort is perfect because:\n\n- Splitting is easy (fast &amp; slow pointers)  \n- Merging is easy (two pointers)  \n\n---\n\n## **\\ud83c\\udfaf Goal**\nSort linked list in **O(n log n)** time and **O(1)** extra space.\n\n---\n\n## **\\ud83d\\udd25 Steps**\n1. Find middle using fast &amp; slow  \n2. Split list into two halves  \n3. Sort left half  \n4. Sort right half  \n5. Merge two sorted halves  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**M\\u2011S\\u2011M**  \nMiddle \\u2192 Sort \\u2192 Merge\n\n---\n\n## **\\ud83c\\udfa8 Example**\nList: `4 \\u2192 2 \\u2192 1 \\u2192 3`\n\nSplit:  \n`4 \\u2192 2` and `1 \\u2192 3`\n\nSort each:  \n`2 \\u2192 4` and `1 \\u2192 3`\n\nMerge:  \n`1 \\u2192 2 \\u2192 3 \\u2192 4`\n\n---\n\n# **\\ud83c\\udf08 4. Pattern 3: Flatten Multilevel Linked List**\n\nNodes have:\n- next  \n- child  \n\nThis structure appears in:\n- File systems  \n- Nested lists  \n- Multilevel menus  \n- Interview problems  \n\n---\n\n## **\\ud83c\\udfaf Goal**\nFlatten into a single\\u2011level linked list.\n\n---\n\n## **\\ud83d\\udd25 Approach 1: DFS (Recursive)**  \nTime: O(N)  \nSpace: O(depth)\n\n### **Steps**\n1. Traverse list  \n2. When child exists:  \n   - Flatten child  \n   - Insert between node and next  \n3. Continue traversal  \n\n---\n\n## **\\ud83e\\udde0 MEMORY TIP:**  \n**Child \\u2192 Flatten \\u2192 Stitch**\n\n---\n\n## **\\ud83d\\udd25 Approach 2: Iterative (Stack)**  \nUse stack to simulate DFS.\n\n---\n\n## **\\ud83d\\udd25 Approach 3: Merge\\u2011Based Flattening**  \nIf child lists are sorted, use merge logic.\n\n---\n\n# **\\ud83c\\udf08 5. Pattern 4: Merge Two Sorted Lists (Foundation)**\n\nThis is the building block for:\n\n- Merge k lists  \n- Merge sort  \n- Flattening sorted lists  \n\n---\n\n## **\\ud83c\\udfaf Logic**\nUse two pointers:\n- Pick smaller node  \n- Move pointer  \n- Append to result  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Smallest wins \\u2192 move pointer**\n\n---\n\n# **\\ud83c\\udf08 6. Pattern 5: Multi\\u2011Pointer Rewiring**\n\nThese problems require:\n\n- prev  \n- next  \n- child  \n- tail  \n- recursion  \n- merging  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Always track: head, tail, next, child**\n\n---\n\n# **\\ud83c\\udf08 7. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Forgetting to update next pointers  \n- \\ud83d\\udea9 Losing child pointers during flattening  \n- \\ud83d\\udea9 Incorrect prev pointers in doubly linked lists  \n- \\ud83d\\udea9 Forgetting to break child links  \n- \\ud83d\\udea9 Infinite loops due to wrong rewiring  \n- \\ud83d\\udea9 Not handling empty lists  \n- \\ud83d\\udea9 Forgetting to check null before accessing next  \n\n---\n\n# **\\ud83c\\udf08 8. Problems You Can Now Solve**\n\n- Merge k sorted lists  \n- Merge two sorted lists  \n- Sort linked list  \n- Flatten multilevel linked list  \n- Flatten multilevel doubly linked list  \n- Merge sort on linked list  \n- Deep structural rewiring  \n- Multi\\u2011pointer recursion problems  \n- K\\u2011way merging problems  \n\n---\n\n# **\\ud83c\\udf08 9. What You Must Master Today**\n\n- Priority queue merging  \n- Divide &amp; conquer merging  \n- Merge sort for linked lists  \n- Flattening multi\\u2011level lists  \n- Pointer rewiring  \n- Recursion + merging  \n- Handling child pointers  \n- Maintaining next/prev integrity  \n&quot;],&quot;examples&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;example01&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 1: Merge K Sorted Lists\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example02&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 2: Sort Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example03&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 3: Flatten Multilevel Doubly LL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct Node{int val;Node*prev,*next,*child;Node(int v):val(v),prev(nullptr),next(nullptr),child(nullptr){}};\nNode* flatten(Node*head){\n    if(!head)return head;\n    stack&lt;Node*&gt; st;\n    Node*c=head;\n    while(c){if(c-&gt;child){if(c-&gt;next)st.push(c-&gt;next);c-&gt;next=c-&gt;child;c-&gt;child-&gt;prev=c;c-&gt;child=nullptr;}\n        if(!c-&gt;next&amp;&amp;!st.empty()){c-&gt;next=st.top();st.top()-&gt;prev=c;st.pop();}\n        c=c-&gt;next;}\n    return head;\n}\nint main(){\n    Node a(1),b(2),c(3),d(4),e(5),f(6);\n    a.next=&amp;b;b.prev=&amp;a;b.next=&amp;c;c.prev=&amp;b;b.child=&amp;d;d.next=&amp;e;e.prev=&amp;d;e.next=&amp;f;f.prev=&amp;e;\n    Node*h=flatten(&amp;a);while(h){cout&lt;&lt;h-&gt;val&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example04&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 4: Add Two Numbers LL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example05&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 5: Intersection of Two LLs\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}]]],&quot;exercises&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;exercise01&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 1: Merge K Sorted Lists\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Merge k sorted arrays using priority queue\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise02&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 2: Sort Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Find kth smallest among k sorted linked lists\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise03&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 3: Flatten Multilevel Doubly LL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Split linked list into k equal parts\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise04&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 4: Add Two Numbers LL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Reverse linked list in groups of k\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise05&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 5: Intersection of Two LLs\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Swap nodes in pairs\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}]]],&quot;solutions&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;solution01&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 1: Merge K Sorted Lists\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution02&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 2: Sort Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution03&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 3: Flatten Multilevel Doubly LL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct Node{int val;Node*prev,*next,*child;Node(int v):val(v),prev(nullptr),next(nullptr),child(nullptr){}};\nNode* flatten(Node*head){\n    if(!head)return head;\n    stack&lt;Node*&gt; st;\n    Node*c=head;\n    while(c){if(c-&gt;child){if(c-&gt;next)st.push(c-&gt;next);c-&gt;next=c-&gt;child;c-&gt;child-&gt;prev=c;c-&gt;child=nullptr;}\n        if(!c-&gt;next&amp;&amp;!st.empty()){c-&gt;next=st.top();st.top()-&gt;prev=c;st.pop();}\n        c=c-&gt;next;}\n    return head;\n}\nint main(){\n    Node a(1),b(2),c(3),d(4),e(5),f(6);\n    a.next=&amp;b;b.prev=&amp;a;b.next=&amp;c;c.prev=&amp;b;b.child=&amp;d;d.next=&amp;e;e.prev=&amp;d;e.next=&amp;f;f.prev=&amp;e;\n    Node*h=flatten(&amp;a);while(h){cout&lt;&lt;h-&gt;val&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution04&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 4: Add Two Numbers LL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution05&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 5: Intersection of Two LLs\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;DayTabs&quot;,&quot;value&quot;:true}" await-children><div><div class="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-1 mb-6 border-b border-slate-800"><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap bg-slate-700 text-white">📖 README</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">🧠 Theory</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">💻 Examples <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✏️ Exercises <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✅ Solutions <span class="ml-1 text-xs text-slate-500">5</span></button></div><div><hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">Day 15 \u2014 Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List (README.rst)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3"><em>30 Days to DSA in C++ \u2014 Ultra\u2011Premium Edition</em></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">1. Introduction</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Today\u2019s problems combine:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Linked lists</strong></li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Heaps</strong></li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Divide &amp; conquer</strong></li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Recursion</strong></li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Pointer manipulation</strong></li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">These are not beginner problems \u2014 they are <em>elite\u2011level</em> linked list challenges that test your understanding of:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Merging sorted structures</li>
+<li class="text-slate-300 ml-2">Recursion vs iteration</li>
+<li class="text-slate-300 ml-2">Priority queues</li>
+<li class="text-slate-300 ml-2">Multilevel pointer flattening</li>
+<li class="text-slate-300 ml-2">Divide\u2011and\u2011conquer sorting</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">Mastering these unlocks the ability to solve complex linked list systems like:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">LRU/LFU caches</li>
+<li class="text-slate-300 ml-2">Multilevel data structures</li>
+<li class="text-slate-300 ml-2">File system trees</li>
+<li class="text-slate-300 ml-2">Priority\u2011based scheduling</li>
+<li class="text-slate-300 ml-2">K\u2011way merging (used in external sorting, MapReduce, etc.)</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">2. Merge k Sorted Linked Lists</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">This is one of the most important linked list problems ever asked.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">2.1 Problem Statement</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Given <code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">k</code> sorted linked lists, merge them into one sorted list.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">2.2 Approaches</strong></h2>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Approach A \u2014 Brute Force (O(N log N))</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Put all values in an array \u2192 sort \u2192 rebuild list.<br/>
+<!-- -->Not recommended.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Approach B \u2014 Merge Lists One by One (O(kN))</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Repeatedly merge two lists.<br/>
+<!-- -->Too slow for large k.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Approach C \u2014 Min\u2011Heap (Priority Queue) \u2014 O(N log k)</strong></h3>
+<p class="text-slate-300 leading-7 mb-3"><strong class="text-white font-semibold">Most popular interview solution.</strong></p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>struct cmp {
+    bool operator()(ListNode* a, ListNode* b) {
+        return a-&gt;val &gt; b-&gt;val;
+    }
+};
+
+ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+    priority_queue&lt;ListNode*, vector&lt;ListNode*&gt;, cmp&gt; pq;
+
+    for (auto node : lists)
+        if (node) pq.push(node);
+
+    ListNode dummy(0);
+    ListNode* tail = &amp;dummy;
+
+    while (!pq.empty()) {
+        ListNode* node = pq.top();
+        pq.pop();
+
+        tail-&gt;next = node;
+        tail = tail-&gt;next;
+
+        if (node-&gt;next)
+            pq.push(node-&gt;next);
+    }
+    return dummy.next;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Approach D \u2014 Divide &amp; Conquer (O(N log k))</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Merge lists in pairs:</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>k \u2192 k/2 \u2192 k/4 \u2192 ... \u2192 1</code></pre></div>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>ListNode* mergeTwo(ListNode* a, ListNode* b) {
+    if (!a) return b;
+    if (!b) return a;
+
+    if (a-&gt;val &lt; b-&gt;val) {
+        a-&gt;next = mergeTwo(a-&gt;next, b);
+        return a;
+    } else {
+        b-&gt;next = mergeTwo(a, b-&gt;next);
+        return b;
+    }
+}
+
+ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+    if (lists.empty()) return NULL;
+
+    while (lists.size() &gt; 1) {
+        vector&lt;ListNode*&gt; merged;
+
+        for (int i = 0; i &lt; lists.size(); i += 2) {
+            ListNode* l1 = lists[i];
+            ListNode* l2 = (i + 1 &lt; lists.size()) ? lists[i+1] : NULL;
+            merged.push_back(mergeTwo(l1, l2));
+        }
+        lists = merged;
+    }
+    return lists[0];
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">3. Sort a Linked List (Merge Sort on Linked List)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Arrays use quicksort or mergesort.<br/>
+<!-- -->Linked lists <strong class="text-white font-semibold">must</strong> use mergesort because:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">No random access</li>
+<li class="text-slate-300 ml-2">Splitting is easy</li>
+<li class="text-slate-300 ml-2">Merging is O(1) pointer manipulation</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.1 Steps</strong></h2>
+<ol class="list-decimal list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Find middle</li>
+<li class="text-slate-300 ml-2">Split list</li>
+<li class="text-slate-300 ml-2">Recursively sort left and right</li>
+<li class="text-slate-300 ml-2">Merge sorted halves</li>
+</ol>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3.2 Implementation</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>ListNode* sortList(ListNode* head) {
+    if (!head || !head-&gt;next) return head;
+
+    // Step 1: find middle
+    ListNode *slow = head, *fast = head, *prev = NULL;
+
+    while (fast &amp;&amp; fast-&gt;next) {
+        prev = slow;
+        slow = slow-&gt;next;
+        fast = fast-&gt;next-&gt;next;
+    }
+
+    prev-&gt;next = NULL; // split list
+
+    // Step 2: sort halves
+    ListNode* left = sortList(head);
+    ListNode* right = sortList(slow);
+
+    // Step 3: merge
+    return mergeTwo(left, right);
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: <strong class="text-white font-semibold">O(n log n)</strong><br/>
+<!-- -->Space: <strong class="text-white font-semibold">O(log n)</strong> recursion stack</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">4. Flatten a Multilevel Doubly Linked List</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">This is a beautiful pointer manipulation problem.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">4.1 Structure</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Each node has:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">next</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">prev</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">child</code> (points to another list)</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">Example:</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>1 \u2192 2 \u2192 3
+      |
+      7 \u2192 8 \u2192 9
+          |
+          11 \u2192 12</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Flatten into:</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>1 \u2192 2 \u2192 3 \u2192 7 \u2192 8 \u2192 11 \u2192 12 \u2192 9</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">4.2 DFS\u2011Based Solution</strong></h2>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>Node* flatten(Node* head) {
+    if (!head) return head;
+
+    Node* curr = head;
+
+    while (curr) {
+        if (curr-&gt;child) {
+            Node* next = curr-&gt;next;
+
+            // flatten child
+            Node* child = flatten(curr-&gt;child);
+
+            curr-&gt;next = child;
+            child-&gt;prev = curr;
+            curr-&gt;child = NULL;
+
+            // find tail of child list
+            while (child-&gt;next)
+                child = child-&gt;next;
+
+            child-&gt;next = next;
+            if (next) next-&gt;prev = child;
+        }
+        curr = curr-&gt;next;
+    }
+    return head;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">5. Real\u2011World Applications</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 1 \u2014 External Sorting (Merge K Lists)</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Databases</li>
+<li class="text-slate-300 ml-2">MapReduce</li>
+<li class="text-slate-300 ml-2">Big data pipelines</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 2 \u2014 File System Trees (Flattening)</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Flattening directory structures.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 3 \u2014 Sorting Linked Data Streams</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Network packet ordering</li>
+<li class="text-slate-300 ml-2">Log merging</li>
+<li class="text-slate-300 ml-2">Event stream processing</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 4 \u2014 Priority\u2011based scheduling</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Min\u2011heap merging.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">6. Interview\u2011Level Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 1 \u2014 Merge k sorted lists</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Heap or divide\u2011and\u2011conquer.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 2 \u2014 Sort linked list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Merge sort.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 3 \u2014 Flatten multilevel list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">DFS pointer manipulation.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 4 \u2014 Merge two sorted lists</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Classic recursion.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 5 \u2014 Split list into k parts</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Length calculation + pointer slicing.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">7. Exercises (Try First)</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 1</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Merge k sorted linked lists using a min\u2011heap.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 2</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Sort a linked list using merge sort.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 3</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Flatten a multilevel doubly linked list.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 4</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Merge two sorted lists (recursive + iterative).</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 5</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Split a linked list into k equal parts.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">8. Solutions</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 1 \u2014 Merge k lists</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use priority queue.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 2 \u2014 Sort list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use merge sort.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 3 \u2014 Flatten list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use DFS pointer rewiring.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 4 \u2014 Merge two lists</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use mergeTwo().</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 5 \u2014 Split list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute length \u2192 divide \u2192 cut pointers.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">9. Summary</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Today you mastered:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Merging k sorted lists (heap + divide &amp; conquer)</li>
+<li class="text-slate-300 ml-2">Sorting linked lists using merge sort</li>
+<li class="text-slate-300 ml-2">Flattening multilevel doubly linked lists</li>
+<li class="text-slate-300 ml-2">Advanced pointer manipulation</li>
+<li class="text-slate-300 ml-2">Real\u2011world applications of linked list merging</li>
+<li class="text-slate-300 ml-2">High\u2011level interview patterns</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day marks the end of the linked list trilogy (Days 12\u201315), and you now have elite\u2011level mastery over all linked list patterns.</p></div></div><!--astro:end--></astro-island> <!-- Prev / Next --> <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800"> <a href="/day/day14-fast-and-slow-pointers-palindrome-linked-list" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"> <span class="text-lg">←</span> <span class="hidden sm:inline">Day 14 · Fast And Slow Pointers Palindrome Linked List</span> <span class="sm:hidden">Prev</span> </a> <a href="/day/day16-stack-next-greater-smaller-stock-span" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right"> <span class="hidden sm:inline">Day 16 · Stack Next Greater Smaller Stock Span</span> <span class="sm:hidden">Next</span> <span class="text-lg">→</span> </a> </div> </div>  </main> <!-- Footer --> <footer class="border-t border-slate-800/60 mt-16 py-8 text-center text-xs text-slate-600">
+30 Days to DSA in C++ · Built with Astro
+</footer> </body></html>

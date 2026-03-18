@@ -1,55 +1,26 @@
 /*
- * Example 3: Topological Sort (Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands)
+ * Example 3: Flood Fill
  */
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Graph Traversals (BFS DFS) plus Flood Fill plus Rotten Oranges plus Number of Islands
-// Task      : Topological Sort
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: topological_sort ---
-// Purpose    : Reorder data according to problem rule in `topological_sort`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-int topological_sort(int n, vector<vector<int>>& g) {
-    vector<int> vis(n, 0);
-    queue<int> q; q.push(0); vis[0] = 1;
-    int cnt = 0;
+// Example 3: Flood Fill
+vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+    int orig = image[sr][sc];
+    if (orig == color) return image;
+    int r = image.size(), c = image[0].size();
+    int dx[]={0,0,1,-1}, dy[]={1,-1,0,0};
+    queue<pair<int,int>> q; q.push({sr,sc}); image[sr][sc] = color;
     while (!q.empty()) {
-        int u = q.front(); q.pop(); cnt++;
-        for (int v : g[u]) if (!vis[v]) vis[v] = 1, q.push(v);
+        auto [x,y] = q.front(); q.pop();
+        for (int d=0;d<4;d++) {
+            int nx=x+dx[d],ny=y+dy[d];
+            if(nx>=0&&nx<r&&ny>=0&&ny<c&&image[nx][ny]==orig){image[nx][ny]=color;q.push({nx,ny});}
+        }
     }
-    return cnt + 3;
+    return image;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    int n = 5; vector<vector<int>> g(n); g[0] = {1,2}; g[1] = {3}; g[2] = {4};
-    cout << topological_sort(n, g) << "\n";
-    return 0;
+    vector<vector<int>> image = {{1,1,1},{1,1,0},{1,0,1}};
+    auto res = floodFill(image, 1, 1, 2);
+    for (auto& row : res) { for (int x : row) cout << x << " "; cout << "\n"; }
 }

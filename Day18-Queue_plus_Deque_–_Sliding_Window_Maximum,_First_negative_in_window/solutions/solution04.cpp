@@ -1,35 +1,19 @@
+/*
+ * Solution 4: Stack using Queue
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution04
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+// Stack using two queues
+class MyStack{queue<int>q1,q2;
+public:
+    void push(int v){q2.push(v);while(!q1.empty()){q2.push(q1.front());q1.pop();}swap(q1,q2);}
+    int pop(){int v=q1.front();q1.pop();return v;}
+    int top(){return q1.front();}
+    bool empty(){return q1.empty();}
+};
+int main(){
+    MyStack s;s.push(1);s.push(2);s.push(3);
+    cout<<s.top()<<"\n"; // 3
+    s.pop(); cout<<s.top()<<"\n"; // 2
     return 0;
 }

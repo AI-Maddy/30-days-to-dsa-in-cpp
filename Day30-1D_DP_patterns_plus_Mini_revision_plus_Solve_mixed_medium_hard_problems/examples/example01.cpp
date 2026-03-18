@@ -1,50 +1,32 @@
 /*
- * Example 1: Fibonacci DP (1D DP patterns plus Mini revision plus Solve mixed medium hard problems)
+ * Example 1: Fibonacci Climbing Stairs House Robber
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : 1D DP patterns plus Mini revision plus Solve mixed medium hard problems
-// Task      : Fibonacci DP
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: fibonacci_dp ---
-// Purpose    : Compute optimal substructure value using `fibonacci_dp`.
-// Approach   : Build DP state transitions from smaller subproblems.
-// Complexity : Usually O(states × transitions), space O(states) unless compressed.
-// Notes      : State definition and transition order are the key correctness points.
-// Pseudocode:
-// 1) Define DP state and base conditions.
-// 2) Iterate states in dependency-safe order.
-// 3) Apply transition recurrence to update best value.
-// 4) Return target state result.
-int fibonacci_dp(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
+// Example 1: Classic 1D DP — Fibonacci, Climbing Stairs, House Robber
+// Fibonacci with DP (bottom-up, O(1) space)
+long long fib(int n) {
+    if (n <= 1) return n;
+    long long a = 0, b = 1;
+    for (int i = 2; i <= n; i++) { long long c = a + b; a = b; b = c; }
+    return b;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+// Climbing stairs — number of ways to reach step n (1 or 2 steps at a time)
+int climbStairs(int n) {
+    if (n <= 2) return n;
+    int a = 1, b = 2;
+    for (int i = 3; i <= n; i++) { int c = a + b; a = b; b = c; }
+    return b;
+}
+// House Robber — max rob without adjacent houses
+int rob(vector<int>& nums) {
+    int prev2 = 0, prev1 = 0;
+    for (int x : nums) { int cur = max(prev1, prev2 + x); prev2 = prev1; prev1 = cur; }
+    return prev1;
+}
 int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << fibonacci_dp(data) << "\n";
-    return 0;
+    cout << fib(10) << "\n"; // 55
+    cout << climbStairs(5) << "\n"; // 8
+    vector<int> houses = {2,7,9,3,1};
+    cout << rob(houses) << "\n"; // 12
 }

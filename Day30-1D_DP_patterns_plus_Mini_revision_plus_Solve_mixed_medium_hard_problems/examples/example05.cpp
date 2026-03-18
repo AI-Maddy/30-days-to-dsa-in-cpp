@@ -1,50 +1,30 @@
 /*
- * Example 5: Knapsack 0-1 (1D DP patterns plus Mini revision plus Solve mixed medium hard problems)
+ * Example 5: Edit Distance LCS
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : 1D DP patterns plus Mini revision plus Solve mixed medium hard problems
-// Task      : Knapsack 0-1
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: knapsack_0_1 ---
-// Purpose    : Compute optimal substructure value using `knapsack_0_1`.
-// Approach   : Build DP state transitions from smaller subproblems.
-// Complexity : Usually O(states × transitions), space O(states) unless compressed.
-// Notes      : State definition and transition order are the key correctness points.
-// Pseudocode:
-// 1) Define DP state and base conditions.
-// 2) Iterate states in dependency-safe order.
-// 3) Apply transition recurrence to update best value.
-// 4) Return target state result.
-int knapsack_0_1(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
+// Example 5: Edit Distance (Levenshtein Distance) + LCS
+int editDistance(const string& a, const string& b) {
+    int m = a.size(), n = b.size();
+    vector<vector<int>> dp(m+1, vector<int>(n+1));
+    for (int i=0;i<=m;i++) dp[i][0]=i;
+    for (int j=0;j<=n;j++) dp[0][j]=j;
+    for (int i=1;i<=m;i++)
+        for (int j=1;j<=n;j++) {
+            if (a[i-1]==b[j-1]) dp[i][j]=dp[i-1][j-1];
+            else dp[i][j]=1+min({dp[i-1][j],dp[i][j-1],dp[i-1][j-1]});
+        }
+    return dp[m][n];
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+int lcs(const string& a, const string& b) {
+    int m=a.size(), n=b.size();
+    vector<vector<int>> dp(m+1, vector<int>(n+1, 0));
+    for (int i=1;i<=m;i++)
+        for (int j=1;j<=n;j++)
+            dp[i][j] = (a[i-1]==b[j-1]) ? dp[i-1][j-1]+1 : max(dp[i-1][j],dp[i][j-1]);
+    return dp[m][n];
+}
 int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << knapsack_0_1(data) << "\n";
-    return 0;
+    cout << editDistance("horse","ros") << "\n"; // 3
+    cout << lcs("ABCBDAB","BDCAB") << "\n";      // 4
 }

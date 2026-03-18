@@ -1,0 +1,78 @@
+{
+  "day": 12,
+  "title": "Singly Linked List Reverse Middle Cycle Remove Nth Node",
+  "slug": "day12-singly-linked-list-reverse-middle-cycle-remove-nth-node",
+  "dirName": "day12-singly_linked_list_reverse_middle_cycle_remove_nth_node",
+  "cluster": "linked-lists",
+  "clusterLabel": "Linked Lists",
+  "clusterColor": "red",
+  "clusterIcon": "🔴",
+  "readme": "---\n\n# **Day 12 \\u2014 Singly Linked List: Reverse, Middle, Cycle Detection, Remove Nth Node (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nSingly Linked Lists are the backbone of many advanced data structures:\n\n- Stacks & Queues  \n- Hashing (chaining)  \n- LRU Cache  \n- Graph adjacency lists  \n- Custom memory allocators  \n- Dynamic data structures  \n\nToday\\u2019s goal is to master the **core operations** that appear in almost every interview:\n\n- Creating and traversing a linked list  \n- Reversing a linked list (iterative + recursive)  \n- Finding the middle node  \n- Detecting and removing cycles  \n- Removing the Nth node from the end  \n- Merging two sorted lists  \n- Deleting nodes efficiently  \n\nThis day is extremely important \\u2014 these patterns appear repeatedly in FAANG interviews.\n\n---\n\n# **2. Node Structure**\n\n```cpp\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x) : val(x), next(NULL) {}\n};\n```\n\n---\n\n# **3. Traversal**\n\n```cpp\nvoid print(ListNode* head) {\n    while (head) {\n        cout << head->val << \" \\",
+  "theory": "---\n\n# **Day 12 \\u2013 \\ud83d\\udd25 Two Pointers Mastery + Meet\\u2011in\\u2011the\\u2011Middle + Prefix Tricks**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Day 12 Matters**\nTwo pointers is one of the **most powerful** patterns in DSA because it turns:\n\n- \\u274c O(n\\u00b2) brute force  \ninto  \n- \\u2705 O(n) or O(n log n) elegant solutions.\n\nToday you learn:\n\n- \\ud83d\\udd25 Two pointers on sorted arrays  \n- \\ud83d\\udd25 Two pointers on unsorted arrays (after sorting)  \n- \\ud83d\\udd25 Pair sum, triplet sum, 3\\u2011sum, 4\\u2011sum  \n- \\ud83d\\udd25 Meet\\u2011in\\u2011the\\u2011middle (2\\u207f \\u2192 2\\u207f/\\u00b2)  \n- \\ud83d\\udd25 Prefix tricks for optimization  \n- \\ud83d\\udd25 Merging, partitioning, deduplication  \n- \\ud83d\\udd25 Geometry + two pointers  \n- \\ud83d\\udd25 Strings + two pointers  \n\nThis is a **massive** upgrade to your problem\\u2011solving toolkit.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cC\\u2011M\\u2011P\\u2011G\\u2011S\\u201d**\nTwo pointers solve problems involving:\n\n- **C**ollision (meeting in middle)  \n- **M**ovement (left/right motion)  \n- **P**artitioning (split arrays)  \n- **G**eometry (areas, distances)  \n- **S**trings (palindromes, compression)  \n\nRemember: **C\\u2011M\\u2011P\\u2011G\\u2011S** \\u2192 the five worlds of two pointers.\n\n---\n\n# **\\ud83c\\udf08 2. Two Pointers on Sorted Arrays (The Classic)**\n\n---\n\n## **\\ud83d\\udc99 Pattern 1: Pair Sum**\nGiven sorted array, find if pair sums to target.\n\n### **\\ud83c\\udfaf Logic**\n- left = 0  \n- right = n\\u20111  \n- If sum < target \\u2192 left++  \n- If sum > target \\u2192 right--  \n- Else found  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Small sum \\u2192 move left**  \n**Big sum \\u2192 move right**\n\n---\n\n## **\\ud83d\\udc9a Pattern 2: Triplet Sum (3\\u2011Sum)**\nSort array \\u2192 fix one element \\u2192 two pointers for the rest.\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Fix + Pair Sum**\n\n---\n\n## **\\ud83d\\udc9b Pattern 3: 3\\u2011Sum Closest**\nSame as 3\\u2011sum but track closest difference.\n\n---\n\n## **\\u2764\\ufe0f Pattern 4: 4\\u2011Sum**\nSort \\u2192 fix two \\u2192 two pointers for remaining.\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**4\\u2011Sum = 2\\u2011Sum inside 2\\u2011Sum**\n\n---\n\n# **\\ud83c\\udf08 3. Two Pointers on Unsorted Arrays (Sort First)**\n\nUsed for:\n- Pair sum  \n- Triplet sum  \n- Remove duplicates  \n- Partitioning  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nIf array is unsorted \\u2192 **sort first** \\u2192 then apply two pointers.\n\n---\n\n# **\\ud83c\\udf08 4. Two Pointers for Deduplication**\n\n---\n\n## **\\ud83d\\udc99 Pattern: Remove Duplicates from Sorted Array**\nMaintain:\n- slow pointer \\u2192 position to write  \n- fast pointer \\u2192 scanning  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Fast reads, slow writes**\n\n---\n\n# **\\ud83c\\udf08 5. Two Pointers for Partitioning**\n\n---\n\n## **\\ud83d\\udc9a Pattern: Dutch National Flag (0,1,2 Sort)**\nThree pointers:\n- low  \n- mid  \n- high  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**0 \\u2192 left**  \n**2 \\u2192 right**  \n**1 \\u2192 stay**\n\n---\n\n## **\\ud83d\\udc9b Pattern: Partition Even/Odd**\nMove left until odd  \nMove right until even  \nSwap  \n\n---\n\n# **\\ud83c\\udf08 6. Two Pointers in Strings**\n\n---\n\n## **\\ud83d\\udc99 Pattern: Palindrome Check**\nleft++, right--\n\n---\n\n## **\\ud83d\\udc9a Pattern: Reverse String**\nSwap left/right\n\n---\n\n## **\\ud83d\\udc9b Pattern: Compress String**\nTwo pointers:\n- read pointer  \n- write pointer  \n\n---\n\n## **\\u2764\\ufe0f Pattern: Remove Adjacent Duplicates**\nUse two pointers or stack logic.\n\n---\n\n# **\\ud83c\\udf08 7. Geometry + Two Pointers**\n\n---\n\n## **\\ud83d\\udc99 Pattern: Container With Most Water**\nTwo pointers at ends.\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \nMove the **shorter** line.\n\n---\n\n## **\\ud83d\\udc9a Pattern: Max Area of Histogram (Two\\u2011Pointer Variant)**\nNot the stack version \\u2014 but a two\\u2011pointer intuition exists.\n\n---\n\n# **\\ud83c\\udf08 8. Meet\\u2011in\\u2011the\\u2011Middle (MITM)**  \n(Used in problems where 2\\u207f is too big)\n\n---\n\n## **\\ud83d\\udca5 Why MITM Matters**\nInstead of O(2\\u207f), split into two halves:\n\n- Left half \\u2192 all subset sums  \n- Right half \\u2192 all subset sums  \n- Sort + two pointers or binary search  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Split \\u2192 Solve \\u2192 Merge**\n\n---\n\n## **\\ud83d\\udd25 Applications**\n- Subset sum  \n- K\\u2011sum variants  \n- Hard DP optimizations  \n- Knapsack approximations  \n\n---\n\n# **\\ud83c\\udf08 9. Prefix Tricks + Two Pointers**\n\n---\n\n## **\\ud83d\\udc99 Pattern: Subarray Sum \\u2264 K**\nUse:\n- Two pointers  \n- Prefix sum  \n- Sliding window  \n\n---\n\n## **\\ud83d\\udc9a Pattern: Count Subarrays with Sum in Range**\nTwo pointers + prefix + binary search.\n\n---\n\n## **\\ud83d\\udc9b Pattern: Longest Subarray with Limit**\nTwo pointers + monotonic deque.\n\n---\n\n# **\\ud83c\\udf08 10. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Using two pointers on unsorted arrays without sorting  \n- \\ud83d\\udea9 Forgetting to skip duplicates in 3\\u2011sum/4\\u2011sum  \n- \\ud83d\\udea9 Moving wrong pointer in pair sum  \n- \\ud83d\\udea9 Infinite loops due to incorrect pointer updates  \n- \\ud83d\\udea9 Using two pointers when array is not monotonic  \n- \\ud83d\\udea9 Forgetting overflow in sum calculations  \n- \\ud83d\\udea9 Using two pointers for problems requiring DP  \n\n---\n\n# **\\ud83c\\udf08 11. Problems You Can Now Solve**\n\n- Pair sum  \n- Triplet sum  \n- 3\\u2011sum  \n- 4\\u2011sum  \n- Container with most water  \n- Remove duplicates  \n- Dutch national flag  \n- Partition even/odd  \n- Palindrome check  \n- Reverse string  \n- Compress string  \n- Subset sum (MITM)  \n- K\\u2011sum variants  \n- Longest subarray with limit  \n- Count subarrays with sum \\u2264 K  \n\n---\n\n# **\\ud83c\\udf08 12. What You Must Master Today**\n\n- Two pointers on sorted arrays  \n- Two pointers on unsorted arrays (after sorting)  \n- Deduplication patterns  \n- Partitioning patterns  \n- String two\\u2011pointer patterns  \n- Geometry two\\u2011pointer patterns  \n- Meet\\u2011in\\u2011the\\u2011middle  \n- Prefix + two pointer hybrid patterns  \n",
+  "examples": [
+    {
+      "id": "example01",
+      "code": "/*\n * Example 1: Reverse Linked List\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "example02",
+      "code": "/*\n * Example 2: Find Middle Node\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "example03",
+      "code": "/*\n * Example 3: Cycle Detection\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "example04",
+      "code": "/*\n * Example 4: Merge Two Sorted Lists\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "example05",
+      "code": "/*\n * Example 5: Remove Nth from End\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise01",
+      "content": "/*\n * Exercise 1: Reverse Linked List\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Check if linked list is palindrome\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise02",
+      "content": "/*\n * Exercise 2: Find Middle Node\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Find intersection of two linked lists\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise03",
+      "content": "/*\n * Exercise 3: Cycle Detection\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Rotate linked list by k positions\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise04",
+      "content": "/*\n * Exercise 4: Merge Two Sorted Lists\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Sort linked list using merge sort\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise05",
+      "content": "/*\n * Exercise 5: Remove Nth from End\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Copy list with random pointers\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "solution01",
+      "code": "/*\n * Solution 1: Reverse Linked List\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "solution02",
+      "code": "/*\n * Solution 2: Find Middle Node\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "solution03",
+      "code": "/*\n * Solution 3: Cycle Detection\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "solution04",
+      "code": "/*\n * Solution 4: Merge Two Sorted Lists\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    },
+    {
+      "id": "solution05",
+      "code": "/*\n * Solution 5: Remove Nth from End\n */\n#include <bits/stdc++.h>\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}\nvoid print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<\"->\\"
+    }
+  ]
+}

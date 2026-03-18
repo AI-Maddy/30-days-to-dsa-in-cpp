@@ -1,53 +1,26 @@
 /*
  * Solution 4: Deque Operations (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Cplusplus STL Mastery
-// Task      : Deque Operations
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: deque_operations ---
-// Purpose    : Compute the result for `deque_operations`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int deque_operations(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x;
-        return ans + 4;
+vector<int> slidingWindowMax(vector<int>& nums, int k) {
+    deque<int> dq;  // stores indices; front = max in current window
+    vector<int> res;
+    for (int i = 0; i < (int)nums.size(); i++) {
+        while (!dq.empty() && dq.front() < i - k + 1) dq.pop_front();
+        while (!dq.empty() && nums[dq.back()] <= nums[i]) dq.pop_back();
+        dq.push_back(i);
+        if (i >= k - 1) res.push_back(nums[dq.front()]);
     }
-};
+    return res;
+}
 
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> nums = {4, 5, 6};
-    Solution s; cout << s.deque_operations(nums) << "\n"; return 0;
+    int n, k; cin >> n >> k;
+    vector<int> nums(n);
+    for (int& x : nums) cin >> x;
+    for (int x : slidingWindowMax(nums, k)) cout << x << " ";
+    cout << "\n";
+    return 0;
 }

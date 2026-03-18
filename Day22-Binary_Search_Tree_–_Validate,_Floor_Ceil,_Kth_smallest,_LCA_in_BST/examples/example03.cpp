@@ -1,35 +1,27 @@
+/*
+ * Example 3: Kth Smallest
+ */
 #include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example03
- * Pattern Family: Binary Search
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Binary Search approach.
- * Input   : Read sorted data or searchable answer range.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read input and identify monotonic condition.
- * 2) Set low/high search boundaries.
- * 3) Check mid using feasibility predicate.
- * 4) Shrink range based on predicate outcome.
- * 5) Return exact position/boundary/optimal answer.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Prefer long long where boundary multiplication/sums can overflow int.
+// Example 3: Kth Smallest in BST (inorder = sorted)
+int kthSmallest(TreeNode* root, int k) {
+    stack<TreeNode*> st;
+    TreeNode* cur = root;
+    int count = 0;
+    while (cur || !st.empty()) {
+        while (cur) { st.push(cur); cur = cur->left; }
+        cur = st.top(); st.pop();
+        if (++count == k) return cur->val;
+        cur = cur->right;
+    }
+    return -1;
 }
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
+    TreeNode* root = new TreeNode(5);
+    root->left = new TreeNode(3); root->right = new TreeNode(6);
+    root->left->left = new TreeNode(2); root->left->right = new TreeNode(4);
+    root->left->left->left = new TreeNode(1);
+    cout << kthSmallest(root, 3) << "\n"; // 3
 }

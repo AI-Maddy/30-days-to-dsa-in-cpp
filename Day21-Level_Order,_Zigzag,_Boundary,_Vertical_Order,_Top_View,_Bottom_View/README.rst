@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Day 21 coming right up, Sasimegala — and this one is a *big milestone*.  
-Today you step into the world of **self‑balancing trees**, the structures that make modern databases, compilers, and ordered maps lightning‑fast.
-
-This README is long, deep, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 21 — AVL Trees: Self‑Balancing BST + Rotations + Insert/Delete (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -458,7 +452,3 @@ Today you mastered:
 - Real‑world applications  
 
 This day is essential for **Day 22 — Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right)**.
-
----
-
-If you want, I’ll prepare **Day 22** with the same ultra‑premium depth.

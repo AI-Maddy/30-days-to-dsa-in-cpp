@@ -8,11 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here is your **Day 2 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Day 1 and Day 30.
-
-This is **Day 2: Time & Space Complexity + STL Algorithms**, designed to feel like a beautifully structured textbook chapter.
-
----
 
 # **Day 2 – THEORY.rst**  
 ## **⏱️ Time & Space Complexity + ⚙️ STL Algorithms Mastery**
@@ -326,13 +321,3 @@ You now understand:
 - How to choose the right container  
 
 This foundation will be used **every single day** going forward.
-
----
-
-If you want, I can now generate:
-
-- **Day 2 README.rst**  
-- **Day 3 theory.rst**  
-- **A combined complexity cheat sheet**  
-
-Just tell me what you want next.

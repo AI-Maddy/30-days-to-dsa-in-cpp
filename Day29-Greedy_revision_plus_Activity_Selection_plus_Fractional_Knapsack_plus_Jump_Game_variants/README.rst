@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — let’s rebuild **Day 29** exactly the way you want it:  
-**Greedy Revision + Activity Selection + Fractional Knapsack + Jump Game Variants**  
-This is a *pure greedy algorithms day*, not DP.  
-And as always, it’s crafted with the same ultra‑premium depth, clarity, and structure as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 29 — Greedy Algorithms Revision: Activity Selection, Fractional Knapsack, Jump Game Variants (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -301,5 +295,3 @@ Today you mastered:
 - Real‑world greedy applications  
 
 This day completes your greedy revision and prepares you for **Day 30 — Advanced DP: LCS, Edit Distance, DP on Strings & Trees**.
-
-If you want, I’ll prepare **Day 30** with the same ultra‑premium depth.

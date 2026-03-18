@@ -1,53 +1,14 @@
 /*
- * Solution 5: Assign Cookies (Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants)
+ * Solution 5: Min Platforms
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants
-// Task      : Assign Cookies
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: assign_cookies ---
-// Purpose    : Compute the result for `assign_cookies`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int assign_cookies(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x;
-        return ans + 5;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> nums = {5, 6, 7};
-    Solution s; cout << s.assign_cookies(nums) << "\n"; return 0;
+int minPlatforms(vector<int>&arr,vector<int>&dep){
+    int n=arr.size();sort(arr.begin(),arr.end());sort(dep.begin(),dep.end());
+    int plat=1,maxP=1,i=1,j=0;
+    while(i<n&&j<n){if(arr[i]<=dep[j]){plat++;i++;}else{plat--;j++;}maxP=max(maxP,plat);}
+    return maxP;
 }
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    vector<int>arr={900,940,950,1100,1500,1800},dep={910,1200,1120,1130,1900,2000};
+    cout<<minPlatforms(arr,dep)<<"\n";}

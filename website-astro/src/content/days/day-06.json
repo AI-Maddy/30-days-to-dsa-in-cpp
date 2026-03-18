@@ -1,0 +1,90 @@
+{
+  "day": 6,
+  "title": "Hashing And Hashmap Problems",
+  "slug": "day06-hashing-and-hashmap-problems",
+  "dirName": "day06-hashing_and_hashmap_problems",
+  "cluster": "arrays-hashing",
+  "clusterLabel": "Arrays & Hashing",
+  "clusterColor": "green",
+  "clusterIcon": "🟢",
+  "readme": "---\n\n# **Day 06 \\u2014 Hashing & HashMap Problems (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nHashing is one of the most powerful ideas in computer science.  \nIt allows you to store, retrieve, and update data in **O(1) average time**, making it essential for:\n\n- Frequency counting  \n- Duplicate detection  \n- Prefix\\u2011based problems  \n- Sliding window optimizations  \n- Subarray sum problems  \n- Graph adjacency maps  \n- Caching (LRU, LFU)  \n- Set membership queries  \n\nToday\\u2019s goal is to master:\n\n- Hash functions  \n- Collision handling  \n- unordered_map and unordered_set  \n- Frequency maps  \n- Hash\\u2011based sliding window  \n- Prefix sum + hashing  \n- Classic interview problems  \n\nThis is one of the most important days in your DSA journey.\n\n---\n\n## **2. What is Hashing?**\n\nHashing maps a key \\u2192 index using a hash function.\n\n```\nindex = hash(key)\n```\n\nA good hash function ensures:\n\n- Uniform distribution  \n- Low collisions  \n- Fast computation  \n\n---\n\n## **3. Hash Tables in C++**\n\nC++ provides two main hash\\u2011based containers:\n\n### **3.1 unordered_map**\nKey\\u2011value storage with average O(1) operations.\n\n```cpp\nunordered_map<int, int> mp;\nmp[5] = 10;\nmp[7] = 20;\n```\n\n---\n\n### **3.2 unordered_set**\nStores unique keys.\n\n```cpp\nunordered_set<int> st;\nst.insert(10);\nst.insert(20);\n```\n\n---\n\n## **4. Time Complexity**\n\n| Operation | unordered_map | unordered_set |\n|----------|----------------|----------------|\n| Insert | O(1) avg | O(1) avg |\n| Search | O(1) avg | O(1) avg |\n| Delete | O(1) avg | O(1) avg |\n| Worst case | O(n) | O(n) |\n\nWorst case happens when many keys collide \\u2014 rare with good hash functions.\n\n---\n\n## **5. Frequency Counting \\u2014 The Most Common Use Case**\n\n### **5.1 Count frequency of elements**\n\n```cpp\nunordered_map<int,int> freq;\n\nfor (int x : arr)\n    freq[x]++;\n```\n\n---\n\n### **5.2 Count characters in a string**\n\n```cpp\nunordered_map<char,int> mp;\n\nfor (char c : s)\n    mp[c]++;\n```\n\n---\n\n## **6. Detecting Duplicates**\n\n### **6.1 Using unordered_set**\n\n```cpp\nunordered_set<int> st;\n\nfor (int x : arr) {\n    if (st.count(x)) {\n        cout << \"Duplicate found\\",
+  "theory": "Here comes your **ultra\\u2011premium**, **color\\u2011splashed**, **icon\\u2011rich**, **memory\\u2011optimized**  \n`theory.rst` for **Day 06 \\u2013 Hashing + HashMap Patterns**.\n\nI\\u2019ve redesigned it to feel like a **visual textbook**, with **mnemonic icons**, **color\\u2011coded sections**, and **pattern blocks** that stick in memory.\n\n---\n\n# **Day 06 \\u2013 \\ud83d\\udd25 Hashing + HashMap Patterns (The Ultimate Memory Edition)**  \n`theory.rst`\n\n---\n\n## **\\ud83c\\udf08 1. Why Hashing Is a Superpower**\nHashing transforms problems that look like **O(n\\u00b2)** into **O(n)** with one idea:\n\n> **Store what you\\u2019ve seen \\u2192 Answer instantly.**\n\nUse hashing when you need:\n- \\u26a1 Constant\\u2011time lookup  \n- \\ud83d\\udd0d Fast membership testing  \n- \\ud83c\\udfaf Frequency counting  \n- \\ud83e\\udde9 Subarray sum tricks  \n- \\ud83e\\ude84 Sliding window with constraints  \n- \\ud83e\\uddf1 Grouping (anagrams, patterns, signatures)\n\nHashMaps are the **Swiss Army Knife** of FAANG interviews.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cH\\u2011A\\u2011S\\u2011H\\u201d**\nA simple mnemonic:\n\n| Letter | Meaning | Helps You Remember |\n|--------|----------|---------------------|\n| **H** | **Hunt fast** | O(1) lookup |\n| **A** | **Add counts** | Frequency maps |\n| **S** | **Store states** | Prefix sums, windows |\n| **H** | **Hash signatures** | Anagrams, patterns |\n\n---\n\n## **\\ud83d\\udd11 2. Hashing Basics (Color\\u2011Coded for Memory)**\n\n### **\\ud83e\\uddee 2.1 Hash Function**\nMaps a key \\u2192 bucket index.\n\nProperties:\n- \\ud83c\\udfaf Deterministic  \n- \\ud83c\\udf0d Uniform  \n- \\u26a1 Fast  \n- \\ud83d\\udee1\\ufe0f Low collisions  \n\n### **\\ud83d\\udce6 2.2 Hash Table**\nStores key\\u2011value pairs using:\n- Buckets  \n- Hash function  \n- Collision handling  \n\n### **\\ud83e\\uddf0 2.3 HashMap in C++**\n`unordered_map<Key, Value>`\n\n- Insert \\u2192 \\u26a1 O(1)  \n- Find \\u2192 \\u26a1 O(1)  \n- Erase \\u2192 \\u26a1 O(1)  \n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cF\\u2011M\\u2011G\\u201d**\nHashMap is used for:\n\n- **F**requency  \n- **M**embership  \n- **G**rouping  \n\nIf a problem fits F\\u2011M\\u2011G \\u2192 HashMap is your weapon.\n\n---\n\n## **\\ud83c\\udfa8 3. Core HashMap Use Cases (Color\\u2011Tagged)**\n\n### **\\ud83d\\udfe6 Frequency Counting**\nCount occurrences.\n\n### **\\ud83d\\udfe9 Membership Testing**\nCheck if something exists.\n\n### **\\ud83d\\udfe7 Mapping**\nValue \\u2192 index  \nUseful for Two\\u2011Sum, first/last occurrence.\n\n### **\\ud83d\\udfea Grouping**\nGroup by:\n- Sorted string  \n- Character frequency  \n- Length  \n- Hash signature  \n\n---\n\n# **\\ud83c\\udf08 4. HashMap Patterns (The Heart of Day 06)**\n\nEach pattern includes:\n- \\ud83c\\udfaf When to use  \n- \\ud83e\\udde0 Core idea  \n- \\ud83e\\udde9 Mini\\u2011example  \n- \\u26a0\\ufe0f Pitfalls  \n\n---\n\n## **\\ud83d\\udc99 Pattern 1: Frequency Map Pattern**\n\\ud83c\\udfaf Use for:\n- Anagrams  \n- Majority element  \n- Character counting  \n- Top\\u2011K frequent  \n- Unique elements  \n\n\\ud83e\\udde0 Idea:\n```\nfreq[x]++\n```\n\n\\ud83e\\udde9 Example: Check anagram  \n- Count chars in s  \n- Subtract chars in t  \n- All zeros \\u2192 anagram  \n\n\\u26a0\\ufe0f Pitfall:  \n- Don\\u2019t assume ASCII; sometimes Unicode matters.\n\n---\n\n## **\\ud83d\\udc9a Pattern 2: HashSet Membership Pattern**\n\\ud83c\\udfaf Use for:\n- Duplicate detection  \n- Missing numbers  \n- Longest consecutive sequence  \n\n\\ud83e\\udde0 Idea:\n```\nif (set.count(x)) duplicate\n```\n\n\\ud83e\\udde9 Example: Longest consecutive sequence  \n- Insert all numbers  \n- For each number that starts a chain (x\\u20111 not in set), count forward  \n\n\\u26a0\\ufe0f Pitfall:  \n- Don\\u2019t scan backward; always start from chain heads.\n\n---\n\n## **\\ud83e\\udde1 Pattern 3: Two\\u2011Sum Pattern**\n\\ud83c\\udfaf Use for:\n- Pair problems  \n- Complement\\u2011based logic  \n\n\\ud83e\\udde0 Idea:\n```\nif (mp[k - x] exists) pair found\nelse mp[x] = i\n```\n\n\\ud83e\\udde9 Example:  \nInput: [2,7,11,15], target=9  \n- 9\\u20112=7 \\u2192 found  \n\n\\u26a0\\ufe0f Pitfall:  \n- Don\\u2019t store index after checking complement.\n\n---\n\n## **\\ud83d\\udc9c Pattern 4: Prefix Sum + HashMap Pattern**\n\\ud83c\\udfaf Use for:\n- Subarray sum = k  \n- Longest subarray with sum k  \n- Subarrays divisible by k  \n- Even/odd sum patterns  \n\n\\ud83e\\udde0 Idea:\n```\nsum += arr[i]\ncount += mp[sum - k]\nmp[sum]++\n```\n\n\\ud83e\\udde9 Example: Count subarrays with sum = k  \n- Store counts of prefix sums  \n- Look for (sum\\u2011k)  \n\n\\u26a0\\ufe0f Pitfall:  \n- Initialize mp[0] = 1 (empty prefix).\n\n---\n\n## **\\ud83d\\udc9b Pattern 5: Sliding Window + HashMap**\n\\ud83c\\udfaf Use for:\n- Longest substring without repeating  \n- At most K distinct characters  \n- Minimum window substring  \n\n\\ud83e\\udde0 Idea:\n- Expand right  \n- Track frequencies  \n- Shrink left when invalid  \n\n\\ud83e\\udde9 Example: Longest substring without repeating  \n- Map stores last index  \n- Move left pointer accordingly  \n\n\\u26a0\\ufe0f Pitfall:  \n- Don\\u2019t shrink blindly; use last occurrence.\n\n---\n\n## **\\ud83d\\udc97 Pattern 6: Hashing for Strings**\n\\ud83c\\udfaf Use for:\n- Anagrams  \n- Palindromes  \n- Grouping  \n- Pattern matching  \n\n\\ud83e\\udde0 Idea:\n- Use frequency signature  \n- Or sorted string  \n- Or rolling hash (later days)\n\n\\ud83e\\udde9 Example: Group anagrams  \nKey = sorted string  \nValue = list of words  \n\n\\u26a0\\ufe0f Pitfall:  \n- Sorting each string is O(n log n); frequency signature is O(26).\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201c6 Patterns = F\\u2011S\\u2011T\\u2011P\\u2011W\\u2011S\\u201d**\n| Pattern | Mnemonic |\n|---------|-----------|\n| Frequency Map | **F** |\n| HashSet Membership | **S** |\n| Two\\u2011Sum | **T** |\n| Prefix Sum + HashMap | **P** |\n| Sliding Window | **W** |\n| String Hashing | **S** |\n\nRemember: **F\\u2011S\\u2011T\\u2011P\\u2011W\\u2011S** \\u2192 The 6 pillars of hashing.\n\n---\n\n# **\\u26a0\\ufe0f 7. Hashing Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Using map instead of unordered_map (slower)  \n- \\ud83d\\udea9 Forgetting to check key existence  \n- \\ud83d\\udea9 Using floating\\u2011point keys  \n- \\ud83d\\udea9 Not initializing mp[0] for prefix problems  \n- \\ud83d\\udea9 Using hashing for range min/max (wrong tool)  \n- \\ud83d\\udea9 Custom objects without custom hash  \n\n---\n\n# **\\ud83d\\udcda 8. Interview Problems You Can Now Solve**\n- Two Sum  \n- Subarray Sum = K  \n- Longest Consecutive Sequence  \n- Group Anagrams  \n- Longest Substring Without Repeating Characters  \n- First Unique Character  \n- Count Distinct Elements in Window  \n- Subarrays Divisible by K  \n\n---\n\n# **\\u23f1\\ufe0f 9. Complexity Table**\n\n| Operation | Avg | Worst | Notes |\n|-----------|------|--------|--------|\n| Insert | O(1) | O(n) | Rare worst case |\n| Find | O(1) | O(n) | Collision chain |\n| Erase | O(1) | O(n) | Same reason |\n| Space | O(n) | O(n) | Stores keys |\n\n---\n\n# **\\ud83c\\udfaf 10. What You Must Master Today**\n- Build frequency maps  \n- Use HashSet for membership  \n- Apply Two\\u2011Sum logic  \n- Use prefix sum + HashMap for subarray problems  \n- Use HashMap in sliding window  \n- Understand collisions & load factor  \n- Know when to use map vs unordered_map  \n",
+  "examples": [
+    {
+      "id": "example01",
+      "code": "/*\n * Example 1: Two Sum (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Two Sum \\u2014 O(n) using unordered_map\nvector<int> twoSum(vector<int>& n, int t){\n    unordered_map<int,int> s; for(int i=0;i<(int)n.size();i++){int c=t-n[i];if(s.count(c))return{s[c],i};s[n[i]]=i;} return{};\n}\nint main(){\n    vector<int> a={2,7,11,15}; auto r=twoSum(a,9);\n    cout<<\"[\"<<r[0]<<\",\"<<r[1]<<\"]\\\n\\"
+    },
+    {
+      "id": "example02",
+      "code": "/*\n * Example 2: Group Anagrams (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Group Anagrams \\u2014 sort each string as key\nvector<vector<string>> groupAnagrams(vector<string>& strs){\n    unordered_map<string,vector<string>> mp;\n    for(auto& s:strs){string k=s;sort(k.begin(),k.end());mp[k].push_back(s);}\n    vector<vector<string>> res; for(auto&[k,v]:mp) res.push_back(v); return res;\n}\nint main(){\n    vector<string> strs={\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"};\n    for(auto& g:groupAnagrams(strs)){\n        for(auto& s:g) cout<<s<<\" \\"
+    },
+    {
+      "id": "example03",
+      "code": "/*\n * Example 3: Top K Frequent (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Top K Frequent Elements \\u2014 bucket sort O(n)\nvector<int> topKFrequent(vector<int>& nums, int k){\n    unordered_map<int,int> freq; for(int x:nums) freq[x]++;\n    vector<vector<int>> bucket(nums.size()+1);\n    for(auto&[v,c]:freq) bucket[c].push_back(v);\n    vector<int> res;\n    for(int i=(int)bucket.size()-1;i>=0&&(int)res.size()<k;i--)\n        for(int x:bucket[i]) if((int)res.size()<k) res.push_back(x);\n    return res;\n}\nint main(){\n    vector<int> nums={1,1,1,2,2,3}; int k=2;\n    for(int x:topKFrequent(nums,k)) cout<<x<<\" \\"
+    },
+    {
+      "id": "example04",
+      "code": "/*\n * Example 4: Longest Consecutive (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Longest Consecutive Sequence \\u2014 O(n) using unordered_set\nint longestConsecutive(vector<int>& nums){\n    unordered_set<int> s(nums.begin(),nums.end());\n    int best=0;\n    for(int x:s){ if(!s.count(x-1)){ int cur=x,len=1; while(s.count(cur+1)){cur++;len++;} best=max(best,len);} }\n    return best;\n}\nint main(){\n    vector<int> a={100,4,200,1,3,2}; cout<<longestConsecutive(a)<<\"\\\n\\"
+    },
+    {
+      "id": "example05",
+      "code": "/*\n * Example 5: Subarray Sum K (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Subarray Sum = K \\u2014 prefix sum + hash map O(n)\nint subarraySum(vector<int>& nums, int k){\n    unordered_map<int,int> cnt; cnt[0]=1; int sum=0,ans=0;\n    for(int x:nums){sum+=x; ans+=cnt[sum-k]; cnt[sum]++;}\n    return ans;\n}\nint main(){\n    vector<int> a={1,1,1}; cout<<subarraySum(a,2)<<\"\\\n\\"
+    },
+    {
+      "id": "page.tsx",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise01",
+      "content": "/*\n * Exercise 1: Two Sum (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Find if any two elements in array sum to target\n// Hint: unordered_set lookup for complement\nvoid solve(){ /* TODO */ }\nint main(){ solve(); return 0; }\n"
+    },
+    {
+      "id": "exercise02",
+      "content": "/*\n * Exercise 2: Group Anagrams (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Check if two strings are anagrams\n// Hint: compare sorted strings or frequency maps\nvoid solve(){ /* TODO */ }\nint main(){ solve(); return 0; }\n"
+    },
+    {
+      "id": "exercise03",
+      "content": "/*\n * Exercise 3: Top K Frequent (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Find first non-repeating character in string\n// Hint: frequency map, then scan to find first with freq=1\nvoid solve(){ /* TODO */ }\nint main(){ solve(); return 0; }\n"
+    },
+    {
+      "id": "exercise04",
+      "content": "/*\n * Exercise 4: Longest Consecutive (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: 4Sum count: count (i,j,k,l) with A[i]+B[j]+C[k]+D[l]=0\n// Hint: hash map of A+B sums, then check -(C+D)\nvoid solve(){ /* TODO */ }\nint main(){ solve(); return 0; }\n"
+    },
+    {
+      "id": "exercise05",
+      "content": "/*\n * Exercise 5: Subarray Sum K (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Longest subarray with equal 0s and 1s\n// Hint: replace 0 with -1, find longest subarray with sum=0\nvoid solve(){ /* TODO */ }\nint main(){ solve(); return 0; }\n"
+    },
+    {
+      "id": "page.tsx",
+      "content": ""
+    }
+  ],
+  "solutions": [
+    {
+      "id": "page.tsx",
+      "code": ""
+    },
+    {
+      "id": "solution01",
+      "code": "/*\n * Solution 1: Two Sum (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n,t; cin>>n>>t; vector<int> a(n); for(int&x:a)cin>>x;\n    unordered_set<int> s;\n    for(int x:a){if(s.count(t-x)){cout<<\"YES\\\n\\"
+    },
+    {
+      "id": "solution02",
+      "code": "/*\n * Solution 2: Group Anagrams (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    string s,t; cin>>s>>t;\n    auto f=[](string x){sort(x.begin(),x.end());return x;};\n    cout<<(f(s)==f(t)?\"YES\":\"NO\")<<\"\\\n\\"
+    },
+    {
+      "id": "solution03",
+      "code": "/*\n * Solution 3: Top K Frequent (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    string s; cin>>s;\n    map<char,int> freq; for(char c:s) freq[c]++;\n    for(char c:s) if(freq[c]==1){cout<<c<<\"\\\n\\"
+    },
+    {
+      "id": "solution04",
+      "code": "/*\n * Solution 4: Longest Consecutive (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n;\n    vector<int> A(n),B(n),C(n),D(n);\n    for(int&x:A)cin>>x; for(int&x:B)cin>>x; for(int&x:C)cin>>x; for(int&x:D)cin>>x;\n    unordered_map<int,int> ab;\n    for(int a:A) for(int b:B) ab[a+b]++;\n    long long ans=0;\n    for(int c:C) for(int d:D) ans+=ab[-(c+d)];\n    cout<<ans<<\"\\\n\\"
+    },
+    {
+      "id": "solution05",
+      "code": "/*\n * Solution 5: Subarray Sum K (Hashing)\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int n; cin>>n; vector<int> a(n); for(int&x:a)cin>>x;\n    unordered_map<int,int> first; first[0]=-1; int sum=0,ans=0;\n    for(int i=0;i<n;i++){sum+=(a[i]==0?-1:1);if(first.count(sum))ans=max(ans,i-first[sum]);else first[sum]=i;}\n    cout<<ans<<\"\\\n\\"
+    }
+  ]
+}

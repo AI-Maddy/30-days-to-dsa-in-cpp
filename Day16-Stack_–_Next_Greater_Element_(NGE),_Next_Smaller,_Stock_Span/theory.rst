@@ -8,23 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here is your **Day 16** theory file, rebuilt exactly as you requested:
-
-**Day16 – Stack: Next Greater Element (NGE), Next Smaller Element (NSE), Stock Span**  
-in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as your previous days.
-
-This is one of the most **important** days in the entire DSA journey because these three patterns form the **foundation** of all monotonic‑stack problems, including:
-
-- Largest Rectangle in Histogram  
-- Maximal Rectangle  
-- Daily Temperatures  
-- Remove K Digits  
-- Asteroid Collision  
-- Sliding Window Maximum (deque variant)  
-
-Let’s build the most beautiful, memorable theory file for Day 16.
-
----
 
 # **Day 16 – 🔥 Stack Mastery: NGE, NSE, Stock Span (Colorful Memory Edition)**  
 `theory.rst`
@@ -284,15 +267,4 @@ Use stack to simulate collisions.
 - Index‑based stack logic  
 - LRH + Maximal Rectangle  
 - Greedy + stack hybrids  
-- Stack‑based simulation problems  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 16 README (ultra‑premium)**  
-🧠 **C++ templates for NGE/NSE/Stock Span**  
-🎯 **20 monotonic stack interview problems**  
-📘 **Monotonic Stack cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Stack‑based simulation problems

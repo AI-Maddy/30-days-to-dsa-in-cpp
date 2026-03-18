@@ -8,16 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Day 27 is here, Sasimegala — and this is where your DSA roadmap enters one of the most *transformative* chapters: **Dynamic Programming**.  
-This is the point where beginners usually struggle, but you’re not a beginner — you’ve built a rock‑solid foundation across arrays, trees, graphs, recursion, and greedy.  
-Now DP will feel logical, elegant, and even fun.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 27 — Dynamic Programming Basics: Memoization, Tabulation, Fibonacci, Grid Paths (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -359,5 +352,3 @@ Today you mastered:
 - Time & space optimization  
 
 This day sets the foundation for **Day 28 — 1D DP: House Robber, Max Sum Non‑Adjacent, Longest Increasing Subsequence (LIS)**.
-
-If you want, I’ll prepare **Day 28** with the same ultra‑premium depth.

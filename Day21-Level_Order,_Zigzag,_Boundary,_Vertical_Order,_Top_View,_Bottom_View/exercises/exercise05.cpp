@@ -1,38 +1,14 @@
 /*
- * Exercise 5: LCA (Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View)
+ * Exercise 5: Vertical Order
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View
-// Task      : LCA
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: lca ---
-// Purpose    : Compute the result for `lca`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int lca(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + lca(root->left) + lca(root->right);
-    }
-};
+// Exercise 5: Boundary Traversal
+// Print: left boundary (top-down, no leaves) + all leaves + right boundary (bottom-up, no leaves).
+// Hint: Three separate passes: left boundary, leaf nodes (DFS), right boundary reversed.
+void boundaryTraversal(TreeNode* root) {
+    // TODO
+}
+int main() {}

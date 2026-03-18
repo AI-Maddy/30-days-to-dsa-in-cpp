@@ -1,0 +1,6 @@
+{
+  "slug": "trees",
+  "title": "Trees",
+  "icon": "🌲",
+  "content": "# 🌲 Trees Cheatsheet\n       \n        **🧠 Memory Aid:** Inorder of BST = sorted array. LCA: if both nodes on same side, go that way; else current = LCA.  Height = max(leftHeight, rightHeight) + 1. Diameter = max over all nodes of (leftH + rightH). \n       \n      \n## 🏕️ Node Definition\n       `struct TreeNode \n};`"
+}

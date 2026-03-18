@@ -1,35 +1,29 @@
+/*
+ * Example 2: Container With Most Water (1D Arrays – Two Pointers and Sliding Window basics)
+ */
+// Two pointer approach: always move the shorter bar inward. O(n) time O(1) space.
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example02
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
+int maxWater(vector<int>& h) {
+    int l=0, r=(int)h.size()-1, maxArea=0;
+    while (l < r) {
+        int area = min(h[l], h[r]) * (r - l);
+        maxArea = max(maxArea, area);
+        // Move the shorter bar — it can only decrease area if we keep it
+        if (h[l] < h[r]) l++;
+        else r--;
+    }
+    return maxArea;
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    vector<int> h = {1,8,6,2,5,4,8,3,7};
+    cout << "Max water: " << maxWater(h) << "\n";  // 49
 
-    // Run the main solver for this file.
-    solve();
+    // Trace for small example
+    vector<int> small = {1,3,2,5,2,3,4,2,1};
+    cout << "Max water (small): " << maxWater(small) << "\n";
+
     return 0;
 }

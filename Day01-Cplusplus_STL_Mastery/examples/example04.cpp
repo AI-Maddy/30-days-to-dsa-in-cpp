@@ -1,50 +1,45 @@
 /*
  * Example 4: Deque Operations (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Cplusplus STL Mastery
-// Task      : Deque Operations
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: deque_operations ---
-// Purpose    : Compute the result for `deque_operations`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int deque_operations(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (7));
-    return ans;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {4, 5, 6, 7, 8};
-    cout << deque_operations(data) << "\n";
+    // deque supports O(1) push/pop at both ends
+    deque<int> dq;
+    dq.push_back(3);  dq.push_back(4);  dq.push_back(5);
+    dq.push_front(2); dq.push_front(1);
+    cout << "deque (front to back): ";
+    for (int x : dq) cout << x << " "; cout << "\n";
+
+    cout << "front=" << dq.front() << "  back=" << dq.back() << "\n";
+    dq.pop_front(); dq.pop_back();
+    cout << "After pop_front + pop_back: ";
+    for (int x : dq) cout << x << " "; cout << "\n";
+
+    // Classic use: Sliding Window Maximum using monotonic deque
+    // Window of size k — deque stores indices, front = index of max
+    vector<int> nums = {1, 3, -1, -3, 5, 3, 6, 7};
+    int k = 3;
+    deque<int> mono;  // stores indices
+    vector<int> result;
+
+    for (int i = 0; i < (int)nums.size(); i++) {
+        // Remove indices outside window
+        while (!mono.empty() && mono.front() < i - k + 1)
+            mono.pop_front();
+        // Maintain decreasing order: remove smaller elements from back
+        while (!mono.empty() && nums[mono.back()] <= nums[i])
+            mono.pop_back();
+        mono.push_back(i);
+        // Window has k elements starting from index k-1
+        if (i >= k - 1)
+            result.push_back(nums[mono.front()]);
+    }
+
+    cout << "\nSliding Window Max (k=" << k << "):\n";
+    cout << "Input:  "; for (int x : nums)   cout << x << " "; cout << "\n";
+    cout << "Output: "; for (int x : result) cout << x << " "; cout << "\n";
+
     return 0;
 }

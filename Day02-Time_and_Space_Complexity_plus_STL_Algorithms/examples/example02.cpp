@@ -1,50 +1,40 @@
 /*
  * Example 2: Map Frequency (Time and Space Complexity plus STL Algorithms)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// Demonstrates STL algorithms: count_if, find_if, transform, max_element.
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Time and Space Complexity plus STL Algorithms
-// Task      : Map Frequency
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: map_frequency ---
-// Purpose    : Compute the result for `map_frequency`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int map_frequency(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 2;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {2, 3, 4, 5, 6};
-    cout << map_frequency(data) << "\n";
+    vector<int> v = {1, -2, 3, -4, 5, -6, 7, 8, -9, 10};
+
+    // count_if — O(n), count elements satisfying predicate
+    int pos = count_if(v.begin(), v.end(), [](int x){ return x > 0; });
+    cout << "Positive count: " << pos << "\n";
+
+    // find_if — O(n), returns iterator to first match
+    auto it = find_if(v.begin(), v.end(), [](int x){ return x > 5; });
+    if (it != v.end()) cout << "First > 5: " << *it << "\n";
+
+    // max_element / min_element — O(n)
+    auto mx = max_element(v.begin(), v.end());
+    auto mn = min_element(v.begin(), v.end());
+    cout << "Max: " << *mx << "  Min: " << *mn << "\n";
+
+    // transform — O(n), apply function to each element
+    vector<int> absv(v.size());
+    transform(v.begin(), v.end(), absv.begin(), [](int x){ return abs(x); });
+    cout << "Absolute values: "; for(int x:absv) cout<<x<<" "; cout<<"\n";
+
+    // transform with two ranges
+    vector<int> a = {1,2,3,4,5}, b = {10,20,30,40,50}, c(5);
+    transform(a.begin(),a.end(), b.begin(), c.begin(), plus<int>());
+    cout << "Element-wise sum: "; for(int x:c) cout<<x<<" "; cout<<"\n";
+
+    // all_of, any_of, none_of — O(n)
+    cout << "all positive? " << all_of(v.begin(),v.end(),[](int x){return x>0;}) << "\n";
+    cout << "any negative? " << any_of(v.begin(),v.end(),[](int x){return x<0;}) << "\n";
+    cout << "none zero?    " << none_of(v.begin(),v.end(),[](int x){return x==0;}) << "\n";
+
     return 0;
 }

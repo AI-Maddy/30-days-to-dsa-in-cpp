@@ -8,13 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Below is your **ultra‑premium, example‑rich, interview‑oriented**  
-`theory.rst` for **Day 05 – Prefix Sum + Difference Array + Range Query Patterns**.
-
-It is structured exactly in the style you’ve been using across the 30‑day curriculum:  
-deep explanations, visuals, pitfalls, patterns, and interview insights.
-
----
 
 # **Day 05 – Prefix Sum + Difference Array + Range Query Patterns**  
 `theory.rst`
@@ -281,15 +274,4 @@ Use prefix modulo + hashmap.
 - Perform range updates in O(1)  
 - Solve subarray sum problems using prefix + hashmap  
 - Understand when prefix sum fails (min/max queries)  
-- Understand 2D prefix and 2D difference arrays  
-
----
-
-If you want, I can now generate:
-
-- **README.md** for Day 05  
-- **C++ code templates** for all patterns  
-- **10–20 curated interview problems**  
-- **Auto‑generation scripts** for your repo  
-
-Just tell me what you want next.
+- Understand 2D prefix and 2D difference arrays

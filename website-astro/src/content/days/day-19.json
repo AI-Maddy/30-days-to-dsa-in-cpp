@@ -1,0 +1,78 @@
+{
+  "day": 19,
+  "title": "Parentheses RPN LFU",
+  "slug": "day19-parentheses-rpn-lfu",
+  "dirName": "day19-parentheses_rpn_lfu",
+  "cluster": "stacks-queues",
+  "clusterLabel": "Stacks & Queues",
+  "clusterColor": "orange",
+  "clusterIcon": "🟠",
+  "readme": "---\n\n# **Day 19 \\u2014 Binary Trees: Traversals, Height, Diameter, Balanced Trees (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nBinary Trees are the backbone of:\n\n- Binary Search Trees (BST)  \n- Heaps  \n- Segment Trees  \n- Fenwick Trees  \n- Tries  \n- Expression Trees  \n- AVL / Red\\u2011Black Trees  \n- Graph traversal intuition  \n\nToday\\u2019s goal is to master:\n\n- Tree representation  \n- DFS traversals (preorder, inorder, postorder)  \n- BFS traversal (level order)  \n- Height & depth  \n- Diameter of a tree  \n- Balanced tree check  \n- Maximum path sum  \n- Mirror tree  \n- Count nodes, leaves, internal nodes  \n\nThis day is foundational for Days 20\\u201322 (BST, advanced tree DP, and recursion mastery).\n\n---\n\n# **2. Tree Node Structure**\n\n```cpp\nstruct TreeNode {\n    int val;\n    TreeNode* left;\n    TreeNode* right;\n    TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n};\n```\n\n---\n\n# **3. Depth\\u2011First Traversals (DFS)**\n\nDFS has three classic variants.\n\n---\n\n## **3.1 Preorder Traversal (Root \\u2192 Left \\u2192 Right)**\n\n```cpp\nvoid preorder(TreeNode* root) {\n    if (!root) return;\n    cout << root->val << \" \\",
+  "theory": "---\n\n# **Day 19 \\u2013 \\ud83d\\udd25 Parentheses Problems + \\ud83e\\uddee Reverse Polish Notation + \\ud83e\\udde0 LFU Cache Intuition**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Day 19 Matters**\nToday\\u2019s patterns unlock:\n\n- \\ud83e\\uddf1 Stack\\u2011based parsing  \n- \\ud83e\\udde9 Expression evaluation  \n- \\ud83d\\udd01 Balanced parentheses logic  \n- \\ud83e\\udde0 LFU cache design intuition  \n- \\ud83e\\uddee Operator precedence  \n- \\ud83e\\uddca Frequency\\u2011based eviction  \n\nThese are **core FAANG interview topics** across Amazon, Google, Meta, and Microsoft.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cP\\u2011R\\u2011L\\u201d**\nToday\\u2019s 3 pillars:\n\n- **P** \\u2013 Parentheses  \n- **R** \\u2013 Reverse Polish Notation  \n- **L** \\u2013 LFU Cache  \n\nRemember: **P\\u2011R\\u2011L** \\u2192 Parse, Reverse Polish, Least Frequently Used.\n\n---\n\n# **\\ud83c\\udf08 2. Parentheses Problems (Stack Mastery)**\n\nParentheses problems are **stack classics**.  \nThey test your ability to:\n\n- Track opening/closing  \n- Validate structure  \n- Compute depth  \n- Remove invalid parentheses  \n- Generate valid parentheses  \n\n---\n\n# **\\ud83c\\udf08 2.1 Valid Parentheses (Classic)**\n\n### **\\ud83c\\udfaf Goal**\nCheck if parentheses string is valid.\n\n### **\\ud83d\\udd25 Logic**\n- Push opening brackets  \n- Pop when matching closing bracket appears  \n- If mismatch \\u2192 invalid  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Push opens \\u2192 Pop closes**\n\n---\n\n# **\\ud83c\\udf08 2.2 Minimum Add to Make Parentheses Valid**\n\n### **\\ud83c\\udfaf Goal**\nCount how many parentheses must be added to make string valid.\n\n### **\\ud83d\\udd25 Logic**\n- Use counter or stack  \n- Track unmatched opens and closes  \n\n---\n\n# **\\ud83c\\udf08 2.3 Longest Valid Parentheses (Hard)**\n\n### **\\ud83c\\udfaf Goal**\nFind longest valid parentheses substring.\n\n### **\\ud83d\\udd25 Approaches**\n- Stack of indices  \n- DP  \n- Two\\u2011pointer left\\u2011right scan  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Stack stores boundaries**\n\n---\n\n# **\\ud83c\\udf08 2.4 Remove Invalid Parentheses (Backtracking)**\n\n### **\\ud83c\\udfaf Goal**\nRemove minimum invalid parentheses to make string valid.\n\n### **\\ud83d\\udd25 Logic**\n- Count invalid opens/closes  \n- Backtrack removing them  \n- Validate each candidate  \n\n---\n\n# **\\ud83c\\udf08 2.5 Generate Parentheses (Backtracking)**\n\n### **\\ud83c\\udfaf Goal**\nGenerate all valid parentheses combinations.\n\n### **\\ud83d\\udd25 Logic**\n- Use recursion  \n- Track open and close count  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Open \\u2264 n, Close \\u2264 Open**\n\n---\n\n# **\\ud83c\\udf08 3. Evaluate Reverse Polish Notation (RPN)**  \nThis is a **stack\\u2011based expression evaluation** problem.\n\n---\n\n# **\\ud83c\\udf08 3.1 What is RPN?**\n\nRPN (postfix notation) means:\n\n```\n3 4 +   = 7\n5 1 2 + 4 * + 3 - = 14\n```\n\nOperators come **after** operands.\n\n---\n\n# **\\ud83c\\udf08 3.2 Why RPN is Powerful**\n- No parentheses needed  \n- No operator precedence issues  \n- Stack evaluation is straightforward  \n\n---\n\n# **\\ud83c\\udf08 3.3 RPN Evaluation Logic**\n\n### **\\ud83d\\udd25 Steps**\n1. Traverse tokens  \n2. If number \\u2192 push  \n3. If operator \\u2192 pop two numbers  \n4. Apply operator  \n5. Push result  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Push numbers \\u2192 Pop for operators**\n\n---\n\n# **\\ud83c\\udf08 3.4 Supported Operators**\n- `+`  \n- `-`  \n- `*`  \n- `/` (truncate toward zero)  \n\n---\n\n# **\\ud83c\\udf08 3.5 Example**\nInput:\n```\n[\"2\",\"1\",\"+\",\"3\",\"*\"]\n```\n\nSteps:\n- 2 \\u2192 push  \n- 1 \\u2192 push  \n- + \\u2192 pop 2,1 \\u2192 push 3  \n- 3 \\u2192 push  \n- * \\u2192 pop 3,3 \\u2192 push 9  \n\nOutput: **9**\n\n---\n\n# **\\ud83c\\udf08 4. LFU Cache Intuition (Design + HashMap + LinkedList)**  \nThis is a **system design + DSA hybrid** problem.\n\n---\n\n# **\\ud83c\\udf08 4.1 What is LFU?**\n\nLFU = **Least Frequently Used** cache.\n\nWhen cache is full:\n- Evict the key with **lowest frequency**  \n- If tie \\u2192 evict **least recently used** among them  \n\n---\n\n# **\\ud83c\\udf08 4.2 Why LFU is Hard**\nYou must support:\n\n- **get(key)** \\u2192 O(1)  \n- **put(key, value)** \\u2192 O(1)  \n- Frequency updates  \n- Recency tracking  \n- Eviction logic  \n\n---\n\n# **\\ud83c\\udf08 4.3 Data Structures Needed**\n\n### **1\\ufe0f\\u20e3 Key \\u2192 Node Map**\nStores:\n- key  \n- value  \n- frequency  \n\n### **2\\ufe0f\\u20e3 Frequency \\u2192 Doubly Linked List**\nEach frequency has its own list of nodes.\n\n### **3\\ufe0f\\u20e3 Min\\u2011frequency tracker**\nTracks lowest frequency in cache.\n\n---\n\n# **\\ud83c\\udf08 4.4 LFU Operations**\n\n---\n\n## **\\ud83d\\udd25 get(key)**  \n1. If key not found \\u2192 return -1  \n2. Increase frequency  \n3. Move node to next frequency list  \n4. Update min\\u2011frequency if needed  \n\n---\n\n## **\\ud83d\\udd25 put(key, value)**  \n1. If key exists \\u2192 update + increase frequency  \n2. If cache full \\u2192 evict LFU node  \n3. Insert new node with freq = 1  \n4. Update min\\u2011frequency  \n\n---\n\n# **\\ud83c\\udf08 4.5 Why LFU Uses DLL + HashMap**\n\n- DLL \\u2192 O(1) insert/delete  \n- HashMap \\u2192 O(1) lookup  \n- Frequency map \\u2192 O(1) frequency updates  \n\n---\n\n# **\\ud83c\\udf08 4.6 MEMORY ANCHOR: \\u201cF\\u2011L\\u2011M\\u201d**\nLFU = **F**requency + **L**ist + **M**ap.\n\n---\n\n# **\\ud83c\\udf08 5. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Forgetting to update frequency on get  \n- \\ud83d\\udea9 Not removing empty frequency lists  \n- \\ud83d\\udea9 Using queue instead of DLL  \n- \\ud83d\\udea9 Mishandling division in RPN  \n- \\ud83d\\udea9 Not checking stack underflow  \n- \\ud83d\\udea9 Forgetting to validate parentheses  \n- \\ud83d\\udea9 Mishandling negative numbers in RPN  \n\n---\n\n# **\\ud83c\\udf08 6. Problems You Can Now Solve**\n\n### **Parentheses**\n- Valid parentheses  \n- Longest valid parentheses  \n- Remove invalid parentheses  \n- Generate parentheses  \n- Minimum add to make valid  \n\n### **RPN**\n- Evaluate RPN  \n- Infix \\u2192 postfix  \n- Postfix \\u2192 infix  \n\n### **LFU**\n- LFU cache  \n- LRU cache  \n- MRU cache  \n- Frequency\\u2011based eviction problems  \n\n---\n\n# **\\ud83c\\udf08 7. What You Must Master Today**\n\n- Stack\\u2011based parentheses logic  \n- RPN evaluation  \n- Operator precedence  \n- LFU cache architecture  \n- Frequency + recency tracking  \n- HashMap + DLL hybrid structures  \n",
+  "examples": [
+    {
+      "id": "example01",
+      "code": "/*\n * Example 1: Valid Parentheses\n */\n#include <bits/stdc++.h>\nusing namespace std;\nbool isValid(string s){stack<char>st;for(char c:s){if(c=='('||c=='['||c=='{')st.push(c);else{if(st.empty())return false;char t=st.top();st.pop();if((c==')'&&t!='(')||(c==']'&&t!='[')||(c=='}'&&t!='{'))return false;}}return st.empty();}\nint main(){\n    cout<<isValid(\"()[]{}\")<<\"\\\n\\"
+    },
+    {
+      "id": "example02",
+      "code": "/*\n * Example 2: Next Greater Element Circular\n */\n#include <bits/stdc++.h>\nusing namespace std;\nvector<int> nextGreater(vector<int>&a){\n    int n=a.size();vector<int>res(n,-1);stack<int>st;\n    for(int i=0;i<n;i++){while(!st.empty()&&a[st.top()]<a[i]){res[st.top()]=a[i];st.pop();}st.push(i);}\n    return res;\n}\nint main(){\n    vector<int> a={2,1,2,4,3}; for(int x:nextGreater(a))cout<<x<<\" \\"
+    },
+    {
+      "id": "example03",
+      "code": "/*\n * Example 3: Stock Span\n */\n#include <bits/stdc++.h>\nusing namespace std;\nvector<int> stockSpan(vector<int>&p){\n    int n=p.size();vector<int>sp(n);stack<int>st;\n    for(int i=0;i<n;i++){while(!st.empty()&&p[st.top()]<=p[i])st.pop();sp[i]=st.empty()?i+1:i-st.top();st.push(i);}\n    return sp;\n}\nint main(){\n    vector<int> p={7,2,1,2}; for(int x:stockSpan(p))cout<<x<<\" \\"
+    },
+    {
+      "id": "example04",
+      "code": "/*\n * Example 4: Daily Temperatures\n */\n#include <bits/stdc++.h>\nusing namespace std;\nvector<int> dailyTemp(vector<int>&t){\n    int n=t.size();vector<int>res(n,0);stack<int>st;\n    for(int i=0;i<n;i++){while(!st.empty()&&t[st.top()]<t[i]){res[st.top()]=i-st.top();st.pop();}st.push(i);}\n    return res;\n}\nint main(){\n    vector<int> t={73,74,75,71,69,72,76,73}; for(int x:dailyTemp(t))cout<<x<<\" \\"
+    },
+    {
+      "id": "example05",
+      "code": "/*\n * Example 5: RPN Evaluate\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint evalRPN(vector<string>&tokens){\n    stack<long long>st;\n    for(auto&t:tokens){if(t==\"+\"||t==\"-\"||t==\"*\"||t==\"/\"){long long b=st.top();st.pop();long long a=st.top();st.pop();if(t==\"+\")st.push(a+b);else if(t==\"-\")st.push(a-b);else if(t==\"*\")st.push(a*b);else st.push(a/b);}else st.push(stoll(t));}\n    return st.top();\n}\nint main(){\n    vector<string> t1={\"2\",\"1\",\"+\",\"3\",\"*\"}; cout<<evalRPN(t1)<<\"\\\n\\"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise01",
+      "content": "/*\n * Exercise 1: Valid Parentheses\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Generate all valid parentheses combinations for n pairs\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise02",
+      "content": "/*\n * Exercise 2: Next Greater Element Circular\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Minimum remove to make valid parentheses\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise03",
+      "content": "/*\n * Exercise 3: Stock Span\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Longest valid parentheses substring\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise04",
+      "content": "/*\n * Exercise 4: Daily Temperatures\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: LFU Cache (O(1) get and put)\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    },
+    {
+      "id": "exercise05",
+      "content": "/*\n * Exercise 5: RPN Evaluate\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// Problem: Basic Calculator II (no parentheses)\nvoid solve(){}\nint main(){solve();return 0;}\n"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "solution01",
+      "code": "/*\n * Solution 1: Valid Parentheses\n */\n#include <bits/stdc++.h>\nusing namespace std;\nvector<string> generate(int n){\n    vector<string>res;\n    function<void(string,int,int)>bt=[&](string s,int o,int c){\n        if((int)s.size()==2*n){res.push_back(s);return;}\n        if(o<n)bt(s+'(',o+1,c);\n        if(c<o)bt(s+')',o,c+1);\n    };\n    bt(\"\",0,0); return res;\n}\nint main(){for(auto&s:generate(3))cout<<s<<\"\\\n\\"
+    },
+    {
+      "id": "solution02",
+      "code": "/*\n * Solution 2: Next Greater Element Circular\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;cin>>s;stack<int>st;for(int i=0;i<(int)s.size();i++){if(s[i]=='(')st.push(i);else if(!st.empty())st.pop();else s[i]='*';}while(!st.empty()){s[st.top()]='*';st.pop();}string res;for(char c:s)if(c!='*')res+=c;cout<<res<<\"\\\n\\"
+    },
+    {
+      "id": "solution03",
+      "code": "/*\n * Solution 3: Stock Span\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;cin>>s;int n=s.size(),ans=0;stack<int>st;st.push(-1);for(int i=0;i<n;i++){if(s[i]=='(')st.push(i);else{st.pop();if(st.empty())st.push(i);else ans=max(ans,i-st.top());}}cout<<ans<<\"\\\n\\"
+    },
+    {
+      "id": "solution04",
+      "code": "/*\n * Solution 4: Daily Temperatures\n */\n#include <bits/stdc++.h>\nusing namespace std;\n// LFU Cache\nclass LFUCache{\n    int cap,minFreq; unordered_map<int,pair<int,int>>kv; unordered_map<int,list<int>>flist; unordered_map<int,list<int>::iterator>pos; unordered_map<int,int>freq;\npublic:\n    LFUCache(int c):cap(c),minFreq(0){}\n    void touch(int k){int f=freq[k];freq[k]++;flist[f].erase(pos[k]);if(flist[f].empty()&&f==minFreq)minFreq++;flist[f+1].push_front(k);pos[k]=flist[f+1].begin();}\n    int get(int k){if(!kv.count(k))return -1;touch(k);return kv[k].second;}\n    void put(int k,int v){if(!cap)return;if(kv.count(k)){kv[k].second=v;touch(k);return;}if((int)kv.size()==cap){int ev=flist[minFreq].back();flist[minFreq].pop_back();kv.erase(ev);pos.erase(ev);freq.erase(ev);}kv[k]={0,v};freq[k]=1;flist[1].push_front(k);pos[k]=flist[1].begin();minFreq=1;}\n};\nint main(){LFUCache c(2);c.put(1,1);c.put(2,2);cout<<c.get(1)<<\"\\\n\\"
+    },
+    {
+      "id": "solution05",
+      "code": "/*\n * Solution 5: RPN Evaluate\n */\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;getline(cin,s);stack<long long>st;long long cur=0;char op='+';for(int i=0;i<(int)s.size();i++){if(isdigit(s[i]))cur=cur*10+(s[i]-'0');if((!isdigit(s[i])&&s[i]!=' ')||i==(int)s.size()-1){if(op=='+')st.push(cur);else if(op=='-')st.push(-cur);else if(op=='*'){long long t=st.top();st.pop();st.push(t*cur);}else{long long t=st.top();st.pop();st.push(t/cur);}op=s[i];cur=0;}}long long ans=0;while(!st.empty()){ans+=st.top();st.pop();}cout<<ans<<\"\\\n\\"
+    }
+  ]
+}

@@ -1,53 +1,25 @@
 /*
- * Solution 3: Tree Height (Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep)
+ * Solution 3: Serialize/Deserialize
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep
-// Task      : Tree Height
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: tree_height ---
-// Purpose    : Compute the result for `tree_height`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int tree_height(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + tree_height(root->left) + tree_height(root->right);
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    Solution s; cout << s.tree_height(r) + 3 << "\n"; return 0;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
+string serialize(TreeNode* root){
+    if(!root)return"";
+    string s;queue<TreeNode*>q;q.push(root);
+    while(!q.empty()){auto n=q.front();q.pop();if(!n){s+="# ";continue;}s+=to_string(n->val)+" ";q.push(n->left);q.push(n->right);}
+    return s;
 }
+TreeNode* deserialize(const string& data){
+    if(data.empty())return nullptr;
+    istringstream ss(data);string tok;ss>>tok;
+    TreeNode* root=new TreeNode(stoi(tok));queue<TreeNode*>q;q.push(root);
+    while(ss>>tok){auto p=q.front();q.pop();
+        if(tok!="#"){p->left=new TreeNode(stoi(tok));q.push(p->left);}
+        ss>>tok;if(tok!="#"){p->right=new TreeNode(stoi(tok));q.push(p->right);}
+    }return root;
+}
+void io(TreeNode* n){if(!n)return;io(n->left);cout<<n->val<<" ";io(n->right);}
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    TreeNode* r=new TreeNode(1);r->left=new TreeNode(2);r->right=new TreeNode(3);
+    string s=serialize(r);io(deserialize(s));cout<<"\n";}

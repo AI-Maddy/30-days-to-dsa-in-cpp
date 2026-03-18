@@ -1,35 +1,6 @@
+/*
+ * Solution 2: Next Smaller Element
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution02
- * Pattern Family: Stack / Queue
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Stack / Queue approach.
- * Input   : Read sequence and query/order constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read values and initialize stack/queue/deque.
- * 2) Process each value maintaining monotonic/validity invariants.
- * 3) Pop outdated elements when condition breaks.
- * 4) Record answers at each relevant step.
- * 5) Print full answer sequence.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: For monotonic structures, store indices when window boundaries matter.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
-}
+int main(){int n;cin>>n;vector<int>h(n);for(int&x:h)cin>>x;h.push_back(0);stack<int>st;int ans=0;for(int i=0;i<(int)h.size();i++){while(!st.empty()&&h[st.top()]>h[i]){int ht=h[st.top()];st.pop();int w=st.empty()?i:i-st.top()-1;ans=max(ans,ht*w);}st.push(i);}cout<<ans<<"\n";return 0;}

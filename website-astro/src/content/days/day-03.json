@@ -1,0 +1,78 @@
+{
+  "day": 3,
+  "title": "Bit Manipulation In C++",
+  "slug": "day03-bit-manipulation-in-cplusplus",
+  "dirName": "day03-bit_manipulation_in_cplusplus",
+  "cluster": "cpp-foundations",
+  "clusterLabel": "C++ Foundations",
+  "clusterColor": "blue",
+  "clusterIcon": "🔵",
+  "readme": "---\n\n# **Day 03 \\u2014 Bit Manipulation in C++ (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nBit manipulation is one of the most powerful tools in competitive programming and technical interviews.  \nIt allows you to:\n\n- Optimize operations to O(1)  \n- Replace loops with constant\\u2011time bit tricks  \n- Solve problems involving subsets, masks, parity, toggling, and binary representation  \n- Write extremely efficient code for DP, graphs, and combinatorics  \n\nToday\\u2019s goal is to build a **deep, intuitive, and practical** understanding of:\n\n- Binary representation  \n- Bitwise operators  \n- Common bit tricks  \n- Checking, setting, clearing, toggling bits  \n- Counting bits  \n- Fast exponentiation using bits  \n- Subset generation using bitmasks  \n- Interview\\u2011level problems  \n\n---\n\n## **2. Binary Representation Refresher**\n\nEvery integer is stored in binary.\n\nExample:  \n```\n13 \\u2192 1101\n```\n\nBit positions (0\\u2011indexed from right):\n\n```\nbit 3   bit 2   bit 1   bit 0\n  1       1       0       1\n```\n\n---\n\n## **3. Bitwise Operators in C++**\n\n| Operator | Meaning | Example |\n|----------|----------|----------|\n| `&` | AND | `a & b` |\n| `|` | OR | `a | b` |\n| `^` | XOR | `a ^ b` |\n| `~` | NOT | `~a` |\n| `<<` | Left shift | `a << 1` |\n| `>>` | Right shift | `a >> 1` |\n\n---\n\n## **4. Core Bit Tricks (Must Know)**\n\n---\n\n### **4.1 Check if a bit is set**\n\n```cpp\nbool isSet = (n & (1 << k));\n```\n\n---\n\n### **4.2 Set a bit**\n\n```cpp\nn = n | (1 << k);\n```\n\n---\n\n### **4.3 Clear a bit**\n\n```cpp\nn = n & ~(1 << k);\n```\n\n---\n\n### **4.4 Toggle a bit**\n\n```cpp\nn = n ^ (1 << k);\n```\n\n---\n\n### **4.5 Remove the lowest set bit**\n\n```cpp\nn = n & (n - 1);\n```\n\nThis is one of the most important tricks.\n\n---\n\n### **4.6 Extract the lowest set bit**\n\n```cpp\nint low = n & -n;\n```\n\n---\n\n### **4.7 Check if a number is power of 2**\n\n```cpp\nbool ok = (n > 0) && ((n & (n - 1)) == 0);\n```\n\n---\n\n## **5. Counting Set Bits**\n\n---\n\n### **5.1 Brian Kernighan\\u2019s Algorithm \\u2014 O(k)**\n\n```cpp\nint count = 0;\nwhile (n) {\n    n &= (n - 1);\n    count++;\n}\n```\n\n---\n\n### **5.2 Built\\u2011in Function**\n\n```cpp\n__builtin_popcount(n);\n__builtin_popcountll(n);\n```\n\n---\n\n## **6. XOR \\u2014 The Magical Operator**\n\nXOR properties:\n\n- `a ^ a = 0`\n- `a ^ 0 = a`\n- XOR is reversible  \n- XOR is associative and commutative  \n\n---\n\n### **6.1 Find the unique element (all others appear twice)**\n\n```cpp\nint ans = 0;\nfor (int x : arr)\n    ans ^= x;\n```\n\n---\n\n### **6.2 Swap two numbers without temp**\n\n```cpp\na ^= b;\nb ^= a;\na ^= b;\n```\n\n---\n\n## **7. Bitmasking \\u2014 Representing Subsets**\n\nA subset of an n\\u2011element set can be represented using an n\\u2011bit number.\n\nExample:  \nFor `{a, b, c}`:\n\n```\n000 \\u2192 {}\n001 \\u2192 {c}\n010 \\u2192 {b}\n011 \\u2192 {b, c}\n100 \\u2192 {a}\n...\n```\n\n---\n\n### **7.1 Generate all subsets**\n\n```cpp\nfor (int mask = 0; mask < (1 << n); mask++) {\n    for (int i = 0; i < n; i++) {\n        if (mask & (1 << i))\n            cout << arr[i] << \" \\",
+  "theory": "---\n\n# **Day 3 \\u2013 THEORY.rst**  \n## **\\u26a1 Bit Manipulation in C++ \\u2013 Mastering Bits, Masks, Tricks & Patterns**\n\n---\n\n# **\\ud83c\\udf1f 1. Overview**\n\nBit manipulation is one of the most **powerful**, **beautiful**, and **high\\u2011performance** techniques in programming.\n\nIt gives you:\n\n- \\u26a1 Constant\\u2011time operations  \n- \\ud83e\\udde0 Elegant mathematical tricks  \n- \\ud83c\\udfaf Perfect solutions for XOR, subsets, masks  \n- \\ud83d\\ude80 Competitive\\u2011programming\\u2011level speed  \n\nMastering bits makes you a **10\\u00d7 better problem solver**.\n\n---\n\n# **\\ud83d\\udd22 2. Binary Representation Refresher**\n\nEvery integer is stored in **binary**:\n\n```\n13 \\u2192 1101\n7  \\u2192 0111\n```\n\nEach bit represents a power of 2:\n\n```\nbit0 = 1\nbit1 = 2\nbit2 = 4\nbit3 = 8\n...\n```\n\n---\n\n# **\\ud83e\\uddf0 3. Bitwise Operators (The Core Tools)**\n\n| Operator | Symbol | Meaning |\n|----------|--------|---------|\n| AND | `&` | bitwise AND |\n| OR | `\\|` | bitwise OR |\n| XOR | `^` | bitwise XOR |\n| NOT | `~` | bitwise NOT |\n| Left Shift | `<<` | multiply by 2 |\n| Right Shift | `>>` | divide by 2 |\n\n---\n\n## **\\ud83d\\udfe6 3.1 AND `&`**\n\n```\n1 & 1 = 1\n1 & 0 = 0\n```\n\nUsed for:\n\n- Checking if a bit is set  \n- Masking  \n\n---\n\n## **\\ud83d\\udfe9 3.2 OR `|`**\n\n```\n1 | 0 = 1\n```\n\nUsed for:\n\n- Setting a bit  \n\n---\n\n## **\\ud83d\\udfe8 3.3 XOR `^`**\n\n```\n1 ^ 1 = 0\n1 ^ 0 = 1\n```\n\nProperties:\n\n- `x ^ x = 0`  \n- `x ^ 0 = x`  \n- XOR is reversible  \n\nUsed in:\n\n- Single number problems  \n- Swapping without temp  \n\n---\n\n## **\\ud83d\\udfe7 3.4 NOT `~`**\n\nFlips all bits.\n\n---\n\n## **\\ud83d\\udfe5 3.5 Left Shift `<<`**\n\n```\nx << 1 = x * 2\n```\n\n---\n\n## **\\ud83d\\udfea 3.6 Right Shift `>>`**\n\n```\nx >> 1 = x / 2\n```\n\n---\n\n# **\\ud83c\\udfaf 4. Bit Masks (The Heart of Bit Manipulation)**\n\nA **bit mask** is a number used to manipulate specific bits.\n\n---\n\n## **\\ud83d\\udfe6 4.1 Check if a bit is set**\n\n```\nif (n & (1 << k))\n```\n\n---\n\n## **\\ud83d\\udfe9 4.2 Set a bit**\n\n```\nn | (1 << k)\n```\n\n---\n\n## **\\ud83d\\udfe8 4.3 Clear a bit**\n\n```\nn & ~(1 << k)\n```\n\n---\n\n## **\\ud83d\\udfe7 4.4 Toggle a bit**\n\n```\nn ^ (1 << k)\n```\n\n---\n\n## **\\ud83d\\udfe5 4.5 Extract last set bit**\n\n```\nn & -n\n```\n\nUsed in:\n\n- Fenwick Tree  \n- Subset generation  \n\n---\n\n# **\\ud83e\\udde0 5. Important Bit Tricks (Must Memorize)**\n\n---\n\n## **\\ud83d\\udd25 Trick 1 \\u2014 Check if number is power of 2**\n\n```\nn & (n - 1) == 0\n```\n\n---\n\n## **\\ud83d\\udd25 Trick 2 \\u2014 Count set bits (Brian Kernighan)**\n\n```\nwhile (n) {\n    n &= (n - 1);\n    count++;\n}\n```\n\n---\n\n## **\\ud83d\\udd25 Trick 3 \\u2014 Swap without temp**\n\n```\na ^= b;\nb ^= a;\na ^= b;\n```\n\n---\n\n## **\\ud83d\\udd25 Trick 4 \\u2014 Turn off rightmost set bit**\n\n```\nn & (n - 1)\n```\n\n---\n\n## **\\ud83d\\udd25 Trick 5 \\u2014 Get rightmost set bit**\n\n```\nn & -n\n```\n\n---\n\n# **\\ud83e\\udde9 6. XOR Patterns (Extremely Important)**\n\n---\n\n## **\\ud83d\\udfe6 6.1 Find unique element (all others appear twice)**\n\n```\nans = 0\nfor x in array:\n    ans ^= x\n```\n\n---\n\n## **\\ud83d\\udfe9 6.2 Find two unique elements**\n\nUse XOR + rightmost set bit trick.\n\n---\n\n## **\\ud83d\\udfe8 6.3 XOR prefix trick**\n\nUsed in:\n\n- Subarray XOR  \n- Range XOR queries  \n\n---\n\n# **\\ud83e\\uddee 7. Bit Manipulation in C++**\n\n---\n\n## **\\ud83d\\udfe6 7.1 Built\\u2011in functions**\n\n### **Count set bits**\n\n```\n__builtin_popcount(x)\n__builtin_popcountll(x)\n```\n\n### **Count leading zeros**\n\n```\n__builtin_clz(x)\n```\n\n### **Count trailing zeros**\n\n```\n__builtin_ctz(x)\n```\n\n---\n\n# **\\ud83e\\uddf1 8. Subset Generation Using Bits**\n\nFor array of size `n`, subsets = `2^n`.\n\n```\nfor (int mask = 0; mask < (1 << n); mask++) {\n    for (int i = 0; i < n; i++) {\n        if (mask & (1 << i))\n            include element i\n    }\n}\n```\n\nUsed in:\n\n- Backtracking  \n- DP on subsets  \n- Combinatorics  \n\n---\n\n# **\\ud83d\\udcd8 9. Bit Manipulation Patterns in Interviews**\n\n---\n\n## **Pattern 1 \\u2014 XOR for uniqueness**\n\nUsed in:\n\n- Single number  \n- Missing number  \n- Duplicate detection  \n\n---\n\n## **Pattern 2 \\u2014 Bitmask DP**\n\nUsed in:\n\n- Traveling Salesman  \n- Subset DP  \n- Word masks  \n\n---\n\n## **Pattern 3 \\u2014 Using bits for state compression**\n\nUsed in:\n\n- Graph problems  \n- DP optimization  \n\n---\n\n## **Pattern 4 \\u2014 Using shifts for fast multiplication/division**\n\n---\n\n# **\\ud83c\\udfaf 10. Interview\\u2011Level Insights**\n\n- Bit manipulation is **constant time**  \n- XOR is your best friend  \n- Masks simplify complex logic  \n- Built\\u2011ins make code faster  \n- Subset generation is easiest with bits  \n\n---\n\n# **\\ud83c\\udfc1 11. Conclusion**\n\nDay 3 gives you mastery over:\n\n- Bitwise operators  \n- Masks  \n- XOR tricks  \n- Built\\u2011ins  \n- Subset generation  \n- Interview patterns  \n\nThis knowledge becomes essential for:\n\n- DP  \n- Graphs  \n- Backtracking  \n- Optimization problems  \n\nYou now have the **bit\\u2011level superpowers** needed for advanced DSA.\n",
+  "examples": [
+    {
+      "id": "example01",
+      "code": "/*\n * Example 1: Check Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n = 42;  // binary: 101010\n    cout << \"n = \" << n << \" (binary: \\"
+    },
+    {
+      "id": "example02",
+      "code": "/*\n * Example 2: Set Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n = 40;  // 101000\n    cout << \"Original n=\" << n << \" (binary: \\"
+    },
+    {
+      "id": "example03",
+      "code": "/*\n * Example 3: Clear Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n = 63;  // 00111111\n    cout << \"Original n=\" << n << \" (binary: \\"
+    },
+    {
+      "id": "example04",
+      "code": "/*\n * Example 4: Toggle Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n = 42;  // 101010\n    cout << \"Original: \" << n << \"\\\n\\"
+    },
+    {
+      "id": "example05",
+      "code": "/*\n * Example 5: Count Set Bits (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    // Brian Kernighan: n & (n-1) clears rightmost set bit \\u2014 O(set_bits)\n    auto countBK = [](int n) {\n        int cnt=0; while(n){ n&=(n-1); cnt++; } return cnt;\n    };\n    // Built-in: __builtin_popcount \\u2014 O(1) on modern hardware\n    vector<int> tests = {0,1,7,15,42,255};\n    cout << \"n       | Brian Kernighan | __builtin_popcount\\\n\\"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise01",
+      "content": "/*\n * Exercise 1: Check Bit (Bit Manipulation in Cplusplus)\n */\n// Problem: Power of 2 check\n// Hint: Use (n>0) && (n&(n-1))==0\n#include <bits/stdc++.h>\nusing namespace std;\n\nvoid solve() {\n    int n; cin>>n;\n    // TODO: Use (n>0) && (n&(n-1))==0\n}\n\nint main() {\n    solve();\n    return 0;\n}\n"
+    },
+    {
+      "id": "exercise02",
+      "content": "/*\n * Exercise 2: Set Bit (Bit Manipulation in Cplusplus)\n */\n// Problem: Single non-duplicate\n// Hint: XOR all elements; duplicates cancel to 0\n#include <bits/stdc++.h>\nusing namespace std;\n\nvoid solve() {\n    int n; cin>>n; vector<int> a(n); for(int&x:a)cin>>x;\n    // TODO: XOR all elements; duplicates cancel to 0\n}\n\nint main() {\n    solve();\n    return 0;\n}\n"
+    },
+    {
+      "id": "exercise03",
+      "content": "/*\n * Exercise 3: Clear Bit (Bit Manipulation in Cplusplus)\n */\n// Problem: Two non-duplicates\n// Hint: XOR all, find rightmost set bit, partition by that bit\n#include <bits/stdc++.h>\nusing namespace std;\n\nvoid solve() {\n    int n; cin>>n; vector<int> a(n); for(int&x:a)cin>>x;\n    // TODO: XOR all, find rightmost set bit, partition by that bit\n}\n\nint main() {\n    solve();\n    return 0;\n}\n"
+    },
+    {
+      "id": "exercise04",
+      "content": "/*\n * Exercise 4: Toggle Bit (Bit Manipulation in Cplusplus)\n */\n// Problem: Reverse 32 bits\n// Hint: Shift result left and append each bit of n from right\n#include <bits/stdc++.h>\nusing namespace std;\n\nvoid solve() {\n    uint32_t n; cin>>n;\n    // TODO: Shift result left and append each bit of n from right\n}\n\nint main() {\n    solve();\n    return 0;\n}\n"
+    },
+    {
+      "id": "exercise05",
+      "content": "/*\n * Exercise 5: Count Set Bits (Bit Manipulation in Cplusplus)\n */\n// Problem: Count total set bits 1..n\n// Hint: Efficient: O(log n) using digit-by-digit count\n#include <bits/stdc++.h>\nusing namespace std;\n\nvoid solve() {\n    int n; cin>>n;\n    // TODO: Efficient: O(log n) using digit-by-digit count\n}\n\nint main() {\n    solve();\n    return 0;\n}\n"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "solution01",
+      "code": "/*\n * Solution 1: Check Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n; cin>>n;\n    cout << (n>0&&(n&(n-1))==0?\"YES\":\"NO\") << \"\\\n\\"
+    },
+    {
+      "id": "solution02",
+      "code": "/*\n * Solution 2: Set Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n; cin>>n; vector<int> a(n); for(int&x:a)cin>>x;\n    int res=0; for(int x:a)res^=x; cout<<res<<\"\\\n\\"
+    },
+    {
+      "id": "solution03",
+      "code": "/*\n * Solution 3: Clear Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n; cin>>n; vector<int> a(n); for(int&x:a)cin>>x;\n    /* XOR all, find partition bit, XOR each partition */\n    return 0;\n}\n"
+    },
+    {
+      "id": "solution04",
+      "code": "/*\n * Solution 4: Toggle Bit (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    uint32_t n; cin>>n;\n    uint32_t r=0; for(int i=0;i<32;i++){r=(r<<1)|(n&1);n>>=1;} cout<<r<<\"\\\n\\"
+    },
+    {
+      "id": "solution05",
+      "code": "/*\n * Solution 5: Count Set Bits (Bit Manipulation in Cplusplus)\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n; cin>>n;\n    int cnt=0; for(int i=1;i<=n;i++) cnt+=__builtin_popcount(i); cout<<cnt<<\"\\\n\\"
+    }
+  ]
+}

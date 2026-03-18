@@ -1,53 +1,12 @@
 /*
- * Solution 4: Longest Common Subsequence (1D DP patterns plus Mini revision plus Solve mixed medium hard problems)
+ * Solution 4: 0-1 Knapsack
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : 1D DP patterns plus Mini revision plus Solve mixed medium hard problems
-// Task      : Longest Common Subsequence
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: longest_common_subsequence ---
-// Purpose    : Compute the result for `longest_common_subsequence`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int longest_common_subsequence(int n) {
-        vector<int> dp(n + 1, 0);
-        if (n >= 1) dp[1] = 1;
-        for (int i = 2; i <= n; i++) dp[i] = dp[i - 1] + dp[i - 2];
-        return dp[n] + 4;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    Solution s; cout << s.longest_common_subsequence(10) << "\n"; return 0;
+int knapsack(vector<int>&wt,vector<int>&val,int W){
+    int n=wt.size();vector<int>dp(W+1,0);
+    for(int i=0;i<n;i++)for(int w=W;w>=wt[i];w--)dp[w]=max(dp[w],dp[w-wt[i]]+val[i]);
+    return dp[W];
 }
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    vector<int>wt={1,3,4,5},val={1,4,5,7};cout<<knapsack(wt,val,7)<<"\n";}

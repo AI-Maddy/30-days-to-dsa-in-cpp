@@ -1,50 +1,16 @@
 /*
- * Example 1: Prefix Sum Query (Hashing and HashMap problems)
+ * Example 1: Two Sum (Hashing)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Hashing and HashMap problems
-// Task      : Prefix Sum Query
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: prefix_sum_query ---
-// Purpose    : Answer aggregate/range computation in `prefix_sum_query`.
-// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
-// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
-// Notes      : Watch index boundaries for left/right endpoints.
-// Pseudocode:
-// 1) Initialize running aggregate/prefix state.
-// 2) Scan array and update aggregate incrementally.
-// 3) Use aggregate differences or window updates for answer.
-// 4) Return final query/optimization result.
-int prefix_sum_query(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
+// Two Sum — O(n) using unordered_map
+vector<int> twoSum(vector<int>& n, int t){
+    unordered_map<int,int> s; for(int i=0;i<(int)n.size();i++){int c=t-n[i];if(s.count(c))return{s[c],i};s[n[i]]=i;} return{};
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << prefix_sum_query(data) << "\n";
+int main(){
+    vector<int> a={2,7,11,15}; auto r=twoSum(a,9);
+    cout<<"["<<r[0]<<","<<r[1]<<"]\n"; // [0,1]
+    vector<int> b={3,2,4}; auto r2=twoSum(b,6);
+    cout<<"["<<r2[0]<<","<<r2[1]<<"]\n"; // [1,2]
     return 0;
 }

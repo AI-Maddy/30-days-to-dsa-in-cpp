@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="30 Days to DSA in C++ — Premium Edition"><title>Day 18 · Queue Deque Sliding Window Max First Negative · DSA in C++</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.EuORl1j-.css"></head> <body class="min-h-screen bg-[#0d1117] text-slate-100 antialiased"> <!-- Nav --> <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0d1117]/90 backdrop-blur-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14"> <a href="/" class="flex items-center gap-2 font-bold text-slate-100 hover:text-white transition-colors"> <span class="text-xl">⚡</span> <span class="hidden sm:inline text-sm">30 Days DSA C++</span> </a> <div class="flex items-center gap-1"> <a href="/" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">Home</a> <a href="/cheatsheets" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">📄 Cheatsheets</a> </div> </div> </nav> <!-- Main --> <main>  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10"> <!-- Breadcrumb --> <div class="flex items-center gap-2 text-xs text-slate-500 mb-6"> <a href="/" class="hover:text-slate-300 transition-colors">Home</a> <span>›</span> <span class="text-orange-400 font-medium">🟠 Stacks &amp; Queues</span> </div> <!-- Header --> <div class="rounded-2xl border border-orange-500/40 bg-orange-950/40 p-6 mb-8"> <div class="flex items-start gap-4"> <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black bg-orange-500/20 text-orange-300"> 18 </div> <div> <div class="text-xs font-bold uppercase tracking-widest mb-1 text-orange-400">Day 18 · Stacks &amp; Queues</div> <h1 class="text-2xl font-extrabold text-white leading-tight">Queue Deque Sliding Window Max First Negative</h1> <div class="flex gap-3 mt-3 text-xs text-slate-400"> <span>📖 README</span> <span>🧠 Theory</span> <span>💻 5 Examples</span> <span>✏️ 5 Exercises</span> <span>✅ 5 Solutions</span> </div> </div> </div> </div> <!-- Tabs --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z1op5C7" prefix="r1" component-url="/_astro/DayTabs.B_BF-cJm.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;readme&quot;:[0,&quot;Day 18 coming right up, ---\n\n# **Day 18 \\u2014 Queue + Deque: Sliding Window Maximum, First Negative in Window (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nQueues and deques are fundamental linear data structures used in:\n\n- Sliding window problems  \n- BFS in graphs  \n- Real\\u2011time streaming  \n- Scheduling systems  \n- Rate limiting  \n- Task processing  \n- Monotonic queue optimizations  \n\nToday\\u2019s goal is to master:\n\n- Queue fundamentals  \n- Deque fundamentals  \n- Sliding window maximum (O(n))  \n- First negative number in every window  \n- Sliding window minimum  \n- Fixed vs variable window patterns  \n- Real interview problems  \n\nThis day builds directly on Day 16 and Day 17.\n\n---\n\n# **2. Queue Basics**\n\nA queue follows **FIFO** (First In, First Out).\n\n### **Operations**\n\n- `push(x)`\n- `pop()`\n- `front()`\n- `empty()`\n\n### **C++ Implementation**\n\n```cpp\nqueue&lt;int&gt; q;\nq.push(10);\nq.pop();\nint x = q.front();\n```\n\n---\n\n# **3. Deque Basics**\n\nA deque (double\\u2011ended queue) allows insertion and deletion from both ends.\n\n### **Operations**\n\n- `push_front(x)`\n- `push_back(x)`\n- `pop_front()`\n- `pop_back()`\n- `front()`\n- `back()`\n\n### **C++ Implementation**\n\n```cpp\ndeque&lt;int&gt; dq;\ndq.push_back(10);\ndq.push_front(5);\ndq.pop_back();\n```\n\n---\n\n# **4. Sliding Window Maximum (Monotonic Deque)**\n\nThis is one of the most important sliding\\u2011window problems.\n\n---\n\n## **4.1 Problem Statement**\n\nGiven an array and window size `k`, find the maximum in every window.\n\nExample:\n\n```\na = [1,3,-1,-3,5,3,6,7], k = 3\nOutput = [3,3,5,5,6,7]\n```\n\n---\n\n## **4.2 Brute Force \\u2014 O(nk)**  \nSkip.\n\n---\n\n## **4.3 Optimal \\u2014 Monotonic Deque (O(n))**\n\n### **Logic**\n\n- Maintain a deque of **indices**  \n- Keep deque **decreasing** (front = max)  \n- Remove:\n  - Elements outside window  \n  - Elements smaller than current  \n\n### **Implementation**\n\n```cpp\nvector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; a, int k) {\n    deque&lt;int&gt; dq;\n    vector&lt;int&gt; ans;\n\n    for (int i = 0; i &lt; a.size(); i++) {\n\n        // Remove out-of-window elements\n        if (!dq.empty() &amp;&amp; dq.front() &lt;= i - k)\n            dq.pop_front();\n\n        // Maintain decreasing order\n        while (!dq.empty() &amp;&amp; a[dq.back()] &lt;= a[i])\n            dq.pop_back();\n\n        dq.push_back(i);\n\n        // Window formed\n        if (i &gt;= k - 1)\n            ans.push_back(a[dq.front()]);\n    }\n    return ans;\n}\n```\n\nTime: **O(n)**  \nSpace: **O(k)**\n\n---\n\n# **5. Sliding Window Minimum (Monotonic Increasing Deque)**\n\nJust reverse the comparison.\n\n### **Implementation**\n\n```cpp\nvector&lt;int&gt; minSlidingWindow(vector&lt;int&gt;&amp; a, int k) {\n    deque&lt;int&gt; dq;\n    vector&lt;int&gt; ans;\n\n    for (int i = 0; i &lt; a.size(); i++) {\n\n        if (!dq.empty() &amp;&amp; dq.front() &lt;= i - k)\n            dq.pop_front();\n\n        while (!dq.empty() &amp;&amp; a[dq.back()] &gt;= a[i])\n            dq.pop_back();\n\n        dq.push_back(i);\n\n        if (i &gt;= k - 1)\n            ans.push_back(a[dq.front()]);\n    }\n    return ans;\n}\n```\n\n---\n\n# **6. First Negative Number in Every Window**\n\nThis is a classic queue problem.\n\n---\n\n## **6.1 Logic**\n\n- Use a queue to store indices of negative numbers  \n- For each window:\n  - Remove negatives that fall out  \n  - First element in queue = first negative  \n\n---\n\n## **6.2 Implementation**\n\n```cpp\nvector&lt;int&gt; firstNegative(vector&lt;int&gt;&amp; a, int k) {\n    queue&lt;int&gt; q;\n    vector&lt;int&gt; ans;\n\n    for (int i = 0; i &lt; a.size(); i++) {\n\n        if (a[i] &lt; 0)\n            q.push(i);\n\n        if (i &gt;= k - 1) {\n            while (!q.empty() &amp;&amp; q.front() &lt;= i - k)\n                q.pop();\n\n            ans.push_back(q.empty() ? 0 : a[q.front()]);\n        }\n    }\n    return ans;\n}\n```\n\n---\n\n# **7. Count of Distinct Elements in Every Window**\n\nUse a frequency map + sliding window.\n\n### **Implementation**\n\n```cpp\nvector&lt;int&gt; distinctInWindow(vector&lt;int&gt;&amp; a, int k) {\n    unordered_map&lt;int,int&gt; freq;\n    vector&lt;int&gt; ans;\n\n    for (int i = 0; i &lt; a.size(); i++) {\n        freq[a[i]]++;\n\n        if (i &gt;= k) {\n            freq[a[i-k]]--;\n            if (freq[a[i-k]] == 0)\n                freq.erase(a[i-k]);\n        }\n\n        if (i &gt;= k - 1)\n            ans.push_back(freq.size());\n    }\n    return ans;\n}\n```\n\n---\n\n# **8. Fixed vs Variable Sliding Window**\n\n### **Fixed Window**\n- Window size = constant  \n- Use indices  \n- Examples:\n  - Sliding window max  \n  - First negative  \n  - Distinct elements  \n\n### **Variable Window**\n- Window expands and shrinks based on condition  \n- Use two pointers  \n- Examples:\n  - Longest substring without repeating characters  \n  - Longest subarray with sum \\u2264 K  \n  - At most K distinct characters  \n\n---\n\n# **9. Real\\u2011World Examples**\n\n---\n\n### **Example 1 \\u2014 Real\\u2011time sensor data**  \nSliding window max/min.\n\n---\n\n### **Example 2 \\u2014 Network packet analysis**  \nFirst negative / anomaly detection.\n\n---\n\n### **Example 3 \\u2014 Stock market analytics**  \nSliding window max.\n\n---\n\n### **Example 4 \\u2014 Rate limiting**  \nQueue\\u2011based windowing.\n\n---\n\n# **10. Interview\\u2011Level Problems**\n\n---\n\n### **Problem 1 \\u2014 Sliding Window Maximum**  \nMonotonic deque.\n\n---\n\n### **Problem 2 \\u2014 First Negative in Window**  \nQueue of indices.\n\n---\n\n### **Problem 3 \\u2014 Distinct Elements in Window**  \nHashmap + sliding window.\n\n---\n\n### **Problem 4 \\u2014 Sliding Window Minimum**  \nMonotonic deque.\n\n---\n\n### **Problem 5 \\u2014 Longest substring with at most K distinct characters**  \nVariable window.\n\n---\n\n# **11. Exercises (Try First)**\n\n---\n\n### **Exercise 1**  \nCompute sliding window maximum.\n\n---\n\n### **Exercise 2**  \nCompute sliding window minimum.\n\n---\n\n### **Exercise 3**  \nFind first negative number in every window.\n\n---\n\n### **Exercise 4**  \nCount distinct elements in every window.\n\n---\n\n### **Exercise 5**  \nGiven a string, find longest substring with at most K distinct characters.\n\n---\n\n# **12. Solutions**\n\n---\n\n### **Solution 1 \\u2014 Sliding window max**  \nUse code from section 4.\n\n---\n\n### **Solution 2 \\u2014 Sliding window min**  \nUse code from section 5.\n\n---\n\n### **Solution 3 \\u2014 First negative**  \nUse queue logic.\n\n---\n\n### **Solution 4 \\u2014 Distinct elements**  \nUse hashmap.\n\n---\n\n### **Solution 5 \\u2014 K distinct substring**\n\n```cpp\nint longestKDistinct(string s, int k) {\n    unordered_map&lt;char,int&gt; mp;\n    int i = 0, ans = 0;\n\n    for (int j = 0; j &lt; s.size(); j++) {\n        mp[s[j]]++;\n\n        while (mp.size() &gt; k) {\n            mp[s[i]]--;\n            if (mp[s[i]] == 0) mp.erase(s[i]);\n            i++;\n        }\n\n        ans = max(ans, j - i + 1);\n    }\n    return ans;\n}\n```\n\n---\n\n# **13. Summary**\n\nToday you mastered:\n\n- Queue fundamentals  \n- Deque fundamentals  \n- Sliding window maximum (O(n))  \n- Sliding window minimum  \n- First negative in window  \n- Distinct elements in window  \n- Fixed vs variable window patterns  \n- Real interview sliding\\u2011window problems  \n\nThis day sets you up perfectly for **Day 19 \\u2014 Binary Trees: Traversals, Height, Diameter, Balanced Trees**.\n&quot;],&quot;theory&quot;:[0,&quot;Got it \\u2014 and thank you for the clarification.  \nHere is your **Day 18** theory file, crafted in the same **ultra\\u2011premium**, **color\\u2011rich**, **icon\\u2011powered**, **memory\\u2011optimized** style as all your previous days.\n\nThis day focuses on:\n\n- **Queue + Deque**\n- **Sliding Window Maximum**\n- **First Negative Number in Every Window**\n- **Sliding Window Minimum (bonus)**\n- **Monotonic Queue patterns**\n\nThis is a **core DSA day** because these patterns appear in dozens of FAANG problems.\n\n---\n\n# **Day 18 \\u2013 \\ud83d\\ude80 Queue + Deque Mastery: Sliding Window Maximum &amp; First Negative in Window**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Day 18 Matters**\nSliding window problems are everywhere in:\n\n- Arrays  \n- Streams  \n- Real\\u2011time analytics  \n- Signal processing  \n- Stock price analysis  \n- Temperature tracking  \n- Windowed queries  \n\nQueues and deques allow you to solve these in **O(n)** instead of **O(n\\u00b7k)**.\n\nToday you master:\n\n- \\ud83d\\udd25 Monotonic Deque  \n- \\ud83d\\udd25 Sliding Window Maximum  \n- \\ud83d\\udd25 Sliding Window Minimum  \n- \\ud83d\\udd25 First Negative in Window  \n- \\ud83d\\udd25 Window processing patterns  \n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cW\\u2011Q\\u2011D\\u201d**\nThree pillars of today:\n\n- **W** \\u2013 Window  \n- **Q** \\u2013 Queue  \n- **D** \\u2013 Deque  \n\nRemember: **W\\u2011Q\\u2011D** \\u2192 Window + Queue + Deque.\n\n---\n\n# **\\ud83c\\udf08 2. Queue Fundamentals (Quick Refresher)**\n\nQueue = **FIFO**  \n- First In \\u2192 First Out  \n- Perfect for tracking order  \n- Used for:  \n  - First negative  \n  - First positive  \n  - Window frequency  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nQueue = **line of people**.\n\n---\n\n# **\\ud83c\\udf08 3. Deque Fundamentals (The Real Power)**\n\nDeque = **Double\\u2011Ended Queue**  \nSupports:\n\n- Push front  \n- Push back  \n- Pop front  \n- Pop back  \n\nThis makes it perfect for **monotonic window structures**.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cBack pops, Front answers\\u201d**\n- Back \\u2192 maintain monotonicity  \n- Front \\u2192 holds the answer  \n\n---\n\n# **\\ud83c\\udf08 4. Sliding Window Maximum (Monotonic Deque)**  \nThis is one of the **top 10 most important DSA patterns**.\n\n---\n\n## **\\ud83c\\udfaf Goal**\nFor each window of size `k`, find the **maximum** element.\n\n---\n\n## **\\ud83d\\udd25 Core Idea**\nUse a **monotonic decreasing deque** storing **indices**.\n\n---\n\n## **\\ud83d\\udd25 Steps (The Golden Template)**\n\n### **1\\ufe0f\\u20e3 Remove out\\u2011of\\u2011window elements**\nIf `dq.front() &lt;= i - k` \\u2192 pop front.\n\n### **2\\ufe0f\\u20e3 Maintain decreasing order**\nWhile `arr[dq.back()] &lt; arr[i]` \\u2192 pop back.\n\n### **3\\ufe0f\\u20e3 Push current index**\nPush `i`.\n\n### **4\\ufe0f\\u20e3 Window max = arr[dq.front()]**\n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Back pops smaller \\u2192 Front holds max**\n\n---\n\n## **\\ud83c\\udfa8 Example**\nArray: `[1,3,-1,-3,5,3,6,7]`, k = 3  \nOutput: `[3,3,5,5,6,7]`\n\n---\n\n# **\\ud83c\\udf08 5. Why Monotonic Deque Works (Intuition)**\n\n- Back pops ensure deque is **strictly decreasing**  \n- Front always holds **max element**  \n- Out\\u2011of\\u2011window elements are removed  \n- Each element is pushed/popped **at most once** \\u2192 O(n)\n\n---\n\n# **\\ud83c\\udf08 6. Sliding Window Minimum (Bonus)**\n\nSame as maximum but maintain **monotonic increasing deque**.\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Back pops bigger \\u2192 Front holds min**\n\n---\n\n# **\\ud83c\\udf08 7. First Negative Number in Every Window**  \nThis is the **classic queue\\u2011based** window problem.\n\n---\n\n## **\\ud83c\\udfaf Goal**\nFor each window of size `k`, return the **first negative number**.\n\n---\n\n## **\\ud83d\\udd25 Core Idea**\nUse a **simple queue** to store **indices of negative numbers**.\n\n---\n\n## **\\ud83d\\udd25 Steps**\n\n### **1\\ufe0f\\u20e3 Add negative numbers**\nIf `arr[i] &lt; 0`, push index into queue.\n\n### **2\\ufe0f\\u20e3 Remove out\\u2011of\\u2011window negatives**\nIf `q.front() &lt;= i - k`, pop front.\n\n### **3\\ufe0f\\u20e3 Window answer**\n- If queue not empty \\u2192 `arr[q.front()]`  \n- Else \\u2192 `0` or `None`  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Queue stores negatives \\u2192 front is first negative**\n\n---\n\n## **\\ud83c\\udfa8 Example**\nArray: `[12, -1, -7, 8, -15, 30, 16, 28]`, k = 3  \nOutput: `[-1, -1, -7, -15, -15, 0]`\n\n---\n\n# **\\ud83c\\udf08 8. Pattern Extensions**\n\n---\n\n## **\\ud83d\\udc99 First Positive in Window**\nSame logic, track positives.\n\n---\n\n## **\\ud83d\\udc9a Count Negatives in Window**\nUse queue size.\n\n---\n\n## **\\ud83d\\udc9b Window Sum / Window Average**\nUse sliding window sum.\n\n---\n\n## **\\u2764\\ufe0f Window Distinct Count**\nUse HashMap + sliding window.\n\n---\n\n## **\\ud83d\\udc9c Window Max/Min**\nUse monotonic deque.\n\n---\n\n# **\\ud83c\\udf08 9. Monotonic Queue Template (Universal)**\n\n```\nwhile dq not empty and dq.back() &lt; current:\n    dq.pop_back()\n\ndq.push_back(i)\n\nif dq.front() &lt;= i - k:\n    dq.pop_front()\n\nanswer = arr[dq.front()]\n```\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Pop back for monotonicity, pop front for window validity.**\n\n---\n\n# **\\ud83c\\udf08 10. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Forgetting to remove out\\u2011of\\u2011window indices  \n- \\ud83d\\udea9 Storing values instead of indices  \n- \\ud83d\\udea9 Using queue instead of deque for max/min  \n- \\ud83d\\udea9 Not maintaining monotonic order  \n- \\ud83d\\udea9 Off\\u2011by\\u2011one errors in window boundaries  \n- \\ud83d\\udea9 Forgetting that each element is pushed/popped once  \n\n---\n\n# **\\ud83c\\udf08 11. Problems You Can Now Solve**\n\n- Sliding Window Maximum  \n- Sliding Window Minimum  \n- First Negative in Window  \n- First Positive in Window  \n- Count negatives in window  \n- Window sum / average  \n- Window distinct count  \n- Window frequency map  \n- Window median (advanced)  \n- Window Kth largest (heap)  \n\n---\n\n# **\\ud83c\\udf08 12. What You Must Master Today**\n\n- Queue fundamentals  \n- Deque operations  \n- Monotonic decreasing deque  \n- Sliding window maximum  \n- Sliding window minimum  \n- First negative in window  \n- Index\\u2011based window logic  \n- O(n) window processing  \n&quot;],&quot;examples&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;example01&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 1: Sliding Window Maximum\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; slidingMax(vector&lt;int&gt;&amp;a,int k){\n    deque&lt;int&gt;dq;vector&lt;int&gt;res;\n    for(int i=0;i&lt;(int)a.size();i++){while(!dq.empty()&amp;&amp;dq.front()&lt;i-k+1)dq.pop_front();while(!dq.empty()&amp;&amp;a[dq.back()]&lt;=a[i])dq.pop_back();dq.push_back(i);if(i&gt;=k-1)res.push_back(a[dq.front()]);}\n    return res;\n}\nint main(){\n    vector&lt;int&gt; a={1,3,-1,-3,5,3,6,7}; int k=3;\n    for(int x:slidingMax(a,k)) cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example02&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 2: First Negative in Window\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; firstNegative(vector&lt;int&gt;&amp;a,int k){\n    deque&lt;int&gt;dq;vector&lt;int&gt;res;\n    for(int i=0;i&lt;(int)a.size();i++){while(!dq.empty()&amp;&amp;dq.front()&lt;i-k+1)dq.pop_front();if(a[i]&lt;0)dq.push_back(i);if(i&gt;=k-1)res.push_back(dq.empty()?0:a[dq.front()]);}\n    return res;\n}\nint main(){\n    vector&lt;int&gt; a={12,-1,-7,8,-15,30,16,28}; int k=3;\n    for(int x:firstNegative(a,k)) cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example03&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 3: Circular Queue\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nclass CircularQueue{int*data;int front,rear,size,cap;\npublic:\n    CircularQueue(int k):cap(k),front(0),rear(-1),size(0){data=new int[k];}\n    bool enqueue(int v){if(size==cap)return false;rear=(rear+1)%cap;data[rear]=v;size++;return true;}\n    bool dequeue(){if(!size)return false;front=(front+1)%cap;size--;return true;}\n    int getFront(){return size?data[front]:-1;}\n    int getRear(){return size?data[rear]:-1;}\n    bool isEmpty(){return size==0;}\n    bool isFull(){return size==cap;}\n};\nint main(){\n    CircularQueue cq(3);cq.enqueue(1);cq.enqueue(2);cq.enqueue(3);\n    cout&lt;&lt;cq.isFull()&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example04&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 4: Stack using Queue\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Stack using two queues\nclass MyStack{queue&lt;int&gt;q1,q2;\npublic:\n    void push(int v){q2.push(v);while(!q1.empty()){q2.push(q1.front());q1.pop();}swap(q1,q2);}\n    int pop(){int v=q1.front();q1.pop();return v;}\n    int top(){return q1.front();}\n    bool empty(){return q1.empty();}\n};\nint main(){\n    MyStack s;s.push(1);s.push(2);s.push(3);\n    cout&lt;&lt;s.top()&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example05&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 5: Queue using Stack\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Queue using two stacks (amortized O(1))\nclass MyQueue{stack&lt;int&gt;in,out;\n    void transfer(){while(!in.empty()){out.push(in.top());in.pop();}}\npublic:\n    void push(int v){in.push(v);}\n    int pop(){if(out.empty())transfer();int v=out.top();out.pop();return v;}\n    int peek(){if(out.empty())transfer();return out.top();}\n    bool empty(){return in.empty()&amp;&amp;out.empty();}\n};\nint main(){\n    MyQueue q;q.push(1);q.push(2);q.push(3);\n    cout&lt;&lt;q.peek()&lt;&lt;\&quot;\\\n\\&quot;]}]]],&quot;exercises&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;exercise01&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 1: Sliding Window Maximum\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Sliding window minimum\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise02&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 2: First Negative in Window\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Gas Station: find starting gas station\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise03&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 3: Circular Queue\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Task Scheduler: min intervals with cooldown n\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise04&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 4: Stack using Queue\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Implement deque using doubly linked list\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise05&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 5: Queue using Stack\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Moving average from data stream\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}]]],&quot;solutions&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;solution01&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 1: Sliding Window Maximum\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; slidingMax(vector&lt;int&gt;&amp;a,int k){\n    deque&lt;int&gt;dq;vector&lt;int&gt;res;\n    for(int i=0;i&lt;(int)a.size();i++){while(!dq.empty()&amp;&amp;dq.front()&lt;i-k+1)dq.pop_front();while(!dq.empty()&amp;&amp;a[dq.back()]&lt;=a[i])dq.pop_back();dq.push_back(i);if(i&gt;=k-1)res.push_back(a[dq.front()]);}\n    return res;\n}\nint main(){\n    vector&lt;int&gt; a={1,3,-1,-3,5,3,6,7}; int k=3;\n    for(int x:slidingMax(a,k)) cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution02&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 2: First Negative in Window\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nvector&lt;int&gt; firstNegative(vector&lt;int&gt;&amp;a,int k){\n    deque&lt;int&gt;dq;vector&lt;int&gt;res;\n    for(int i=0;i&lt;(int)a.size();i++){while(!dq.empty()&amp;&amp;dq.front()&lt;i-k+1)dq.pop_front();if(a[i]&lt;0)dq.push_back(i);if(i&gt;=k-1)res.push_back(dq.empty()?0:a[dq.front()]);}\n    return res;\n}\nint main(){\n    vector&lt;int&gt; a={12,-1,-7,8,-15,30,16,28}; int k=3;\n    for(int x:firstNegative(a,k)) cout&lt;&lt;x&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution03&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 3: Circular Queue\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nclass CircularQueue{int*data;int front,rear,size,cap;\npublic:\n    CircularQueue(int k):cap(k),front(0),rear(-1),size(0){data=new int[k];}\n    bool enqueue(int v){if(size==cap)return false;rear=(rear+1)%cap;data[rear]=v;size++;return true;}\n    bool dequeue(){if(!size)return false;front=(front+1)%cap;size--;return true;}\n    int getFront(){return size?data[front]:-1;}\n    int getRear(){return size?data[rear]:-1;}\n    bool isEmpty(){return size==0;}\n    bool isFull(){return size==cap;}\n};\nint main(){\n    CircularQueue cq(3);cq.enqueue(1);cq.enqueue(2);cq.enqueue(3);\n    cout&lt;&lt;cq.isFull()&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution04&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 4: Stack using Queue\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Stack using two queues\nclass MyStack{queue&lt;int&gt;q1,q2;\npublic:\n    void push(int v){q2.push(v);while(!q1.empty()){q2.push(q1.front());q1.pop();}swap(q1,q2);}\n    int pop(){int v=q1.front();q1.pop();return v;}\n    int top(){return q1.front();}\n    bool empty(){return q1.empty();}\n};\nint main(){\n    MyStack s;s.push(1);s.push(2);s.push(3);\n    cout&lt;&lt;s.top()&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution05&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 5: Queue using Stack\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Queue using two stacks (amortized O(1))\nclass MyQueue{stack&lt;int&gt;in,out;\n    void transfer(){while(!in.empty()){out.push(in.top());in.pop();}}\npublic:\n    void push(int v){in.push(v);}\n    int pop(){if(out.empty())transfer();int v=out.top();out.pop();return v;}\n    int peek(){if(out.empty())transfer();return out.top();}\n    bool empty(){return in.empty()&amp;&amp;out.empty();}\n};\nint main(){\n    MyQueue q;q.push(1);q.push(2);q.push(3);\n    cout&lt;&lt;q.peek()&lt;&lt;\&quot;\\\n\\&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;DayTabs&quot;,&quot;value&quot;:true}" await-children><div><div class="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-1 mb-6 border-b border-slate-800"><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap bg-slate-700 text-white">📖 README</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">🧠 Theory</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">💻 Examples <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✏️ Exercises <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✅ Solutions <span class="ml-1 text-xs text-slate-500">5</span></button></div><div><p class="text-slate-300 leading-7 mb-3">Day 18 coming right up, ---</p>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">Day 18 \u2014 Queue + Deque: Sliding Window Maximum, First Negative in Window (README.rst)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3"><em>30 Days to DSA in C++ \u2014 Ultra\u2011Premium Edition</em></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">1. Introduction</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Queues and deques are fundamental linear data structures used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Sliding window problems</li>
+<li class="text-slate-300 ml-2">BFS in graphs</li>
+<li class="text-slate-300 ml-2">Real\u2011time streaming</li>
+<li class="text-slate-300 ml-2">Scheduling systems</li>
+<li class="text-slate-300 ml-2">Rate limiting</li>
+<li class="text-slate-300 ml-2">Task processing</li>
+<li class="text-slate-300 ml-2">Monotonic queue optimizations</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">Today\u2019s goal is to master:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Queue fundamentals</li>
+<li class="text-slate-300 ml-2">Deque fundamentals</li>
+<li class="text-slate-300 ml-2">Sliding window maximum (O(n))</li>
+<li class="text-slate-300 ml-2">First negative number in every window</li>
+<li class="text-slate-300 ml-2">Sliding window minimum</li>
+<li class="text-slate-300 ml-2">Fixed vs variable window patterns</li>
+<li class="text-slate-300 ml-2">Real interview problems</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day builds directly on Day 16 and Day 17.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">2. Queue Basics</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">A queue follows <strong class="text-white font-semibold">FIFO</strong> (First In, First Out).</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Operations</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">push(x)</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">pop()</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">front()</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">empty()</code></li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">C++ Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>queue&lt;int&gt; q;
+q.push(10);
+q.pop();
+int x = q.front();</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">3. Deque Basics</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">A deque (double\u2011ended queue) allows insertion and deletion from both ends.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Operations</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">push_front(x)</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">push_back(x)</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">pop_front()</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">pop_back()</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">front()</code></li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">back()</code></li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">C++ Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>deque&lt;int&gt; dq;
+dq.push_back(10);
+dq.push_front(5);
+dq.pop_back();</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">4. Sliding Window Maximum (Monotonic Deque)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">This is one of the most important sliding\u2011window problems.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">4.1 Problem Statement</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Given an array and window size <code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">k</code>, find the maximum in every window.</p>
+<p class="text-slate-300 leading-7 mb-3">Example:</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>a = [1,3,-1,-3,5,3,6,7], k = 3
+Output = [3,3,5,5,6,7]</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">4.2 Brute Force \u2014 O(nk)</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Skip.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">4.3 Optimal \u2014 Monotonic Deque (O(n))</strong></h2>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Logic</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Maintain a deque of <strong class="text-white font-semibold">indices</strong></li>
+<li class="text-slate-300 ml-2">Keep deque <strong class="text-white font-semibold">decreasing</strong> (front = max)</li>
+<li class="text-slate-300 ml-2">Remove:<!-- -->
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Elements outside window</li>
+<li class="text-slate-300 ml-2">Elements smaller than current</li>
+</ul>
+</li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; a, int k) {
+    deque&lt;int&gt; dq;
+    vector&lt;int&gt; ans;
+
+    for (int i = 0; i &lt; a.size(); i++) {
+
+        // Remove out-of-window elements
+        if (!dq.empty() &amp;&amp; dq.front() &lt;= i - k)
+            dq.pop_front();
+
+        // Maintain decreasing order
+        while (!dq.empty() &amp;&amp; a[dq.back()] &lt;= a[i])
+            dq.pop_back();
+
+        dq.push_back(i);
+
+        // Window formed
+        if (i &gt;= k - 1)
+            ans.push_back(a[dq.front()]);
+    }
+    return ans;
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: <strong class="text-white font-semibold">O(n)</strong><br/>
+<!-- -->Space: <strong class="text-white font-semibold">O(k)</strong></p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">5. Sliding Window Minimum (Monotonic Increasing Deque)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Just reverse the comparison.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; minSlidingWindow(vector&lt;int&gt;&amp; a, int k) {
+    deque&lt;int&gt; dq;
+    vector&lt;int&gt; ans;
+
+    for (int i = 0; i &lt; a.size(); i++) {
+
+        if (!dq.empty() &amp;&amp; dq.front() &lt;= i - k)
+            dq.pop_front();
+
+        while (!dq.empty() &amp;&amp; a[dq.back()] &gt;= a[i])
+            dq.pop_back();
+
+        dq.push_back(i);
+
+        if (i &gt;= k - 1)
+            ans.push_back(a[dq.front()]);
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">6. First Negative Number in Every Window</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">This is a classic queue problem.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">6.1 Logic</strong></h2>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Use a queue to store indices of negative numbers</li>
+<li class="text-slate-300 ml-2">For each window:<!-- -->
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Remove negatives that fall out</li>
+<li class="text-slate-300 ml-2">First element in queue = first negative</li>
+</ul>
+</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">6.2 Implementation</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; firstNegative(vector&lt;int&gt;&amp; a, int k) {
+    queue&lt;int&gt; q;
+    vector&lt;int&gt; ans;
+
+    for (int i = 0; i &lt; a.size(); i++) {
+
+        if (a[i] &lt; 0)
+            q.push(i);
+
+        if (i &gt;= k - 1) {
+            while (!q.empty() &amp;&amp; q.front() &lt;= i - k)
+                q.pop();
+
+            ans.push_back(q.empty() ? 0 : a[q.front()]);
+        }
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">7. Count of Distinct Elements in Every Window</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Use a frequency map + sliding window.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; distinctInWindow(vector&lt;int&gt;&amp; a, int k) {
+    unordered_map&lt;int,int&gt; freq;
+    vector&lt;int&gt; ans;
+
+    for (int i = 0; i &lt; a.size(); i++) {
+        freq[a[i]]++;
+
+        if (i &gt;= k) {
+            freq[a[i-k]]--;
+            if (freq[a[i-k]] == 0)
+                freq.erase(a[i-k]);
+        }
+
+        if (i &gt;= k - 1)
+            ans.push_back(freq.size());
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">8. Fixed vs Variable Sliding Window</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Fixed Window</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Window size = constant</li>
+<li class="text-slate-300 ml-2">Use indices</li>
+<li class="text-slate-300 ml-2">Examples:<!-- -->
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Sliding window max</li>
+<li class="text-slate-300 ml-2">First negative</li>
+<li class="text-slate-300 ml-2">Distinct elements</li>
+</ul>
+</li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Variable Window</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Window expands and shrinks based on condition</li>
+<li class="text-slate-300 ml-2">Use two pointers</li>
+<li class="text-slate-300 ml-2">Examples:<!-- -->
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Longest substring without repeating characters</li>
+<li class="text-slate-300 ml-2">Longest subarray with sum \u2264 K</li>
+<li class="text-slate-300 ml-2">At most K distinct characters</li>
+</ul>
+</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">9. Real\u2011World Examples</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 1 \u2014 Real\u2011time sensor data</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Sliding window max/min.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 2 \u2014 Network packet analysis</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">First negative / anomaly detection.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 3 \u2014 Stock market analytics</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Sliding window max.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 4 \u2014 Rate limiting</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Queue\u2011based windowing.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">10. Interview\u2011Level Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 1 \u2014 Sliding Window Maximum</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Monotonic deque.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 2 \u2014 First Negative in Window</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Queue of indices.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 3 \u2014 Distinct Elements in Window</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Hashmap + sliding window.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 4 \u2014 Sliding Window Minimum</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Monotonic deque.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 5 \u2014 Longest substring with at most K distinct characters</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Variable window.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">11. Exercises (Try First)</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 1</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute sliding window maximum.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 2</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Compute sliding window minimum.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 3</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Find first negative number in every window.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 4</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Count distinct elements in every window.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 5</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Given a string, find longest substring with at most K distinct characters.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">12. Solutions</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 1 \u2014 Sliding window max</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use code from section 4.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 2 \u2014 Sliding window min</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use code from section 5.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 3 \u2014 First negative</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use queue logic.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 4 \u2014 Distinct elements</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use hashmap.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 5 \u2014 K distinct substring</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>int longestKDistinct(string s, int k) {
+    unordered_map&lt;char,int&gt; mp;
+    int i = 0, ans = 0;
+
+    for (int j = 0; j &lt; s.size(); j++) {
+        mp[s[j]]++;
+
+        while (mp.size() &gt; k) {
+            mp[s[i]]--;
+            if (mp[s[i]] == 0) mp.erase(s[i]);
+            i++;
+        }
+
+        ans = max(ans, j - i + 1);
+    }
+    return ans;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">13. Summary</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Today you mastered:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Queue fundamentals</li>
+<li class="text-slate-300 ml-2">Deque fundamentals</li>
+<li class="text-slate-300 ml-2">Sliding window maximum (O(n))</li>
+<li class="text-slate-300 ml-2">Sliding window minimum</li>
+<li class="text-slate-300 ml-2">First negative in window</li>
+<li class="text-slate-300 ml-2">Distinct elements in window</li>
+<li class="text-slate-300 ml-2">Fixed vs variable window patterns</li>
+<li class="text-slate-300 ml-2">Real interview sliding\u2011window problems</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day sets you up perfectly for <strong class="text-white font-semibold">Day 19 \u2014 Binary Trees: Traversals, Height, Diameter, Balanced Trees</strong>.</p></div></div><!--astro:end--></astro-island> <!-- Prev / Next --> <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800"> <a href="/day/day17-monotonic-stack-queue-largest-rectangle-histogram" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"> <span class="text-lg">←</span> <span class="hidden sm:inline">Day 17 · Monotonic Stack Queue Largest Rectangle Histogram</span> <span class="sm:hidden">Prev</span> </a> <a href="/day/day19-parentheses-rpn-lfu" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right"> <span class="hidden sm:inline">Day 19 · Parentheses RPN LFU</span> <span class="sm:hidden">Next</span> <span class="text-lg">→</span> </a> </div> </div>  </main> <!-- Footer --> <footer class="border-t border-slate-800/60 mt-16 py-8 text-center text-xs text-slate-600">
+30 Days to DSA in C++ · Built with Astro
+</footer> </body></html>

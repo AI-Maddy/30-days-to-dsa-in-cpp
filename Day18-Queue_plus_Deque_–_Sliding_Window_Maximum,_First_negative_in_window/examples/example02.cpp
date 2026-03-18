@@ -1,35 +1,15 @@
+/*
+ * Example 2: First Negative in Window
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example02
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
+vector<int> firstNegative(vector<int>&a,int k){
+    deque<int>dq;vector<int>res;
+    for(int i=0;i<(int)a.size();i++){while(!dq.empty()&&dq.front()<i-k+1)dq.pop_front();if(a[i]<0)dq.push_back(i);if(i>=k-1)res.push_back(dq.empty()?0:a[dq.front()]);}
+    return res;
 }
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+int main(){
+    vector<int> a={12,-1,-7,8,-15,30,16,28}; int k=3;
+    for(int x:firstNegative(a,k)) cout<<x<<" "; cout<<"\n"; // -1 -1 -7 -15 -15 0
     return 0;
 }

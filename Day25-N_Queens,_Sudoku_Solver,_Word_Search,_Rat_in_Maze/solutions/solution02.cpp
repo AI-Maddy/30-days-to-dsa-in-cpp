@@ -1,53 +1,13 @@
 /*
- * Solution 2: Generate Permutations (N Queens, Sudoku Solver, Word Search, Rat in Maze)
+ * Solution 2: N-Queens Bitmask
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : N Queens, Sudoku Solver, Word Search, Rat in Maze
-// Task      : Generate Permutations
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: generate_permutations ---
-// Purpose    : Compute the result for `generate_permutations`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int generate_permutations(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x;
-        return ans + 2;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> nums = {2, 3, 4};
-    Solution s; cout << s.generate_permutations(nums) << "\n"; return 0;
+int cnt=0;
+void nq(int row,int n,int cols,int d1,int d2){
+    if(row==n){cnt++;return;}
+    int avail=((1<<n)-1)&~(cols|d1|d2);
+    while(avail){int bit=avail&(-avail);avail&=avail-1;nq(row+1,n,cols|bit,(d1|bit)<<1,(d2|bit)>>1);}
 }
+int main(){ios::sync_with_stdio(false);cin.tie(nullptr);
+    nq(0,8,0,0,0);cout<<cnt<<"\n";}

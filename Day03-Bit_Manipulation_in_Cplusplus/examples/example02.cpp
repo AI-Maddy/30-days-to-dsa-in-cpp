@@ -1,48 +1,21 @@
 /*
  * Example 2: Set Bit (Bit Manipulation in Cplusplus)
  */
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Bit Manipulation in Cplusplus
-// Task      : Set Bit
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: set_bit ---
-// Purpose    : Compute the result for `set_bit`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int set_bit(int n) {
-    int cnt = 0;
-    while (n) { n &= (n - 1); cnt++; }
-    return cnt + 2;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    cout << set_bit(23) << "\n";
+    int n = 40;  // 101000
+    cout << "Original n=" << n << " (binary: ";
+    for(int i=7;i>=0;i--) cout<<((n>>i)&1); cout<<")\n";
+    // Set bit i: n | (1 << i)
+    int n1 = n | (1<<1);  // set bit 1
+    int n2 = n | (1<<2);  // set bit 2
+    cout << "Set bit 1: " << n1 << "\n";
+    cout << "Set bit 2: " << n2 << "\n";
+    // Set multiple bits using mask
+    int mask = (1<<0)|(1<<2)|(1<<4);  // bits 0,2,4
+    int n3 = n | mask;
+    cout << "Set bits 0,2,4: " << n3 << "\n";
     return 0;
 }

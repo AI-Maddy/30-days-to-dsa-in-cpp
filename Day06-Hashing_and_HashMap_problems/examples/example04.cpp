@@ -1,50 +1,17 @@
 /*
- * Example 4: Two Pointers Pair (Hashing and HashMap problems)
+ * Example 4: Longest Consecutive (Hashing)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Hashing and HashMap problems
-// Task      : Two Pointers Pair
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: two_pointers_pair ---
-// Purpose    : Compute the result for `two_pointers_pair`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int two_pointers_pair(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (7));
-    return ans;
+// Longest Consecutive Sequence — O(n) using unordered_set
+int longestConsecutive(vector<int>& nums){
+    unordered_set<int> s(nums.begin(),nums.end());
+    int best=0;
+    for(int x:s){ if(!s.count(x-1)){ int cur=x,len=1; while(s.count(cur+1)){cur++;len++;} best=max(best,len);} }
+    return best;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    vector<int> data = {4, 5, 6, 7, 8};
-    cout << two_pointers_pair(data) << "\n";
+int main(){
+    vector<int> a={100,4,200,1,3,2}; cout<<longestConsecutive(a)<<"\n"; // 4
+    vector<int> b={0,3,7,2,5,8,4,6,0,1}; cout<<longestConsecutive(b)<<"\n"; // 9
     return 0;
 }

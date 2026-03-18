@@ -1,57 +1,29 @@
 /*
- * Example 4: Diameter (Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View)
+ * Example 4: Bottom View
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View
-// Task      : Diameter
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// --- Function Explanation: diameter ---
-// Purpose    : Compute the result for `diameter`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int diameter(TreeNode* root) {
-    if (!root) return 0;
-    queue<TreeNode*> q; q.push(root);
-    int cnt = 0;
+// Example 4: Bottom View of Binary Tree
+void bottomView(TreeNode* root) {
+    if (!root) return;
+    map<int, int> colMap;
+    queue<pair<TreeNode*, int>> q;
+    q.push({root, 0});
     while (!q.empty()) {
-        TreeNode* cur = q.front(); q.pop(); cnt++;
-        if (cur->left) q.push(cur->left);
-        if (cur->right) q.push(cur->right);
+        auto [node, col] = q.front(); q.pop();
+        colMap[col] = node->val; // overwrite — last level wins
+        if (node->left)  q.push({node->left,  col - 1});
+        if (node->right) q.push({node->right, col + 1});
     }
-    return cnt + 4;
+    for (auto& [c, v] : colMap) cout << v << " ";
+    cout << "\n";
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    cout << diameter(r) << "\n";
-    return 0;
+    TreeNode* root = new TreeNode(20);
+    root->left = new TreeNode(8); root->right = new TreeNode(22);
+    root->left->left = new TreeNode(5); root->left->right = new TreeNode(3);
+    root->left->right->left = new TreeNode(10); root->left->right->right = new TreeNode(14);
+    bottomView(root);
 }

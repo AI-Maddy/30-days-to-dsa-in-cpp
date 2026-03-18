@@ -1,35 +1,15 @@
+/*
+ * Solution 1: Sliding Window Maximum
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution01
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
+vector<int> slidingMax(vector<int>&a,int k){
+    deque<int>dq;vector<int>res;
+    for(int i=0;i<(int)a.size();i++){while(!dq.empty()&&dq.front()<i-k+1)dq.pop_front();while(!dq.empty()&&a[dq.back()]<=a[i])dq.pop_back();dq.push_back(i);if(i>=k-1)res.push_back(a[dq.front()]);}
+    return res;
 }
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+int main(){
+    vector<int> a={1,3,-1,-3,5,3,6,7}; int k=3;
+    for(int x:slidingMax(a,k)) cout<<x<<" "; cout<<"\n"; // 3 3 5 5 6 7
     return 0;
 }

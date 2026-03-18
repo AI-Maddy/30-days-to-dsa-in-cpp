@@ -8,14 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — **Day 23** is here, and this is where your DSA roadmap enters one of the most *foundational* and *interview‑critical* chapters: **GRAPHS**.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 23 — Graphs: BFS, DFS, Adjacency List, Cycle Detection (Directed + Undirected) (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -388,7 +383,3 @@ Today you mastered:
 - Real‑world graph applications  
 
 This day sets the stage for **Day 24 — Topological Sort, Kahn’s Algorithm, DFS Ordering**.
-
----
-
-If you want, I’ll prepare **Day 24** with the same ultra‑premium depth.

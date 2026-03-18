@@ -8,11 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 10** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style you’ve been using across Days 1–9.
-
-This one is **BIG** — Sorting Revision + Custom Comparators + Counting Sort + Radix Sort Intuition — so I’ve made it **deep**, **dense**, and **beautifully structured** for maximum retention.
-
----
 
 # **Day 10 – ⚡ Sorting Revision + 🧭 Custom Comparators + 🎨 Counting Sort + 🚀 Radix Sort Intuition**  
 `theory.rst`
@@ -321,15 +316,4 @@ Final sorted array emerges.
 - Radix sort intuition  
 - Stability vs instability  
 - When to use which sorting algorithm  
-- Sorting as preprocessing for bigger problems  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 10 README (ultra‑premium)**  
-🧠 **C++ templates for all sorting algorithms**  
-🎯 **20 sorting interview problems**  
-📘 **Sorting cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Sorting as preprocessing for bigger problems

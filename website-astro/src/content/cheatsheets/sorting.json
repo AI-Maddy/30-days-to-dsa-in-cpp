@@ -1,0 +1,6 @@
+{
+  "slug": "sorting",
+  "title": "Sorting",
+  "icon": "📄",
+  "content": "#   Sorting Cheatsheet\n       \n        **🧠 Memory Aid:** For interviews: know merge sort and quick sort inside out. Use std::sort in practice.  Stability matters when sorting by one key while preserving another. \n       \n      \n## ⏱️ Complexity Summary\n       `// Merge Sort: O(n log n) time, O(n) space\n// Quick Sort: O(n log n) avg, O(n^2) worst\n// Heap Sort: O(n log n) time, O(1) space`"
+}

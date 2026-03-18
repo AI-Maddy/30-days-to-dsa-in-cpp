@@ -1,57 +1,33 @@
 /*
- * Example 5: LCA (Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View)
+ * Example 5: Vertical Order
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View
-// Task      : LCA
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// --- Function Explanation: lca ---
-// Purpose    : Compute the result for `lca`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int lca(TreeNode* root) {
-    if (!root) return 0;
-    queue<TreeNode*> q; q.push(root);
-    int cnt = 0;
+// Example 5: Vertical Order Traversal
+vector<vector<int>> verticalOrder(TreeNode* root) {
+    map<int, map<int, multiset<int>>> nodes; // col -> row -> values
+    queue<tuple<TreeNode*, int, int>> q;
+    q.push({root, 0, 0});
     while (!q.empty()) {
-        TreeNode* cur = q.front(); q.pop(); cnt++;
-        if (cur->left) q.push(cur->left);
-        if (cur->right) q.push(cur->right);
+        auto [node, col, row] = q.front(); q.pop();
+        nodes[col][row].insert(node->val);
+        if (node->left)  q.push({node->left,  col - 1, row + 1});
+        if (node->right) q.push({node->right, col + 1, row + 1});
     }
-    return cnt + 5;
+    vector<vector<int>> res;
+    for (auto& [col, rowMap] : nodes) {
+        vector<int> col_vals;
+        for (auto& [row, vals] : rowMap)
+            col_vals.insert(col_vals.end(), vals.begin(), vals.end());
+        res.push_back(col_vals);
+    }
+    return res;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    cout << lca(r) << "\n";
-    return 0;
+    TreeNode* root = new TreeNode(3);
+    root->left = new TreeNode(9); root->right = new TreeNode(20);
+    root->right->left = new TreeNode(15); root->right->right = new TreeNode(7);
+    for (auto& col : verticalOrder(root)) { for (int x : col) cout << x << " "; cout << "\n"; }
 }

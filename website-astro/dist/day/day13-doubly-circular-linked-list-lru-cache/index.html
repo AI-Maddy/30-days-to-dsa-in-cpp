@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="30 Days to DSA in C++ — Premium Edition"><title>Day 13 · Doubly Circular Linked List LRU Cache · DSA in C++</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.EuORl1j-.css"></head> <body class="min-h-screen bg-[#0d1117] text-slate-100 antialiased"> <!-- Nav --> <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0d1117]/90 backdrop-blur-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14"> <a href="/" class="flex items-center gap-2 font-bold text-slate-100 hover:text-white transition-colors"> <span class="text-xl">⚡</span> <span class="hidden sm:inline text-sm">30 Days DSA C++</span> </a> <div class="flex items-center gap-1"> <a href="/" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">Home</a> <a href="/cheatsheets" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">📄 Cheatsheets</a> </div> </div> </nav> <!-- Main --> <main>  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10"> <!-- Breadcrumb --> <div class="flex items-center gap-2 text-xs text-slate-500 mb-6"> <a href="/" class="hover:text-slate-300 transition-colors">Home</a> <span>›</span> <span class="text-red-400 font-medium">🔴 Linked Lists</span> </div> <!-- Header --> <div class="rounded-2xl border border-red-500/40 bg-red-950/40 p-6 mb-8"> <div class="flex items-start gap-4"> <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black bg-red-500/20 text-red-300"> 13 </div> <div> <div class="text-xs font-bold uppercase tracking-widest mb-1 text-red-400">Day 13 · Linked Lists</div> <h1 class="text-2xl font-extrabold text-white leading-tight">Doubly Circular Linked List LRU Cache</h1> <div class="flex gap-3 mt-3 text-xs text-slate-400"> <span>📖 README</span> <span>🧠 Theory</span> <span>💻 5 Examples</span> <span>✏️ 5 Exercises</span> <span>✅ 5 Solutions</span> </div> </div> </div> </div> <!-- Tabs --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="2po6p4" prefix="r1" component-url="/_astro/DayTabs.B_BF-cJm.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;readme&quot;:[0,&quot;---\n\n# **Day 13 \\u2014 Doubly Linked List + Circular Linked List + LRU Cache Intuition (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nToday\\u2019s focus is on **advanced linked list structures** that power real\\u2011world systems:\n\n- **Doubly Linked List (DLL)**  \n- **Circular Linked List (CLL)**  \n- **LRU Cache (DLL + HashMap)**  \n\nThese structures are used in:\n\n- Browser history  \n- Undo/redo systems  \n- Media playlists  \n- Task schedulers  \n- Cache systems (LRU, LFU)  \n- OS memory management  \n- Graph adjacency lists  \n\nThis day builds the foundation for implementing efficient caches and advanced data structures.\n\n---\n\n# **2. Doubly Linked List (DLL)**\n\nA DLL node contains:\n\n- `prev` pointer  \n- `next` pointer  \n- `value`  \n\n### **2.1 Node Structure**\n\n```cpp\nstruct Node {\n    int val;\n    Node* prev;\n    Node* next;\n    Node(int x) : val(x), prev(NULL), next(NULL) {}\n};\n```\n\n---\n\n## **3. Basic Operations on DLL**\n\n---\n\n### **3.1 Insert at Head**\n\n```cpp\nvoid insertHead(Node* &amp;head, int x) {\n    Node* n = new Node(x);\n    n-&gt;next = head;\n    if (head) head-&gt;prev = n;\n    head = n;\n}\n```\n\n---\n\n### **3.2 Insert at Tail**\n\n```cpp\nvoid insertTail(Node* &amp;head, int x) {\n    Node* n = new Node(x);\n    if (!head) {\n        head = n;\n        return;\n    }\n    Node* temp = head;\n    while (temp-&gt;next) temp = temp-&gt;next;\n    temp-&gt;next = n;\n    n-&gt;prev = temp;\n}\n```\n\n---\n\n### **3.3 Delete a Node**\n\n```cpp\nvoid deleteNode(Node* &amp;head, Node* del) {\n    if (!head || !del) return;\n\n    if (head == del) head = del-&gt;next;\n\n    if (del-&gt;next) del-&gt;next-&gt;prev = del-&gt;prev;\n    if (del-&gt;prev) del-&gt;prev-&gt;next = del-&gt;next;\n\n    delete del;\n}\n```\n\n---\n\n## **4. Advantages of DLL**\n\n- Bidirectional traversal  \n- Easy deletion (O(1))  \n- Easy insertion before/after a node  \n- Used in LRU Cache  \n\n---\n\n# **5. Circular Linked List (CLL)**\n\nA circular linked list\\u2019s last node points back to the head.\n\n```\nhead \\u2192 1 \\u2192 2 \\u2192 3 \\u2192 4 \\u2192 (back to head)\n```\n\n---\n\n## **6. CLL Node Structure**\n\nSame as singly linked list.\n\n---\n\n## **7. Basic Operations on CLL**\n\n---\n\n### **7.1 Insert at Head**\n\n```cpp\nvoid insertHead(Node* &amp;head, int x) {\n    Node* n = new Node(x);\n\n    if (!head) {\n        head = n;\n        n-&gt;next = head;\n        return;\n    }\n\n    Node* temp = head;\n    while (temp-&gt;next != head) temp = temp-&gt;next;\n\n    temp-&gt;next = n;\n    n-&gt;next = head;\n    head = n;\n}\n```\n\n---\n\n### **7.2 Insert at Tail**\n\n```cpp\nvoid insertTail(Node* &amp;head, int x) {\n    Node* n = new Node(x);\n\n    if (!head) {\n        head = n;\n        n-&gt;next = head;\n        return;\n    }\n\n    Node* temp = head;\n    while (temp-&gt;next != head) temp = temp-&gt;next;\n\n    temp-&gt;next = n;\n    n-&gt;next = head;\n}\n```\n\n---\n\n### **7.3 Delete Head**\n\n```cpp\nvoid deleteHead(Node* &amp;head) {\n    if (!head) return;\n\n    if (head-&gt;next == head) {\n        delete head;\n        head = NULL;\n        return;\n    }\n\n    Node* temp = head;\n    while (temp-&gt;next != head) temp = temp-&gt;next;\n\n    Node* del = head;\n    temp-&gt;next = head-&gt;next;\n    head = head-&gt;next;\n\n    delete del;\n}\n```\n\n---\n\n# **8. Applications of Circular Linked List**\n\n- Round\\u2011robin scheduling  \n- Multiplayer games  \n- Music playlists  \n- Token passing in networks  \n- Implementing queues with wrap\\u2011around  \n\n---\n\n# **9. LRU Cache \\u2014 Intuition &amp; Implementation**\n\nLRU (Least Recently Used) Cache is one of the most important interview problems.\n\n### **9.1 Requirements**\n\n- `get(key)` \\u2192 O(1)  \n- `put(key, value)` \\u2192 O(1)  \n- Remove least recently used item when full  \n\n### **9.2 Data Structures Used**\n\n- **Doubly Linked List** \\u2192 maintain usage order  \n- **HashMap** \\u2192 store key \\u2192 node pointer  \n\n---\n\n## **10. LRU Cache Architecture**\n\n```\nHashMap: key \\u2192 DLL node\n\nDLL:\nhead = most recently used\ntail = least recently used\n```\n\nOperations:\n\n- Move accessed node to head  \n- Insert new node at head  \n- Remove tail when capacity full  \n\n---\n\n## **11. LRU Cache Implementation**\n\n```cpp\nclass LRUCache {\npublic:\n    int cap;\n    unordered_map&lt;int, Node*&gt; mp;\n    Node *head, *tail;\n\n    LRUCache(int capacity) {\n        cap = capacity;\n        head = new Node(0);\n        tail = new Node(0);\n        head-&gt;next = tail;\n        tail-&gt;prev = head;\n    }\n\n    void remove(Node* node) {\n        Node* p = node-&gt;prev;\n        Node* n = node-&gt;next;\n        p-&gt;next = n;\n        n-&gt;prev = p;\n    }\n\n    void insert(Node* node) {\n        Node* p = head-&gt;next;\n        head-&gt;next = node;\n        node-&gt;prev = head;\n        node-&gt;next = p;\n        p-&gt;prev = node;\n    }\n\n    int get(int key) {\n        if (!mp.count(key)) return -1;\n\n        Node* node = mp[key];\n        remove(node);\n        insert(node);\n\n        return node-&gt;val;\n    }\n\n    void put(int key, int value) {\n        if (mp.count(key)) {\n            remove(mp[key]);\n        }\n\n        if (mp.size() == cap) {\n            mp.erase(tail-&gt;prev-&gt;key);\n            remove(tail-&gt;prev);\n        }\n\n        Node* node = new Node(value);\n        node-&gt;key = key;\n        insert(node);\n        mp[key] = node;\n    }\n};\n```\n\n---\n\n# **12. Real\\u2011World Examples**\n\n---\n\n### **Example 1 \\u2014 Browser History**\n\nDLL allows:\n\n- Back  \n- Forward  \n- Insert new page  \n\n---\n\n### **Example 2 \\u2014 Undo/Redo System**\n\nDLL stores operations.\n\n---\n\n### **Example 3 \\u2014 Music Playlist**\n\nCLL allows infinite looping.\n\n---\n\n### **Example 4 \\u2014 LRU Cache in OS**\n\nUsed in:\n\n- Page replacement  \n- Memory management  \n- CPU cache  \n\n---\n\n# **13. Interview\\u2011Level Problems**\n\n---\n\n### **Problem 1 \\u2014 LRU Cache**  \nHashMap + DLL.\n\n---\n\n### **Problem 2 \\u2014 Flatten multilevel DLL**  \nRecursive pointer manipulation.\n\n---\n\n### **Problem 3 \\u2014 Insert/Delete in DLL**  \nPointer adjustments.\n\n---\n\n### **Problem 4 \\u2014 Detect cycle in CLL**  \nUse fast\\u2011slow pointers.\n\n---\n\n### **Problem 5 \\u2014 Delete node in CLL**  \nPointer rewiring.\n\n---\n\n# **14. Exercises (Try First)**\n\n---\n\n### **Exercise 1**  \nImplement a doubly linked list with insert/delete operations.\n\n---\n\n### **Exercise 2**  \nImplement a circular linked list with insert/delete operations.\n\n---\n\n### **Exercise 3**  \nImplement LRU Cache with O(1) operations.\n\n---\n\n### **Exercise 4**  \nFlatten a multilevel doubly linked list.\n\n---\n\n### **Exercise 5**  \nCheck if a circular linked list has a cycle (trick question).\n\n---\n\n# **15. Solutions**\n\n---\n\n### **Solution 1 \\u2014 DLL operations**\n\nUse code from section 3.\n\n---\n\n### **Solution 2 \\u2014 CLL operations**\n\nUse code from section 7.\n\n---\n\n### **Solution 3 \\u2014 LRU Cache**\n\nUse implementation from section 11.\n\n---\n\n### **Solution 4 \\u2014 Flatten DLL**\n\nRecursive pointer merging.\n\n---\n\n### **Solution 5 \\u2014 Cycle in CLL**\n\nA CLL **always** has a cycle.\n\n---\n\n# **16. Summary**\n\nToday you mastered:\n\n- Doubly linked lists  \n- Circular linked lists  \n- Efficient insert/delete operations  \n- LRU Cache architecture  \n- HashMap + DLL integration  \n- Real\\u2011world applications  \n- Interview\\u2011level linked list patterns  \n\nThis day builds the foundation for advanced linked list problems in Days 14 and 15.\n&quot;],&quot;theory&quot;:[0,&quot;---\n\n# **Day 13 \\u2013 \\ud83d\\udd25 Stacks + Monotonic Stacks + NGE/NS Patterns (Colorful Memory Edition)**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Stacks Matter**\nStacks are the backbone of:\n\n- \\ud83e\\uddee Expression evaluation  \n- \\ud83e\\uddf1 Parentheses validation  \n- \\ud83d\\udcc8 Next greater/smaller element  \n- \\ud83d\\udcca Histogram problems  \n- \\ud83d\\udd25 Monotonic stack optimizations  \n- \\ud83e\\udde8 Removing elements greedily  \n- \\ud83e\\udde0 State tracking  \n\nStacks convert **nested**, **reversible**, and **dependency\\u2011based** problems into elegant solutions.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cL\\u2011I\\u2011F\\u2011O\\u201d**\nStack = **Last In, First Out**\n\nThink of a stack of plates:\n- Last plate placed \\u2192 first removed.\n\n---\n\n# **\\ud83c\\udf08 2. Basic Stack Operations**\n\n- **push(x)**  \n- **pop()**  \n- **top()**  \n- **empty()**  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nStack = **Undo machine**.\n\n---\n\n# **\\ud83c\\udf08 3. Classic Stack Problems**\n\n---\n\n## **\\ud83d\\udc99 Pattern 1: Valid Parentheses**\nPush opening brackets, pop when matching closing bracket appears.\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Push opens \\u2192 Pop closes**\n\n---\n\n## **\\ud83d\\udc9a Pattern 2: Min Stack**\nMaintain:\n- main stack  \n- min stack  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nPush new min when it becomes smaller.\n\n---\n\n## **\\ud83d\\udc9b Pattern 3: Reverse Polish Notation (RPN)**\nUse stack to evaluate postfix expressions.\n\n---\n\n# **\\ud83c\\udf08 4. Monotonic Stacks (The Real Power)**\n\nMonotonic stacks maintain elements in **sorted order** (increasing or decreasing) while scanning.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cM\\u2011S\\u2011S\\u201d**\nMonotonic Stack solves:\n\n- **M**ax/min range problems  \n- **S**pans  \n- **S**urrounding greater/smaller  \n\n---\n\n# **\\ud83c\\udf08 5. Next Greater / Smaller Element Patterns**\n\n---\n\n## **\\ud83d\\udc99 Pattern: Next Greater Element (NGE)**\nFind next element to the right that is greater.\n\n### **\\ud83c\\udfaf Logic**\nTraverse from right \\u2192 left  \nMaintain decreasing stack  \nPop smaller elements  \nTop of stack = NGE  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Right \\u2192 Left + Decreasing Stack**\n\n---\n\n## **\\ud83d\\udc9a Pattern: Next Smaller Element (NSE)**\nSame as NGE but maintain **increasing** stack.\n\n---\n\n## **\\ud83d\\udc9b Pattern: Previous Greater/Smaller**\nSame logic but traverse left \\u2192 right.\n\n---\n\n# **\\ud83c\\udf08 6. Stock Span Problem**\n\nSpan = number of consecutive days before today with price \\u2264 today.\n\n### **\\ud83c\\udfaf Logic**\nUse **monotonic decreasing stack** of indices.\n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Pop all smaller or equal \\u2192 compute span**\n\n---\n\n# **\\ud83c\\udf08 7. Daily Temperatures**\n\nFor each day, find next warmer day.\n\n### **\\ud83c\\udfaf Logic**\nSame as NGE but store indices.\n\n---\n\n# **\\ud83c\\udf08 8. Largest Rectangle in Histogram (LRH)**  \nOne of the most important monotonic stack problems.\n\n---\n\n## **\\ud83c\\udfaf Goal**\nFind largest rectangle in histogram bars.\n\n---\n\n## **\\ud83d\\udd25 Logic**\n1. Compute **NSL** (next smaller left)  \n2. Compute **NSR** (next smaller right)  \n3. Width = `right[i] - left[i] - 1`  \n4. Area = `height[i] * width`  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**NSL + NSR = LRH**\n\n---\n\n# **\\ud83c\\udf08 9. Maximal Rectangle (Matrix Version)**\n\nConvert each row into histogram heights \\u2192 apply LRH.\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Matrix \\u2192 Histogram \\u2192 LRH**\n\n---\n\n# **\\ud83c\\udf08 10. Remove K Digits (Greedy + Monotonic Stack)**\n\nRemove digits to form smallest number.\n\n### **\\ud83c\\udfaf Logic**\nUse **increasing stack**  \nPop while top &gt; current digit and k &gt; 0  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Pop big digits early**\n\n---\n\n# **\\ud83c\\udf08 11. Asteroid Collision**\n\nUse stack to simulate collisions.\n\n### **\\ud83c\\udfaf Logic**\n- Positive moves right  \n- Negative moves left  \n- Collide when directions oppose  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Stack stores right\\u2011moving asteroids**\n\n---\n\n# **\\ud83c\\udf08 12. Expression Evaluation**\n\n---\n\n## **\\ud83d\\udc99 Infix \\u2192 Postfix**\nUse operator precedence + stack.\n\n## **\\ud83d\\udc9a Evaluate Postfix**\nUse value stack.\n\n---\n\n# **\\ud83c\\udf08 13. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Forgetting to pop until stack is valid  \n- \\ud83d\\udea9 Using wrong monotonic direction  \n- \\ud83d\\udea9 Not handling equal elements correctly  \n- \\ud83d\\udea9 Off\\u2011by\\u2011one in LRH width  \n- \\ud83d\\udea9 Forgetting to append sentinel bars in LRH  \n- \\ud83d\\udea9 Using stack when queue is needed  \n- \\ud83d\\udea9 Not clearing stack between passes  \n\n---\n\n# **\\ud83c\\udf08 14. Problems You Can Now Solve**\n\n- Valid parentheses  \n- Min stack  \n- Reverse Polish notation  \n- Next greater element  \n- Next smaller element  \n- Stock span  \n- Daily temperatures  \n- Largest rectangle in histogram  \n- Maximal rectangle  \n- Remove K digits  \n- Asteroid collision  \n- Evaluate expressions  \n- Previous greater/smaller  \n- Sliding window maximum (monotonic deque)  \n\n---\n\n# **\\ud83c\\udf08 15. What You Must Master Today**\n\n- Stack fundamentals  \n- Monotonic increasing/decreasing stacks  \n- NGE/NS patterns  \n- Stock span  \n- Daily temperatures  \n- LRH + Maximal rectangle  \n- Greedy + stack hybrids  \n- Expression evaluation  \n- Asteroid collision logic  \n&quot;],&quot;examples&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;example01&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 1: Doubly Linked List Ops\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct DNode{int val;DNode*prev,*next;DNode(int x):val(x),prev(nullptr),next(nullptr){}};\nDNode* insertFront(DNode*head,int val){DNode*n=new DNode(val);if(head){n-&gt;next=head;head-&gt;prev=n;}return n;}\nDNode* deleteNode(DNode*head,int val){DNode*c=head;while(c&amp;&amp;c-&gt;val!=val)c=c-&gt;next;if(!c)return head;if(c-&gt;prev)c-&gt;prev-&gt;next=c-&gt;next;else head=c-&gt;next;if(c-&gt;next)c-&gt;next-&gt;prev=c-&gt;prev;return head;}\nDNode* reversDLL(DNode*head){DNode*c=head,*last=nullptr;while(c){DNode*n=c-&gt;next;c-&gt;next=c-&gt;prev;c-&gt;prev=n;last=c;c=n;}return last;}\nvoid print(DNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;&lt;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example02&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 2: Circular Linked List Ops\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct Node{int val;Node*next;Node(int x):val(x),next(nullptr){}};\nNode* insertCircular(Node*tail,int val){Node*n=new Node(val);if(!tail){n-&gt;next=n;return n;}n-&gt;next=tail-&gt;next;tail-&gt;next=n;return n;}\nvoid print(Node*tail,int k){Node*c=tail-&gt;next;for(int i=0;i&lt;k;i++){cout&lt;&lt;c-&gt;val&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example03&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 3: LRU Cache\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nclass LRUCache{\n    int cap; list&lt;pair&lt;int,int&gt;&gt; lst; unordered_map&lt;int,list&lt;pair&lt;int,int&gt;&gt;::iterator&gt; mp;\npublic:\n    LRUCache(int c):cap(c){}\n    int get(int k){if(!mp.count(k))return -1;lst.splice(lst.begin(),lst,mp[k]);return mp[k]-&gt;second;}\n    void put(int k,int v){if(mp.count(k)){mp[k]-&gt;second=v;lst.splice(lst.begin(),lst,mp[k]);return;}\n        if((int)lst.size()==cap){mp.erase(lst.back().first);lst.pop_back();}\n        lst.push_front({k,v});mp[k]=lst.begin();}\n};\nint main(){\n    LRUCache c(2);\n    c.put(1,1); c.put(2,2);\n    cout&lt;&lt;c.get(1)&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example04&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 4: Sort Doubly Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct DNode{int val;DNode*prev,*next;DNode(int x):val(x),prev(nullptr),next(nullptr){}};\n// Merge sort on DLL\nDNode* getMiddle(DNode*h){DNode*s=h,*f=h;while(f-&gt;next&amp;&amp;f-&gt;next-&gt;next){s=s-&gt;next;f=f-&gt;next-&gt;next;}return s;}\nDNode* merge(DNode*a,DNode*b){if(!a)return b;if(!b)return a;if(a-&gt;val&lt;=b-&gt;val){a-&gt;next=merge(a-&gt;next,b);if(a-&gt;next)a-&gt;next-&gt;prev=a;a-&gt;prev=nullptr;return a;}else{b-&gt;next=merge(a,b-&gt;next);if(b-&gt;next)b-&gt;next-&gt;prev=b;b-&gt;prev=nullptr;return b;}}\nDNode* mergeSort(DNode*h){if(!h||!h-&gt;next)return h;DNode*m=getMiddle(h);DNode*r=m-&gt;next;m-&gt;next=nullptr;if(r)r-&gt;prev=nullptr;return merge(mergeSort(h),mergeSort(r));}\nvoid print(DNode*h){while(h){cout&lt;&lt;h-&gt;val&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example05&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 5: BST to DLL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Convert BST to sorted doubly linked list in-place\nstruct TreeNode{int val;TreeNode*left,*right;TreeNode(int x):val(x),left(nullptr),right(nullptr){}};\nTreeNode*prev_node=nullptr,*head_dll=nullptr;\nvoid inorder(TreeNode*root){\n    if(!root)return;\n    inorder(root-&gt;left);\n    if(prev_node){prev_node-&gt;right=root;root-&gt;left=prev_node;}\n    else head_dll=root;\n    prev_node=root;\n    inorder(root-&gt;right);\n}\nint main(){\n    TreeNode* r=new TreeNode(4);r-&gt;left=new TreeNode(2);r-&gt;right=new TreeNode(6);r-&gt;left-&gt;left=new TreeNode(1);r-&gt;left-&gt;right=new TreeNode(3);r-&gt;right-&gt;left=new TreeNode(5);r-&gt;right-&gt;right=new TreeNode(7);\n    inorder(r);\n    TreeNode*c=head_dll;while(c){cout&lt;&lt;c-&gt;val&lt;&lt;\&quot; \\&quot;]}]]],&quot;exercises&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;exercise01&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 1: Doubly Linked List Ops\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Implement deque using doubly linked list\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise02&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 2: Circular Linked List Ops\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Implement LFU Cache (O(1) ops)\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise03&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 3: LRU Cache\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Insert into sorted doubly linked list\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise04&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 4: Sort Doubly Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Find pairs with sum in sorted DLL\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise05&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 5: BST to DLL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Reverse circular linked list\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}]]],&quot;solutions&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;solution01&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 1: Doubly Linked List Ops\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct DNode{int val;DNode*prev,*next;DNode(int x):val(x),prev(nullptr),next(nullptr){}};\nDNode* insertFront(DNode*head,int val){DNode*n=new DNode(val);if(head){n-&gt;next=head;head-&gt;prev=n;}return n;}\nDNode* deleteNode(DNode*head,int val){DNode*c=head;while(c&amp;&amp;c-&gt;val!=val)c=c-&gt;next;if(!c)return head;if(c-&gt;prev)c-&gt;prev-&gt;next=c-&gt;next;else head=c-&gt;next;if(c-&gt;next)c-&gt;next-&gt;prev=c-&gt;prev;return head;}\nDNode* reversDLL(DNode*head){DNode*c=head,*last=nullptr;while(c){DNode*n=c-&gt;next;c-&gt;next=c-&gt;prev;c-&gt;prev=n;last=c;c=n;}return last;}\nvoid print(DNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;&lt;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution02&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 2: Circular Linked List Ops\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct Node{int val;Node*next;Node(int x):val(x),next(nullptr){}};\nNode* insertCircular(Node*tail,int val){Node*n=new Node(val);if(!tail){n-&gt;next=n;return n;}n-&gt;next=tail-&gt;next;tail-&gt;next=n;return n;}\nvoid print(Node*tail,int k){Node*c=tail-&gt;next;for(int i=0;i&lt;k;i++){cout&lt;&lt;c-&gt;val&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution03&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 3: LRU Cache\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nclass LRUCache{\n    int cap; list&lt;pair&lt;int,int&gt;&gt; lst; unordered_map&lt;int,list&lt;pair&lt;int,int&gt;&gt;::iterator&gt; mp;\npublic:\n    LRUCache(int c):cap(c){}\n    int get(int k){if(!mp.count(k))return -1;lst.splice(lst.begin(),lst,mp[k]);return mp[k]-&gt;second;}\n    void put(int k,int v){if(mp.count(k)){mp[k]-&gt;second=v;lst.splice(lst.begin(),lst,mp[k]);return;}\n        if((int)lst.size()==cap){mp.erase(lst.back().first);lst.pop_back();}\n        lst.push_front({k,v});mp[k]=lst.begin();}\n};\nint main(){\n    LRUCache c(2);\n    c.put(1,1); c.put(2,2);\n    cout&lt;&lt;c.get(1)&lt;&lt;\&quot;\\\n\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution04&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 4: Sort Doubly Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct DNode{int val;DNode*prev,*next;DNode(int x):val(x),prev(nullptr),next(nullptr){}};\n// Merge sort on DLL\nDNode* getMiddle(DNode*h){DNode*s=h,*f=h;while(f-&gt;next&amp;&amp;f-&gt;next-&gt;next){s=s-&gt;next;f=f-&gt;next-&gt;next;}return s;}\nDNode* merge(DNode*a,DNode*b){if(!a)return b;if(!b)return a;if(a-&gt;val&lt;=b-&gt;val){a-&gt;next=merge(a-&gt;next,b);if(a-&gt;next)a-&gt;next-&gt;prev=a;a-&gt;prev=nullptr;return a;}else{b-&gt;next=merge(a,b-&gt;next);if(b-&gt;next)b-&gt;next-&gt;prev=b;b-&gt;prev=nullptr;return b;}}\nDNode* mergeSort(DNode*h){if(!h||!h-&gt;next)return h;DNode*m=getMiddle(h);DNode*r=m-&gt;next;m-&gt;next=nullptr;if(r)r-&gt;prev=nullptr;return merge(mergeSort(h),mergeSort(r));}\nvoid print(DNode*h){while(h){cout&lt;&lt;h-&gt;val&lt;&lt;\&quot; \\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution05&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 5: BST to DLL\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Convert BST to sorted doubly linked list in-place\nstruct TreeNode{int val;TreeNode*left,*right;TreeNode(int x):val(x),left(nullptr),right(nullptr){}};\nTreeNode*prev_node=nullptr,*head_dll=nullptr;\nvoid inorder(TreeNode*root){\n    if(!root)return;\n    inorder(root-&gt;left);\n    if(prev_node){prev_node-&gt;right=root;root-&gt;left=prev_node;}\n    else head_dll=root;\n    prev_node=root;\n    inorder(root-&gt;right);\n}\nint main(){\n    TreeNode* r=new TreeNode(4);r-&gt;left=new TreeNode(2);r-&gt;right=new TreeNode(6);r-&gt;left-&gt;left=new TreeNode(1);r-&gt;left-&gt;right=new TreeNode(3);r-&gt;right-&gt;left=new TreeNode(5);r-&gt;right-&gt;right=new TreeNode(7);\n    inorder(r);\n    TreeNode*c=head_dll;while(c){cout&lt;&lt;c-&gt;val&lt;&lt;\&quot; \\&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;DayTabs&quot;,&quot;value&quot;:true}" await-children><div><div class="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-1 mb-6 border-b border-slate-800"><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap bg-slate-700 text-white">📖 README</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">🧠 Theory</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">💻 Examples <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✏️ Exercises <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✅ Solutions <span class="ml-1 text-xs text-slate-500">5</span></button></div><div><hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">Day 13 \u2014 Doubly Linked List + Circular Linked List + LRU Cache Intuition (README.rst)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3"><em>30 Days to DSA in C++ \u2014 Ultra\u2011Premium Edition</em></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">1. Introduction</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Today\u2019s focus is on <strong class="text-white font-semibold">advanced linked list structures</strong> that power real\u2011world systems:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Doubly Linked List (DLL)</strong></li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Circular Linked List (CLL)</strong></li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">LRU Cache (DLL + HashMap)</strong></li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">These structures are used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Browser history</li>
+<li class="text-slate-300 ml-2">Undo/redo systems</li>
+<li class="text-slate-300 ml-2">Media playlists</li>
+<li class="text-slate-300 ml-2">Task schedulers</li>
+<li class="text-slate-300 ml-2">Cache systems (LRU, LFU)</li>
+<li class="text-slate-300 ml-2">OS memory management</li>
+<li class="text-slate-300 ml-2">Graph adjacency lists</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day builds the foundation for implementing efficient caches and advanced data structures.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">2. Doubly Linked List (DLL)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">A DLL node contains:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">prev</code> pointer</li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">next</code> pointer</li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">value</code></li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">2.1 Node Structure</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>struct Node {
+    int val;
+    Node* prev;
+    Node* next;
+    Node(int x) : val(x), prev(NULL), next(NULL) {}
+};</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3. Basic Operations on DLL</strong></h2>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">3.1 Insert at Head</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void insertHead(Node* &amp;head, int x) {
+    Node* n = new Node(x);
+    n-&gt;next = head;
+    if (head) head-&gt;prev = n;
+    head = n;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">3.2 Insert at Tail</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void insertTail(Node* &amp;head, int x) {
+    Node* n = new Node(x);
+    if (!head) {
+        head = n;
+        return;
+    }
+    Node* temp = head;
+    while (temp-&gt;next) temp = temp-&gt;next;
+    temp-&gt;next = n;
+    n-&gt;prev = temp;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">3.3 Delete a Node</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void deleteNode(Node* &amp;head, Node* del) {
+    if (!head || !del) return;
+
+    if (head == del) head = del-&gt;next;
+
+    if (del-&gt;next) del-&gt;next-&gt;prev = del-&gt;prev;
+    if (del-&gt;prev) del-&gt;prev-&gt;next = del-&gt;next;
+
+    delete del;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">4. Advantages of DLL</strong></h2>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Bidirectional traversal</li>
+<li class="text-slate-300 ml-2">Easy deletion (O(1))</li>
+<li class="text-slate-300 ml-2">Easy insertion before/after a node</li>
+<li class="text-slate-300 ml-2">Used in LRU Cache</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">5. Circular Linked List (CLL)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">A circular linked list\u2019s last node points back to the head.</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>head \u2192 1 \u2192 2 \u2192 3 \u2192 4 \u2192 (back to head)</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">6. CLL Node Structure</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Same as singly linked list.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">7. Basic Operations on CLL</strong></h2>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">7.1 Insert at Head</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void insertHead(Node* &amp;head, int x) {
+    Node* n = new Node(x);
+
+    if (!head) {
+        head = n;
+        n-&gt;next = head;
+        return;
+    }
+
+    Node* temp = head;
+    while (temp-&gt;next != head) temp = temp-&gt;next;
+
+    temp-&gt;next = n;
+    n-&gt;next = head;
+    head = n;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">7.2 Insert at Tail</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void insertTail(Node* &amp;head, int x) {
+    Node* n = new Node(x);
+
+    if (!head) {
+        head = n;
+        n-&gt;next = head;
+        return;
+    }
+
+    Node* temp = head;
+    while (temp-&gt;next != head) temp = temp-&gt;next;
+
+    temp-&gt;next = n;
+    n-&gt;next = head;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">7.3 Delete Head</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void deleteHead(Node* &amp;head) {
+    if (!head) return;
+
+    if (head-&gt;next == head) {
+        delete head;
+        head = NULL;
+        return;
+    }
+
+    Node* temp = head;
+    while (temp-&gt;next != head) temp = temp-&gt;next;
+
+    Node* del = head;
+    temp-&gt;next = head-&gt;next;
+    head = head-&gt;next;
+
+    delete del;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">8. Applications of Circular Linked List</strong></h1>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Round\u2011robin scheduling</li>
+<li class="text-slate-300 ml-2">Multiplayer games</li>
+<li class="text-slate-300 ml-2">Music playlists</li>
+<li class="text-slate-300 ml-2">Token passing in networks</li>
+<li class="text-slate-300 ml-2">Implementing queues with wrap\u2011around</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">9. LRU Cache \u2014 Intuition &amp; Implementation</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">LRU (Least Recently Used) Cache is one of the most important interview problems.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">9.1 Requirements</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">get(key)</code> \u2192 O(1)</li>
+<li class="text-slate-300 ml-2"><code class="bg-slate-800 text-emerald-300 px-1.5 py-0.5 rounded text-sm font-mono">put(key, value)</code> \u2192 O(1)</li>
+<li class="text-slate-300 ml-2">Remove least recently used item when full</li>
+</ul>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">9.2 Data Structures Used</strong></h3>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">Doubly Linked List</strong> \u2192 maintain usage order</li>
+<li class="text-slate-300 ml-2"><strong class="text-white font-semibold">HashMap</strong> \u2192 store key \u2192 node pointer</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">10. LRU Cache Architecture</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>HashMap: key \u2192 DLL node
+
+DLL:
+head = most recently used
+tail = least recently used</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Operations:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Move accessed node to head</li>
+<li class="text-slate-300 ml-2">Insert new node at head</li>
+<li class="text-slate-300 ml-2">Remove tail when capacity full</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">11. LRU Cache Implementation</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>class LRUCache {
+public:
+    int cap;
+    unordered_map&lt;int, Node*&gt; mp;
+    Node *head, *tail;
+
+    LRUCache(int capacity) {
+        cap = capacity;
+        head = new Node(0);
+        tail = new Node(0);
+        head-&gt;next = tail;
+        tail-&gt;prev = head;
+    }
+
+    void remove(Node* node) {
+        Node* p = node-&gt;prev;
+        Node* n = node-&gt;next;
+        p-&gt;next = n;
+        n-&gt;prev = p;
+    }
+
+    void insert(Node* node) {
+        Node* p = head-&gt;next;
+        head-&gt;next = node;
+        node-&gt;prev = head;
+        node-&gt;next = p;
+        p-&gt;prev = node;
+    }
+
+    int get(int key) {
+        if (!mp.count(key)) return -1;
+
+        Node* node = mp[key];
+        remove(node);
+        insert(node);
+
+        return node-&gt;val;
+    }
+
+    void put(int key, int value) {
+        if (mp.count(key)) {
+            remove(mp[key]);
+        }
+
+        if (mp.size() == cap) {
+            mp.erase(tail-&gt;prev-&gt;key);
+            remove(tail-&gt;prev);
+        }
+
+        Node* node = new Node(value);
+        node-&gt;key = key;
+        insert(node);
+        mp[key] = node;
+    }
+};</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">12. Real\u2011World Examples</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 1 \u2014 Browser History</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">DLL allows:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Back</li>
+<li class="text-slate-300 ml-2">Forward</li>
+<li class="text-slate-300 ml-2">Insert new page</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 2 \u2014 Undo/Redo System</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">DLL stores operations.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 3 \u2014 Music Playlist</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">CLL allows infinite looping.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 4 \u2014 LRU Cache in OS</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Used in:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Page replacement</li>
+<li class="text-slate-300 ml-2">Memory management</li>
+<li class="text-slate-300 ml-2">CPU cache</li>
+</ul>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">13. Interview\u2011Level Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 1 \u2014 LRU Cache</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">HashMap + DLL.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 2 \u2014 Flatten multilevel DLL</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Recursive pointer manipulation.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 3 \u2014 Insert/Delete in DLL</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Pointer adjustments.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 4 \u2014 Detect cycle in CLL</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use fast\u2011slow pointers.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 5 \u2014 Delete node in CLL</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Pointer rewiring.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">14. Exercises (Try First)</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 1</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Implement a doubly linked list with insert/delete operations.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 2</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Implement a circular linked list with insert/delete operations.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 3</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Implement LRU Cache with O(1) operations.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 4</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Flatten a multilevel doubly linked list.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 5</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Check if a circular linked list has a cycle (trick question).</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">15. Solutions</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 1 \u2014 DLL operations</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use code from section 3.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 2 \u2014 CLL operations</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use code from section 7.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 3 \u2014 LRU Cache</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use implementation from section 11.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 4 \u2014 Flatten DLL</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Recursive pointer merging.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 5 \u2014 Cycle in CLL</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">A CLL <strong class="text-white font-semibold">always</strong> has a cycle.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">16. Summary</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Today you mastered:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Doubly linked lists</li>
+<li class="text-slate-300 ml-2">Circular linked lists</li>
+<li class="text-slate-300 ml-2">Efficient insert/delete operations</li>
+<li class="text-slate-300 ml-2">LRU Cache architecture</li>
+<li class="text-slate-300 ml-2">HashMap + DLL integration</li>
+<li class="text-slate-300 ml-2">Real\u2011world applications</li>
+<li class="text-slate-300 ml-2">Interview\u2011level linked list patterns</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day builds the foundation for advanced linked list problems in Days 14 and 15.</p></div></div><!--astro:end--></astro-island> <!-- Prev / Next --> <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800"> <a href="/day/day12-singly-linked-list-reverse-middle-cycle-remove-nth-node" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"> <span class="text-lg">←</span> <span class="hidden sm:inline">Day 12 · Singly Linked List Reverse Middle Cycle Remove Nth Node</span> <span class="sm:hidden">Prev</span> </a> <a href="/day/day14-fast-and-slow-pointers-palindrome-linked-list" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right"> <span class="hidden sm:inline">Day 14 · Fast And Slow Pointers Palindrome Linked List</span> <span class="sm:hidden">Next</span> <span class="text-lg">→</span> </a> </div> </div>  </main> <!-- Footer --> <footer class="border-t border-slate-800/60 mt-16 py-8 text-center text-xs text-slate-600">
+30 Days to DSA in C++ · Built with Astro
+</footer> </body></html>

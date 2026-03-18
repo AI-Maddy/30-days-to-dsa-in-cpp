@@ -8,22 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Here it is, Sasimegala — your **Day 17** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 17 is the **true masterclass** of monotonic data structures.  
-Today you learn the patterns that power:
-
-- Largest Rectangle in Histogram  
-- Maximal Rectangle  
-- Sliding Window Maximum  
-- Daily Temperatures  
-- Next Greater/Smaller variants  
-- Monotonic Queue for O(1) window queries  
-- Stack/Queue hybrids  
-
-This is one of the **most important** days in the entire 30‑day curriculum.
-
----
 
 # **Day 17 – 🔥 Monotonic Stack + Monotonic Queue Patterns + Largest Rectangle in Histogram**  
 `theory.rst`
@@ -294,15 +278,4 @@ Use stack to find boundaries.
 - LRH (Largest Rectangle in Histogram)  
 - Maximal Rectangle  
 - Sliding window max/min  
-- Stack vs deque decision making  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 17 README (ultra‑premium)**  
-🧠 **C++ templates for all monotonic stack/queue patterns**  
-🎯 **20 FAANG‑level monotonic stack/queue problems**  
-📘 **Monotonic Stack & Queue cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Stack vs deque decision making

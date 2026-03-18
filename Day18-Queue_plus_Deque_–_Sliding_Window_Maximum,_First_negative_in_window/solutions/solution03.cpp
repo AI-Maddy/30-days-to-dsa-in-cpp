@@ -1,35 +1,23 @@
+/*
+ * Solution 3: Circular Queue
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution03
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+class CircularQueue{int*data;int front,rear,size,cap;
+public:
+    CircularQueue(int k):cap(k),front(0),rear(-1),size(0){data=new int[k];}
+    bool enqueue(int v){if(size==cap)return false;rear=(rear+1)%cap;data[rear]=v;size++;return true;}
+    bool dequeue(){if(!size)return false;front=(front+1)%cap;size--;return true;}
+    int getFront(){return size?data[front]:-1;}
+    int getRear(){return size?data[rear]:-1;}
+    bool isEmpty(){return size==0;}
+    bool isFull(){return size==cap;}
+};
+int main(){
+    CircularQueue cq(3);cq.enqueue(1);cq.enqueue(2);cq.enqueue(3);
+    cout<<cq.isFull()<<"\n"; // 1
+    cout<<cq.getRear()<<"\n"; // 3
+    cq.dequeue();cq.enqueue(4);
+    cout<<cq.getFront()<<"\n"; // 2
     return 0;
 }

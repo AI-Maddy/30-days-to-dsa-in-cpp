@@ -1,54 +1,18 @@
 /*
- * Example 3: Jump Game Reachability (Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants)
+ * Example 3: Jump Game I
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Greedy revision plus Activity Selection plus Fractional Knapsack plus Jump Game variants
-// Task      : Jump Game Reachability
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: jump_game_reachability ---
-// Purpose    : Compute the result for `jump_game_reachability`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int jump_game_reachability(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
+// Example 3: Jump Game I — can you reach the last index?
+bool canJump(vector<int>& nums) {
+    int maxReach = 0;
+    for (int i = 0; i < (int)nums.size(); i++) {
+        if (i > maxReach) return false; // current index unreachable
+        maxReach = max(maxReach, i + nums[i]);
     }
-    return score + 3;
+    return true;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << jump_game_reachability(data) << "\n";
-    return 0;
+    vector<int> nums1 = {2,3,1,1,4}; cout << canJump(nums1) << "\n"; // 1
+    vector<int> nums2 = {3,2,1,0,4}; cout << canJump(nums2) << "\n"; // 0
 }

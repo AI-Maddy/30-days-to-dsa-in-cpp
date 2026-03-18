@@ -1,54 +1,30 @@
 /*
- * Example 3: House Robber (1D DP patterns plus Mini revision plus Solve mixed medium hard problems)
+ * Example 3: LIS O(nlogn)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : 1D DP patterns plus Mini revision plus Solve mixed medium hard problems
-// Task      : House Robber
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: house_robber ---
-// Purpose    : Compute the result for `house_robber`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int house_robber(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
-    }
-    return score + 3;
+// Example 3: Longest Increasing Subsequence (LIS)
+// O(n^2) DP
+int lisDP(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> dp(n, 1);
+    for (int i = 1; i < n; i++)
+        for (int j = 0; j < i; j++)
+            if (nums[j] < nums[i]) dp[i] = max(dp[i], dp[j] + 1);
+    return *max_element(dp.begin(), dp.end());
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+// O(n log n) patience sorting
+int lisOptimal(vector<int>& nums) {
+    vector<int> tails;
+    for (int x : nums) {
+        auto it = lower_bound(tails.begin(), tails.end(), x);
+        if (it == tails.end()) tails.push_back(x);
+        else *it = x;
+    }
+    return tails.size();
+}
 int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << house_robber(data) << "\n";
-    return 0;
+    vector<int> nums = {10,9,2,5,3,7,101,18};
+    cout << lisDP(nums) << "\n";      // 4
+    cout << lisOptimal(nums) << "\n"; // 4
 }

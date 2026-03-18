@@ -1,38 +1,8 @@
 /*
- * Exercise 3: Cycle Detection (Doubly plus Circular Linked List plus LRU Cache intuition)
+ * Exercise 3: LRU Cache
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Doubly plus Circular Linked List plus LRU Cache intuition
-// Task      : Cycle Detection
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: cycle_detection ---
-// Purpose    : Apply pointer/index transformation in `cycle_detection`.
-// Approach   : Use two-pointer or fast-slow pointer mechanics for linear traversal.
-// Complexity : O(n) time, O(1) auxiliary space for in-place variants.
-// Notes      : Carefully handle edge cases for size 0/1 and pointer updates.
-// Pseudocode:
-// 1) Initialize pointers/iterators to required positions.
-// 2) Move pointers per condition while updating state.
-// 3) Handle crossing/meeting/base edge conditions.
-// 4) Return transformed structure or boolean/result value.
-    int cycle_detection(ListNode* head) {
-        int len = 0;
-        while (head) { len++; head = head->next; }
-        return len + 3;
-    }
-};
+// Problem: Insert into sorted doubly linked list
+void solve(){}
+int main(){solve();return 0;}

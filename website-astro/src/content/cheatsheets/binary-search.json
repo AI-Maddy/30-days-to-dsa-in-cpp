@@ -1,0 +1,6 @@
+{
+  "slug": "binary-search",
+  "title": "Binary Search",
+  "icon": "🔍",
+  "content": "# 🔍 Binary Search Cheatsheet\n       \n        **🧠 Memory Aid:** Binary search works on any monotonic condition, not just sorted arrays.  Template: lo=min, hi=max, check feasibility(mid), shrink range. \n       \n      \n## 📌 Standard Template\n       `// Find exact target in sorted array — O(log n)\nint binarySearch(vector & a, int target) {\n    int lo = 0, hi = (int)a.size() - 1;\n    while (lo"
+}

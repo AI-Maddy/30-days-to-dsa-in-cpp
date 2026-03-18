@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Here it is, Sasimegala — **Day 03**, crafted with the same ultra‑premium depth, clarity, and richness as Days 01 and 02.  
-This README is long, example‑rich, interview‑oriented, and structured exactly for your 30‑day DSA mastery repo.
-
----
 
 # **Day 03 — Bit Manipulation in C++ (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -431,7 +427,3 @@ Today you mastered:
 
 Bit manipulation is one of the most powerful tools in your DSA arsenal.  
 You’ll use these tricks repeatedly in sliding window, hashing, DP, graphs, and more.
-
----
-
-If you’re ready, I’ll prepare **Day 04 — 1D Arrays: Two Pointers & Sliding Window Basics** with the same ultra‑premium depth.

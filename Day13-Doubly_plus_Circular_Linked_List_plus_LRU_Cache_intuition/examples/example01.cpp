@@ -1,50 +1,16 @@
 /*
- * Example 1: Reverse List (Doubly plus Circular Linked List plus LRU Cache intuition)
+ * Example 1: Doubly Linked List Ops
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Doubly plus Circular Linked List plus LRU Cache intuition
-// Task      : Reverse List
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// --- Function Explanation: reverse_list ---
-// Purpose    : Compute optimal substructure value using `reverse_list`.
-// Approach   : Build DP state transitions from smaller subproblems.
-// Complexity : Usually O(states × transitions), space O(states) unless compressed.
-// Notes      : State definition and transition order are the key correctness points.
-// Pseudocode:
-// 1) Define DP state and base conditions.
-// 2) Iterate states in dependency-safe order.
-// 3) Apply transition recurrence to update best value.
-// 4) Return target state result.
-int reverse_list(ListNode* head) {
-    int ans = 0;
-    while (head) { ans += head->val; head = head->next; }
-    return ans + 1;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2); a->next->next = new ListNode(3);
-    cout << reverse_list(a) << "\n";
+struct DNode{int val;DNode*prev,*next;DNode(int x):val(x),prev(nullptr),next(nullptr){}};
+DNode* insertFront(DNode*head,int val){DNode*n=new DNode(val);if(head){n->next=head;head->prev=n;}return n;}
+DNode* deleteNode(DNode*head,int val){DNode*c=head;while(c&&c->val!=val)c=c->next;if(!c)return head;if(c->prev)c->prev->next=c->next;else head=c->next;if(c->next)c->next->prev=c->prev;return head;}
+DNode* reversDLL(DNode*head){DNode*c=head,*last=nullptr;while(c){DNode*n=c->next;c->next=c->prev;c->prev=n;last=c;c=n;}return last;}
+void print(DNode*h){while(h){cout<<h->val;if(h->next)cout<<"<->";h=h->next;}cout<<"\n";}
+int main(){
+    DNode*h=nullptr; for(int x:{5,4,3,2,1}) h=insertFront(h,x); print(h);
+    h=deleteNode(h,3); print(h);
+    print(reversDLL(h));
     return 0;
 }

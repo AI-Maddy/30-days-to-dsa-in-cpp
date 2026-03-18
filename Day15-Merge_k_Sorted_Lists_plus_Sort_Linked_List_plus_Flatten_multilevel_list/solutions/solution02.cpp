@@ -1,53 +1,16 @@
 /*
- * Solution 2: Middle Node (Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list)
+ * Solution 2: Sort Linked List
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list
-// Task      : Middle Node
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: middle_node ---
-// Purpose    : Compute the result for `middle_node`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int middle_node(ListNode* head) {
-        int len = 0;
-        while (head) { len++; head = head->next; }
-        return len + 2;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2);
-    Solution s; cout << s.middle_node(a) << "\n"; return 0;
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+ListNode* mid(ListNode*h,ListNode*t){ListNode*s=h,*f=h;while(f!=t&&f->next!=t){s=s->next;f=f->next->next;}return s;}
+ListNode* merge(ListNode*a,ListNode*b){ListNode d(0);ListNode*c=&d;while(a&&b){if(a->val<=b->val){c->next=a;a=a->next;}else{c->next=b;b=b->next;}c=c->next;}c->next=a?a:b;return d.next;}
+ListNode* mergeSort(ListNode*h,ListNode*t){if(h==t||!h)return h;ListNode*m=mid(h,t);ListNode*r=m->next;m->next=nullptr;return merge(mergeSort(h,m),mergeSort(r,t));}
+ListNode* sortList(ListNode*h){if(!h||!h->next)return h;ListNode*t=h;while(t->next)t=t->next;return mergeSort(h,t);}
+int main(){
+    print(sortList(build({4,2,1,3}))); // 1->2->3->4
+    return 0;
 }

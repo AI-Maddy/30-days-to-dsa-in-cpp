@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — **Day 22** is here, and this one is a *beautiful*, high‑impact chapter in your tree mastery.  
-Today we go beyond basic traversals and BST logic into **Tree DP**, **views**, and **advanced BFS/DFS patterns** that show up constantly in FAANG interviews.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium quality as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 22 — Tree DP: Path Sums, Zigzag Traversal, Boundary Traversal, Views (Top/Bottom/Left/Right) (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -481,7 +475,3 @@ Today you mastered:
 - BFS + DFS + Tree DP patterns  
 
 This day is a major milestone — you now understand the full breadth of binary tree traversal patterns used in interviews.
-
----
-
-If you want, I’ll prepare **Day 23 — Graphs: BFS, DFS, Adjacency List, Cycle Detection (Directed + Undirected)** with the same ultra‑premium depth.

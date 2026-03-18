@@ -1,50 +1,43 @@
 /*
  * Example 1: Vector Sort (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Cplusplus STL Mastery
-// Task      : Vector Sort
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: vector_sort ---
-// Purpose    : Reorder data according to problem rule in `vector_sort`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-int vector_sort(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << vector_sort(data) << "\n";
+    vector<int> v = {5, 2, 8, 1, 9, 3, 7, 4, 6};
+    cout << "Original: "; for (int x : v) cout << x << " "; cout << "\n";
+
+    // sort() — O(n log n)
+    sort(v.begin(), v.end());
+    cout << "Ascending: "; for (int x : v) cout << x << " "; cout << "\n";
+
+    // reverse() — O(n)
+    reverse(v.begin(), v.end());
+    cout << "Descending: "; for (int x : v) cout << x << " "; cout << "\n";
+
+    sort(v.begin(), v.end());  // re-sort for search
+
+    // binary_search — requires sorted range, O(log n)
+    cout << "\nbinary_search(7): " << binary_search(v.begin(), v.end(), 7) << "\n";
+
+    // lower_bound — first element >= value
+    auto lb = lower_bound(v.begin(), v.end(), 5);
+    cout << "lower_bound(5) index: " << (lb - v.begin()) << " value: " << *lb << "\n";
+
+    // upper_bound — first element > value
+    auto ub = upper_bound(v.begin(), v.end(), 5);
+    cout << "upper_bound(5) index: " << (ub - v.begin()) << " value: " << *ub << "\n";
+
+    // Count occurrences in sorted array
+    vector<int> d = {1,2,2,2,3,4,4,5};
+    int cnt = upper_bound(d.begin(),d.end(),2) - lower_bound(d.begin(),d.end(),2);
+    cout << "\nCount of 2 in {1,2,2,2,3,4,4,5}: " << cnt << "\n";
+
+    // Custom comparator: sort by absolute value
+    vector<int> w = {-3, 1, -4, 2, -5};
+    sort(w.begin(), w.end(), [](int a, int b){ return abs(a) < abs(b); });
+    cout << "Sorted by |val|: "; for (int x : w) cout << x << " "; cout << "\n";
+
     return 0;
 }

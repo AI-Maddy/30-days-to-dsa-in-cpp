@@ -8,23 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here is your **Day 15 (Re‑done)** theory file, rebuilt exactly as you requested:
-
-**Day 15 – Merge k Sorted Lists + Sort Linked List + Flatten Multilevel Linked List**  
-in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-This is one of the **most important** days in the Linked List arc because these three problems represent the **highest‑level FAANG patterns** involving:
-
-- Priority queues  
-- Divide & conquer  
-- Merge sort  
-- Multi‑level pointer rewiring  
-- Recursion + merging  
-- Deep structural manipulation  
-
-Let’s build the most beautiful, memorable theory file for Day 15.
-
----
 
 # **Day 15 – 🔥 Merge k Sorted Lists + Sort Linked List + Flatten Multilevel List**  
 `theory.rst`
@@ -274,15 +257,4 @@ These problems require:
 - Pointer rewiring  
 - Recursion + merging  
 - Handling child pointers  
-- Maintaining next/prev integrity  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 15 README (ultra‑premium)**  
-🧠 **C++ templates for all 3 patterns**  
-🎯 **20 linked list interview problems**  
-📘 **Linked List Advanced cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Maintaining next/prev integrity

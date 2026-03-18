@@ -1,53 +1,26 @@
 /*
- * Solution 4: Diameter (Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View)
+ * Solution 4: Bottom View
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View
-// Task      : Diameter
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: diameter ---
-// Purpose    : Compute the result for `diameter`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int diameter(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + diameter(root->left) + diameter(root->right);
+void bottomView(TreeNode* root) {
+    if (!root) return;
+    map<int,int> m; queue<pair<TreeNode*,int>> q; q.push({root,0});
+    while (!q.empty()) {
+        auto [node,col] = q.front(); q.pop();
+        m[col] = node->val;
+        if (node->left)  q.push({node->left,  col-1});
+        if (node->right) q.push({node->right, col+1});
     }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+    for (auto& [c,v] : m) cout << v << " "; cout << "\n";
+}
 int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    Solution s; cout << s.diameter(r) + 4 << "\n"; return 0;
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    TreeNode* r = new TreeNode(20);
+    r->left = new TreeNode(8); r->right = new TreeNode(22);
+    r->left->left = new TreeNode(5); r->left->right = new TreeNode(3);
+    r->left->right->left = new TreeNode(10); r->left->right->right = new TreeNode(14);
+    bottomView(r);
 }

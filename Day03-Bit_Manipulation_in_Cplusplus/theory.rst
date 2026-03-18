@@ -8,11 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here is your **Day 3 – THEORY.rst**, crafted with the same ultra‑premium, colorful, icon‑rich, highly‑memorizable style as Day 1 and Day 2.
-
-This is **Day 3: Bit Manipulation in C++**, designed to be crystal‑clear, deep, and unforgettable.
-
----
 
 # **Day 3 – THEORY.rst**  
 ## **⚡ Bit Manipulation in C++ – Mastering Bits, Masks, Tricks & Patterns**
@@ -379,13 +374,3 @@ This knowledge becomes essential for:
 - Optimization problems  
 
 You now have the **bit‑level superpowers** needed for advanced DSA.
-
----
-
-If you want, I can now generate:
-
-- **Day 3 README.rst**  
-- **Day 4 theory.rst**  
-- **A complete Bit Manipulation cheat sheet**  
-
-Just tell me what you want next.

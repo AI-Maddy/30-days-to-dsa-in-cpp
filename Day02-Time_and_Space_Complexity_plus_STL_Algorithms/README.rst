@@ -8,13 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes **Day 02**, crafted with the same ultra‑premium depth, clarity, and richness as Day 01.  
-This is a **long, interview‑oriented, example‑heavy, 150+ line README.rst**, perfect for your 30‑day DSA mastery repo.
-
----
 
 # **Day 02 — Time & Space Complexity + STL Algorithms (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -416,7 +412,3 @@ Today you mastered:
 - Real‑world STL usage  
 
 This is one of the most important days in the entire 30‑day plan.
-
----
-
-If you’re ready, I’ll prepare **Day 03 — Bit Manipulation in C++** with the same ultra‑premium depth.

@@ -1,50 +1,33 @@
 /*
- * Example 5: Word Search (N Queens, Sudoku Solver, Word Search, Rat in Maze)
+ * Example 5: Rat in a Maze
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : N Queens, Sudoku Solver, Word Search, Rat in Maze
-// Task      : Word Search
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: word_search ---
-// Purpose    : Locate target condition/index via `word_search`.
-// Approach   : Use binary/conditional narrowing on search space with invariant maintenance.
-// Complexity : O(log n) time on sorted/monotonic search spaces; O(1) extra space.
-// Notes      : Behavior depends on sortedness/monotonicity precondition.
-// Pseudocode:
-// 1) Initialize search boundaries or pointers.
-// 2) Repeatedly pick probe/mid and compare with target rule.
-// 3) Shrink the valid range while preserving invariants.
-// 4) Return found index/value or fallback result.
-int word_search(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
+// Example 5: Rat in a Maze (find all paths)
+int N;
+vector<string> maze;
+vector<string> paths;
+int dx[] = {1, 0, 0, -1};
+int dy[] = {0, 1, -1,  0};
+char dc[] = {'D', 'R', 'L', 'U'};
+void solve(int x, int y, string path, vector<vector<bool>>& visited) {
+    if (x == N-1 && y == N-1) { paths.push_back(path); return; }
+    for (int d = 0; d < 4; d++) {
+        int nx = x + dx[d], ny = y + dy[d];
+        if (nx >= 0 && nx < N && ny >= 0 && ny < N && !visited[nx][ny] && maze[nx][ny] == '1') {
+            visited[nx][ny] = true;
+            solve(nx, ny, path + dc[d], visited);
+            visited[nx][ny] = false;
+        }
+    }
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << word_search(data) << "\n";
-    return 0;
+    N = 4;
+    maze = {"1100","1110","0110","0011"};
+    if (maze[0][0] == '0' || maze[N-1][N-1] == '0') { cout << "No path\n"; return 0; }
+    vector<vector<bool>> visited(N, vector<bool>(N, false));
+    visited[0][0] = true;
+    solve(0, 0, "", visited);
+    if (paths.empty()) cout << "No path\n";
+    else for (auto& p : paths) cout << p << "\n";
 }

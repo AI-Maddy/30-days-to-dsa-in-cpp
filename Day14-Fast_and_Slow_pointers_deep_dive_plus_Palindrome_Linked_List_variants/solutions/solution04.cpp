@@ -1,53 +1,21 @@
 /*
- * Solution 4: Merge Two Lists (Fast and Slow pointers deep dive plus Palindrome Linked List variants)
+ * Solution 4: Reorder List
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Fast and Slow pointers deep dive plus Palindrome Linked List variants
-// Task      : Merge Two Lists
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: merge_two_lists ---
-// Purpose    : Reorder data according to problem rule in `merge_two_lists`.
-// Approach   : Apply comparison-based ordering and maintain partition/merge invariants.
-// Complexity : Typically O(n log n) time; extra space depends on chosen sorting strategy.
-// Notes      : Handles duplicates according to comparator logic.
-// Pseudocode:
-// 1) Define ordering criterion/comparator.
-// 2) Partition/merge/reorder elements per criterion.
-// 3) Maintain stability/invariant as needed.
-// 4) Return sorted/rearranged sequence or computed metric.
-    int merge_two_lists(ListNode* head) {
-        int len = 0;
-        while (head) { len++; head = head->next; }
-        return len + 4;
-    }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2);
-    Solution s; cout << s.merge_two_lists(a) << "\n"; return 0;
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+// Reorder: L0->Ln->L1->Ln-1->...
+void reorder(ListNode*h){
+    if(!h||!h->next)return;
+    ListNode*s=h,*f=h;while(f->next&&f->next->next){s=s->next;f=f->next->next;}
+    ListNode*second=s->next; s->next=nullptr;
+    ListNode*p=nullptr,*c=second;while(c){ListNode*n=c->next;c->next=p;p=c;c=n;} second=p;
+    ListNode*p1=h,*p2=second;
+    while(p2){ListNode*n1=p1->next,*n2=p2->next;p1->next=p2;p2->next=n1;p1=n1;p2=n2;}
+}
+int main(){
+    ListNode*h=build({1,2,3,4,5});reorder(h);print(h); // 1->5->2->4->3
+    return 0;
 }

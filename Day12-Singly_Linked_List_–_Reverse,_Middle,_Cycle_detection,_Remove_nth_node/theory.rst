@@ -8,16 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 12** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
-
-Since Day 11 covered **Advanced Binary Search**, the natural next step in your 30‑day DSA roadmap is:
-
-# **Day 12 – 🧩 Two Pointers Deep Dive + Meet-in-the-Middle + Prefix Tricks**  
-(You can rename if your internal roadmap differs.)
-
-This day expands the two‑pointer universe far beyond sliding windows — into **sorted arrays**, **pair/triplet logic**, **meet‑in‑the‑middle**, and **prefix‑based optimizations**.
-
----
 
 # **Day 12 – 🔥 Two Pointers Mastery + Meet‑in‑the‑Middle + Prefix Tricks**  
 `theory.rst`
@@ -282,15 +272,4 @@ Two pointers + monotonic deque.
 - String two‑pointer patterns  
 - Geometry two‑pointer patterns  
 - Meet‑in‑the‑middle  
-- Prefix + two pointer hybrid patterns  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 12 README (ultra‑premium)**  
-🧠 **C++ templates for all two‑pointer patterns**  
-🎯 **20 two‑pointer interview problems**  
-📘 **Two‑Pointer cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Prefix + two pointer hybrid patterns

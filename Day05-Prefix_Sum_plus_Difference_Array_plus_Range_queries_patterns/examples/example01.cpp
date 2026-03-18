@@ -1,50 +1,22 @@
 /*
  * Example 1: Prefix Sum Query (Prefix Sum plus Difference Array plus Range queries patterns)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Prefix Sum plus Difference Array plus Range queries patterns
-// Task      : Prefix Sum Query
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: prefix_sum_query ---
-// Purpose    : Answer aggregate/range computation in `prefix_sum_query`.
-// Approach   : Use running aggregate (prefix/sliding window) to avoid recomputation.
-// Complexity : O(n) preprocessing/scan with O(1) per update or query pattern.
-// Notes      : Watch index boundaries for left/right endpoints.
-// Pseudocode:
-// 1) Initialize running aggregate/prefix state.
-// 2) Scan array and update aggregate incrementally.
-// 3) Use aggregate differences or window updates for answer.
-// 4) Return final query/optimization result.
-int prefix_sum_query(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << prefix_sum_query(data) << "\n";
+    vector<int> a = {3,1,4,1,5,9,2,6,5,3};
+    int n = a.size();
+    // Build prefix sum array: pre[i] = a[0]+...+a[i-1]
+    vector<int> pre(n+1, 0);
+    for (int i=0;i<n;i++) pre[i+1]=pre[i]+a[i];
+    // Range sum [l,r] in O(1): pre[r+1] - pre[l]
+    cout << "Array: "; for(int x:a) cout<<x<<" "; cout<<"\n";
+    cout << "Sum [0,4] = " << pre[5]-pre[0] << "  (expected 14)\n";
+    cout << "Sum [2,7] = " << pre[8]-pre[2] << "  (expected 26)\n";
+    // Count queries answered in O(1) after O(n) preprocessing
+    int Q = 5;
+    vector<pair<int,int>> queries = {{0,9},{1,5},{3,6},{0,0},{9,9}};
+    for(auto[l,r]:queries)
+        cout << "Sum[" << l << "," << r << "] = " << pre[r+1]-pre[l] << "\n";
     return 0;
 }

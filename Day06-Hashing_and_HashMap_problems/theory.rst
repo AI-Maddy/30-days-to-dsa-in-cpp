@@ -8,12 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Here comes your **ultra‑premium**, **color‑splashed**, **icon‑rich**, **memory‑optimized**  
-`theory.rst` for **Day 06 – Hashing + HashMap Patterns**.
-
-I’ve redesigned it to feel like a **visual textbook**, with **mnemonic icons**, **color‑coded sections**, and **pattern blocks** that stick in memory.
-
----
 
 # **Day 06 – 🔥 Hashing + HashMap Patterns (The Ultimate Memory Edition)**  
 `theory.rst`
@@ -299,15 +293,4 @@ Remember: **F‑S‑T‑P‑W‑S** → The 6 pillars of hashing.
 - Use prefix sum + HashMap for subarray problems  
 - Use HashMap in sliding window  
 - Understand collisions & load factor  
-- Know when to use map vs unordered_map  
-
----
-
-If you want, I can now create:
-
-🌈 **Day 06 README (150+ lines, ultra‑premium)**  
-🧠 **Day 06 cheat sheets**  
-🧩 **C++ templates for all 6 patterns**  
-🔥 **20 hashing interview problems with solutions**
-
-Just tell me what you want next.
+- Know when to use map vs unordered_map

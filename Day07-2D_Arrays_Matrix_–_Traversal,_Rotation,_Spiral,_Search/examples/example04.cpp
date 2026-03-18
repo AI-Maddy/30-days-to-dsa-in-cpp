@@ -1,35 +1,22 @@
+/*
+ * Example 4: Set Matrix Zeros (Matrix)
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example04
- * Pattern Family: Arrays
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
+// Set matrix zeros: O(1) extra space using first row/col as flags
+void setZeroes(vector<vector<int>>& m){
+    int n=m.size(),k=m[0].size();
+    bool row0=false,col0=false;
+    for(int j=0;j<k;j++) if(m[0][j]==0) row0=true;
+    for(int i=0;i<n;i++) if(m[i][0]==0) col0=true;
+    for(int i=1;i<n;i++) for(int j=1;j<k;j++) if(m[i][j]==0){m[i][0]=0;m[0][j]=0;}
+    for(int i=1;i<n;i++) for(int j=1;j<k;j++) if(m[i][0]==0||m[0][j]==0) m[i][j]=0;
+    if(row0) for(int j=0;j<k;j++) m[0][j]=0;
+    if(col0) for(int i=0;i<n;i++) m[i][0]=0;
 }
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+int main(){
+    vector<vector<int>> m={{1,1,1},{1,0,1},{1,1,1}};
+    setZeroes(m);
+    for(auto& r:m){for(int x:r) cout<<x<<" ";cout<<"\n";}
     return 0;
 }

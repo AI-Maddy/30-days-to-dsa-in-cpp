@@ -1,50 +1,22 @@
 /*
  * Example 4: Two Pointers Pair (Prefix Sum plus Difference Array plus Range queries patterns)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Prefix Sum plus Difference Array plus Range queries patterns
-// Task      : Two Pointers Pair
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: two_pointers_pair ---
-// Purpose    : Compute the result for `two_pointers_pair`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int two_pointers_pair(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (7));
-    return ans;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {4, 5, 6, 7, 8};
-    cout << two_pointers_pair(data) << "\n";
+    // Difference array — supports O(1) range updates, O(n) reconstruction
+    int n=8;
+    vector<int> diff(n+1,0);
+    // Add 3 to range [1,4]
+    diff[1]+=3; diff[5]-=3;
+    // Add -1 to range [3,6]
+    diff[3]+=-1; diff[7]-=-1;
+    // Add 2 to range [0,2]
+    diff[0]+=2; diff[3]-=2;
+    // Reconstruct
+    vector<int> a(n);
+    a[0]=diff[0];
+    for(int i=1;i<n;i++) a[i]=a[i-1]+diff[i];
+    cout << "After range updates: "; for(int x:a) cout<<x<<" "; cout<<"\n";
     return 0;
 }

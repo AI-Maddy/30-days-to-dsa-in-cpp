@@ -1,57 +1,43 @@
 /*
- * Example 3: Tree Height (Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep)
+ * Example 3: Serialize/Deserialize
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep
-// Task      : Tree Height
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// --- Function Explanation: tree_height ---
-// Purpose    : Compute the result for `tree_height`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int tree_height(TreeNode* root) {
-    if (!root) return 0;
-    queue<TreeNode*> q; q.push(root);
-    int cnt = 0;
+// Example 3: Serialize and Deserialize Binary Tree (BFS-based)
+string serialize(TreeNode* root) {
+    if (!root) return "";
+    string s; queue<TreeNode*> q; q.push(root);
     while (!q.empty()) {
-        TreeNode* cur = q.front(); q.pop(); cnt++;
-        if (cur->left) q.push(cur->left);
-        if (cur->right) q.push(cur->right);
+        auto n = q.front(); q.pop();
+        if (!n) { s += "# "; continue; }
+        s += to_string(n->val) + " ";
+        q.push(n->left); q.push(n->right);
     }
-    return cnt + 3;
+    return s;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+TreeNode* deserialize(const string& data) {
+    if (data.empty()) return nullptr;
+    istringstream ss(data); string token;
+    ss >> token;
+    TreeNode* root = new TreeNode(stoi(token));
+    queue<TreeNode*> q; q.push(root);
+    while (ss >> token) {
+        auto parent = q.front(); q.pop();
+        if (token != "#") { parent->left = new TreeNode(stoi(token)); q.push(parent->left); }
+        ss >> token;
+        if (token != "#") { parent->right = new TreeNode(stoi(token)); q.push(parent->right); }
+    }
+    return root;
+}
+void inorderPrint(TreeNode* n) { if(!n)return; inorderPrint(n->left); cout<<n->val<<" "; inorderPrint(n->right); }
 int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    cout << tree_height(r) << "\n";
-    return 0;
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2); root->right = new TreeNode(3);
+    root->right->left = new TreeNode(4); root->right->right = new TreeNode(5);
+    string s = serialize(root);
+    cout << s << "\n";
+    TreeNode* root2 = deserialize(s);
+    inorderPrint(root2); cout << "\n";
 }

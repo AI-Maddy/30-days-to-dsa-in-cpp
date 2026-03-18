@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="30 Days to DSA in C++ — Premium Edition"><title>Day 14 · Fast And Slow Pointers Palindrome Linked List · DSA in C++</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.EuORl1j-.css"></head> <body class="min-h-screen bg-[#0d1117] text-slate-100 antialiased"> <!-- Nav --> <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0d1117]/90 backdrop-blur-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14"> <a href="/" class="flex items-center gap-2 font-bold text-slate-100 hover:text-white transition-colors"> <span class="text-xl">⚡</span> <span class="hidden sm:inline text-sm">30 Days DSA C++</span> </a> <div class="flex items-center gap-1"> <a href="/" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">Home</a> <a href="/cheatsheets" class="px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-md transition-colors">📄 Cheatsheets</a> </div> </div> </nav> <!-- Main --> <main>  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10"> <!-- Breadcrumb --> <div class="flex items-center gap-2 text-xs text-slate-500 mb-6"> <a href="/" class="hover:text-slate-300 transition-colors">Home</a> <span>›</span> <span class="text-red-400 font-medium">🔴 Linked Lists</span> </div> <!-- Header --> <div class="rounded-2xl border border-red-500/40 bg-red-950/40 p-6 mb-8"> <div class="flex items-start gap-4"> <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-xl font-black bg-red-500/20 text-red-300"> 14 </div> <div> <div class="text-xs font-bold uppercase tracking-widest mb-1 text-red-400">Day 14 · Linked Lists</div> <h1 class="text-2xl font-extrabold text-white leading-tight">Fast And Slow Pointers Palindrome Linked List</h1> <div class="flex gap-3 mt-3 text-xs text-slate-400"> <span>📖 README</span> <span>🧠 Theory</span> <span>💻 5 Examples</span> <span>✏️ 5 Exercises</span> <span>✅ 5 Solutions</span> </div> </div> </div> </div> <!-- Tabs --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZjgqhJ" prefix="r1" component-url="/_astro/DayTabs.B_BF-cJm.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;readme&quot;:[0,&quot;---\n\n# **Day 14 \\u2014 Fast &amp; Slow Pointers Deep Dive + Palindrome Linked List Variants (README.rst)**  \n*30 Days to DSA in C++ \\u2014 Ultra\\u2011Premium Edition*\n\n---\n\n## **1. Introduction**\n\nFast &amp; slow pointers (also called **tortoise and hare**) are one of the most elegant and powerful techniques in linked list problems.  \nThey allow you to solve problems that seem impossible with simple traversal:\n\n- Find middle of list  \n- Detect cycle  \n- Find cycle start  \n- Check if list is palindrome  \n- Remove Nth node from end  \n- Reorder list  \n- Split list into halves  \n- Detect intersection patterns  \n\nToday\\u2019s goal is to master:\n\n- Fast &amp; slow pointer mechanics  \n- Cycle detection &amp; cycle start  \n- Palindrome linked list (multiple variants)  \n- Reorder list  \n- Odd-even linked list  \n- Intersection logic  \n- Deep intuition behind pointer movement  \n\nThis day is extremely important \\u2014 these patterns appear in almost every FAANG interview.\n\n---\n\n# **2. Fast &amp; Slow Pointer Fundamentals**\n\n### **2.1 Core Idea**\n\n```\nslow moves 1 step\nfast moves 2 steps\n```\n\nThis creates a **relative speed difference** that reveals structural properties of the list.\n\n---\n\n## **3. Find Middle of Linked List**\n\n### **3.1 Implementation**\n\n```cpp\nListNode* middleNode(ListNode* head) {\n    ListNode *slow = head, *fast = head;\n\n    while (fast &amp;&amp; fast-&gt;next) {\n        slow = slow-&gt;next;\n        fast = fast-&gt;next-&gt;next;\n    }\n    return slow;\n}\n```\n\nIf even length \\u2192 returns second middle.\n\n---\n\n# **4. Detect Cycle (Floyd\\u2019s Algorithm)**\n\n### **4.1 Logic**\n\nIf fast and slow meet \\u2192 cycle exists.\n\n### **4.2 Implementation**\n\n```cpp\nbool hasCycle(ListNode* head) {\n    ListNode *slow = head, *fast = head;\n\n    while (fast &amp;&amp; fast-&gt;next) {\n        slow = slow-&gt;next;\n        fast = fast-&gt;next-&gt;next;\n\n        if (slow == fast) return true;\n    }\n    return false;\n}\n```\n\n---\n\n# **5. Find Start of Cycle**\n\nOnce slow == fast:\n\n1. Move slow to head  \n2. Move both slow and fast one step  \n3. They meet at cycle start  \n\n### **5.1 Implementation**\n\n```cpp\nListNode* detectCycle(ListNode* head) {\n    ListNode *slow = head, *fast = head;\n\n    while (fast &amp;&amp; fast-&gt;next) {\n        slow = slow-&gt;next;\n        fast = fast-&gt;next-&gt;next;\n\n        if (slow == fast) {\n            slow = head;\n            while (slow != fast) {\n                slow = slow-&gt;next;\n                fast = fast-&gt;next;\n            }\n            return slow;\n        }\n    }\n    return NULL;\n}\n```\n\n---\n\n# **6. Palindrome Linked List \\u2014 Multiple Approaches**\n\nThis is one of the most important linked list problems.\n\n---\n\n## **6.1 Approach 1 \\u2014 Convert to Array (Simple)**\n\n```cpp\nvector&lt;int&gt; v;\nwhile (head) {\n    v.push_back(head-&gt;val);\n    head = head-&gt;next;\n}\nreturn equal(v.begin(), v.begin() + v.size()/2, v.rbegin());\n```\n\nTime: O(n)  \nSpace: O(n)\n\n---\n\n## **6.2 Approach 2 \\u2014 Reverse Second Half (Optimal)**\n\n### **Steps**\n\n1. Find middle  \n2. Reverse second half  \n3. Compare halves  \n4. Restore list (optional)  \n\n### **Implementation**\n\n```cpp\nbool isPalindrome(ListNode* head) {\n    if (!head || !head-&gt;next) return true;\n\n    // Step 1: find middle\n    ListNode *slow = head, *fast = head;\n    while (fast-&gt;next &amp;&amp; fast-&gt;next-&gt;next) {\n        slow = slow-&gt;next;\n        fast = fast-&gt;next-&gt;next;\n    }\n\n    // Step 2: reverse second half\n    ListNode* second = reverseList(slow-&gt;next);\n\n    // Step 3: compare halves\n    ListNode *p1 = head, *p2 = second;\n    while (p2) {\n        if (p1-&gt;val != p2-&gt;val) return false;\n        p1 = p1-&gt;next;\n        p2 = p2-&gt;next;\n    }\n\n    return true;\n}\n```\n\nTime: **O(n)**  \nSpace: **O(1)**\n\n---\n\n## **6.3 Approach 3 \\u2014 Recursion (Elegant but heavy)**\n\nUse recursion to compare front and back.\n\n---\n\n# **7. Reorder List (L0 \\u2192 Ln \\u2192 L1 \\u2192 Ln-1 \\u2026)**\n\n### **Steps**\n\n1. Find middle  \n2. Reverse second half  \n3. Merge two halves  \n\n### **Implementation**\n\n```cpp\nvoid reorderList(ListNode* head) {\n    if (!head || !head-&gt;next) return;\n\n    // Step 1: middle\n    ListNode *slow = head, *fast = head;\n    while (fast-&gt;next &amp;&amp; fast-&gt;next-&gt;next) {\n        slow = slow-&gt;next;\n        fast = fast-&gt;next-&gt;next;\n    }\n\n    // Step 2: reverse second half\n    ListNode* second = reverseList(slow-&gt;next);\n    slow-&gt;next = NULL;\n\n    // Step 3: merge\n    ListNode *first = head;\n    while (second) {\n        ListNode* t1 = first-&gt;next;\n        ListNode* t2 = second-&gt;next;\n\n        first-&gt;next = second;\n        second-&gt;next = t1;\n\n        first = t1;\n        second = t2;\n    }\n}\n```\n\n---\n\n# **8. Odd-Even Linked List**\n\nGroup odd index nodes first, then even index nodes.\n\n```cpp\nListNode* oddEvenList(ListNode* head) {\n    if (!head) return head;\n\n    ListNode *odd = head, *even = head-&gt;next, *evenHead = even;\n\n    while (even &amp;&amp; even-&gt;next) {\n        odd-&gt;next = even-&gt;next;\n        odd = odd-&gt;next;\n\n        even-&gt;next = odd-&gt;next;\n        even = even-&gt;next;\n    }\n\n    odd-&gt;next = evenHead;\n    return head;\n}\n```\n\n---\n\n# **9. Intersection of Two Linked Lists**\n\n### **9.1 Two\\u2011Pointer Switching Trick**\n\n```cpp\nListNode* getIntersectionNode(ListNode* a, ListNode* b) {\n    ListNode *p1 = a, *p2 = b;\n\n    while (p1 != p2) {\n        p1 = p1 ? p1-&gt;next : b;\n        p2 = p2 ? p2-&gt;next : a;\n    }\n    return p1;\n}\n```\n\nTime: **O(n + m)**  \nSpace: **O(1)**\n\n---\n\n# **10. Deep Intuition Behind Fast &amp; Slow Pointers**\n\n### **10.1 Why do they meet in a cycle?**\n\nBecause fast pointer gains 1 node per step relative to slow.  \nEventually, fast \\u201claps\\u201d slow.\n\n### **10.2 Why does moving slow to head find cycle start?**\n\nBecause:\n\n```\ndistance(head \\u2192 cycleStart) = distance(meetingPoint \\u2192 cycleStart)\n```\n\n### **10.3 Why does reversing second half detect palindrome?**\n\nBecause linked lists cannot be indexed backward.  \nReversing creates a backward traversal.\n\n---\n\n# **11. Real\\u2011World Examples**\n\n---\n\n### **Example 1 \\u2014 Check if list is palindrome**  \nReverse second half.\n\n---\n\n### **Example 2 \\u2014 Detect cycle in network routing**  \nFast\\u2011slow pointer logic.\n\n---\n\n### **Example 3 \\u2014 Reorder playlist**  \nReorder list pattern.\n\n---\n\n### **Example 4 \\u2014 Split list into halves**  \nMiddle pointer.\n\n---\n\n# **12. Interview\\u2011Level Problems**\n\n---\n\n### **Problem 1 \\u2014 Palindrome Linked List**  \nReverse second half.\n\n---\n\n### **Problem 2 \\u2014 Reorder List**  \nMiddle + reverse + merge.\n\n---\n\n### **Problem 3 \\u2014 Detect Cycle**  \nFloyd\\u2019s algorithm.\n\n---\n\n### **Problem 4 \\u2014 Find Cycle Start**  \nReset slow to head.\n\n---\n\n### **Problem 5 \\u2014 Intersection of Two Lists**  \nTwo\\u2011pointer switching.\n\n---\n\n# **13. Exercises (Try First)**\n\n---\n\n### **Exercise 1**  \nCheck if a linked list is palindrome (O(1) space).\n\n---\n\n### **Exercise 2**  \nReorder a linked list.\n\n---\n\n### **Exercise 3**  \nDetect cycle and return cycle start.\n\n---\n\n### **Exercise 4**  \nSplit linked list into two halves.\n\n---\n\n### **Exercise 5**  \nFind intersection of two linked lists.\n\n---\n\n# **14. Solutions**\n\n---\n\n### **Solution 1 \\u2014 Palindrome**  \nUse reverse\\u2011second\\u2011half method.\n\n---\n\n### **Solution 2 \\u2014 Reorder list**  \nUse middle + reverse + merge.\n\n---\n\n### **Solution 3 \\u2014 Cycle start**  \nUse Floyd\\u2019s algorithm.\n\n---\n\n### **Solution 4 \\u2014 Split list**  \nUse middle pointer.\n\n---\n\n### **Solution 5 \\u2014 Intersection**  \nUse two\\u2011pointer switching.\n\n---\n\n# **15. Summary**\n\nToday you mastered:\n\n- Fast &amp; slow pointer mechanics  \n- Middle node detection  \n- Cycle detection + cycle start  \n- Palindrome linked list (multiple approaches)  \n- Reorder list  \n- Odd-even list  \n- Intersection logic  \n- Deep pointer intuition  \n\nThis day is foundational for advanced linked list problems in Day 15.\n&quot;],&quot;theory&quot;:[0,&quot;---\n\n# **Day 14 \\u2013 \\u26a1 Fast &amp; Slow Pointers Deep Dive + \\ud83d\\udd01 Palindrome Linked List Variants**  \n`theory.rst`\n\n---\n\n# **\\ud83c\\udf08 1. Why Fast &amp; Slow Pointers Matter**\nThe **fast &amp; slow pointer technique** (also called **tortoise &amp; hare**) is the most elegant way to solve linked list problems that involve:\n\n- \\ud83c\\udf00 Cycles  \n- \\ud83c\\udfaf Middle detection  \n- \\ud83d\\udd01 Palindromes  \n- \\ud83d\\udd17 Intersection  \n- \\ud83e\\udde9 Reordering  \n- \\ud83e\\uddee Length parity  \n- \\ud83e\\uddf5 Splitting lists  \n- \\ud83e\\udde0 Detecting structural patterns  \n\nThis technique reduces many problems from **O(n) space \\u2192 O(1) space**.\n\n---\n\n# **\\ud83c\\udf1f MEMORY ANCHOR: \\u201cF\\u2011S\\u2011M\\u2011C\\u2011P\\u201d**\nFast &amp; Slow pointers solve:\n\n- **F**ind middle  \n- **S**plit list  \n- **M**easure parity  \n- **C**ycle detection  \n- **P**alindrome check  \n\nRemember: **F\\u2011S\\u2011M\\u2011C\\u2011P** \\u2192 the five pillars of fast &amp; slow pointers.\n\n---\n\n# **\\ud83c\\udf08 2. Core Concept: Fast vs Slow Movement**\n\n- **Slow pointer** \\u2192 moves **1 step**  \n- **Fast pointer** \\u2192 moves **2 steps**  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nFast pointer \\u201cjumps\\u201d, slow pointer \\u201cwalks\\u201d.\n\n---\n\n# **\\ud83c\\udf08 3. Pattern 1: Find Middle of Linked List**\n\n---\n\n## **\\ud83c\\udfaf Goal**\nReturn the middle node.\n\n### **Logic**\n- Move slow by 1  \n- Move fast by 2  \n- When fast reaches end \\u2192 slow is at middle  \n\n---\n\n## **\\ud83d\\udca1 Odd vs Even Length**\n- Odd length \\u2192 slow lands exactly on middle  \n- Even length \\u2192 slow lands on **second middle**  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Fast ends \\u2192 Slow centers**\n\n---\n\n# **\\ud83c\\udf08 4. Pattern 2: Detect Cycle (Floyd\\u2019s Algorithm)**\n\n---\n\n## **\\ud83c\\udfaf Goal**\nDetect if cycle exists.\n\n### **Logic**\n- Move slow = +1  \n- Move fast = +2  \n- If they ever meet \\u2192 cycle exists  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**If fast catches slow \\u2192 loop exists**\n\n---\n\n# **\\ud83c\\udf08 5. Pattern 3: Find Start of Cycle**\n\n---\n\n## **\\ud83c\\udfaf Steps**\n1. Detect cycle (fast meets slow)  \n2. Reset slow to head  \n3. Move both slow &amp; fast by 1  \n4. Where they meet = cycle start  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Meet \\u2192 Reset \\u2192 Walk \\u2192 Meet again**\n\n---\n\n# **\\ud83c\\udf08 6. Pattern 4: Check if Linked List is Palindrome**\n\nThis is one of the most important linked list interview problems.\n\n---\n\n## **\\ud83c\\udfaf Steps**\n1. Find middle using fast &amp; slow  \n2. Reverse second half  \n3. Compare first half &amp; reversed second half  \n4. (Optional) Restore list  \n\n---\n\n## **\\ud83e\\udde0 MEMORY ANCHOR: \\u201cM\\u2011R\\u2011C\\u2011R\\u201d**\n- **M**iddle  \n- **R**everse  \n- **C**ompare  \n- **R**estore  \n\n---\n\n# **\\ud83c\\udf08 7. Palindrome Linked List Variants**\n\n---\n\n## **\\ud83d\\udc99 Variant 1: Restore the List After Checking**\nAfter comparing halves, reverse second half again.\n\n### **Why?**\nTo preserve original structure.\n\n---\n\n## **\\ud83d\\udc9a Variant 2: Palindrome with Odd Length**\nMiddle node is ignored.\n\n### **\\ud83e\\udde0 MEMORY TIP:**  \nSkip the middle element when comparing.\n\n---\n\n## **\\ud83d\\udc9b Variant 3: Palindrome Without Modifying List**\nUse recursion (but uses O(n) stack).\n\n---\n\n## **\\u2764\\ufe0f Variant 4: Palindrome Using Stack**\nPush first half \\u2192 compare with second half.\n\n---\n\n## **\\ud83d\\udc9c Variant 5: Palindrome Using Array**\nCopy values \\u2192 check with two pointers.\n\n---\n\n# **\\ud83c\\udf08 8. Pattern 5: Remove Nth Node From End**\n\n---\n\n## **\\ud83c\\udfaf Logic**\nUse two pointers:\n- Move fast n steps  \n- Move slow &amp; fast together  \n- When fast hits end \\u2192 slow is before target  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**Fast leads \\u2192 Slow deletes**\n\n---\n\n# **\\ud83c\\udf08 9. Pattern 6: Intersection of Two Linked Lists**\n\n---\n\n## **\\ud83c\\udfaf Logic**\nUse two pointers:\n- Move A pointer through A then B  \n- Move B pointer through B then A  \n- They meet at intersection  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Equalize path lengths by switching heads**\n\n---\n\n# **\\ud83c\\udf08 10. Pattern 7: Reorder List (L0 \\u2192 Ln \\u2192 L1 \\u2192 Ln\\u20111 \\u2026)**\n\n---\n\n## **\\ud83c\\udfaf Steps**\n1. Find middle  \n2. Reverse second half  \n3. Merge two halves  \n\n### **\\ud83e\\udde0 MEMORY ANCHOR:**  \n**M\\u2011R\\u2011M**  \nMiddle \\u2192 Reverse \\u2192 Merge\n\n---\n\n# **\\ud83c\\udf08 11. Pattern 8: Check If Length Is Odd or Even**\n\n---\n\n## **\\ud83c\\udfaf Logic**\n- If fast ends at null \\u2192 even  \n- If fast ends at last node \\u2192 odd  \n\n### **\\ud83e\\udde0 MEMORY TIP:**  \n**Fast pointer reveals parity**\n\n---\n\n# **\\ud83c\\udf08 12. Pattern 9: Split Linked List Into Two Halves**\n\n---\n\n## **\\ud83c\\udfaf Logic**\nUse fast &amp; slow to find middle \\u2192 split.\n\n---\n\n# **\\ud83c\\udf08 13. Pitfalls (Red Flags \\ud83d\\udea9)**\n\n- \\ud83d\\udea9 Forgetting to check `fast &amp;&amp; fast-&gt;next`  \n- \\ud83d\\udea9 Forgetting to skip middle node in palindrome odd case  \n- \\ud83d\\udea9 Not restoring list after palindrome check  \n- \\ud83d\\udea9 Infinite loops due to wrong pointer movement  \n- \\ud83d\\udea9 Reversing wrong half  \n- \\ud83d\\udea9 Using recursion for large lists (stack overflow)  \n- \\ud83d\\udea9 Forgetting to handle 1\\u2011node or 2\\u2011node lists  \n\n---\n\n# **\\ud83c\\udf08 14. Problems You Can Now Solve**\n\n- Middle of linked list  \n- Detect cycle  \n- Find start of cycle  \n- Palindrome linked list  \n- Remove Nth node from end  \n- Intersection of linked lists  \n- Reorder list  \n- Split list  \n- Odd/even length detection  \n- Check if list is circular  \n- Reverse second half  \n- Merge two halves  \n\n---\n\n# **\\ud83c\\udf08 15. What You Must Master Today**\n\n- Fast &amp; slow pointer fundamentals  \n- Cycle detection + cycle start  \n- Palindrome linked list (all variants)  \n- Remove Nth node from end  \n- Intersection logic  \n- Reorder list  \n- Splitting lists  \n- Parity detection  \n- Reversing linked list halves  \n&quot;],&quot;examples&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;example01&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 1: Happy Number\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example02&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 2: Find Cycle Start\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example03&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 3: Palindrome Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example04&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 4: Reorder List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;example05&quot;],&quot;code&quot;:[0,&quot;/*\n * Example 5: Find Duplicate Number\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Find duplicate in array of n+1 ints in [1,n] using Floyd&#39;s cycle detection\nint findDuplicate(vector&lt;int&gt;&amp;nums){\n    int s=nums[0],f=nums[0];\n    do{s=nums[s];f=nums[nums[f]];}while(s!=f);\n    s=nums[0];\n    while(s!=f){s=nums[s];f=nums[f];}\n    return s;\n}\nint main(){\n    vector&lt;int&gt; a={1,3,4,2,2}; cout&lt;&lt;findDuplicate(a)&lt;&lt;\&quot;\\\n\\&quot;]}]]],&quot;exercises&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;exercise01&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 1: Happy Number\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Find middle of linked list (second middle for even length)\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise02&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 2: Find Cycle Start\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Check if linked list has cycle and return cycle length\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise03&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 3: Palindrome Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Remove all occurrences of value from linked list\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise04&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 4: Reorder List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Odd-Even Linked List: group odd-index then even-index nodes\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}],[0,{&quot;id&quot;:[0,&quot;exercise05&quot;],&quot;content&quot;:[0,&quot;/*\n * Exercise 5: Find Duplicate Number\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Problem: Partition linked list around value x\nvoid solve(){}\nint main(){solve();return 0;}\n&quot;]}]]],&quot;solutions&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;solution01&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 1: Happy Number\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution02&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 2: Find Cycle Start\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution03&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 3: Palindrome Linked List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution04&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 4: Reorder List\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\nstruct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};\nListNode* build(vector&lt;int&gt;v){ListNode d(0);ListNode*c=&amp;d;for(int x:v){c-&gt;next=new ListNode(x);c=c-&gt;next;}return d.next;}\nvoid print(ListNode*h){while(h){cout&lt;&lt;h-&gt;val;if(h-&gt;next)cout&lt;&lt;\&quot;-&gt;\\&quot;]}],[0,{&quot;id&quot;:[0,&quot;solution05&quot;],&quot;code&quot;:[0,&quot;/*\n * Solution 5: Find Duplicate Number\n */\n#include &lt;bits/stdc++.h&gt;\nusing namespace std;\n// Find duplicate in array of n+1 ints in [1,n] using Floyd&#39;s cycle detection\nint findDuplicate(vector&lt;int&gt;&amp;nums){\n    int s=nums[0],f=nums[0];\n    do{s=nums[s];f=nums[nums[f]];}while(s!=f);\n    s=nums[0];\n    while(s!=f){s=nums[s];f=nums[f];}\n    return s;\n}\nint main(){\n    vector&lt;int&gt; a={1,3,4,2,2}; cout&lt;&lt;findDuplicate(a)&lt;&lt;\&quot;\\\n\\&quot;]}]]]}" ssr client="load" opts="{&quot;name&quot;:&quot;DayTabs&quot;,&quot;value&quot;:true}" await-children><div><div class="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-1 mb-6 border-b border-slate-800"><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap bg-slate-700 text-white">📖 README</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">🧠 Theory</button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">💻 Examples <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✏️ Exercises <span class="ml-1 text-xs text-slate-500">5</span></button><button class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800">✅ Solutions <span class="ml-1 text-xs text-slate-500">5</span></button></div><div><hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">Day 14 \u2014 Fast &amp; Slow Pointers Deep Dive + Palindrome Linked List Variants (README.rst)</strong></h1>
+<p class="text-slate-300 leading-7 mb-3"><em>30 Days to DSA in C++ \u2014 Ultra\u2011Premium Edition</em></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">1. Introduction</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Fast &amp; slow pointers (also called <strong class="text-white font-semibold">tortoise and hare</strong>) are one of the most elegant and powerful techniques in linked list problems.<br/>
+<!-- -->They allow you to solve problems that seem impossible with simple traversal:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Find middle of list</li>
+<li class="text-slate-300 ml-2">Detect cycle</li>
+<li class="text-slate-300 ml-2">Find cycle start</li>
+<li class="text-slate-300 ml-2">Check if list is palindrome</li>
+<li class="text-slate-300 ml-2">Remove Nth node from end</li>
+<li class="text-slate-300 ml-2">Reorder list</li>
+<li class="text-slate-300 ml-2">Split list into halves</li>
+<li class="text-slate-300 ml-2">Detect intersection patterns</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">Today\u2019s goal is to master:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Fast &amp; slow pointer mechanics</li>
+<li class="text-slate-300 ml-2">Cycle detection &amp; cycle start</li>
+<li class="text-slate-300 ml-2">Palindrome linked list (multiple variants)</li>
+<li class="text-slate-300 ml-2">Reorder list</li>
+<li class="text-slate-300 ml-2">Odd-even linked list</li>
+<li class="text-slate-300 ml-2">Intersection logic</li>
+<li class="text-slate-300 ml-2">Deep intuition behind pointer movement</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day is extremely important \u2014 these patterns appear in almost every FAANG interview.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">2. Fast &amp; Slow Pointer Fundamentals</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">2.1 Core Idea</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>slow moves 1 step
+fast moves 2 steps</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">This creates a <strong class="text-white font-semibold">relative speed difference</strong> that reveals structural properties of the list.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">3. Find Middle of Linked List</strong></h2>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">3.1 Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>ListNode* middleNode(ListNode* head) {
+    ListNode *slow = head, *fast = head;
+
+    while (fast &amp;&amp; fast-&gt;next) {
+        slow = slow-&gt;next;
+        fast = fast-&gt;next-&gt;next;
+    }
+    return slow;
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">If even length \u2192 returns second middle.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">4. Detect Cycle (Floyd\u2019s Algorithm)</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">4.1 Logic</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">If fast and slow meet \u2192 cycle exists.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">4.2 Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>bool hasCycle(ListNode* head) {
+    ListNode *slow = head, *fast = head;
+
+    while (fast &amp;&amp; fast-&gt;next) {
+        slow = slow-&gt;next;
+        fast = fast-&gt;next-&gt;next;
+
+        if (slow == fast) return true;
+    }
+    return false;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">5. Find Start of Cycle</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Once slow == fast:</p>
+<ol class="list-decimal list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Move slow to head</li>
+<li class="text-slate-300 ml-2">Move both slow and fast one step</li>
+<li class="text-slate-300 ml-2">They meet at cycle start</li>
+</ol>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">5.1 Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>ListNode* detectCycle(ListNode* head) {
+    ListNode *slow = head, *fast = head;
+
+    while (fast &amp;&amp; fast-&gt;next) {
+        slow = slow-&gt;next;
+        fast = fast-&gt;next-&gt;next;
+
+        if (slow == fast) {
+            slow = head;
+            while (slow != fast) {
+                slow = slow-&gt;next;
+                fast = fast-&gt;next;
+            }
+            return slow;
+        }
+    }
+    return NULL;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">6. Palindrome Linked List \u2014 Multiple Approaches</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">This is one of the most important linked list problems.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">6.1 Approach 1 \u2014 Convert to Array (Simple)</strong></h2>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>vector&lt;int&gt; v;
+while (head) {
+    v.push_back(head-&gt;val);
+    head = head-&gt;next;
+}
+return equal(v.begin(), v.begin() + v.size()/2, v.rbegin());</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: O(n)<br/>
+<!-- -->Space: O(n)</p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">6.2 Approach 2 \u2014 Reverse Second Half (Optimal)</strong></h2>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Steps</strong></h3>
+<ol class="list-decimal list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Find middle</li>
+<li class="text-slate-300 ml-2">Reverse second half</li>
+<li class="text-slate-300 ml-2">Compare halves</li>
+<li class="text-slate-300 ml-2">Restore list (optional)</li>
+</ol>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>bool isPalindrome(ListNode* head) {
+    if (!head || !head-&gt;next) return true;
+
+    // Step 1: find middle
+    ListNode *slow = head, *fast = head;
+    while (fast-&gt;next &amp;&amp; fast-&gt;next-&gt;next) {
+        slow = slow-&gt;next;
+        fast = fast-&gt;next-&gt;next;
+    }
+
+    // Step 2: reverse second half
+    ListNode* second = reverseList(slow-&gt;next);
+
+    // Step 3: compare halves
+    ListNode *p1 = head, *p2 = second;
+    while (p2) {
+        if (p1-&gt;val != p2-&gt;val) return false;
+        p1 = p1-&gt;next;
+        p2 = p2-&gt;next;
+    }
+
+    return true;
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: <strong class="text-white font-semibold">O(n)</strong><br/>
+<!-- -->Space: <strong class="text-white font-semibold">O(1)</strong></p>
+<hr class="border-slate-700/60 my-4"/>
+<h2 class="text-xl font-bold text-slate-200 mt-5 mb-2"><strong class="text-white font-semibold">6.3 Approach 3 \u2014 Recursion (Elegant but heavy)</strong></h2>
+<p class="text-slate-300 leading-7 mb-3">Use recursion to compare front and back.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">7. Reorder List (L0 \u2192 Ln \u2192 L1 \u2192 Ln-1 \u2026)</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Steps</strong></h3>
+<ol class="list-decimal list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Find middle</li>
+<li class="text-slate-300 ml-2">Reverse second half</li>
+<li class="text-slate-300 ml-2">Merge two halves</li>
+</ol>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Implementation</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>void reorderList(ListNode* head) {
+    if (!head || !head-&gt;next) return;
+
+    // Step 1: middle
+    ListNode *slow = head, *fast = head;
+    while (fast-&gt;next &amp;&amp; fast-&gt;next-&gt;next) {
+        slow = slow-&gt;next;
+        fast = fast-&gt;next-&gt;next;
+    }
+
+    // Step 2: reverse second half
+    ListNode* second = reverseList(slow-&gt;next);
+    slow-&gt;next = NULL;
+
+    // Step 3: merge
+    ListNode *first = head;
+    while (second) {
+        ListNode* t1 = first-&gt;next;
+        ListNode* t2 = second-&gt;next;
+
+        first-&gt;next = second;
+        second-&gt;next = t1;
+
+        first = t1;
+        second = t2;
+    }
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">8. Odd-Even Linked List</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Group odd index nodes first, then even index nodes.</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>ListNode* oddEvenList(ListNode* head) {
+    if (!head) return head;
+
+    ListNode *odd = head, *even = head-&gt;next, *evenHead = even;
+
+    while (even &amp;&amp; even-&gt;next) {
+        odd-&gt;next = even-&gt;next;
+        odd = odd-&gt;next;
+
+        even-&gt;next = odd-&gt;next;
+        even = even-&gt;next;
+    }
+
+    odd-&gt;next = evenHead;
+    return head;
+}</code></pre></div>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">9. Intersection of Two Linked Lists</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">9.1 Two\u2011Pointer Switching Trick</strong></h3>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>ListNode* getIntersectionNode(ListNode* a, ListNode* b) {
+    ListNode *p1 = a, *p2 = b;
+
+    while (p1 != p2) {
+        p1 = p1 ? p1-&gt;next : b;
+        p2 = p2 ? p2-&gt;next : a;
+    }
+    return p1;
+}</code></pre></div>
+<p class="text-slate-300 leading-7 mb-3">Time: <strong class="text-white font-semibold">O(n + m)</strong><br/>
+<!-- -->Space: <strong class="text-white font-semibold">O(1)</strong></p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">10. Deep Intuition Behind Fast &amp; Slow Pointers</strong></h1>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">10.1 Why do they meet in a cycle?</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Because fast pointer gains 1 node per step relative to slow.<br/>
+<!-- -->Eventually, fast \u201claps\u201d slow.</p>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">10.2 Why does moving slow to head find cycle start?</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Because:</p>
+<div class="relative group rounded-xl overflow-hidden border border-slate-700/60 my-4"><div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-700/60"><div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500/70"></span><span class="w-3 h-3 rounded-full bg-yellow-500/70"></span><span class="w-3 h-3 rounded-full bg-green-500/70"></span></div><span class="text-xs text-slate-500 font-mono">cpp</span><button class="text-xs text-slate-500 hover:text-slate-200 transition-colors px-2 py-0.5 rounded border border-slate-700 hover:border-slate-500">copy</button></div><pre class="overflow-x-auto p-5 bg-slate-950 text-sm text-slate-200 leading-6 font-mono whitespace-pre"><code>distance(head \u2192 cycleStart) = distance(meetingPoint \u2192 cycleStart)</code></pre></div>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">10.3 Why does reversing second half detect palindrome?</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Because linked lists cannot be indexed backward.<br/>
+<!-- -->Reversing creates a backward traversal.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">11. Real\u2011World Examples</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 1 \u2014 Check if list is palindrome</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Reverse second half.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 2 \u2014 Detect cycle in network routing</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Fast\u2011slow pointer logic.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 3 \u2014 Reorder playlist</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Reorder list pattern.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Example 4 \u2014 Split list into halves</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Middle pointer.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">12. Interview\u2011Level Problems</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 1 \u2014 Palindrome Linked List</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Reverse second half.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 2 \u2014 Reorder List</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Middle + reverse + merge.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 3 \u2014 Detect Cycle</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Floyd\u2019s algorithm.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 4 \u2014 Find Cycle Start</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Reset slow to head.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Problem 5 \u2014 Intersection of Two Lists</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Two\u2011pointer switching.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">13. Exercises (Try First)</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 1</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Check if a linked list is palindrome (O(1) space).</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 2</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Reorder a linked list.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 3</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Detect cycle and return cycle start.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 4</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Split linked list into two halves.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Exercise 5</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Find intersection of two linked lists.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">14. Solutions</strong></h1>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 1 \u2014 Palindrome</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use reverse\u2011second\u2011half method.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 2 \u2014 Reorder list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use middle + reverse + merge.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 3 \u2014 Cycle start</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use Floyd\u2019s algorithm.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 4 \u2014 Split list</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use middle pointer.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h3 class="text-base font-semibold text-slate-300 mt-4 mb-2"><strong class="text-white font-semibold">Solution 5 \u2014 Intersection</strong></h3>
+<p class="text-slate-300 leading-7 mb-3">Use two\u2011pointer switching.</p>
+<hr class="border-slate-700/60 my-4"/>
+<h1 class="text-2xl font-bold text-white mt-6 mb-3"><strong class="text-white font-semibold">15. Summary</strong></h1>
+<p class="text-slate-300 leading-7 mb-3">Today you mastered:</p>
+<ul class="list-disc list-inside space-y-1 mb-3 text-slate-300">
+<li class="text-slate-300 ml-2">Fast &amp; slow pointer mechanics</li>
+<li class="text-slate-300 ml-2">Middle node detection</li>
+<li class="text-slate-300 ml-2">Cycle detection + cycle start</li>
+<li class="text-slate-300 ml-2">Palindrome linked list (multiple approaches)</li>
+<li class="text-slate-300 ml-2">Reorder list</li>
+<li class="text-slate-300 ml-2">Odd-even list</li>
+<li class="text-slate-300 ml-2">Intersection logic</li>
+<li class="text-slate-300 ml-2">Deep pointer intuition</li>
+</ul>
+<p class="text-slate-300 leading-7 mb-3">This day is foundational for advanced linked list problems in Day 15.</p></div></div><!--astro:end--></astro-island> <!-- Prev / Next --> <div class="flex justify-between gap-4 mt-12 pt-6 border-t border-slate-800"> <a href="/day/day13-doubly-circular-linked-list-lru-cache" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"> <span class="text-lg">←</span> <span class="hidden sm:inline">Day 13 · Doubly Circular Linked List LRU Cache</span> <span class="sm:hidden">Prev</span> </a> <a href="/day/day15-merge-k-sorted-lists-sort-flatten-multilevel" class="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors text-right"> <span class="hidden sm:inline">Day 15 · Merge K Sorted Lists Sort Flatten Multilevel</span> <span class="sm:hidden">Next</span> <span class="text-lg">→</span> </a> </div> </div>  </main> <!-- Footer --> <footer class="border-t border-slate-800/60 mt-16 py-8 text-center text-xs text-slate-600">
+30 Days to DSA in C++ · Built with Astro
+</footer> </body></html>

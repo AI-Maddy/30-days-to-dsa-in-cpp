@@ -8,17 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here is the **theory.rst** for **Day 30**, crafted to be:
-
-✨ **Ultra‑premium**  
-🎨 **Colorful & Icon‑based (ASCII‑friendly)**  
-📘 **Highly memorizable**  
-🧠 **Pattern‑driven**  
-📚 **Rich in depth & clarity**  
-
-This is formatted exactly like a **theory.rst** file — clean, structured, and ready to drop into your repo.
-
----
 
 # **Day 30 – THEORY.rst**  
 ## **🎯 1D DP Patterns + Mini‑Revision + Mixed Medium–Hard Problems**
@@ -279,14 +268,3 @@ You now have:
 - 💼 Interview‑ready confidence  
 
 This theory chapter serves as your **long‑term DP reference**.
-
----
-
-If you want, I can now generate:
-
-- 📘 A **full DSA revision sheet**  
-- 🧪 A **mock interview problem set**  
-- 🧱 A **C++ template library**  
-- 📅 A **100‑day LeetCode roadmap**  
-
-Just tell me the direction you want to go next.

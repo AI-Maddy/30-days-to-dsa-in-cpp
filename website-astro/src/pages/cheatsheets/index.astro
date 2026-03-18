@@ -1,0 +1,32 @@
+---
+import Base from "../../layouts/Base.astro";
+import manifest from "../../content/manifest.json";
+
+const cheatsheets = manifest.cheatsheets;
+---
+
+<Base title="Cheatsheets">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+    <!-- Header -->
+    <div class="mb-8">
+      <a href="/" class="text-xs text-slate-500 hover:text-slate-300 transition-colors">← Home</a>
+      <h1 class="text-3xl font-extrabold text-white mt-3 mb-2">📄 Cheatsheets</h1>
+      <p class="text-slate-400 text-sm">{cheatsheets.length} quick-reference sheets — patterns, templates, memory aids.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {cheatsheets.map((cs) => (
+        <a
+          href={`/cheatsheets/${cs.slug}`}
+          class="group flex items-center gap-4 p-5 rounded-xl border border-violet-500/25 bg-violet-950/20 hover:border-violet-400/50 hover:bg-violet-950/40 transition-all duration-200"
+        >
+          <span class="text-3xl flex-shrink-0">{cs.icon}</span>
+          <div class="min-w-0">
+            <div class="font-semibold text-slate-200 group-hover:text-white truncate text-sm">{cs.title}</div>
+            <div class="text-xs text-violet-400 mt-0.5">Quick reference →</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

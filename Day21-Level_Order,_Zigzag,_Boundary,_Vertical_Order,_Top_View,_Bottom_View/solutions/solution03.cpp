@@ -1,53 +1,26 @@
 /*
- * Solution 3: Tree Height (Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View)
+ * Solution 3: Top View
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Level Order, Zigzag, Boundary, Vertical Order, Top View, Bottom View
-// Task      : Tree Height
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: tree_height ---
-// Purpose    : Compute the result for `tree_height`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int tree_height(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + tree_height(root->left) + tree_height(root->right);
+void topView(TreeNode* root) {
+    if (!root) return;
+    map<int,int> m; queue<pair<TreeNode*,int>> q; q.push({root,0});
+    while (!q.empty()) {
+        auto [node,col] = q.front(); q.pop();
+        if (!m.count(col)) m[col] = node->val;
+        if (node->left)  q.push({node->left,  col-1});
+        if (node->right) q.push({node->right, col+1});
     }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+    for (auto& [c,v] : m) cout << v << " "; cout << "\n";
+}
 int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    Solution s; cout << s.tree_height(r) + 3 << "\n"; return 0;
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    TreeNode* r = new TreeNode(1);
+    r->left = new TreeNode(2); r->right = new TreeNode(3);
+    r->left->left = new TreeNode(4); r->left->right = new TreeNode(5);
+    r->right->right = new TreeNode(6);
+    topView(r);
 }

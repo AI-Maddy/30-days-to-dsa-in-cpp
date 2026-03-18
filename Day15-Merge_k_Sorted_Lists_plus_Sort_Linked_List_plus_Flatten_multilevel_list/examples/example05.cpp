@@ -1,50 +1,21 @@
 /*
- * Example 5: Remove Nth End (Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list)
+ * Example 5: Intersection of Two LLs
  */
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Merge k Sorted Lists plus Sort Linked List plus Flatten multilevel list
-// Task      : Remove Nth End
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct ListNode { int val; ListNode* next; ListNode(int v): val(v), next(nullptr) {} };
-
-// --- Function Explanation: remove_nth_end ---
-// Purpose    : Compute the result for `remove_nth_end`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int remove_nth_end(ListNode* head) {
-    int ans = 0;
-    while (head) { ans += head->val; head = head->next; }
-    return ans + 5;
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+ListNode* getIntersect(ListNode*h1,ListNode*h2){
+    ListNode*a=h1,*b=h2;
+    while(a!=b){a=a?a->next:h2;b=b?b->next:h1;}
+    return a;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    ListNode* a = new ListNode(1); a->next = new ListNode(2); a->next->next = new ListNode(3);
-    cout << remove_nth_end(a) << "\n";
+int main(){
+    // Build intersecting lists: 1->2->3->4->5, 6->4->5 (intersect at 4)
+    ListNode n1(1),n2(2),n3(4),n4(5),n5(6);
+    n1.next=&n2;n2.next=&n3;n3.next=&n4;n5.next=&n3;
+    ListNode*inter=getIntersect(&n1,&n5);
+    cout<<(inter?inter->val:-1)<<"\n"; // 4
     return 0;
 }

@@ -1,48 +1,25 @@
 /*
  * Example 3: Clear Bit (Bit Manipulation in Cplusplus)
  */
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Bit Manipulation in Cplusplus
-// Task      : Clear Bit
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: clear_bit ---
-// Purpose    : Compute the result for `clear_bit`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int clear_bit(int n) {
-    int cnt = 0;
-    while (n) { n &= (n - 1); cnt++; }
-    return cnt + 3;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    cout << clear_bit(32) << "\n";
+    int n = 63;  // 00111111
+    cout << "Original n=" << n << " (binary: ";
+    for(int i=7;i>=0;i--) cout<<((n>>i)&1); cout<<")\n";
+    // Clear bit i: n & ~(1 << i)
+    int n1 = n & ~(1<<0);  // clear bit 0
+    int n2 = n & ~(1<<5);  // clear bit 5
+    cout << "Clear bit 0: " << n1 << "\n";
+    cout << "Clear bit 5: " << n2 << "\n";
+    // Clear lowest set bit: n & (n-1)
+    cout << "\nn & (n-1) clears lowest set bit:\n";
+    int x = 52;  // 110100
+    while(x) {
+        cout << x << " -> ";
+        x &= (x-1);
+        cout << x << "\n";
+    }
     return 0;
 }

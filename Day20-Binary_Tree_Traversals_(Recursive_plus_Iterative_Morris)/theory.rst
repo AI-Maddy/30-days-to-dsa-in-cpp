@@ -8,17 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 20** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 20 is a **major milestone** because it covers:
-
-- **Binary Tree Traversals (Recursive)**
-- **Binary Tree Traversals (Iterative using Stack)**
-- **Morris Traversal (Inorder + Preorder)** — the legendary **O(1) space** traversal
-
-This day forms the backbone of all tree‑based algorithms.
-
----
 
 # **Day 20 – 🌳 Binary Tree Traversals (Recursive + Iterative + Morris Traversal)**  
 `theory.rst`
@@ -285,15 +274,4 @@ Inorder = visit on second encounter
 - Predecessor logic  
 - Thread creation/removal  
 - Stack‑based traversal control  
-- Traversal applications  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 20 README (ultra‑premium)**  
-🧠 **C++ templates for all traversal types**  
-🎯 **20 tree traversal interview problems**  
-📘 **Tree Traversal cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Traversal applications

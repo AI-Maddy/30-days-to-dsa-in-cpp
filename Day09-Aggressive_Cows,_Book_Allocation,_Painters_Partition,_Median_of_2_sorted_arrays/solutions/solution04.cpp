@@ -1,59 +1,26 @@
 /*
- * Solution 4: First Occurrence (Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays)
+ * Solution 4: First Occurrence (BS Answer)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Solution
-// Topic     : Aggressive Cows, Book Allocation, Painters Partition, Median of 2 sorted arrays
-// Task      : First Occurrence
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: first_occurrence ---
-// Purpose    : Compute the result for `first_occurrence`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int first_occurrence(vector<int>& a, int target) {
-        int l = 0, r = (int)a.size() - 1;
-        while (l <= r) {
-            int m = l + (r - l) / 2;
-            if (a[m] == target) return m;
-            if (a[m] < target) l = m + 1;
-            else r = m - 1;
-        }
-        return -1;
+// Median of two sorted arrays — O(log(min(m,n)))
+double findMedian(vector<int>&a,vector<int>&b){
+    if(a.size()>b.size()) return findMedian(b,a);
+    int m=a.size(),n=b.size(),lo=0,hi=m;
+    while(lo<=hi){
+        int pa=lo+(hi-lo)/2,pb=(m+n+1)/2-pa;
+        int aleft=pa?a[pa-1]:INT_MIN, aright=pa<m?a[pa]:INT_MAX;
+        int bleft=pb?b[pb-1]:INT_MIN, bright=pb<n?b[pb]:INT_MAX;
+        if(aleft<=bright&&bleft<=aright){
+            if((m+n)%2) return max(aleft,bleft);
+            return(max(aleft,bleft)+min(aright,bright))/2.0;
+        }else if(aleft>bright) hi=pa-1;
+        else lo=pa+1;
     }
-};
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
-int main() {
-    Solution s; vector<int> a = {4, 6, 8, 10};
-    cout << s.first_occurrence(a, 8) << "\n";
+    return -1;
+}
+int main(){
+    vector<int> a={1,3},b={2};cout<<findMedian(a,b)<<"\n"; // 2.0
+    vector<int> c={1,2},d={3,4};cout<<findMedian(c,d)<<"\n"; // 2.5
     return 0;
 }

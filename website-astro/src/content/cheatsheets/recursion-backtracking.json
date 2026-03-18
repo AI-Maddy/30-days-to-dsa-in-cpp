@@ -1,0 +1,6 @@
+{
+  "slug": "recursion-backtracking",
+  "title": "Recursion Backtracking",
+  "icon": "📄",
+  "content": "#   Recursion & Backtracking Cheatsheet\n       \n        **🧠 Memory Aid:** Backtracking = choose, explore, unchoose. Always undo what you did.  Prune: skip invalid choices early to avoid exploring dead branches. \n       \n      \n## 🔁 Recursion Mental Model\n       `// 1. Base case: smallest valid input → return directly\n// 2. Recursive case: reduce to smaller subproblem\n// 3. Combine: use subproblem result to build answer`"
+}

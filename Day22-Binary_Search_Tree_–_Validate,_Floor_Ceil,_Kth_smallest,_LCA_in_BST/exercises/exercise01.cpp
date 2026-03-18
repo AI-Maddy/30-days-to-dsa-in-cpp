@@ -1,35 +1,10 @@
+/*
+ * Exercise 1: Validate BST
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | exercises | exercise01
- * Pattern Family: Binary Search
- * Goal: Provide a guided scaffold for user practice and self-attempts.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Binary Search approach.
- * Input   : Read sorted data or searchable answer range.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Read input and identify monotonic condition.
- * 2) Set low/high search boundaries.
- * 3) Check mid using feasibility predicate.
- * 4) Shrink range based on predicate outcome.
- * 5) Return exact position/boundary/optimal answer.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Prefer long long where boundary multiplication/sums can overflow int.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
-}
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
+// Exercise 1: Validate BST
+// Hint: Pass min/max bounds through recursion; use LONG_MIN/LONG_MAX to handle INT extremes.
+bool isValidBST(TreeNode* root) { return false; /* TODO */ }
+int main() {}

@@ -23,7 +23,7 @@ This is the kind of content that makes a repo feel world‑class.
 ---
 
 # **Day 01 — C++ STL Mastery (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -439,7 +439,3 @@ Today you mastered:
 - Real interview patterns  
 
 This foundation will make the next 29 days dramatically easier.
-
----
-
-If you’re ready, I’ll generate **Day 02 — Time & Space Complexity + STL Algorithms** in the same ultra‑premium style.

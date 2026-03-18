@@ -1,37 +1,17 @@
 /*
  * Exercise 5: Count Set Bits (Bit Manipulation in Cplusplus)
  */
-#include <iostream>
-#include <vector>
+// Problem: Count total set bits 1..n
+// Hint: Efficient: O(log n) using digit-by-digit count
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Exercise
-// Topic     : Bit Manipulation in Cplusplus
-// Task      : Count Set Bits
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
+void solve() {
+    int n; cin>>n;
+    // TODO: Efficient: O(log n) using digit-by-digit count
+}
 
-
-// Core implementation for this task.
-class Solution {
-public:
-// --- Function Explanation: count_set_bits ---
-// Purpose    : Compute the result for `count_set_bits`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-    int count_set_bits(vector<int>& nums) {
-        int ans = 0;
-        for (int x : nums) ans += x % (9);
-        return ans;
-    }
-};
+int main() {
+    solve();
+    return 0;
+}

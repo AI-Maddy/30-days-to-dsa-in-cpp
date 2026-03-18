@@ -8,30 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here comes your **Day 13** theory file, crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all previous days.
-
-Since Day 12 covered **Two Pointers + Meet‑in‑the‑Middle**, the natural next step in your 30‑day DSA roadmap is:
-
-# **Day 13 – 🧱 Stacks + Monotonic Stacks + Next Greater/Smaller Patterns**  
-(You can rename if your internal roadmap differs.)
-
-This is one of the **most important** days in the entire curriculum because monotonic stacks unlock:
-
-- Largest Rectangle in Histogram  
-- Maximal Rectangle  
-- Next Greater Element  
-- Next Smaller Element  
-- Stock Span  
-- Daily Temperatures  
-- Remove K Digits  
-- Asteroid Collision  
-- Balanced Parentheses  
-- Min Stack  
-- Expression evaluation  
-
-This is a **massive** pattern day.
-
----
 
 # **Day 13 – 🔥 Stacks + Monotonic Stacks + NGE/NS Patterns (Colorful Memory Edition)**  
 `theory.rst`
@@ -274,15 +250,4 @@ Use value stack.
 - LRH + Maximal rectangle  
 - Greedy + stack hybrids  
 - Expression evaluation  
-- Asteroid collision logic  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 13 README (ultra‑premium)**  
-🧠 **C++ templates for all stack patterns**  
-🎯 **20 monotonic stack interview problems**  
-📘 **Stack cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Asteroid collision logic

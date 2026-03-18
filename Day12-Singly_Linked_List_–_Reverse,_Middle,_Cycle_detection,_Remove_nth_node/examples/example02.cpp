@@ -1,35 +1,14 @@
+/*
+ * Example 2: Find Middle Node
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | examples | example02
- * Pattern Family: Linked List
- * Goal: Demonstrate a clear reference implementation for the concept.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Linked List approach.
- * Input   : Read node values and operation/query requirements.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Build or receive linked list structure.
- * 2) Identify pointer strategy (slow-fast, dummy node, reverse segment).
- * 3) Perform node rewiring safely.
- * 4) Validate head/tail and null transitions.
- * 5) Output transformed list/answer.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Use a dummy head node for insertion/deletion edge cases.
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
+struct ListNode{int val;ListNode*next;ListNode(int x):val(x),next(nullptr){}};
+ListNode* build(vector<int>v){ListNode d(0);ListNode*c=&d;for(int x:v){c->next=new ListNode(x);c=c->next;}return d.next;}
+void print(ListNode*h){while(h){cout<<h->val;if(h->next)cout<<"->";h=h->next;}cout<<"\n";}
+ListNode* middle(ListNode*h){ListNode*s=h,*f=h;while(f&&f->next){s=s->next;f=f->next->next;}return s;}
+int main(){
+    print(middle(build({1,2,3,4,5}))); // 3
+    print(middle(build({1,2,3,4,5,6}))); // 4
     return 0;
 }

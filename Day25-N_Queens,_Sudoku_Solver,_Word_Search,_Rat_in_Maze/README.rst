@@ -8,15 +8,9 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Day 25 coming right up, Sasimegala — and this one is a *pillar* of graph theory mastery.  
-Today you enter the world of **shortest path algorithms**, the backbone of navigation systems, routing protocols, logistics, and countless interview problems.
-
-This README is long, structured, example‑rich, and crafted with the same ultra‑premium depth as the rest of your 30‑day DSA mastery repo.
-
----
 
 # **Day 25 — Shortest Paths: BFS (Unweighted), Dijkstra, Bellman‑Ford (README.rst)**  
-*30 Days to DSA in C++ — Ultra‑Premium Edition*
+*30 Days to DSA in C++ *
 
 ---
 
@@ -280,7 +274,3 @@ Today you mastered:
 - Real‑world shortest path applications  
 
 This day sets the stage for **Day 26 — Floyd‑Warshall, Minimum Spanning Trees (Prim + Kruskal)**.
-
----
-
-If you want, I’ll prepare **Day 26** with the same ultra‑premium depth.

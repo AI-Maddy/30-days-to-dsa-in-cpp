@@ -1,50 +1,21 @@
 /*
- * Example 1: Generate Subsets (Recursion basics plus Subsets, Combination Sum, Permutations)
+ * Example 1: All Subsets
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Recursion basics plus Subsets, Combination Sum, Permutations
-// Task      : Generate Subsets
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: generate_subsets ---
-// Purpose    : Compute the result for `generate_subsets`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int generate_subsets(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (4));
-    return ans;
+// Example 1: Generate All Subsets (Power Set)
+void subsets(vector<int>& nums, int idx, vector<int>& cur, vector<vector<int>>& res) {
+    res.push_back(cur);
+    for (int i = idx; i < (int)nums.size(); i++) {
+        cur.push_back(nums[i]);
+        subsets(nums, i + 1, cur, res);
+        cur.pop_back(); // backtrack
+    }
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {1, 2, 3, 4, 5};
-    cout << generate_subsets(data) << "\n";
-    return 0;
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> res;
+    vector<int> cur;
+    subsets(nums, 0, cur, res);
+    for (auto& s : res) { cout << "["; for (int x : s) cout << x << " "; cout << "]\n"; }
 }

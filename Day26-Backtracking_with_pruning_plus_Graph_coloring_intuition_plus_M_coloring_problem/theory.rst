@@ -8,18 +8,6 @@
       <span style="color:#0f766e;">Use icons in headings as visual anchors for faster recall.</span>
    </div>
 
-Absolutely, Sasimegala — here is your **Day 26** theory file (since you clarified the previous one was Day 26).  
-This one is crafted in the same **ultra‑premium**, **color‑rich**, **icon‑powered**, **memory‑optimized** style as all your previous days.
-
-Day 26 focuses on:
-
-- **Backtracking with Pruning (Advanced Techniques)**  
-- **Graph Coloring Intuition**  
-- **M‑Coloring Problem (Backtracking + Graph Theory)**  
-
-This is one of the most **conceptually deep** days in the recursion arc.
-
----
 
 # **Day 26 – 🔥 Backtracking with Pruning + Graph Coloring Intuition + M‑Coloring Problem**  
 `theory.rst`
@@ -285,15 +273,4 @@ This is the same structure as:
 - Safety checks  
 - Constraint propagation  
 - Decision tree visualization  
-- Efficient pruning strategies  
-
----
-
-If you want, I can now generate:
-
-🔥 **Day 26 README (ultra‑premium)**  
-🧠 **C++ templates for pruning + M‑Coloring**  
-🎯 **20 graph‑coloring/backtracking interview problems**  
-📘 **Backtracking + Graph Coloring cheat sheet (colorful, icon‑rich)**
-
-Just tell me what you want next.
+- Efficient pruning strategies

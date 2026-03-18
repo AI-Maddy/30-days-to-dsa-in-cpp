@@ -1,35 +1,19 @@
+/*
+ * Solution 5: Minimum Window Substring (1D Arrays – Two Pointers and Sliding Window basics)
+ */
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Topic: 30-days-to-dsa-in-cpp | solutions | solution05
- * Pattern Family: Arrays
- * Goal: Deliver a correct and optimized solution for the target problem.
- */
-
-/**
- * Function: solve
- * Purpose : Implement the problem logic using a Arrays approach.
- * Input   : Read array or matrix values with index/range constraints.
- * Output  : Print problem-specific output to standard output.
- *
- * Pseudocode:
- * 1) Parse n (and m for matrix) and input values.
- * 2) Choose pattern: traversal, two pointers, sliding window, or prefix sums.
- * 3) Maintain required state (running sum/frequency/window bounds).
- * 4) Update best answer while preserving invariants.
- * 5) Print computed result.
- */
-void solve() {
-    // TODO: Implement problem-specific logic for this file.
-    // Hint: Track boundaries carefully to avoid off-by-one errors.
-}
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    // Run the main solver for this file.
-    solve();
-    return 0;
+    string s,t; cin>>s>>t;
+    unordered_map<char,int> need,have;
+    for(char c:t)need[c]++;
+    int formed=0,req=need.size(),l=0,ml=INT_MAX,ms=0;
+    for(int r=0;r<(int)s.size();r++){
+        have[s[r]]++;
+        if(need.count(s[r])&&have[s[r]]==need[s[r]])formed++;
+        while(formed==req){if(r-l+1<ml){ml=r-l+1;ms=l;}
+            if(need.count(s[l])&&--have[s[l]]<need[s[l]])formed--;
+            else have[s[l]]--;l++;}
+    }
+    cout<<(ml==INT_MAX?"":s.substr(ms,ml))<<"\n"; return 0;
 }

@@ -1,57 +1,32 @@
 /*
- * Example 2: Level Order Traversal (Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep)
+ * Example 2: Build from In+Post
  */
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 using namespace std;
+struct TreeNode { int val; TreeNode *left,*right; TreeNode(int v):val(v),left(nullptr),right(nullptr){} };
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Construct Tree from traversals plus Serialize Deserialize plus Morris Traversal deep
-// Task      : Level Order Traversal
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-struct TreeNode { int val; TreeNode* left; TreeNode* right; TreeNode(int v): val(v), left(nullptr), right(nullptr) {} };
-
-// --- Function Explanation: level_order_traversal ---
-// Purpose    : Traverse structure using `level_order_traversal` and aggregate traversal output.
-// Approach   : Use queue/stack/recursion to visit each node once in traversal order.
-// Complexity : O(n) time, O(h) to O(n) auxiliary space based on traversal strategy.
-// Notes      : Checks null root/base condition before traversal.
-// Pseudocode:
-// 1) If root/state is empty, return base result.
-// 2) Initialize traversal structure (stack/queue/recursion).
-// 3) Visit each node exactly once and update answer.
-// 4) Return accumulated traversal result.
-int level_order_traversal(TreeNode* root) {
-    if (!root) return 0;
-    queue<TreeNode*> q; q.push(root);
-    int cnt = 0;
-    while (!q.empty()) {
-        TreeNode* cur = q.front(); q.pop(); cnt++;
-        if (cur->left) q.push(cur->left);
-        if (cur->right) q.push(cur->right);
-    }
-    return cnt + 2;
+// Example 2: Construct Binary Tree from Inorder + Postorder
+TreeNode* buildPost(vector<int>& post, int pl, int pr,
+                    vector<int>& ino, int il, int ir,
+                    unordered_map<int,int>& idx) {
+    if (pl > pr) return nullptr;
+    int rootVal = post[pr];
+    int mid = idx[rootVal];
+    int leftSize = mid - il;
+    TreeNode* root = new TreeNode(rootVal);
+    root->left  = buildPost(post, pl, pl+leftSize-1, ino, il, mid-1, idx);
+    root->right = buildPost(post, pl+leftSize, pr-1, ino, mid+1, ir, idx);
+    return root;
 }
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
+TreeNode* buildTreePost(vector<int>& inorder, vector<int>& postorder) {
+    unordered_map<int,int> idx;
+    for (int i = 0; i < (int)inorder.size(); i++) idx[inorder[i]] = i;
+    int n = postorder.size();
+    return buildPost(postorder, 0, n-1, inorder, 0, n-1, idx);
+}
+void pre(TreeNode* n) { if(!n)return; cout<<n->val<<" "; pre(n->left); pre(n->right); }
 int main() {
-    TreeNode* r = new TreeNode(1); r->left = new TreeNode(2); r->right = new TreeNode(3);
-    cout << level_order_traversal(r) << "\n";
-    return 0;
+    vector<int> ino={9,3,15,20,7}, post={9,15,7,20,3};
+    TreeNode* root = buildTreePost(ino, post);
+    pre(root); cout << "\n";
 }

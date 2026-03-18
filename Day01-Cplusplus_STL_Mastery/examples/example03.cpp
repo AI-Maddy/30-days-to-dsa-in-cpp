@@ -1,54 +1,47 @@
 /*
  * Example 3: Set Uniqueness (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Cplusplus STL Mastery
-// Task      : Set Uniqueness
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: set_uniqueness ---
-// Purpose    : Compute the result for `set_uniqueness`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int set_uniqueness(vector<int> a) {
-    int l = 0, r = (int)a.size() - 1, score = 0;
-    while (l <= r) {
-        score += a[l];
-        if (l != r) score -= a[r];
-        l++; r--;
-    }
-    return score + 3;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {3, 4, 5, 6, 7};
-    cout << set_uniqueness(data) << "\n";
+    // set<int> — sorted, unique elements, O(log n) ops
+    set<int> s = {5, 3, 8, 1, 3, 5, 9};  // duplicates auto-removed
+    cout << "set (sorted, unique): ";
+    for (int x : s) cout << x << " "; cout << "\n";
+
+    s.insert(4);  cout << "After insert(4): ";
+    for (int x : s) cout << x << " "; cout << "\n";
+
+    s.erase(3);   cout << "After erase(3):  ";
+    for (int x : s) cout << x << " "; cout << "\n";
+
+    cout << "count(5): " << s.count(5) << "  count(10): " << s.count(10) << "\n";
+
+    // lower_bound / upper_bound on set
+    auto lb = s.lower_bound(5);  // first >= 5
+    auto ub = s.upper_bound(5);  // first > 5
+    cout << "lower_bound(5)=" << *lb << "  upper_bound(5)=" << *ub << "\n";
+
+    // Deduplicate a vector using set
+    vector<int> v = {4, 2, 7, 2, 4, 8, 1, 7};
+    set<int> dedup(v.begin(), v.end());
+    vector<int> uniq(dedup.begin(), dedup.end());
+    cout << "\nDeduplicated: ";
+    for (int x : uniq) cout << x << " "; cout << "\n";
+
+    // unordered_set — O(1) average, no ordering
+    unordered_set<int> us = {10, 20, 30, 40};
+    us.insert(50);
+    cout << "\nunordered_set contains 30? " << (us.count(30) ? "yes" : "no") << "\n";
+
+    // Set intersection and union via algorithm
+    vector<int> a = {1,2,3,4,5}, b = {3,4,5,6,7};
+    vector<int> inter, uni;
+    set_intersection(a.begin(),a.end(), b.begin(),b.end(), back_inserter(inter));
+    set_union(a.begin(),a.end(), b.begin(),b.end(), back_inserter(uni));
+    cout << "\nIntersection: "; for (int x : inter) cout << x << " "; cout << "\n";
+    cout << "Union:        "; for (int x : uni)   cout << x << " "; cout << "\n";
+
     return 0;
 }

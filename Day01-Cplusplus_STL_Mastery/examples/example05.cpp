@@ -1,50 +1,58 @@
 /*
  * Example 5: Priority Queue Top-K (Cplusplus STL Mastery)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Cplusplus STL Mastery
-// Task      : Priority Queue Top-K
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: priority_queue_top_k ---
-// Purpose    : Evaluate sequence constraints using `priority_queue_top_k`.
-// Approach   : Use monotonic stack/queue to keep only useful candidates.
-// Complexity : O(n) time with amortized O(1) push/pop operations.
-// Notes      : Ensure pop conditions reflect strict/non-strict requirement.
-// Pseudocode:
-// 1) Initialize monotonic/support stack or queue.
-// 2) For each element, pop invalid candidates.
-// 3) Read answer from top/front and push current element.
-// 4) Return collected per-index or global result.
-int priority_queue_top_k(vector<int> a) {
-    int best = a.empty() ? 0 : a[0];
-    for (int x : a) if (x > best) best = x;
-    return best + 5;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {5, 6, 7, 8, 9};
-    cout << priority_queue_top_k(data) << "\n";
+    // Max-heap (default) — largest element at top
+    priority_queue<int> maxpq;
+    for (int x : {3, 1, 4, 1, 5, 9, 2, 6}) maxpq.push(x);
+    cout << "Max-heap top-3: ";
+    for (int i = 0; i < 3; i++) {
+        cout << maxpq.top() << " ";
+        maxpq.pop();
+    }
+    cout << "\n";
+
+    // Min-heap — smallest element at top
+    priority_queue<int, vector<int>, greater<int>> minpq;
+    for (int x : {3, 1, 4, 1, 5, 9, 2, 6}) minpq.push(x);
+    cout << "Min-heap top-3: ";
+    for (int i = 0; i < 3; i++) {
+        cout << minpq.top() << " ";
+        minpq.pop();
+    }
+    cout << "\n";
+
+    // Find top-K largest elements using min-heap of size K
+    // Space O(k), Time O(n log k)
+    vector<int> nums = {7, 10, 4, 3, 20, 15, 8, 1};
+    int K = 4;
+    priority_queue<int, vector<int>, greater<int>> heap;  // min-heap
+    for (int x : nums) {
+        heap.push(x);
+        if ((int)heap.size() > K) heap.pop();  // evict smallest
+    }
+    // heap now contains K largest; top = Kth largest
+    cout << "\nTop-" << K << " largest: ";
+    vector<int> topK;
+    while (!heap.empty()) { topK.push_back(heap.top()); heap.pop(); }
+    sort(topK.rbegin(), topK.rend());
+    for (int x : topK) cout << x << " "; cout << "\n";
+    cout << K << "th largest element: " << topK.back() << "\n";
+
+    // Priority queue with pairs (custom ordering)
+    // Task scheduling: {priority, task_name}
+    priority_queue<pair<int,string>> tasks;
+    tasks.push({3, "low"});
+    tasks.push({10, "high"});
+    tasks.push({7, "medium"});
+    cout << "\nTask order by priority:\n";
+    while (!tasks.empty()) {
+        auto [pri, name] = tasks.top(); tasks.pop();
+        cout << "  priority=" << pri << " task=" << name << "\n";
+    }
+
     return 0;
 }

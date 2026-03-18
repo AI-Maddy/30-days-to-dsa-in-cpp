@@ -1,50 +1,41 @@
 /*
  * Example 4: Deque Operations (Time and Space Complexity plus STL Algorithms)
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// Demonstrates fill, iota, generate, rotate, copy.
+#include <bits/stdc++.h>
 using namespace std;
 
-// ===== Explanation =====
-// File Role : Example
-// Topic     : Time and Space Complexity plus STL Algorithms
-// Task      : Deque Operations
-// What this file shows:
-// 1) A compact implementation for the target pattern/problem.
-// 2) Typical data flow and expected usage in interviews/contests.
-// 3) A small driver (if present) to demonstrate behavior.
-// =======================
-
-
-// --- Function Explanation: deque_operations ---
-// Purpose    : Compute the result for `deque_operations`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Initialize variables and helper state.
-// 2) Iterate through input and apply core rule.
-// 3) Update intermediate answer safely.
-// 4) Return final computed result.
-int deque_operations(vector<int> a) {
-    int ans = 0;
-    for (int i = 0; i < (int)a.size(); i++) ans += (a[i] % (7));
-    return ans;
-}
-
-// Driver code for quick local verification.
-// --- Function Explanation: main ---
-// Purpose    : Compute the result for `main`.
-// Approach   : Iterative pass over input with lightweight state updates.
-// Complexity : O(n) time, O(1) extra space (excluding input/output).
-// Notes      : Assumes valid input format from caller.
-// Pseudocode:
-// 1) Build or read sample input.
-// 2) Call the core function/class method.
-// 3) Print/verify the produced output.
 int main() {
-    vector<int> data = {4, 5, 6, 7, 8};
-    cout << deque_operations(data) << "\n";
+    // iota — fills with increasing values
+    vector<int> v(10);
+    iota(v.begin(), v.end(), 1);
+    cout << "iota(1..10): "; for(int x:v) cout<<x<<" "; cout<<"\n";
+
+    // fill — sets all elements to a value
+    vector<int> zeros(5);
+    fill(zeros.begin(), zeros.end(), 42);
+    cout << "fill(42): "; for(int x:zeros) cout<<x<<" "; cout<<"\n";
+
+    // generate — fill with function results
+    int counter = 0;
+    vector<int> gen(5);
+    generate(gen.begin(), gen.end(), [&](){ return counter += 3; });
+    cout << "generate(multiples of 3): "; for(int x:gen) cout<<x<<" "; cout<<"\n";
+
+    // rotate — O(n), left rotate by k positions
+    vector<int> r = {1,2,3,4,5,6,7};
+    rotate(r.begin(), r.begin()+3, r.end());  // left rotate by 3
+    cout << "rotate left by 3: "; for(int x:r) cout<<x<<" "; cout<<"\n";
+
+    // copy, copy_if
+    vector<int> src = {1,2,3,4,5,6,7,8}, dst;
+    copy_if(src.begin(), src.end(), back_inserter(dst), [](int x){ return x%2==0; });
+    cout << "copy_if (evens): "; for(int x:dst) cout<<x<<" "; cout<<"\n";
+
+    // replace, replace_if
+    vector<int> rep = {1,2,3,2,4,2,5};
+    replace(rep.begin(), rep.end(), 2, 99);
+    cout << "replace 2->99: "; for(int x:rep) cout<<x<<" "; cout<<"\n";
+
     return 0;
 }
