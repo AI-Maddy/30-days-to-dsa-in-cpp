@@ -1,0 +1,12 @@
+# Exclude website and scripting folders from GitHub language detection
+website-astro/** linguist-vendored
+website/** linguist-vendored
+scripts/** linguist-vendored
+
+# Exclude node_modules from language detection
+node_modules/** linguist-vendored
+
+# Ensure C++ files are detected correctly
+*.cpp linguist-language=C++
+*.h linguist-language=C++
+*.hpp linguist-language=C++
